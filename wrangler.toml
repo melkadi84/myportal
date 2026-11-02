@@ -1,0 +1,10 @@
+name = "mk-contactme"
+main = "cloudflare-worker.js"
+compatibility_date = "2024-01-01"
+account_id = "f30fc791edbe31adc0ec0f7216f55126"
+
+# Cloudflare D1 Database Binding
+[[d1_databases]]
+binding = "DB"
+database_name = "mk_contactme"
+database_id = "cc5b3b12-7148-464a-9117-644c0b03305c"
