@@ -3378,16 +3378,16 @@ a {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url('assets/waves-background.svg');
-  background-repeat: no-repeat;
-  background-position: bottom center;
-  background-size: 90vw;
+  background-color: #1e3a8a;
+  -webkit-mask: url('assets/waves-background.svg') bottom center / 90vw no-repeat;
+  mask: url('assets/waves-background.svg') bottom center / 90vw no-repeat;
   opacity: 0.12;
   pointer-events: none;
   z-index: 1;
 }
 
 [data-theme="dark"] .beverr-hero::before {
+  background-color: #ffffff;
   opacity: 0.15;
 }
 
