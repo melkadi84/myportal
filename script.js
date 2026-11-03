@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTimelineDateClicks();
   initDynamicRecommendations();
   initTestimonialsCarousel();
+  initYouTemplateSlider();
   initCompaniesMarquee();
   initPortfolioSlider();
 });
@@ -840,4 +841,203 @@ function initPortfolioSlider() {
   window.addEventListener('resize', updateBtnStates);
   // Initial check after layout
   setTimeout(updateBtnStates, 100);
+}
+
+/* ==========================================================================
+   Featured Testimonial Slider Variant (Webflow You Template Reference Match)
+   ========================================================================== */
+function initYouTemplateSlider() {
+  const viewport = document.getElementById('youSliderViewport');
+  const track = document.getElementById('youSliderTrack');
+  const prevBtn = document.getElementById('youSliderPrevBtn');
+  const nextBtn = document.getElementById('youSliderNextBtn');
+  const counterCurrent = document.getElementById('youSliderCurrent');
+  const playBtn = document.getElementById('youSliderPlayBtn');
+  const dots = document.querySelectorAll('.you-slider-dot');
+  const slides = document.querySelectorAll('.you-slide');
+
+  if (!viewport || !track || !slides.length) return;
+
+  let currentIndex = 0;
+  const total = slides.length;
+  let autoPlayTimer = null;
+  let isAutoPlaying = true;
+  let isDragging = false;
+  let startX = 0;
+
+  function updateSlider(index, smooth = true) {
+    if (index < 0) {
+      currentIndex = total - 1;
+    } else if (index >= total) {
+      currentIndex = 0;
+    } else {
+      currentIndex = index;
+    }
+
+    track.style.transition = smooth ? 'transform 0.45s cubic-bezier(0.22, 1, 0.36, 1)' : 'none';
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+    // Active slide styling
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === currentIndex);
+    });
+
+    // Active dot styling
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === currentIndex);
+    });
+
+    // Update counter
+    if (counterCurrent) {
+      counterCurrent.textContent = currentIndex + 1;
+    }
+  }
+
+  // Button navigation
+  if (prevBtn) {
+    prevBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      resetAutoPlay();
+      updateSlider(currentIndex - 1);
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      resetAutoPlay();
+      updateSlider(currentIndex + 1);
+    });
+  }
+
+  // Dot navigation
+  dots.forEach(dot => {
+    dot.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = parseInt(dot.getAttribute('data-slide-target'), 10);
+      if (!isNaN(target)) {
+        resetAutoPlay();
+        updateSlider(target);
+      }
+    });
+  });
+
+  // Auto-play timer (advances every 6.5 seconds)
+  function startAutoPlay() {
+    if (autoPlayTimer) clearInterval(autoPlayTimer);
+    if (!isAutoPlaying) return;
+    autoPlayTimer = setInterval(() => {
+      updateSlider(currentIndex + 1);
+    }, 6500);
+  }
+
+  function pauseAutoPlay() {
+    if (autoPlayTimer) {
+      clearInterval(autoPlayTimer);
+      autoPlayTimer = null;
+    }
+  }
+
+  function resetAutoPlay() {
+    pauseAutoPlay();
+    if (isAutoPlaying) {
+      startAutoPlay();
+    }
+  }
+
+  // Pause on hover
+  viewport.addEventListener('mouseenter', () => {
+    if (isAutoPlaying) pauseAutoPlay();
+  });
+
+  viewport.addEventListener('mouseleave', () => {
+    if (isAutoPlaying) startAutoPlay();
+  });
+
+  // Toggle button
+  if (playBtn) {
+    playBtn.addEventListener('click', () => {
+      isAutoPlaying = !isAutoPlaying;
+      playBtn.classList.toggle('paused', !isAutoPlaying);
+      const icon = playBtn.querySelector('.slider-play-icon');
+      const text = playBtn.querySelector('.slider-play-text');
+      if (isAutoPlaying) {
+        if (icon) icon.textContent = '❚❚';
+        if (text) text.textContent = 'Auto-playing';
+        startAutoPlay();
+      } else {
+        if (icon) icon.textContent = '▶';
+        if (text) text.textContent = 'Paused';
+        pauseAutoPlay();
+      }
+    });
+  }
+
+  // Touch and Mouse Drag Support
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  viewport.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+    pauseAutoPlay();
+  }, { passive: true });
+
+  viewport.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].clientX;
+    handleSwipe();
+    if (isAutoPlaying) startAutoPlay();
+  }, { passive: true });
+
+  viewport.addEventListener('mousedown', (e) => {
+    if (e.button !== 0) return;
+    isDragging = true;
+    startX = e.clientX;
+    viewport.classList.add('is-dragging');
+    pauseAutoPlay();
+  });
+
+  window.addEventListener('mouseup', (e) => {
+    if (!isDragging) return;
+    isDragging = false;
+    viewport.classList.remove('is-dragging');
+    const diff = e.clientX - startX;
+    if (Math.abs(diff) > 40) {
+      if (diff < 0) {
+        updateSlider(currentIndex + 1);
+      } else {
+        updateSlider(currentIndex - 1);
+      }
+    }
+    if (isAutoPlaying) startAutoPlay();
+  });
+
+  function handleSwipe() {
+    const diff = touchEndX - touchStartX;
+    if (Math.abs(diff) > 40) {
+      if (diff < 0) {
+        updateSlider(currentIndex + 1);
+      } else {
+        updateSlider(currentIndex - 1);
+      }
+    }
+  }
+
+  // Keyboard navigation
+  window.addEventListener('keydown', (e) => {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    const rect = viewport.getBoundingClientRect();
+    const inView = rect.top < window.innerHeight && rect.bottom > 0;
+    if (!inView) return;
+
+    if (e.key === 'ArrowLeft') {
+      resetAutoPlay();
+      updateSlider(currentIndex - 1);
+    } else if (e.key === 'ArrowRight') {
+      resetAutoPlay();
+      updateSlider(currentIndex + 1);
+    }
+  });
+
+  startAutoPlay();
+  updateSlider(0);
 }

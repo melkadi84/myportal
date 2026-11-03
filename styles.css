@@ -4112,6 +4112,354 @@ a {
   }
 }
 
+/* ==========================================================================
+   FEATURED TESTIMONIAL SLIDER VARIANT (Webflow You Template Reference Match)
+   Stacked Card Layout with Large Circular Avatar & Flanking Controls
+   ========================================================================== */
+.you-slider-section {
+  padding: 100px 0 110px 0;
+  background: var(--bg-primary);
+  border-top: 1px solid var(--border-subtle);
+  position: relative;
+  overflow: hidden;
+}
+
+.you-slider-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 46px auto;
+}
+
+.slider-variant-badge {
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 3px 12px;
+  border-radius: var(--radius-full);
+  background: rgba(15, 118, 110, 0.12);
+  color: var(--brand-secondary);
+  border: 1px solid rgba(15, 118, 110, 0.25);
+  display: inline-block;
+  letter-spacing: 0.02em;
+}
+
+[data-theme="dark"] .slider-variant-badge {
+  background: rgba(45, 212, 191, 0.15);
+  color: #2dd4bf;
+  border-color: rgba(45, 212, 191, 0.3);
+}
+
+.you-slider-outer {
+  position: relative;
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Stacked Background Deck Effect (Behind Main Card) */
+.you-slider-stack-underlay {
+  position: absolute;
+  top: -14px;
+  bottom: -14px;
+  left: 36px;
+  right: 36px;
+  background: #eef2f6;
+  border-radius: 36px;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .you-slider-stack-underlay {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+}
+
+/* Main Slider Viewport */
+.you-slider-viewport {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  border-radius: 28px;
+  overflow: hidden;
+  background: var(--bg-card);
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.07);
+  border: 1px solid var(--border-subtle);
+  cursor: grab;
+}
+
+.you-slider-viewport.is-dragging {
+  cursor: grabbing;
+}
+
+.you-slider-track {
+  display: flex;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+  width: 100%;
+}
+
+.you-slide {
+  width: 100%;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  opacity: 0.35;
+  transition: opacity 0.35s ease;
+}
+
+.you-slide.active {
+  opacity: 1;
+}
+
+.you-slide-card {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 40px;
+  padding: 56px 54px;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 440px;
+}
+
+.you-slide-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.you-slide-quote {
+  font-size: clamp(1.1rem, 1.6vw, 1.32rem);
+  line-height: 1.65;
+  color: var(--text-primary);
+  margin: 0 0 32px 0;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: -0.01em;
+}
+
+.you-slide-author-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.you-slide-name {
+  font-size: 1.22rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.015em;
+  margin-bottom: 2px;
+}
+
+.you-slide-role {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.you-slide-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Large Circular Avatar with Tinted Backdrop */
+.you-avatar-circle-backdrop {
+  width: clamp(240px, 26vw, 320px);
+  height: clamp(240px, 26vw, 320px);
+  border-radius: 50%;
+  background-color: var(--circle-bg, #e0f2fe);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  transition: background-color 0.3s ease;
+}
+
+[data-theme="dark"] .you-avatar-circle-backdrop {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border: 2px solid var(--border-subtle);
+}
+
+.you-slide-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
+/* Flanking Circular Navigation Arrows */
+.you-slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.you-slider-prev {
+  left: -24px;
+}
+
+.you-slider-next {
+  right: -24px;
+}
+
+.you-slider-arrow:hover {
+  background: var(--brand-secondary);
+  color: #ffffff;
+  border-color: var(--brand-secondary);
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 10px 24px rgba(15, 118, 110, 0.3);
+}
+
+.you-slider-arrow:active {
+  transform: translateY(-50%) scale(0.96);
+}
+
+/* Navigation Bar & Dots */
+.you-slider-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1020px;
+  margin: 30px auto 0 auto;
+  padding: 0 20px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.you-slider-counter {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.you-slider-dots {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+  max-width: 580px;
+  justify-content: center;
+}
+
+.you-slider-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--border-medium);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.25s ease;
+}
+
+.you-slider-dot:hover {
+  background: var(--brand-secondary);
+  transform: scale(1.2);
+}
+
+.you-slider-dot.active {
+  width: 28px;
+  border-radius: 9999px;
+  background: var(--brand-secondary);
+}
+
+.you-slider-play-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.you-slider-play-btn:hover {
+  border-color: var(--brand-secondary);
+  color: var(--text-primary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1080px) {
+  .you-slider-prev {
+    left: 2px;
+  }
+  .you-slider-next {
+    right: 2px;
+  }
+}
+
+@media (max-width: 860px) {
+  .you-slide-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 30px;
+    padding: 40px 24px;
+  }
+  .you-slide-content {
+    order: 2;
+  }
+  .you-slide-media {
+    order: 1;
+  }
+  .you-slide-author-wrap {
+    align-items: center;
+  }
+  .you-slider-stack-underlay {
+    left: 12px;
+    right: 12px;
+  }
+  .you-slider-nav-bar {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 580px) {
+  .you-slider-arrow {
+    width: 44px;
+    height: 44px;
+  }
+  .you-slider-prev {
+    left: -8px;
+  }
+  .you-slider-next {
+    right: -8px;
+  }
+  .you-slide-card {
+    padding: 32px 18px;
+  }
+  .you-avatar-circle-backdrop {
+    width: 200px;
+    height: 200px;
+  }
+}
+
 
 
 
