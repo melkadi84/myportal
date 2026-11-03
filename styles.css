@@ -3498,34 +3498,42 @@ a {
 .testimonials-carousel-wrapper {
   position: relative;
   width: 100%;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
   padding: 38px 0 34px 0;
-  mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-behavior: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.testimonials-carousel-wrapper::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.testimonials-carousel-wrapper.is-dragging {
+  cursor: grabbing !important;
+  scroll-behavior: auto !important;
+}
+
+.testimonials-carousel-wrapper.is-dragging * {
+  cursor: grabbing !important;
+  pointer-events: none;
 }
 
 .testimonials-carousel-track {
   display: flex;
   gap: 20px;
   width: max-content;
-  animation: testimonialsAutoScroll 60s linear infinite;
-  will-change: transform;
   padding: 16px 0;
-}
-
-.testimonials-carousel-wrapper:hover .testimonials-carousel-track,
-.testimonials-carousel-wrapper:focus-within .testimonials-carousel-track,
-.testimonials-carousel-wrapper.paused .testimonials-carousel-track {
-  animation-play-state: paused;
-}
-
-@keyframes testimonialsAutoScroll {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    transform: translate3d(-50%, 0, 0);
-  }
+  will-change: scroll-position;
 }
 
 .testimonial-card-youx {
@@ -3548,8 +3556,14 @@ a {
   min-height: 330px;
   flex-shrink: 0;
   user-select: none;
-  cursor: pointer;
+  -webkit-user-select: none;
   z-index: 1;
+}
+
+.testimonial-card-youx img {
+  -webkit-user-drag: none;
+  user-select: none;
+  pointer-events: none;
 }
 
 /* Sibling focus effect: subtly soften non-hovered cards without blur or layout shifts */

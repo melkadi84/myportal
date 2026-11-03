@@ -531,6 +531,7 @@ async function initDynamicRecommendations() {
 
   try {
     let recommendations = [];
+    let isRemote = false;
 
     // Attempt 1: Fetch from Cloudflare Worker endpoint if defined
     if (typeof CLOUDFLARE_WORKER_ENDPOINT !== 'undefined' && CLOUDFLARE_WORKER_ENDPOINT) {
@@ -538,26 +539,31 @@ async function initDynamicRecommendations() {
         const res = await fetch(`${CLOUDFLARE_WORKER_ENDPOINT}/api/recommendations`);
         if (res.ok) {
           recommendations = await res.json();
+          isRemote = true;
         }
       } catch (err) {
         console.warn('Worker endpoint fetch failed, falling back to local dataset.', err);
       }
     }
 
-    // Attempt 2: Fallback to local data/recommendations.json (if on web server)
+    // Attempt 2: Fallback to local data/recommendations.json only if track is empty
     if (!recommendations || recommendations.length === 0) {
+      if (track.children.length > 0) {
+        // Pre-rendered markup in index.html already contains all 18 authentic recommendations
+        return;
+      }
       try {
         const localRes = await fetch('data/recommendations.json');
         if (localRes.ok) {
           recommendations = await localRes.json();
         }
       } catch (e) {
-        // file:/// protocol or offline; keep preloaded markup
         return;
       }
     }
 
     if (!recommendations || recommendations.length === 0) return;
+    if (!isRemote && track.children.length >= 36) return;
 
     // Helper to render card HTML
     const renderCard = (item, isDuplicate = false) => `
@@ -598,7 +604,7 @@ function escapeHtml(str) {
 }
 
 /* ==========================================================================
-   Testimonials Auto-Scrolling Carousel Logic
+   Testimonials Auto-Scrolling Carousel with Drag & Arrow Navigation
    ========================================================================== */
 function initTestimonialsCarousel() {
   const wrapper = document.getElementById('testimonialsCarousel');
@@ -607,76 +613,185 @@ function initTestimonialsCarousel() {
   const nextBtn = document.getElementById('nextTestimonialBtn');
   if (!wrapper || !track) return;
 
+  let isPaused = false;
+  let isDragging = false;
+  let startX = 0;
+  let startScrollLeft = 0;
+  let dragMoved = false;
   let resumeTimeout = null;
+  let lastTimestamp = null;
+  let rafId = null;
 
-  // Touch handling for mobile pause/resume
+  // Auto-scroll speed: ~38 pixels per second (comfortable reading and scanning pace)
+  const SCROLL_SPEED = 38;
+
+  function getCardStep() {
+    const card = track.querySelector('.testimonial-card-youx');
+    return card ? (card.offsetWidth + 20) : 320;
+  }
+
+  function getHalfWidth() {
+    return track.scrollWidth / 2;
+  }
+
+  // Animation frame ticker for smooth continuous scrolling
+  function stepScroll(timestamp) {
+    if (!lastTimestamp) lastTimestamp = timestamp;
+    const elapsed = (timestamp - lastTimestamp) / 1000;
+    lastTimestamp = timestamp;
+
+    // Cap delta at 0.1s to prevent jumps when waking up from background tabs
+    const delta = Math.min(elapsed, 0.1);
+
+    if (!isPaused && !isDragging) {
+      wrapper.scrollLeft += SCROLL_SPEED * delta;
+
+      const halfWidth = getHalfWidth();
+      if (halfWidth > 0 && wrapper.scrollLeft >= halfWidth) {
+        // Seamless reset back to beginning of Set 2 (identical to Set 1)
+        wrapper.scrollLeft -= halfWidth;
+      }
+    }
+
+    rafId = requestAnimationFrame(stepScroll);
+  }
+
+  rafId = requestAnimationFrame(stepScroll);
+
+  function pauseAutoScroll(durationMs = 0) {
+    isPaused = true;
+    if (resumeTimeout) clearTimeout(resumeTimeout);
+    if (durationMs > 0) {
+      resumeTimeout = setTimeout(() => {
+        if (!wrapper.matches(':hover') && !isDragging) {
+          isPaused = false;
+          lastTimestamp = null;
+        }
+      }, durationMs);
+    }
+  }
+
+  function resumeAutoScroll() {
+    if (!wrapper.matches(':hover') && !isDragging) {
+      isPaused = false;
+      lastTimestamp = null;
+    }
+  }
+
+  // Hover detection: pause auto-scroll when user hovers cards to read
+  wrapper.addEventListener('mouseenter', () => {
+    isPaused = true;
+  });
+
+  wrapper.addEventListener('mouseleave', () => {
+    if (!isDragging) {
+      if (resumeTimeout) clearTimeout(resumeTimeout);
+      resumeTimeout = setTimeout(() => {
+        resumeAutoScroll();
+      }, 400);
+    }
+  });
+
+  // Touch support for mobile devices
   wrapper.addEventListener('touchstart', () => {
-    track.style.animationPlayState = 'paused';
-    wrapper.classList.add('paused');
+    pauseAutoScroll(0);
   }, { passive: true });
 
   wrapper.addEventListener('touchend', () => {
-    track.style.animationPlayState = 'running';
-    wrapper.classList.remove('paused');
+    pauseAutoScroll(2000);
   }, { passive: true });
 
-  // Arrow button navigation
-  function nudgeCarousel(direction) {
-    track.style.animationPlayState = 'paused';
-    wrapper.classList.add('paused');
+  // Mouse Drag-to-Scroll
+  wrapper.addEventListener('mousedown', (e) => {
+    if (e.button !== 0) return; // Only main left click
+    isDragging = true;
+    isPaused = true;
+    dragMoved = false;
+    startX = e.pageX - wrapper.offsetLeft;
+    startScrollLeft = wrapper.scrollLeft;
+    wrapper.classList.add('is-dragging');
+  });
 
-    // Read current computed translateX
-    let currentX = 0;
-    try {
-      const computedStyle = window.getComputedStyle(track);
-      const transform = computedStyle.transform || computedStyle.webkitTransform;
-      if (transform && transform !== 'none') {
-        const matrixValues = transform.match(/matrix.*\((.+)\)/);
-        if (matrixValues) {
-          const parts = matrixValues[1].split(', ');
-          currentX = parseFloat(parts[4]) || 0;
-        }
-      }
-    } catch (e) {
-      currentX = 0;
+  window.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - wrapper.offsetLeft;
+    const walk = (x - startX) * 1.3;
+    if (Math.abs(walk) > 4) {
+      dragMoved = true;
     }
+    wrapper.scrollLeft = startScrollLeft - walk;
 
-    const firstCard = track.querySelector('.testimonial-card-youx');
-    const cardStep = firstCard ? (firstCard.offsetWidth + 20) : 330;
-    let targetX = currentX + (direction === 'next' ? -cardStep : cardStep);
-
-    // Keep within half width loop
-    const halfWidth = track.scrollWidth / 2;
+    // Seamless wrap during active mouse drag
+    const halfWidth = getHalfWidth();
     if (halfWidth > 0) {
-      if (targetX < -halfWidth) targetX += halfWidth;
-      if (targetX > 0) targetX -= halfWidth;
+      if (wrapper.scrollLeft >= halfWidth) {
+        wrapper.scrollLeft -= halfWidth;
+        startScrollLeft -= halfWidth;
+      } else if (wrapper.scrollLeft <= 0) {
+        wrapper.scrollLeft += halfWidth;
+        startScrollLeft += halfWidth;
+      }
+    }
+  });
+
+  window.addEventListener('mouseup', () => {
+    if (!isDragging) return;
+    isDragging = false;
+    wrapper.classList.remove('is-dragging');
+    pauseAutoScroll(2500);
+  });
+
+  // Prevent click events on cards when user was dragging
+  wrapper.addEventListener('click', (e) => {
+    if (dragMoved) {
+      e.preventDefault();
+      e.stopPropagation();
+      dragMoved = false;
+    }
+  }, true);
+
+  // Arrow Navigation Buttons
+  function navigate(direction) {
+    pauseAutoScroll(3500);
+    const step = getCardStep();
+    const halfWidth = getHalfWidth();
+
+    if (halfWidth > 0) {
+      if (direction === 'prev' && wrapper.scrollLeft <= 15) {
+        wrapper.scrollLeft += halfWidth;
+      } else if (direction === 'next' && wrapper.scrollLeft >= halfWidth - 15) {
+        wrapper.scrollLeft -= halfWidth;
+      }
     }
 
-    track.style.transition = 'transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)';
-    track.style.transform = `translateX(${targetX}px)`;
-
-    if (resumeTimeout) clearTimeout(resumeTimeout);
-    resumeTimeout = setTimeout(() => {
-      track.style.transition = '';
-      track.style.transform = '';
-      track.style.animationPlayState = 'running';
-      wrapper.classList.remove('paused');
-    }, 2800);
+    const delta = direction === 'next' ? step : -step;
+    wrapper.scrollBy({ left: delta, behavior: 'smooth' });
   }
 
   if (prevBtn) {
     prevBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      nudgeCarousel('prev');
+      navigate('prev');
     });
   }
 
   if (nextBtn) {
     nextBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      nudgeCarousel('next');
+      navigate('next');
     });
   }
+
+  // Handle native scroll event (touch swipe or trackpad) seamless wrapping
+  wrapper.addEventListener('scroll', () => {
+    const halfWidth = getHalfWidth();
+    if (halfWidth > 0) {
+      if (wrapper.scrollLeft >= halfWidth * 1.95) {
+        wrapper.scrollLeft -= halfWidth;
+      }
+    }
+  }, { passive: true });
 }
 
 /* ==========================================================================
