@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 575 360" width="575" height="360">
+  <defs>
+    <linearGradient id="bg-emd" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E0F2FE"/>
+      <stop offset="100%" stop-color="#CCFBF1"/>
+    </linearGradient>
+    <filter id="shadow-card" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#0F766E" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="575" height="360" rx="24" fill="url(#bg-emd)"/>
+  <g filter="url(#shadow-card)">
+    <rect x="45" y="35" width="485" height="290" rx="18" fill="#FFFFFF"/>
+  </g>
+  <rect x="45" y="35" width="485" height="44" rx="18" fill="#F8FAFC"/>
+  <rect x="45" y="65" width="485" height="14" fill="#F8FAFC"/>
+  <circle cx="72" cy="57" r="5" fill="#EF4444"/>
+  <circle cx="88" cy="57" r="5" fill="#F59E0B"/>
+  <circle cx="104" cy="57" r="5" fill="#10B981"/>
+  <text x="287" y="61" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" fill="#64748B" text-anchor="middle">START Enterprise Recognition Platform • EMD</text>
+  <g transform="translate(70, 95)">
+    <rect x="0" y="0" width="138" height="62" rx="10" fill="#F0FDFA" stroke="#99F6E4" stroke-width="1"/>
+    <text x="16" y="24" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F766E">4 Power Plants</text>
+    <text x="16" y="46" font-family="sans-serif" font-size="18" font-weight="800" fill="#115E59">Burullus +3</text>
+    
+    <rect x="150" y="0" width="138" height="62" rx="10" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1"/>
+    <text x="166" y="24" font-family="sans-serif" font-size="11" font-weight="600" fill="#1D4ED8">Recognition Metric</text>
+    <text x="166" y="46" font-family="sans-serif" font-size="18" font-weight="800" fill="#1E40AF">500+ Peers</text>
+
+    <rect x="300" y="0" width="135" height="62" rx="10" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1"/>
+    <text x="316" y="24" font-family="sans-serif" font-size="11" font-weight="600" fill="#B45309">Status</text>
+    <text x="316" y="46" font-family="sans-serif" font-size="16" font-weight="800" fill="#92400E">Active Live</text>
+
+    <rect x="0" y="78" width="435" height="132" rx="14" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+    <circle cx="42" cy="124" r="24" fill="#CCFBF1"/>
+    <text x="42" y="132" font-size="24" text-anchor="middle">🏆</text>
+    <text x="80" y="116" font-family="sans-serif" font-size="15" font-weight="700" fill="#0F172A">Siemens Energy Excellence Award</text>
+    <text x="80" y="136" font-family="sans-serif" font-size="12" fill="#64748B">Peer Recognition: Operational Enablement &amp; Digital Innovation</text>
+    
+    <rect x="80" y="154" width="92" height="24" rx="6" fill="#0F766E"/>
+    <text x="126" y="170" font-family="sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">Verified START</text>
+
+    <rect x="180" y="154" width="112" height="24" rx="6" fill="#E0F2FE"/>
+    <text x="236" y="170" font-family="sans-serif" font-size="10" font-weight="700" fill="#0369A1" text-anchor="middle">+500 Impact Pts</text>
+
+    <rect x="300" y="154" width="110" height="24" rx="6" fill="#DCFCE7"/>
+    <text x="355" y="170" font-family="sans-serif" font-size="10" font-weight="700" fill="#15803D" text-anchor="middle">Power Platform</text>
+  </g>
+</svg>

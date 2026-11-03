@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 575 360" width="575" height="360">
+  <defs>
+    <linearGradient id="bg-hub" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EFF6FF"/>
+      <stop offset="100%" stop-color="#DBEAFE"/>
+    </linearGradient>
+    <filter id="shadow-hub" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#1D4ED8" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+  <rect width="575" height="360" rx="24" fill="url(#bg-hub)"/>
+  <g filter="url(#shadow-hub)">
+    <rect x="45" y="35" width="485" height="290" rx="18" fill="#FFFFFF"/>
+  </g>
+  <rect x="45" y="35" width="485" height="44" rx="18" fill="#F8FAFC"/>
+  <rect x="45" y="65" width="485" height="14" fill="#F8FAFC"/>
+  <circle cx="72" cy="57" r="5" fill="#EF4444"/>
+  <circle cx="88" cy="57" r="5" fill="#F59E0B"/>
+  <circle cx="104" cy="57" r="5" fill="#10B981"/>
+  <text x="287" y="61" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" fill="#64748B" text-anchor="middle">Burullus IT Tools Hub • Unified Site Launchpad</text>
+  <g transform="translate(68, 95)">
+    <!-- Search bar -->
+    <rect x="0" y="0" width="439" height="36" rx="8" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="14" y="23" font-family="sans-serif" font-size="12" fill="#94A3B8">🔍 Search internally developed plant applications...</text>
+    
+    <!-- 4 App Launcher Tiles -->
+    <g transform="translate(0, 48)">
+      <rect x="0" y="0" width="102" height="74" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+      <text x="51" y="30" font-size="20" text-anchor="middle">📋</text>
+      <text x="51" y="52" font-family="sans-serif" font-size="10" font-weight="700" fill="#0F172A" text-anchor="middle">Start Card</text>
+      <text x="51" y="64" font-family="sans-serif" font-size="8" fill="#059669" text-anchor="middle">PTW Active</text>
+
+      <rect x="112" y="0" width="102" height="74" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+      <text x="163" y="30" font-size="20" text-anchor="middle">🛡️</text>
+      <text x="163" y="52" font-family="sans-serif" font-size="10" font-weight="700" fill="#0F172A" text-anchor="middle">EHS Suite</text>
+      <text x="163" y="64" font-family="sans-serif" font-size="8" fill="#2563EB" text-anchor="middle">QR Live</text>
+
+      <rect x="224" y="0" width="102" height="74" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+      <text x="275" y="30" font-size="20" text-anchor="middle">💻</text>
+      <text x="275" y="52" font-family="sans-serif" font-size="10" font-weight="700" fill="#0F172A" text-anchor="middle">IT Warehouse</text>
+      <text x="275" y="64" font-family="sans-serif" font-size="8" fill="#D97706" text-anchor="middle">Asset Track</text>
+
+      <rect x="336" y="0" width="102" height="74" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+      <text x="387" y="30" font-size="20" text-anchor="middle">📶</text>
+      <text x="387" y="52" font-family="sans-serif" font-size="10" font-weight="700" fill="#0F172A" text-anchor="middle">Wi-Fi Voucher</text>
+      <text x="387" y="64" font-family="sans-serif" font-size="8" fill="#7C3AED" text-anchor="middle">Firewall API</text>
+    </g>
+
+    <!-- Quick stats strip -->
+    <g transform="translate(0, 134)">
+      <rect x="0" y="0" width="439" height="76" rx="10" fill="#F0FDFA" stroke="#99F6E4" stroke-width="1"/>
+      <circle cx="36" cy="38" r="18" fill="#CCFBF1"/>
+      <text x="36" y="44" font-size="18" text-anchor="middle">⚡</text>
+      <text x="68" y="30" font-family="sans-serif" font-size="13" font-weight="700" fill="#0F766E">17 Enterprise Apps Integrated</text>
+      <text x="68" y="48" font-family="sans-serif" font-size="11" fill="#115E59">Centralized Single Sign-On (SSO) &amp; Role-Based Access for 500+ Plant Users</text>
+    </g>
+  </g>
+</svg>

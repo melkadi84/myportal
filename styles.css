@@ -3291,6 +3291,43 @@ a {
   gap: 16px;
 }
 
+.portfolio-all-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 24px;
+  border-radius: 9999px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  margin-right: 8px;
+}
+
+.portfolio-all-badge:hover {
+  background: var(--brand-primary);
+  color: #ffffff;
+  border-color: var(--brand-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(29, 78, 216, 0.2);
+}
+
+[data-theme="dark"] .portfolio-all-badge {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #f1f5f9;
+}
+
+[data-theme="dark"] .portfolio-all-badge:hover {
+  background: var(--brand-secondary);
+  color: #042f2e;
+  border-color: var(--brand-secondary);
+}
+
 .portfolio-slider-arrow {
   width: 68px;
   height: 68px;

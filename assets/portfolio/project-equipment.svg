@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 575 360" width="575" height="360">
+  <defs>
+    <linearGradient id="bg-eq" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEF3C7"/>
+      <stop offset="100%" stop-color="#FDE68A"/>
+    </linearGradient>
+    <filter id="shadow-eq" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#D97706" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="575" height="360" rx="24" fill="url(#bg-eq)"/>
+  <g filter="url(#shadow-eq)">
+    <rect x="45" y="35" width="485" height="290" rx="18" fill="#FFFFFF"/>
+  </g>
+  <rect x="45" y="35" width="485" height="44" rx="18" fill="#F8FAFC"/>
+  <rect x="45" y="65" width="485" height="14" fill="#F8FAFC"/>
+  <circle cx="72" cy="57" r="5" fill="#EF4444"/>
+  <circle cx="88" cy="57" r="5" fill="#F59E0B"/>
+  <circle cx="104" cy="57" r="5" fill="#10B981"/>
+  <text x="287" y="61" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" fill="#64748B" text-anchor="middle">Heavy Equipment &amp; Fleet Reservation System</text>
+  <g transform="translate(68, 95)">
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="138" height="58" rx="10" fill="#FFFBEB" stroke="#FCD34D" stroke-width="1"/>
+      <text x="14" y="22" font-family="sans-serif" font-size="10" font-weight="600" fill="#B45309">Fleet In Service</text>
+      <text x="14" y="44" font-family="sans-serif" font-size="17" font-weight="800" fill="#78350F">24 Vehicles</text>
+
+      <rect x="150" y="0" width="138" height="58" rx="10" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1"/>
+      <text x="164" y="22" font-family="sans-serif" font-size="10" font-weight="600" fill="#15803D">Bookings Today</text>
+      <text x="164" y="44" font-family="sans-serif" font-size="17" font-weight="800" fill="#166534">18 Approved</text>
+
+      <rect x="300" y="0" width="138" height="58" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1"/>
+      <text x="314" y="22" font-family="sans-serif" font-size="10" font-weight="600" fill="#1D4ED8">Utilization Rate</text>
+      <text x="314" y="44" font-family="sans-serif" font-size="17" font-weight="800" fill="#1E40AF">94.2%</text>
+    </g>
+
+    <!-- Schedule grid -->
+    <g transform="translate(0, 72)">
+      <rect x="0" y="0" width="438" height="64" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+      <text x="16" y="28" font-family="sans-serif" font-size="13" font-weight="700" fill="#0F172A">🏗️ 50-Ton Mobile Crane (Liebherr LTM)</text>
+      <text x="16" y="48" font-family="sans-serif" font-size="11" fill="#64748B">Burullus Unit 21 Turbine Hall • 08:00 - 16:30 • Approved: Mechanical Team</text>
+      <rect x="340" y="16" width="84" height="24" rx="6" fill="#DCFCE7"/>
+      <text x="382" y="32" font-family="sans-serif" font-size="10" font-weight="700" fill="#15803D" text-anchor="middle">Dispatched</text>
+
+      <rect x="0" y="72" width="438" height="64" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+      <text x="16" y="28" font-family="sans-serif" font-size="13" font-weight="700" fill="#0F172A">🚜 Forklift 5-Ton (CAT DP50)</text>
+      <text x="16" y="48" font-family="sans-serif" font-size="11" fill="#64748B">Central Spares Warehouse • 13:00 - 18:00 • Approved: Logistics Lead</text>
+      <rect x="340" y="16" width="84" height="24" rx="6" fill="#FEF3C7"/>
+      <text x="382" y="32" font-family="sans-serif" font-size="10" font-weight="700" fill="#B45309" text-anchor="middle">Scheduled</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 575 360" width="575" height="360">
+  <defs>
+    <linearGradient id="bg-voucher" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#CFFAFE"/>
+      <stop offset="100%" stop-color="#E0F2FE"/>
+    </linearGradient>
+    <filter id="shadow-card-v" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#0284C7" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="575" height="360" rx="24" fill="url(#bg-voucher)"/>
+  <g filter="url(#shadow-card-v)">
+    <rect x="45" y="35" width="485" height="290" rx="18" fill="#FFFFFF"/>
+  </g>
+  <rect x="45" y="35" width="485" height="44" rx="18" fill="#F0F9FF"/>
+  <rect x="45" y="65" width="485" height="14" fill="#F0F9FF"/>
+  <circle cx="72" cy="57" r="5" fill="#EF4444"/>
+  <circle cx="88" cy="57" r="5" fill="#F59E0B"/>
+  <circle cx="104" cy="57" r="5" fill="#10B981"/>
+  <text x="287" y="61" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" fill="#0369A1" text-anchor="middle">Automated Guest Wi-Fi Voucher &amp; Edge Firewall Token Portal</text>
+  <g transform="translate(70, 95)">
+    <rect x="0" y="0" width="255" height="210" rx="14" fill="#0F172A"/>
+    <text x="24" y="35" font-family="sans-serif" font-size="11" font-weight="600" fill="#38BDF8">Secure Wi-Fi Voucher Token</text>
+    <rect x="24" y="48" width="207" height="52" rx="8" fill="#1E293B" stroke="#38BDF8" stroke-width="1.5"/>
+    <text x="127" y="80" font-family="monospace" font-size="20" font-weight="800" fill="#38BDF8" text-anchor="middle">BUR-SEC-9214</text>
+    <text x="24" y="125" font-family="sans-serif" font-size="11" fill="#94A3B8">Bandwidth: 50 Mbps Dedicated</text>
+    <text x="24" y="145" font-family="sans-serif" font-size="11" fill="#94A3B8">Validity: 24 Hours • Multi-Device</text>
+    <rect x="24" y="164" width="207" height="28" rx="6" fill="#0284C7"/>
+    <text x="127" y="182" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">Firewall Policy Active ✓</text>
+
+    <g transform="translate(270, 0)">
+      <rect x="0" y="0" width="165" height="95" rx="12" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1"/>
+      <text x="16" y="26" font-family="sans-serif" font-size="11" font-weight="600" fill="#166534">Ticket Reduction</text>
+      <text x="16" y="58" font-family="sans-serif" font-size="28" font-weight="900" fill="#15803D">-90%</text>
+      <text x="16" y="80" font-family="sans-serif" font-size="10" fill="#166534">Automated Self-Service</text>
+
+      <rect x="0" y="110" width="165" height="100" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+      <text x="16" y="134" font-family="sans-serif" font-size="11" font-weight="700" fill="#1E293B">Enterprise SecOps</text>
+      <text x="16" y="156" font-family="sans-serif" font-size="10" fill="#64748B">Instant contractor token generation with edge ACL security.</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 575 360" width="575" height="360">
+  <defs>
+    <linearGradient id="bg-pcs" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E2E8F0"/>
+      <stop offset="100%" stop-color="#CBD5E1"/>
+    </linearGradient>
+    <filter id="shadow-pcs" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#334155" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+  <rect width="575" height="360" rx="24" fill="url(#bg-pcs)"/>
+  <g filter="url(#shadow-pcs)">
+    <rect x="45" y="35" width="485" height="290" rx="18" fill="#FFFFFF"/>
+  </g>
+  <rect x="45" y="35" width="485" height="44" rx="18" fill="#0F172A"/>
+  <circle cx="72" cy="57" r="5" fill="#EF4444"/>
+  <circle cx="88" cy="57" r="5" fill="#F59E0B"/>
+  <circle cx="104" cy="57" r="5" fill="#10B981"/>
+  <text x="287" y="61" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" fill="#94A3B8" text-anchor="middle">Multi-Department Project Control Systems • Mega-Power Projects</text>
+  <g transform="translate(68, 95)">
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="138" height="58" rx="10" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+      <text x="14" y="22" font-family="sans-serif" font-size="10" font-weight="600" fill="#475569">Consortium</text>
+      <text x="14" y="44" font-family="sans-serif" font-size="15" font-weight="800" fill="#0F172A">Siemens • NEM</text>
+
+      <rect x="150" y="0" width="138" height="58" rx="10" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+      <text x="164" y="22" font-family="sans-serif" font-size="10" font-weight="600" fill="#475569">Turnaround Scope</text>
+      <text x="164" y="44" font-family="sans-serif" font-size="15" font-weight="800" fill="#0F172A">4,800 MW Plant</text>
+
+      <rect x="300" y="0" width="138" height="58" rx="10" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+      <text x="314" y="22" font-family="sans-serif" font-size="10" font-weight="600" fill="#475569">Milestone Track</text>
+      <text x="314" y="44" font-family="sans-serif" font-size="15" font-weight="800" fill="#059669">100% on Schedule</text>
+    </g>
+
+    <!-- Project Gantt / tracking bars -->
+    <g transform="translate(0, 72)">
+      <rect x="0" y="0" width="438" height="62" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+      <text x="14" y="24" font-family="sans-serif" font-size="12" font-weight="700" fill="#0F172A">HRSG Boilers Piping &amp; Structural Delivery</text>
+      <rect x="14" y="36" width="310" height="8" rx="4" fill="#E2E8F0"/>
+      <rect x="14" y="36" width="310" height="8" rx="4" fill="#0F766E"/>
+      <text x="340" y="43" font-family="sans-serif" font-size="10" font-weight="700" fill="#0F766E">Completed</text>
+
+      <rect x="0" y="70" width="438" height="62" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+      <text x="14" y="24" font-family="sans-serif" font-size="12" font-weight="700" fill="#0F172A">Multi-Contractor Submittal &amp; Material Traceability</text>
+      <rect x="14" y="36" width="310" height="8" rx="4" fill="#E2E8F0"/>
+      <rect x="14" y="36" width="310" height="8" rx="4" fill="#1D4ED8"/>
+      <text x="340" y="43" font-family="sans-serif" font-size="10" font-weight="700" fill="#1D4ED8">Closed Out</text>
+    </g>
+  </g>
+</svg>

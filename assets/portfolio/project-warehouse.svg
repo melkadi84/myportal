@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 575 360" width="575" height="360">
+  <defs>
+    <linearGradient id="bg-wh" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DCFCE7"/>
+      <stop offset="100%" stop-color="#F0FDF4"/>
+    </linearGradient>
+    <filter id="shadow-card-wh" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#15803D" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="575" height="360" rx="24" fill="url(#bg-wh)"/>
+  <g filter="url(#shadow-card-wh)">
+    <rect x="45" y="35" width="485" height="290" rx="18" fill="#FFFFFF"/>
+  </g>
+  <rect x="45" y="35" width="485" height="44" rx="18" fill="#F0FDF4"/>
+  <rect x="45" y="65" width="485" height="14" fill="#F0FDF4"/>
+  <circle cx="72" cy="57" r="5" fill="#EF4444"/>
+  <circle cx="88" cy="57" r="5" fill="#F59E0B"/>
+  <circle cx="104" cy="57" r="5" fill="#10B981"/>
+  <text x="287" y="61" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" fill="#166534" text-anchor="middle">Burullus IT Asset Warehouse &amp; Inventory Tracker • 500+ Users</text>
+  <g transform="translate(70, 95)">
+    <rect x="0" y="0" width="138" height="62" rx="10" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1"/>
+    <text x="16" y="24" font-family="sans-serif" font-size="11" font-weight="600" fill="#166534">Laptops Active</text>
+    <text x="16" y="46" font-family="sans-serif" font-size="18" font-weight="800" fill="#15803D">385 Assigned</text>
+
+    <rect x="150" y="0" width="138" height="62" rx="10" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1"/>
+    <text x="166" y="24" font-family="sans-serif" font-size="11" font-weight="600" fill="#1D4ED8">Warehouse Items</text>
+    <text x="166" y="46" font-family="sans-serif" font-size="18" font-weight="800" fill="#1E40AF">1,240 Total</text>
+
+    <rect x="300" y="0" width="135" height="62" rx="10" fill="#FAF5FF" stroke="#E9D5FF" stroke-width="1"/>
+    <text x="316" y="24" font-family="sans-serif" font-size="11" font-weight="600" fill="#7E22CE">Audit Health</text>
+    <text x="316" y="46" font-family="sans-serif" font-size="18" font-weight="800" fill="#6B21A8">99.8% Match</text>
+
+    <rect x="0" y="78" width="435" height="132" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+    <rect x="16" y="92" width="403" height="32" rx="6" fill="#FFFFFF"/>
+    <text x="30" y="112" font-family="sans-serif" font-size="11" font-weight="700" fill="#1E293B">💻 HP ZBook Power G8 (Core i7 / 32GB)</text>
+    <text x="330" y="112" font-family="sans-serif" font-size="10" font-weight="700" fill="#16A34A">Deployed</text>
+    
+    <rect x="16" y="132" width="403" height="32" rx="6" fill="#FFFFFF"/>
+    <text x="30" y="152" font-family="sans-serif" font-size="11" font-weight="700" fill="#1E293B">🖥️ Dell UltraSharp 27" QHD Dual Monitors</text>
+    <text x="330" y="152" font-family="sans-serif" font-size="10" font-weight="700" fill="#0284C7">Warehouse</text>
+    
+    <rect x="16" y="172" width="403" height="28" rx="6" fill="#FFFFFF"/>
+    <text x="30" y="190" font-family="sans-serif" font-size="11" font-weight="700" fill="#1E293B">🔋 UPS Power Backup MDF 6-Hour Module</text>
+    <text x="330" y="190" font-family="sans-serif" font-size="10" font-weight="700" fill="#D97706">Active Live</text>
+  </g>
+</svg>

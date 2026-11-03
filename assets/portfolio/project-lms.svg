@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 575 360" width="575" height="360">
+  <defs>
+    <linearGradient id="bg-lms" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDF4FF"/>
+      <stop offset="100%" stop-color="#F5D0FE"/>
+    </linearGradient>
+    <filter id="shadow-lms" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#A21CAF" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="575" height="360" rx="24" fill="url(#bg-lms)"/>
+  <g filter="url(#shadow-lms)">
+    <rect x="45" y="35" width="485" height="290" rx="18" fill="#FFFFFF"/>
+  </g>
+  <rect x="45" y="35" width="485" height="44" rx="18" fill="#F8FAFC"/>
+  <rect x="45" y="65" width="485" height="14" fill="#F8FAFC"/>
+  <circle cx="72" cy="57" r="5" fill="#EF4444"/>
+  <circle cx="88" cy="57" r="5" fill="#F59E0B"/>
+  <circle cx="104" cy="57" r="5" fill="#10B981"/>
+  <text x="287" y="61" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" fill="#64748B" text-anchor="middle">Learning Management System • Plant Operations LMS</text>
+  <g transform="translate(68, 95)">
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="138" height="58" rx="10" fill="#FDF4FF" stroke="#F0ABFC" stroke-width="1"/>
+      <text x="14" y="22" font-family="sans-serif" font-size="10" font-weight="600" fill="#86198F">Mandatory Modules</text>
+      <text x="14" y="44" font-family="sans-serif" font-size="17" font-weight="800" fill="#701A75">98.4% Compliant</text>
+
+      <rect x="150" y="0" width="138" height="58" rx="10" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1"/>
+      <text x="164" y="22" font-family="sans-serif" font-size="10" font-weight="600" fill="#15803D">Completed Sessions</text>
+      <text x="164" y="44" font-family="sans-serif" font-size="17" font-weight="800" fill="#166534">1,420 Trainees</text>
+
+      <rect x="300" y="0" width="138" height="58" rx="10" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1"/>
+      <text x="314" y="22" font-family="sans-serif" font-size="10" font-weight="600" fill="#1D4ED8">Live Certifications</text>
+      <text x="314" y="44" font-family="sans-serif" font-size="17" font-weight="800" fill="#1E40AF">34 Tracks</text>
+    </g>
+
+    <!-- Course progress items -->
+    <g transform="translate(0, 72)">
+      <rect x="0" y="0" width="438" height="62" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+      <text x="16" y="26" font-family="sans-serif" font-size="13" font-weight="700" fill="#0F172A">Gas Turbine SGT5-8000H Operation Protocols</text>
+      <rect x="16" y="38" width="280" height="8" rx="4" fill="#E2E8F0"/>
+      <rect x="16" y="38" width="240" height="8" rx="4" fill="#A21CAF"/>
+      <text x="308" y="45" font-family="sans-serif" font-size="11" font-weight="700" fill="#86198F">86% Completed</text>
+
+      <rect x="0" y="70" width="438" height="62" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+      <text x="16" y="26" font-family="sans-serif" font-size="13" font-weight="700" fill="#0F172A">Cybersecurity &amp; Industrial Control System Standards</text>
+      <rect x="16" y="38" width="280" height="8" rx="4" fill="#E2E8F0"/>
+      <rect x="16" y="38" width="280" height="8" rx="4" fill="#10B981"/>
+      <text x="308" y="45" font-family="sans-serif" font-size="11" font-weight="700" fill="#059669">100% Verified</text>
+    </g>
+  </g>
+</svg>
