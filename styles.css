@@ -1508,11 +1508,11 @@ a {
 }
 
 .apps-hero-filter-bar .hero-filter-btn.active {
-  background: #FDD746;
-  border-color: #FDD746;
-  color: #096A61;
-  font-weight: 800;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  background: var(--brand-primary);
+  border-color: var(--brand-primary);
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 4px 16px rgba(29, 78, 216, 0.3);
   transform: translateY(-2px);
 }
 
@@ -1555,9 +1555,9 @@ a {
 }
 
 .app-card:hover {
-  border-color: #096A61;
+  border-color: var(--brand-primary);
   transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(9, 106, 97, 0.14);
+  box-shadow: 0 12px 28px rgba(29, 78, 216, 0.14);
 }
 
 .app-card-header {
@@ -1595,9 +1595,9 @@ a {
   font-family: var(--font-mono);
   padding: 4px 10px;
   border-radius: 9999px;
-  background: rgba(9, 106, 97, 0.08);
-  color: #096A61;
-  border: 1px solid rgba(9, 106, 97, 0.18);
+  background: rgba(15, 118, 110, 0.08);
+  color: #0f766e;
+  border: 1px solid rgba(15, 118, 110, 0.18);
   white-space: nowrap;
 }
 
@@ -1709,13 +1709,13 @@ a {
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: rgba(9, 106, 97, 0.08);
-  border: 1px solid rgba(9, 106, 97, 0.16);
+  background: rgba(29, 78, 216, 0.08);
+  border: 1px solid rgba(29, 78, 216, 0.16);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.25rem;
-  color: #096A61;
+  color: var(--brand-primary);
   flex-shrink: 0;
 }
 
@@ -1778,9 +1778,9 @@ a {
 
 .form-input:focus,
 .form-textarea:focus {
-  border-color: #096A61;
+  border-color: var(--brand-primary);
   background: var(--bg-card);
-  box-shadow: 0 0 0 3px rgba(9, 106, 97, 0.15);
+  box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.15);
 }
 
 .form-input::placeholder,
@@ -1828,14 +1828,14 @@ a {
 }
 
 [data-theme="dark"] .apps-hero-filter-bar .hero-filter-btn.active {
-  background: #FDD746;
-  color: #096A61;
+  background: var(--brand-primary);
+  color: #ffffff;
 }
 
 [data-theme="dark"] .app-status-badge {
-  background: rgba(9, 106, 97, 0.25);
+  background: rgba(15, 118, 110, 0.25);
   color: #5eead4;
-  border-color: rgba(9, 106, 97, 0.4);
+  border-color: rgba(15, 118, 110, 0.4);
 }
 
 [data-theme="dark"] .app-icon-wrap,
@@ -3092,11 +3092,11 @@ a {
 }
 
 /* ==========================================================================
-   BEVERR HERO CLONE SECTION (Exact Screenshot Match)
-   Spruce Teal Palette (#096A61), Yellow Accent (#FDD746), Protruding Oval Capsule
+   EXECUTIVE HERO & HEADER THEME (Standard Corporate Design Schema)
+   Deep Enterprise Cobalt Blue (#1d4ed8), Spruce Teal (#0f766e), Warm Bronze (#b45309)
    ========================================================================== */
 
-/* Seamless Header on Green Hero */
+/* Seamless Header on Hero */
 .site-header.beverr-header-theme {
   background: transparent;
   border-bottom: none;
@@ -3111,9 +3111,11 @@ a {
 
 .site-header.beverr-header-theme.scrolled {
   position: fixed;
-  background: rgba(9, 106, 97, 0.96);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  background: rgba(15, 23, 42, 0.96);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .beverr-brand-logo {
@@ -3124,8 +3126,8 @@ a {
 }
 
 .beverr-logo-box {
-  background: #FDD746;
-  color: #096A61;
+  background: var(--brand-primary);
+  color: #ffffff;
   font-family: 'Staatliches', sans-serif;
   font-weight: 900;
   font-size: 1.45rem;
@@ -3134,8 +3136,15 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 4px;
+  border-radius: 6px;
   line-height: 1;
+  box-shadow: 0 2px 8px rgba(29, 78, 216, 0.35);
+  transition: all 0.2s ease;
+}
+
+.beverr-brand-logo:hover .beverr-logo-box {
+  transform: scale(1.05);
+  background: #2563eb;
 }
 
 .beverr-logo-text {
@@ -3162,6 +3171,7 @@ a {
 .beverr-header-nav .nav-link.active {
   opacity: 1;
   color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .beverr-header-socials {
@@ -3186,14 +3196,14 @@ a {
 
 .beverr-social-link:hover {
   opacity: 1;
-  color: #FDD746;
+  color: #38bdf8;
   transform: translateY(-2px);
 }
 
 .beverr-hero {
   position: relative;
-  background-color: #096A61;
-  background-image: url('assets/waves-background.svg');
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 52%, #0f766e 100%);
+  background-image: url('assets/waves-background.svg'), linear-gradient(135deg, #0f172a 0%, #1e3a8a 52%, #0f766e 100%);
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: 100% auto;
@@ -3269,7 +3279,7 @@ a {
 }
 
 .beverr-arch-frame {
-  background-color: #FDD746;
+  background: linear-gradient(180deg, #d97706 0%, #b45309 100%);
   border-radius: 500px;
   width: 370px;
   max-width: 100%;
@@ -3281,6 +3291,24 @@ a {
   display: flex;
   align-items: flex-end;
   justify-content: center;
+}
+
+/* Standard Page Hero Banner across subpages */
+.page-hero-banner {
+  padding: 130px 0 54px 0;
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 52%, #0f766e 100%);
+  color: #ffffff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.page-hero-banner .section-eyebrow {
+  color: #f59e0b;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  display: inline-block;
+  margin-bottom: 8px;
 }
 
 .beverr-hero-portrait {
@@ -4172,9 +4200,9 @@ a {
 
 .badge-thumb-item:hover {
   transform: translateY(-3px);
-  border-color: #096A61;
+  border-color: #0f766e;
   background: var(--bg-card);
-  box-shadow: 0 8px 18px rgba(9, 106, 97, 0.15);
+  box-shadow: 0 8px 18px rgba(15, 118, 110, 0.15);
 }
 
 .badge-thumb-item.trophy-item {
@@ -4224,9 +4252,9 @@ a {
   padding: 8px 10px;
   min-height: 72px;
   border-radius: 12px;
-  background: rgba(9, 106, 97, 0.07);
-  border: 1.5px dashed rgba(9, 106, 97, 0.32);
-  color: #096A61;
+  background: rgba(15, 118, 110, 0.07);
+  border: 1.5px dashed rgba(15, 118, 110, 0.32);
+  color: #0f766e;
   font-size: 0.74rem;
   font-weight: 700;
   text-align: center;
@@ -4237,12 +4265,12 @@ a {
 }
 
 .badge-more-indication:hover {
-  background: #096A61;
+  background: #0f766e;
   color: #ffffff;
   border-style: solid;
-  border-color: #096A61;
+  border-color: #0f766e;
   transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(9, 106, 97, 0.25);
+  box-shadow: 0 6px 16px rgba(15, 118, 110, 0.25);
 }
 
 .badge-more-span-2 {
@@ -4313,7 +4341,7 @@ a {
 
 .portal-card:hover .portal-link-text {
   gap: 10px;
-  color: #096A61;
+  color: #0f766e;
 }
 
 /* Dark mode theme overrides for badge thumbnails */
