@@ -157,8 +157,12 @@ function initAppFilters() {
       btn.classList.add('active');
 
       appCards.forEach(card => {
-        const category = card.getAttribute('data-category');
-        if (filterValue === 'all' || category === filterValue || (filterValue === 'm365' && category.includes('m365'))) {
+        const category = card.getAttribute('data-category') || '';
+        const matches = filterValue === 'all' ||
+                        category === filterValue ||
+                        category.split(/\s+/).includes(filterValue) ||
+                        (filterValue === 'm365' && category.includes('m365'));
+        if (matches) {
           card.style.display = 'flex';
           card.style.opacity = '1';
         } else {

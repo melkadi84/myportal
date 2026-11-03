@@ -1479,59 +1479,134 @@ a {
   box-shadow: 0 4px 12px rgba(var(--brand-primary-rgb), 0.25);
 }
 
+/* Hero Filter Buttons on Spruce Teal Banner */
+.apps-hero-filter-bar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 26px;
+}
+
+.apps-hero-filter-bar .hero-filter-btn {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  padding: 9px 20px;
+  border-radius: 9999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  font-family: var(--font-main);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(8px);
+}
+
+.apps-hero-filter-bar .hero-filter-btn:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.45);
+  transform: translateY(-2px);
+}
+
+.apps-hero-filter-bar .hero-filter-btn.active {
+  background: #FDD746;
+  border-color: #FDD746;
+  color: #096A61;
+  font-weight: 800;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+/* 4-Columns in a row responsive grid */
 .apps-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 1200px) {
+  .apps-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .apps-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 580px) {
+  .apps-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .app-card {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg);
-  padding: 18px 16px;
+  border-radius: 16px;
+  padding: 22px 18px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: var(--shadow-sm);
-  transition: all var(--transition-normal);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   min-height: 100%;
 }
 
 .app-card:hover {
-  border-color: var(--brand-primary);
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
+  border-color: #096A61;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(9, 106, 97, 0.14);
 }
 
 .app-card-header {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
 }
 
+.app-icon-wrap,
 .app-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
   background: var(--bg-secondary);
   border: 1px solid var(--border-subtle);
   color: var(--brand-primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.15rem;
+  font-size: 1.35rem;
   flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.app-card:hover .app-icon-wrap,
+.app-card:hover .app-icon {
+  transform: scale(1.08);
+}
+
+.app-status-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  padding: 4px 10px;
+  border-radius: 9999px;
+  background: rgba(9, 106, 97, 0.08);
+  color: #096A61;
+  border: 1px solid rgba(9, 106, 97, 0.18);
+  white-space: nowrap;
 }
 
 .app-title {
-  font-size: 0.95rem;
+  font-size: 1.02rem;
   font-weight: 700;
   color: var(--text-primary);
   line-height: 1.35;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .app-company-tag {
@@ -1543,10 +1618,11 @@ a {
 }
 
 .app-desc {
-  font-size: 0.82rem;
+  font-size: 0.84rem;
   color: var(--text-secondary);
-  line-height: 1.55;
-  margin-bottom: 14px;
+  line-height: 1.58;
+  margin-bottom: 16px;
+  flex-grow: 1;
 }
 
 .app-bullets {
@@ -1575,20 +1651,215 @@ a {
 .app-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 6px;
   margin-top: auto;
-  padding-top: 10px;
+  padding-top: 12px;
   border-top: 1px solid var(--border-subtle);
 }
 
+.app-tag,
 .tech-tag {
   background: var(--bg-secondary);
   border: 1px solid var(--border-subtle);
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   font-family: var(--font-mono);
   color: var(--text-secondary);
-  padding: 2px 7px;
-  border-radius: 4px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.app-card:hover .app-tag,
+.app-card:hover .tech-tag {
+  border-color: rgba(9, 106, 97, 0.3);
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
+   CONTACT PAGE STYLES (Beverr Unified Theme)
+   ========================================================================== */
+.contact-section-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+  padding: 44px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.contact-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 48px;
+}
+
+.contact-info-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.contact-info-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(9, 106, 97, 0.08);
+  border: 1px solid rgba(9, 106, 97, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: #096A61;
+  flex-shrink: 0;
+}
+
+.contact-info-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+
+.contact-info-val {
+  font-size: 0.96rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.contact-form-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  transition: all 0.25s ease;
+  outline: none;
+}
+
+.form-textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: #096A61;
+  background: var(--bg-card);
+  box-shadow: 0 0 0 3px rgba(9, 106, 97, 0.15);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.form-status {
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+  display: none;
+}
+
+.form-status.success {
+  display: block;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #047857;
+}
+
+.form-status.error {
+  display: block;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #b91c1c;
+}
+
+@media (max-width: 900px) {
+  .contact-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .contact-section-card {
+    padding: 28px 20px;
+  }
+}
+
+/* Dark mode theme overrides */
+[data-theme="dark"] .apps-hero-filter-bar .hero-filter-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+[data-theme="dark"] .apps-hero-filter-bar .hero-filter-btn.active {
+  background: #FDD746;
+  color: #096A61;
+}
+
+[data-theme="dark"] .app-status-badge {
+  background: rgba(9, 106, 97, 0.25);
+  color: #5eead4;
+  border-color: rgba(9, 106, 97, 0.4);
+}
+
+[data-theme="dark"] .app-icon-wrap,
+[data-theme="dark"] .app-icon {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .contact-info-icon {
+  background: rgba(9, 106, 97, 0.2);
+  border-color: rgba(9, 106, 97, 0.35);
+  color: #5eead4;
+}
+
+[data-theme="dark"] .form-status.success {
+  background: rgba(16, 185, 129, 0.2);
+  color: #6ee7b7;
+  border-color: rgba(16, 185, 129, 0.4);
+}
+
+[data-theme="dark"] .form-status.error {
+  background: rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
+  border-color: rgba(239, 68, 68, 0.4);
 }
 
 /* --------------------------------------------------------------------------
