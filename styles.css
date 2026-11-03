@@ -3098,6 +3098,7 @@ a {
    ========================================================================== */
 
 /* Seamless Header on Hero */
+/* Seamless Header on Hero */
 .site-header.beverr-header-theme {
   background: transparent;
   border-bottom: none;
@@ -3106,17 +3107,30 @@ a {
   top: 0;
   left: 0;
   right: 0;
+  height: 100px;
+  display: flex;
+  align-items: center;
   z-index: 100;
   transition: all 0.3s ease;
 }
 
 .site-header.beverr-header-theme.scrolled {
   position: fixed;
-  background: rgba(15, 23, 42, 0.96);
+  background: rgba(9, 106, 97, 0.96);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.site-header.beverr-header-theme .nav-container {
+  max-width: 1290px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
 }
 
 .beverr-brand-logo {
@@ -3150,35 +3164,52 @@ a {
 
 .beverr-logo-text {
   font-family: 'Staatliches', 'Plus Jakarta Sans', sans-serif;
-  font-size: 1.6rem;
+  font-size: 28px;
   font-weight: 700;
   color: #ffffff;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   line-height: 1;
 }
 
+.beverr-header-nav {
+  display: flex;
+  justify-content: center;
+}
+
+.beverr-header-nav .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 .beverr-header-nav .nav-link {
-  color: #ffffff;
-  font-size: 0.98rem;
-  font-weight: 500;
-  padding: 8px 18px;
-  border-radius: 8px;
-  opacity: 0.9;
-  transition: opacity 0.2s ease, color 0.2s ease;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  padding: 0;
+  background: transparent !important;
+  border-radius: 0;
+  line-height: 1.3;
+  transition: color 0.2s ease;
 }
 
 .beverr-header-nav .nav-link:hover,
 .beverr-header-nav .nav-link.active {
-  opacity: 1;
   color: #ffffff;
-  background: rgba(255, 255, 255, 0.12);
+  background: transparent !important;
 }
 
 .beverr-header-socials {
   display: flex;
   align-items: center;
   gap: 18px;
+  justify-content: flex-end;
 }
 
 .beverr-social-link {
@@ -3197,7 +3228,7 @@ a {
 
 .beverr-social-link:hover {
   opacity: 1;
-  color: #38bdf8;
+  color: #FDD746;
   transform: translateY(-2px);
 }
 
@@ -3228,56 +3259,63 @@ a {
 
 .beverr-hero-container {
   display: grid;
-  grid-template-columns: 1.15fr auto 1fr;
-  align-items: center;
-  gap: 40px;
+  grid-template-columns: 1fr 424px 1fr;
+  align-items: flex-end;
+  gap: 10px;
   position: relative;
   z-index: 22;
   overflow: visible;
-  max-width: 1360px;
+  max-width: 1290px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .beverr-hero-left {
-  align-self: center;
   padding-bottom: 50px;
   position: relative;
   z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
 }
 
 .beverr-greeting {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
   font-size: 24px;
   font-weight: 600;
   color: #ffffff;
   margin-bottom: 20px;
   letter-spacing: -0.01em;
-  opacity: 0.95;
+  line-height: 1.2;
 }
 
 .beverr-name {
   font-family: 'Staatliches', cursive, sans-serif;
-  font-size: clamp(3.8rem, 6.2vw, 7.5rem);
-  line-height: 0.9;
+  font-size: clamp(4.5rem, 6.2vw, 120px);
+  line-height: 0.9em;
   color: #ffffff;
   text-transform: uppercase;
-  margin: 0 0 24px 0;
-  letter-spacing: 0.02em;
+  margin: 0 0 20px 0;
+  letter-spacing: 0;
 }
 
 .beverr-deco-line {
   width: 250px;
   max-width: 100%;
   height: auto;
-  margin-bottom: 24px;
+  margin-bottom: 30px;
   display: block;
 }
 
 .beverr-role {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
   font-size: 22px;
   color: #ffffff;
-  opacity: 0.75;
+  opacity: 0.7;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: normal;
   line-height: 1.2;
   margin: 0;
 }
@@ -3290,6 +3328,7 @@ a {
   position: relative;
   z-index: 30;
   overflow: visible;
+  width: 424px;
 }
 
 .beverr-arch-frame {
@@ -3336,33 +3375,40 @@ a {
 
 /* Right Column Vertically Stacked Metrics */
 .beverr-hero-right {
-  align-self: center;
   padding-bottom: 50px;
   display: flex;
   flex-direction: column;
-  gap: 32px;
   text-align: right;
   align-items: flex-end;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 5;
 }
 
 .beverr-stat-item {
   text-align: right;
+  margin-bottom: 30px;
+}
+
+.beverr-stat-item:last-child {
+  margin-bottom: 0;
 }
 
 .beverr-stat-label {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
   font-size: 24px;
   color: #ffffff;
-  opacity: 0.75;
+  opacity: 0.7;
   font-weight: 500;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
 }
 
 .beverr-stat-number {
   font-family: 'Staatliches', cursive, sans-serif;
-  font-size: clamp(3.6rem, 5.2vw, 5rem);
-  font-weight: 700;
+  font-size: 70px;
+  font-weight: 400;
   color: #ffffff;
-  line-height: 1;
+  line-height: 1em;
 }
 
 /* ==========================================================================
