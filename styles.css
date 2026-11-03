@@ -4146,6 +4146,126 @@ a {
   margin-bottom: 16px;
 }
 
+.portal-badges-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.badge-thumb-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 8px 6px 7px 6px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  min-height: 72px;
+  box-sizing: border-box;
+}
+
+.badge-thumb-item:hover {
+  transform: translateY(-3px);
+  border-color: #096A61;
+  background: var(--bg-card);
+  box-shadow: 0 8px 18px rgba(9, 106, 97, 0.15);
+}
+
+.badge-thumb-item.trophy-item {
+  border-color: rgba(245, 158, 11, 0.3);
+  background: rgba(245, 158, 11, 0.05);
+}
+
+.badge-thumb-item.trophy-item:hover {
+  border-color: #f59e0b;
+  box-shadow: 0 8px 18px rgba(245, 158, 11, 0.22);
+}
+
+.badge-thumb-img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  transition: transform 0.25s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08));
+}
+
+.badge-thumb-item:hover .badge-thumb-img {
+  transform: scale(1.12);
+}
+
+.badge-thumb-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+  text-align: center;
+  white-space: nowrap;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+}
+
+.badge-thumb-item:hover .badge-thumb-label {
+  color: var(--text-primary);
+}
+
+.badge-more-indication {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 10px;
+  min-height: 72px;
+  border-radius: 12px;
+  background: rgba(9, 106, 97, 0.07);
+  border: 1.5px dashed rgba(9, 106, 97, 0.32);
+  color: #096A61;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.3;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.badge-more-indication:hover {
+  background: #096A61;
+  color: #ffffff;
+  border-style: solid;
+  border-color: #096A61;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(9, 106, 97, 0.25);
+}
+
+.badge-more-span-2 {
+  grid-column: span 2;
+}
+
+.badge-more-span-3 {
+  grid-column: span 3;
+}
+
+.badge-more-counter {
+  border-color: rgba(2, 132, 199, 0.35);
+  background: rgba(2, 132, 199, 0.06);
+  color: #0284c7;
+}
+
+.badge-more-counter:hover {
+  background: #0284c7;
+  color: #ffffff;
+  border-color: #0284c7;
+  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.25);
+}
+
 .portal-badge-chips {
   display: flex;
   flex-wrap: wrap;
@@ -4173,7 +4293,7 @@ a {
 .portal-card-footer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding-top: 18px;
   border-top: 1px solid var(--border-subtle);
   margin-top: auto;
@@ -4193,17 +4313,30 @@ a {
 
 .portal-card:hover .portal-link-text {
   gap: 10px;
-  color: var(--brand-secondary);
+  color: #096A61;
 }
 
-.portal-registry-badge {
-  font-size: 0.78rem;
-  font-weight: 500;
-  color: var(--text-muted);
-  white-space: nowrap;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
+/* Dark mode theme overrides for badge thumbnails */
+[data-theme="dark"] .badge-thumb-item {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .badge-thumb-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #5eead4;
+}
+
+[data-theme="dark"] .badge-more-indication {
+  background: rgba(9, 106, 97, 0.2);
+  border-color: rgba(9, 106, 97, 0.45);
+  color: #5eead4;
+}
+
+[data-theme="dark"] .badge-more-counter {
+  background: rgba(2, 132, 199, 0.2);
+  border-color: rgba(2, 132, 199, 0.45);
+  color: #38bdf8;
 }
 
 .portal-link-arrow {
