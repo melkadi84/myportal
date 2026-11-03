@@ -13,58 +13,68 @@
   <meta property="og:type" content="website">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231d4ed8'/%3E%3Ctext x='16' y='21' font-family='sans-serif' font-size='13' font-weight='800' fill='%23ffffff' text-anchor='middle'%3EME%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23096A61'/%3E%3Ctext x='16' y='21' font-family='sans-serif' font-size='13' font-weight='800' fill='%23ffffff' text-anchor='middle'%3EME%3C/text%3E%3C/svg%3E">
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Staatliches, Plus Jakarta Sans, JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Staatliches&display=swap" rel="stylesheet">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Subtle Architectural Pattern -->
-  <div class="bg-pattern" aria-hidden="true"></div>
-
-  <!-- Header / Navigation -->
-  <header class="site-header" id="mainHeader">
+  <!-- Header / Navigation (Beverr Green Theme) -->
+  <header class="site-header beverr-header-theme" id="mainHeader">
     <div class="container nav-container">
-      <a href="#hero" class="brand-monogram" aria-label="Mohamed Elkadi Homepage">
-        <div class="monogram-box">ME</div>
-        <div class="brand-name">
-          <span>Mohamed Elkadi</span>
-          <span class="brand-title-small">IT & Digital Enablement</span>
-        </div>
+      <a href="index.html" class="beverr-brand-logo" aria-label="Mohamed Elkadi Homepage">
+        <span class="beverr-logo-box">M</span>
+        <span class="beverr-logo-text">ELKADI</span>
       </a>
 
       <!-- Desktop Navigation Links -->
-      <nav class="desktop-nav" aria-label="Main Navigation">
+      <nav class="desktop-nav beverr-header-nav" aria-label="Main Navigation">
         <ul class="nav-links">
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#achievements-portals" class="nav-link">Credentials</a></li>
-          <li><a href="#applications" class="nav-link">Solutions</a></li>
-          <li><a href="#experience" class="nav-link">Experience</a></li>
-          <li><a href="#infrastructure" class="nav-link">Infrastructure</a></li>
-          <li><a href="#certifications" class="nav-link">Certifications</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="portfolio.html" class="nav-link">Projects</a></li>
+          <li><a href="contact.html" class="nav-link">Contacts</a></li>
         </ul>
       </nav>
 
-      <!-- Navigation Actions & Mode Switcher -->
-      <div class="nav-actions">
-        <!-- Light/Dark Mode Switcher -->
-        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme Mode" title="Switch Theme">
-          🌙
-        </button>
-
-        <a href="https://www.linkedin.com/in/melkadi/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary" title="Connect on LinkedIn">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-          <span>LinkedIn</span>
+      <!-- Navigation Actions & Socials (Beverr Style Borderless SVGs) -->
+      <div class="nav-actions beverr-header-socials">
+        <!-- Dribbble / Portal Icon -->
+        <a href="https://me.developers.google.com/u/mohamed_elkadi" target="_blank" rel="noopener noreferrer" class="beverr-social-link" title="Google Developers Profile" aria-label="Google Developers Profile">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path d="M10,0C4.5,0,0,4.5,0,10c0,5.5,4.5,10,10,10c5.5,0,10-4.5,10-10C20,4.5,15.5,0,10,0 M16.1,5.2c1,1.2,1.6,2.8,1.7,4.4c-1.1-0.2-2.2-0.4-3.2-0.4v0h0c-0.8,0-1.6,0.1-2.3,0.2c-0.2-0.4-0.3-0.8-0.5-1.2C13.4,7.6,14.9,6.6,16.1,5.2 M10,2.2c1.8,0,3.5,0.6,4.9,1.7c-1,1.2-2.4,2.1-3.8,2.7c-1-2-2-3.4-2.7-4.3C8.9,2.3,9.4,2.2,10,2.2 M6.6,3c0.5,0.6,1.6,2,2.8,4.2C7,8,4.6,8.1,3.2,8.1c0,0-0.1,0-0.1,0h0c-0.2,0-0.4,0-0.6,0C3,5.9,4.5,4,6.6,3 M2.2,10c0,0,0-0.1,0-0.1c0.2,0,0.5,0,0.9,0h0c1.6,0,4.3-0.1,7.1-1c0.2,0.3,0.3,0.7,0.4,1c-1.9,0.6-3.3,1.6-4.4,2.6c-1,0.9-1.7,1.9-2.2,2.5C2.9,13.7,2.2,11.9,2.2,10 M10,17.8c-1.7,0-3.3-0.6-4.6-1.5c0.3-0.5,0.9-1.3,1.8-2.2c1-0.9,2.3-1.9,4.1-2.5c0.6,1.7,1.1,3.6,1.5,5.7C11.9,17.6,11,17.8,10,17.8M14.4,16.4c-0.4-1.9-0.9-3.7-1.4-5.2c0.5-0.1,1-0.1,1.6-0.1h0h0h0c0.9,0,2,0.1,3.1,0.4C17.3,13.5,16.1,15.3,14.4,16.4"/>
+          </svg>
         </a>
 
-        <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Toggle Menu" aria-expanded="false">
+        <!-- Behance / LinkedIn Icon -->
+        <a href="https://www.linkedin.com/in/melkadi/" target="_blank" rel="noopener noreferrer" class="beverr-social-link" title="LinkedIn Profile" aria-label="LinkedIn Profile">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path d="M15.2,10.3h-2.7c0,0,0.2-1.3,1.5-1.3C15.2,9,15.2,10.3,15.2,10.3z M7.7,10.3H5.3v2.2h2.2c0,0,0.1,0,0.2,0c0.3,0,1-0.1,1-1.1C8.6,10.3,7.7,10.3,7.7,10.3zM20,10c0,5.5-4.5,10-10,10C4.5,20,0,15.5,0,10S4.5,0,10,0C15.5,0,20,4.5,20,10zM12.1,7.2h3.4v-1h-3.4V7.2z M8.8,9.5c0,0,1.3-0.1,1.3-1.6S9,5.7,7.7,5.7H5.3H5.2H3.4V14h1.8h0.1h2.4c0,0,2.6,0.1,2.6-2.5C10.4,11.5,10.5,9.5,8.8,9.5zM13.9,7.8c-3.2,0-3.2,3.2-3.2,3.2s-0.2,3.2,3.2,3.2c0,0,2.9,0.2,2.9-2.2h-1.5c0,0,0,0.9-1.3,0.9c0,0-1.5,0.1-1.5-1.5h4.3C16.8,11.4,17.3,7.8,13.9,7.8z M8.3,8c0-0.9-0.6-0.9-0.6-0.9H7.4H5.3V9h2.3C8,9,8.3,8.9,8.3,8z"/>
+          </svg>
+        </a>
+
+        <!-- Instagram / Social Icon -->
+        <a href="https://www.credly.com/users/mohamedelkadi/badges" target="_blank" rel="noopener noreferrer" class="beverr-social-link" title="Credly Digital Badges" aria-label="Credly Badges">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <circle cx="10" cy="10" r="3.3"/>
+            <path d="M14.2,0H5.8C2.6,0,0,2.6,0,5.8v8.3C0,17.4,2.6,20,5.8,20h8.3c3.2,0,5.8-2.6,5.8-5.8V5.8C20,2.6,17.4,0,14.2,0zM10,15c-2.8,0-5-2.2-5-5s2.2-5,5-5s5,2.2,5,5S12.8,15,10,15z M15.8,5C15.4,5,15,4.6,15,4.2s0.4-0.8,0.8-0.8s0.8,0.4,0.8,0.8S16.3,5,15.8,5z"/>
+          </svg>
+        </a>
+
+        <!-- Light/Dark Mode Switcher -->
+        <button class="theme-toggle-btn beverr-social-link" id="themeToggleBtn" aria-label="Toggle Theme Mode" title="Switch Theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Toggle Menu" aria-expanded="false" style="color: #ffffff; border-color: rgba(255,255,255,0.4);">
           ☰
         </button>
       </div>
@@ -74,1999 +84,1014 @@
   <!-- Mobile Navigation Drawer -->
   <div class="mobile-drawer" id="mobileDrawer">
     <ul class="mobile-nav-links">
-      <li><a href="#about" class="mobile-nav-link">About & Summary</a></li>
-      <li><a href="#achievements-portals" class="mobile-nav-link">Verified Credentials (Google, Credly, MS Learn)</a></li>
-      <li><a href="#ai-practice" class="mobile-nav-link">AI & Generative AI Practice</a></li>
-      <li><a href="#applications" class="mobile-nav-link">Enterprise Solutions & Apps</a></li>
-      <li><a href="#experience" class="mobile-nav-link">Professional Experience</a></li>
-      <li><a href="#infrastructure" class="mobile-nav-link">Infrastructure Projects</a></li>
-      <li><a href="#certifications" class="mobile-nav-link">Certifications & Learning</a></li>
-      <li><a href="#contact" class="mobile-nav-link">Get In Touch</a></li>
+      <li><a href="index.html" class="mobile-nav-link active">Home</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li><a href="portfolio.html" class="mobile-nav-link">Projects</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contacts</a></li>
+      <li><a href="https://me.developers.google.com/u/mohamed_elkadi" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">Google Developers Profile ↗</a></li>
+      <li><a href="https://www.credly.com/users/mohamedelkadi/badges" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">Credly Badges ↗</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/users/melkadise/" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">Microsoft Learn ↗</a></li>
     </ul>
-    <div style="margin-top: 10px;">
+    <div style="margin-top: 18px;">
       <a href="https://www.linkedin.com/in/melkadi/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%;">Connect on LinkedIn</a>
     </div>
   </div>
 
   <main>
-    <!-- HERO SECTION -->
-    <section class="hero-section" id="hero">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <div class="hero-top-badges">
-            <span class="badge">
-              <span class="pulse-dot"></span>
-              Active IT Operations & Enablement
-            </span>
-            <span class="badge badge-teal badge-company-active" title="Siemens Energy Middle East & Africa">
-              <svg class="company-badge-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 343" aria-hidden="true">
-                <path class="company-logo-siemens" d="m68.94,60.1q-19.36-8.71-23.66-11.4-5.17-3.33-5.17-8.6 0-14.09 25.62-14.09 18.2,0 39.41,8.47v-28.93q-28.52-5.55-43.59-5.55-27.33,0-44.34,11.72-17.21,11.83-17.21,34.42 0,17.54 11.82,29.04 9.12,8.72 39.19,21.08 16.75,6.89 20.83,10.76a11.78,11.78 0 0 1 3.98,9.03q0,14.42-27.29,14.42-19.77,0-45.44-8.08v30.07a207.29,207.27 0 0 0 47.23,5.54q27.76,0 45.2-10.53 21.52-13.01 21.52-37.76 0-17.22-10.98-28.08-9.24-9.15-37.12-21.53zm72.12,94.82h42.54v-152.27h-42.54zm122.56-65.22h59.28v-25.13h-59.28v-34.38h68.1v-27.54h-109.1v152.27h110.86v-29.09h-69.86zm191.1,10.24-38.32-97.29h-55.15v152.27h29.97v-107.81l43.8,109.36h26.37l44.67-109.36v107.81h40.33v-152.27h-52.39zm171.7-10.24h59.28v-25.13h-59.28v-34.38h68.1v-27.54h-109.1v152.27h110.85v-29.09h-69.85zm199.46,14.88l-52.3-101.93h-49.31v152.27h29.98v-103.31l53.69,103.31h47.91v-152.27h-29.97zm126.02-44.48q-19.35-8.71-23.66-11.4-5.17-3.33-5.17-8.6 0-14.09 25.62-14.09 18.2,0 39.41,8.47v-28.93q-28.52-5.55-43.59-5.55-27.33,0-44.34,11.72-17.21,11.83-17.21,34.42 0,17.54 11.82,29.04 9.12,8.72 39.19,21.08 16.76,6.89 20.83,10.76a11.78,11.78 0 0 1 3.98,9.03q0,14.42-27.29,14.42-19.77,0-45.44-8.08v30.07a207.29,207.27 0 0 0 47.23,5.54q27.76,0 45.2-10.53 21.52-13.01 21.52-37.76 0-17.22-10.98-28.08-9.24-9.15-37.12-21.53z"/>
-                <path class="company-logo-energy" d="m123.9,189.25c-13.3-.75-26.8-1.25-40.4-1.25s-27.1,.5-40.4,1.25a45.5,45.5 0 0 0-43.1,45.25v62a45.5,45.5 0 0 0 43.1,45.25c13.3,.75 26.8,1.25 40.4,1.25s27.1-.5 40.4-1.25a45.5,45.5 0 0 0 43.1-45.25v-3.5h-19.5v3.5a25.9,25.9 0 0 1-24.4,25.7c-13.1,.8-26.3,1.3-39.6,1.3s-26.5-.5-39.6-1.3a25.9,25.9 0 0 1-24.4-25.7v-62a25.9,25.9 0 0 1 24.4-25.7c13.1-.8 26.3-1.3 39.6-1.3s26.5,.5 39.6,1.3a25.9,25.9 0 0 1 24.4,25.7v21h-80.5v20h100v-41a45.5,45.5 0 0 0-43.1-45.25zm175.15,.25c-10.75-.9-21.75-1.5-32.7-1.5s-21.95,.6-32.69,1.5a45.5,45.5 0 0 0-41.31,45v107h19.5v-107a26,26 0 0 1 24.28-25.78c9.94-.69 20.02-1.22 30.22-1.22s20.29,.5 30.23,1.22a26,26 0 0 1 24.27,25.78v107h19.5v-107a45.5,45.5 0 0 0-41.3-45zm189.95-.25c-13.3-.75-26.8-1.25-40.4-1.25s-27.1,.5-40.4,1.25a45.5,45.5 0 0 0-43.1,45.25v62a45.5,45.5 0 0 0 43.1,45.25c13.3,.75 26.8,1.25 40.4,1.25s27.1-.5 40.4-1.25a45.5,45.5 0 0 0 43.1-45.25v-3.5h-19.5v3.5a25.9,25.9 0 0 1-24.4,25.7c-13.1,.8-26.3,1.3-39.6,1.3s-26.5-.5-39.6-1.3a25.9,25.9 0 0 1-24.4-25.7v-62a25.9,25.9 0 0 1 24.4-25.7c13.1-.8 26.3-1.3 39.6-1.3s26.5,.5 39.6,1.3a25.9,25.9 0 0 1 24.4,25.7v21h-80.5v20h100v-41a45.5,45.5 0 0 0-43.1-45.25zm70.59,45.24v107h19.5v-107c0-13.67 11.22-25.5 24.77-25.5h39.73v-19.51h-40.41c-21.24,.02-43.59,18.44-43.59,45.01zm221.91-45.24c-13.3-.75-26.8-1.25-40.4-1.25s-27.1,.5-40.4,1.25a45.5,45.5 0 0 0-43.1,45.25v62a45.5,45.5 0 0 0 43.1,45.25c13.3,.75 26.8,1.25 40.4,1.25s27.1-.5 40.4-1.25a45.5,45.5 0 0 0 43.1-45.25v-41h-100v20h80.5v21a25.9,25.9 0 0 1-24.4,25.7c-13.1,.8-26.3,1.3-39.6,1.3s-26.5-.5-39.6-1.3a25.9,25.9 0 0 1-24.4-25.7v-62a25.9,25.9 0 0 1 24.4-25.7c13.1-.8 26.3-1.3 39.6-1.3s26.5,.5 39.6,1.3a25.9,25.9 0 0 1 24.4,25.7v3.5h19.5v-3.5a45.5,45.5 0 0 0-43.1-45.25zm218.5,.25h-24.42l-66.25,87.9a44.8,44.8 0 0 0-9.06,27.1v37h19.5v-37a25.4,25.4 0 0 1 5.15-15.37zm-147.73,0h-25.46l69.46,82.77 12.04-15.99z"/>
+    <!-- BEVERR CLONED HERO SECTION -->
+    <section class="beverr-hero" id="homeHero">
+      <div class="container beverr-hero-container">
+        
+        <!-- Left Column: Name & Intro -->
+        <div class="beverr-hero-left">
+          <div class="beverr-greeting">Hey, my name is</div>
+          <h1 class="beverr-name">MOHAMED<br>ELKADI</h1>
+          
+          <img src="assets/decorative-line-1.svg" alt="decorative accent line" class="beverr-deco-line">
+          
+          <div class="beverr-role">PROJECT DEVELOPMENT</div>
+        </div>
+
+        <!-- Center Column: Oval Capsule Portrait (Protruding below into white) -->
+        <div class="beverr-hero-center">
+          <div class="beverr-arch-frame">
+            <img src="assets/home-hero-person-v1.webp" alt="Mohamed Elkadi - Project Development" class="beverr-hero-portrait" onerror="this.src='profile.jpg'">
+          </div>
+        </div>
+
+        <!-- Right Column: Vertical Metric Counters -->
+        <div class="beverr-hero-right">
+          <div class="beverr-stat-item">
+            <div class="beverr-stat-label">Years of experience</div>
+            <div class="beverr-stat-number">15+</div>
+          </div>
+
+          <div class="beverr-stat-item">
+            <div class="beverr-stat-label">Projects done</div>
+            <div class="beverr-stat-number">25+</div>
+          </div>
+
+          <div class="beverr-stat-item">
+            <div class="beverr-stat-label">Users & Clients</div>
+            <div class="beverr-stat-number">500+</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CORE SERVICES & CAPABILITIES (You X Structure - Protruding Arch Clearance) -->
+    <section class="section-wrapper services-after-hero" id="services">
+      <div class="container">
+        <div class="section-header" style="text-align: center; max-width: 680px; margin: 0 auto 50px auto;">
+          <span class="section-eyebrow">Enterprise Capabilities</span>
+          <h2 class="section-title">What I Bring to Organizations</h2>
+          <p class="section-desc">Bridging IT infrastructure, enterprise application development, and business automation to empower end-users and drive operational excellence.</p>
+        </div>
+
+        <div class="capabilities-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+          
+          <div class="card-glass" style="padding: 30px; border-radius: 16px;">
+            <div style="font-size: 2.2rem; margin-bottom: 16px;">⚡</div>
+            <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin-bottom: 10px;">Low-Code Applications & M365</h3>
+            <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
+              Designing end-to-end Power Apps and SharePoint solutions. Built the Employee Recognition platform across 4 power plants, IT asset warehouse, and operational tools for 500+ users.
+            </p>
+          </div>
+
+          <div class="card-glass" style="padding: 30px; border-radius: 16px;">
+            <div style="font-size: 2.2rem; margin-bottom: 16px;">🤖</div>
+            <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin-bottom: 10px;">AI Adoption & Computer Vision</h3>
+            <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
+              Coaching workforce on Microsoft Copilot and prompt engineering. Deployed the infrastructure for Omnivise Image Analytics (OIA) camera systems for industrial equipment telemetry.
+            </p>
+          </div>
+
+          <div class="card-glass" style="padding: 30px; border-radius: 16px;">
+            <div style="font-size: 2.2rem; margin-bottom: 16px;">🏗️</div>
+            <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin-bottom: 10px;">Mission-Critical Infrastructure</h3>
+            <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
+              Administering 4,800 MW Burullus Power Plant IT networks, MDF power backup infrastructure (extended runtime to 6h), and telecom relocations with high availability.
+            </p>
+          </div>
+
+          <div class="card-glass" style="padding: 30px; border-radius: 16px;">
+            <div style="font-size: 2.2rem; margin-bottom: 16px;">🛡️</div>
+            <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin-bottom: 10px;">Cybersecurity & Governance</h3>
+            <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
+              Cybersecurity Ambassador at Siemens Energy, ISO 27001:2022 Lead Auditor, and ISC2 certified. Mentoring staff against social engineering and ensuring strict compliance.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPANIES & ORGANIZATIONS CAROUSEL (Whole Worked Companies Marquee) -->
+    <section class="companies-carousel-section" id="companiesCarousel" aria-label="Companies & Organizations Worked With">
+      <div class="container">
+        <div class="companies-carousel-header">
+          <span class="companies-carousel-eyebrow">Enterprise Experience</span>
+          <h2 class="companies-carousel-title">Companies & Organizations I've Worked With</h2>
+          <p class="companies-carousel-desc">Over 15 years delivering enterprise IT operations, mission-critical infrastructure, and digital solutions across leading energy & industrial enterprises.</p>
+        </div>
+      </div>
+
+      <!-- Marquee Carousel Track (Infinite Smooth Loop with Pause on Hover) -->
+      <div class="companies-marquee-container" id="companiesMarquee">
+        <div class="companies-marquee-track" id="companiesTrack">
+          
+          <!-- SET 1 (Original) -->
+          <!-- 1: Siemens Energy -->
+          <div class="company-carousel-card">
+            <div class="company-card-icon-wrap">
+              <svg class="company-logo-svg" viewBox="0 0 100 100" fill="currentColor">
+                <path d="M50 5 L88 27 L88 73 L50 95 L12 73 L12 27 Z" fill="none" stroke="currentColor" stroke-width="6"/>
+                <path d="M35 38 L65 38 L35 62 L65 62" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
               </svg>
-              <span>Siemens Energy MEA</span>
-            </span>
-          </div>
-
-          <h1 class="hero-name">Mohamed Elkadi</h1>
-
-          <div class="hero-subtitle">
-            Product-Oriented IT Professional | Internal Digital Products | IT Operations, Delivery & Value
-          </div>
-
-          <p class="hero-description">
-            IT and Digital Enablement Professional with <strong>15+ years of experience</strong> across IT infrastructure, cybersecurity, enterprise operations, project delivery, and low-code solution development. Supporting <strong>500+ users</strong> in multi-site environments, transforming business needs into reliable Microsoft 365 and Power Platform solutions.
-          </p>
-
-          <div class="hero-key-pills">
-            <span class="key-pill">AI Adoption</span>
-            <span class="key-pill">Power Platform</span>
-            <span class="key-pill">Microsoft 365</span>
-            <span class="key-pill">Cybersecurity</span>
-            <span class="key-pill">ISO 27001</span>
-            <span class="key-pill">PMP & Agile</span>
-            <span class="key-pill">Azure Cloud</span>
-            <span class="key-pill">IT Operations</span>
-            <span class="key-pill">Power Automate</span>
-            <span class="key-pill">Power BI</span>
-            <span class="key-pill">ITIL v4</span>
-            <span class="key-pill">Change Enablement</span>
-          </div>
-
-          <div class="hero-actions">
-            <a href="#applications" class="btn btn-primary">
-              <span>Explore Enterprise Solutions</span>
-            </a>
-            <a href="#achievements-portals" class="btn btn-secondary">
-              <span>View Verified Credentials</span>
-            </a>
-            <a href="#contact" class="btn btn-outline">
-              <span>Send Message</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Hero Identity Card -->
-        <aside class="hero-card-profile" aria-label="Professional Profile">
-          <div class="profile-avatar-wrapper">
-            <div class="profile-avatar">
-              <img src="profile.jpg" alt="Mohamed Elkadi" class="profile-avatar-img" onerror="if (this.src !== 'https://images.credly.com/images/748fad13-8a95-4f3a-a30f-c76a827a11ec/blob.jpeg') { this.src = 'https://images.credly.com/images/748fad13-8a95-4f3a-a30f-c76a827a11ec/blob.jpeg'; } else { this.style.display='none'; this.nextElementSibling.style.display='flex'; }" loading="eager">
-              <span class="profile-avatar-initials" style="display: none;">ME</span>
             </div>
-            <div class="profile-badge-float">
-              <span>●</span> Verified
+            <div class="company-card-info">
+              <div class="company-card-name">Siemens Energy</div>
             </div>
           </div>
 
-          <h2 class="profile-card-name">Mohamed Elkadi</h2>
-
-          <div class="profile-meta-list">
-            <div class="profile-meta-item">
-              <span>Organization</span>
-              <strong>Siemens Energy</strong>
+          <!-- 2: Siemens AG -->
+          <div class="company-carousel-card">
+            <div class="company-card-icon-wrap">
+              <svg class="company-logo-svg" viewBox="0 0 100 100" fill="currentColor">
+                <path d="M25 35 C25 25, 75 25, 75 35 C75 48, 25 52, 25 65 C25 75, 75 75, 75 65" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+              </svg>
             </div>
-            <div class="profile-meta-item">
-              <span>Location</span>
-              <strong>Cairo, Egypt</strong>
-            </div>
-            <div class="profile-meta-item">
-              <span>Operational Scale</span>
-              <strong>500+ Enterprise Users</strong>
-            </div>
-            <div class="profile-meta-item">
-              <span>Key Recognitions</span>
-              <strong>1x Lean Hero ME & Joined MEA Global Award</strong>
+            <div class="company-card-info">
+              <div class="company-card-name">Siemens AG</div>
             </div>
           </div>
 
-          <div style="width: 100%; margin-top: 20px;">
-            <a href="https://www.linkedin.com/in/melkadi/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="width: 100%;">
-              View LinkedIn Profile (@melkadi)
-            </a>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <!-- METRICS BANNER -->
-    <section class="metrics-banner" aria-label="Key Highlights">
-      <div class="container">
-        <div class="metrics-grid">
-          <div class="metric-card">
-            <div class="metric-number">15+</div>
-            <div class="metric-label">Years Experience</div>
-            <div class="metric-sub">IT, Cybersecurity & Operations</div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-number">500+</div>
-            <div class="metric-label">Users Supported</div>
-            <div class="metric-sub">Multi-Site Enterprise Operations</div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-number">4,800 MW</div>
-            <div class="metric-label">Burullus Power Plant</div>
-            <div class="metric-sub">Combined Cycle IT Infrastructure</div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-number">17+</div>
-            <div class="metric-label">Enterprise Apps Built</div>
-            <div class="metric-sub">Low-Code & Process Automation</div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-number">20+</div>
-            <div class="metric-label">Core Skills</div>
-            <div class="metric-sub">Cloud, AI, Security & Automation</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT & CORE CAPABILITIES -->
-    <section class="section-wrapper" id="about">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-eyebrow">Professional Summary</span>
-          <h2 class="section-title">Experience & Strategic Focus</h2>
-          <p class="section-desc">Building secure, resilient enterprise IT environments that support business continuity, operational excellence, and digital transformation.</p>
-        </div>
-
-        <div class="about-grid">
-          <div class="about-summary-card card-glass">
-            <p class="about-summary-text">
-              Strong foundation in AI adoption and digital transformation through automation, user enablement, responsible technology practices, cross-functional collaboration, and exposure to AI-enabled industrial solutions.
-            </p>
-            <p class="about-summary-text">
-              Supported AI awareness, digital adoption, and end-user enablement through continuous coaching, knowledge sharing, and practical guidance on Microsoft technologies.
-            </p>
-            <p class="about-summary-text">
-              <em>"Open to collaboration on AI adoption, Power Platform solutions, business automation, and data-driven initiatives."</em>
-            </p>
-
-            <h3 style="font-size: 1.1rem; margin-top: 10px; color: var(--text-primary);">Core Capabilities (11 Areas)</h3>
-            <div class="capabilities-grid" id="capabilities">
-              <!-- 1. AI & Digital Transformation -->
-              <div class="capability-item">
-                <div class="capability-icon">⚡</div>
-                <span>AI Adoption & Change Enablement</span>
-              </div>
-              <div class="capability-item">
-                <div class="capability-icon">🎯</div>
-                <span>AI Use-Case Identification</span>
-              </div>
-
-              <!-- 2. Security & Cloud Infrastructure -->
-              <div class="capability-item">
-                <div class="capability-icon">🛡️</div>
-                <span>Cybersecurity & Governance</span>
-              </div>
-              <div class="capability-item">
-                <div class="capability-icon">🌐</div>
-                <span>Azure Fundamentals & Cloud Adoption</span>
-              </div>
-
-              <!-- 3. Intelligent Automation & Low-Code -->
-              <div class="capability-item">
-                <div class="capability-icon">🧩</div>
-                <span>Power Apps & Power Automate</span>
-              </div>
-              <div class="capability-item">
-                <div class="capability-icon">⚙️</div>
-                <span>Business Process Automation</span>
-              </div>
-
-              <!-- 4. Data Intelligence & Enterprise IT -->
-              <div class="capability-item">
-                <div class="capability-icon">📊</div>
-                <span>Power BI & Data Analytics</span>
-              </div>
-              <div class="capability-item">
-                <div class="capability-icon">🖥️</div>
-                <span>IT Infrastructure & Operations</span>
-              </div>
-
-              <!-- 5. Modern Workplace & Transformation Delivery -->
-              <div class="capability-item">
-                <div class="capability-icon">☁️</div>
-                <span>Microsoft 365 & SharePoint</span>
-              </div>
-              <div class="capability-item">
-                <div class="capability-icon">👥</div>
-                <span>User Enablement & Coaching</span>
-              </div>
-              <div class="capability-item">
-                <div class="capability-icon">📋</div>
-                <span>Project Coordination & Delivery</span>
-              </div>
+          <!-- 3: Five Builders -->
+          <div class="company-carousel-card">
+            <div class="company-card-icon-wrap">
+              <svg class="company-logo-svg" viewBox="0 0 100 100" fill="currentColor">
+                <circle cx="50" cy="50" r="18" fill="none" stroke="currentColor" stroke-width="6"/>
+                <path d="M50 14 L50 24 M50 76 L50 86 M14 50 L24 50 M76 50 L86 50 M25 25 L32 32 M68 68 L75 75 M75 25 L68 32 M32 68 L25 75" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="company-card-info">
+              <div class="company-card-name">Five Builders</div>
             </div>
           </div>
 
-          <!-- Strengths & Education -->
-          <div style="display: flex; flex-direction: column; gap: 20px;">
-            <div class="side-card card-glass">
-              <h3 class="side-card-title">Additional Strengths</h3>
-              <ul class="bullets-list">
-                <li>Business-friendly communication across technical and non-technical teams.</li>
-                <li>Hands-on, self-driven approach to experimentation and continuous learning.</li>
-                <li>Experience supporting users from diverse functions and operational backgrounds.</li>
-                <li>Strong foundation in secure and responsible technology adoption.</li>
-              </ul>
+          <!-- 4: NEM Energy Egypt -->
+          <div class="company-carousel-card">
+            <div class="company-card-icon-wrap">
+              <svg class="company-logo-svg" viewBox="0 0 100 100" fill="currentColor">
+                <path d="M20 75 L38 25 L50 55 L62 25 L80 75" fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+              </svg>
             </div>
-
-            <div class="side-card card-glass">
-              <h3 class="side-card-title">Education</h3>
-              <div class="edu-item">
-                <div class="edu-degree">Institute of Computer Science</div>
-                <div class="edu-year">2003 – 2004 | Graduation: Excellence</div>
-              </div>
-              <div class="edu-item">
-                <div class="edu-degree">Diploma of Technician Commerce</div>
-                <div class="edu-year">2001</div>
-              </div>
-            </div>
-
-            <div class="side-card card-glass">
-              <h3 class="side-card-title">Languages</h3>
-              <div class="language-pills">
-                <div class="lang-pill" title="Arabic (Native Proficiency)">
-                  <svg class="lang-flag" viewBox="0 0 18 13" width="18" height="13" aria-hidden="true">
-                    <rect width="18" height="4.33" fill="#CE1126"/>
-                    <rect y="4.33" width="18" height="4.33" fill="#FFFFFF"/>
-                    <rect y="8.66" width="18" height="4.34" fill="#000000"/>
-                    <circle cx="9" cy="6.5" r="1.3" fill="#C09300"/>
-                  </svg>
-                  <strong>Arabic</strong>
-                  <span>Native</span>
-                </div>
-                <div class="lang-pill" title="English (Professional Intermediate)">
-                  <svg class="lang-flag" viewBox="0 0 18 13" width="18" height="13" aria-hidden="true">
-                    <clipPath id="uk-flag-clip"><rect width="18" height="13" rx="2"/></clipPath>
-                    <g clip-path="url(#uk-flag-clip)">
-                      <rect width="18" height="13" fill="#012169"/>
-                      <path d="M0 0 L18 13 M18 0 L0 13" stroke="#fff" stroke-width="2.5"/>
-                      <path d="M0 0 L18 13 M18 0 L0 13" stroke="#C8102E" stroke-width="1.3"/>
-                      <path d="M9 0 V13 M0 6.5 H18" stroke="#fff" stroke-width="4.5"/>
-                      <path d="M9 0 V13 M0 6.5 H18" stroke="#C8102E" stroke-width="2.5"/>
-                    </g>
-                  </svg>
-                  <strong>English</strong>
-                  <span>Intermediate</span>
-                </div>
-                <div class="lang-pill" title="German (A1 Elementary)">
-                  <svg class="lang-flag" viewBox="0 0 18 13" width="18" height="13" aria-hidden="true">
-                    <clipPath id="de-flag-clip"><rect width="18" height="13" rx="2"/></clipPath>
-                    <g clip-path="url(#de-flag-clip)">
-                      <rect width="18" height="4.33" fill="#000000"/>
-                      <rect y="4.33" width="18" height="4.33" fill="#DD0000"/>
-                      <rect y="8.66" width="18" height="4.34" fill="#FFCE00"/>
-                    </g>
-                  </svg>
-                  <strong>German</strong>
-                  <span>A1 Level</span>
-                </div>
-              </div>
+            <div class="company-card-info">
+              <div class="company-card-name">NEM Energy Egypt</div>
             </div>
           </div>
+
+          <!-- 5: Siemens HTT -->
+          <div class="company-carousel-card">
+            <div class="company-card-icon-wrap">
+              <svg class="company-logo-svg" viewBox="0 0 100 100" fill="currentColor">
+                <rect x="22" y="22" width="56" height="56" rx="10" transform="rotate(45 50 50)" fill="none" stroke="currentColor" stroke-width="6"/>
+                <circle cx="50" cy="50" r="10" fill="currentColor"/>
+              </svg>
+            </div>
+            <div class="company-card-info">
+              <div class="company-card-name">Siemens HTT</div>
+            </div>
+          </div>
+
+          <!-- 6: Burullus Power Plant -->
+          <div class="company-carousel-card">
+            <div class="company-card-icon-wrap">
+              <svg class="company-logo-svg" viewBox="0 0 100 100" fill="currentColor">
+                <circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="6"/>
+                <path d="M50 20 L50 40 M50 60 L50 80 M20 50 L40 50 M60 50 L80 50 M29 29 L43 43 M57 57 L71 71 M71 29 L57 43 M43 57 L29 71" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+                <circle cx="50" cy="50" r="12" fill="none" stroke="currentColor" stroke-width="5"/>
+              </svg>
+            </div>
+            <div class="company-card-info">
+              <div class="company-card-name">Burullus Power Plant</div>
+            </div>
+          </div>
+
+          <!-- 7: Benban Solar Park -->
+          <div class="company-carousel-card">
+            <div class="company-card-icon-wrap">
+              <svg class="company-logo-svg" viewBox="0 0 100 100" fill="currentColor">
+                <rect x="18" y="28" width="64" height="44" rx="4" fill="none" stroke="currentColor" stroke-width="6"/>
+                <line x1="18" y1="50" x2="82" y2="50" stroke="currentColor" stroke-width="4"/>
+                <line x1="39" y1="28" x2="39" y2="72" stroke="currentColor" stroke-width="4"/>
+                <line x1="61" y1="28" x2="61" y2="72" stroke="currentColor" stroke-width="4"/>
+                <path d="M35 84 L50 72 L65 84" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="company-card-info">
+              <div class="company-card-name">Benban Solar Park</div>
+            </div>
+          </div>
+
+          <!-- SET 2 (Duplicate for Seamless Infinite Marquee Continuity) -->
+          <!-- 1 (dup): Siemens Energy -->
+          <div class="company-carousel-card" aria-hidden="true">
+            <div class="company-card-icon-wrap">
+              <svg class="company-logo-svg" viewBox="0 0 100 100" fill="currentColor">
+                <path d="M50 5 L88 27 L88 73 L50 95 L12 73 L12 27 Z" fill="none" stroke="currentColor" stroke-width="6"/>
+                <path d="M35 38 L65 38 L35 62 L65 62" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="company-card-info">
+              <div class="company-card-name">Siemens Energy</div>
+            </div>
+          </div>
+
+          <!-- 2 (dup): Siemens AG -->
+          <div class="company-carousel-card" aria-hidden="true">
+            <div class="company-card-icon-wrap">
+              <svg class="company-logo-svg" viewBox="0 0 100 100" fill="currentColor">
+                <path d="M25 35 C25 25, 75 25, 75 35 C75 48, 25 52, 25 65 C25 75, 75 75, 75 65" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="company-card-info">
+              <div class="company-card-name">Siemens AG</div>
+            </div>
+          </div>
+
+          <!-- 3 (dup): Five Builders -->
+          <div class="company-carousel-card" aria-hidden="true">
+            <div class="company-card-icon-wrap">
+              <svg class="company-logo-svg" viewBox="0 0 100 100" fill="currentColor">
+                <circle cx="50" cy="50" r="18" fill="none" stroke="currentColor" stroke-width="6"/>
+                <path d="M50 14 L50 24 M50 76 L50 86 M14 50 L24 50 M76 50 L86 50 M25 25 L32 32 M68 68 L75 75 M75 25 L68 32 M32 68 L25 75" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="company-card-info">
+              <div class="company-card-name">Five Builders</div>
+            </div>
+          </div>
+
+          <!-- 4 (dup): NEM Energy Egypt -->
+          <div class="company-carousel-card" aria-hidden="true">
+            <div class="company-card-icon-wrap">
+              <svg class="company-logo-svg" viewBox="0 0 100 100" fill="currentColor">
+                <path d="M20 75 L38 25 L50 55 L62 25 L80 75" fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="company-card-info">
+              <div class="company-card-name">NEM Energy Egypt</div>
+            </div>
+          </div>
+
+          <!-- 5 (dup): Siemens HTT -->
+          <div class="company-carousel-card" aria-hidden="true">
+            <div class="company-card-icon-wrap">
+              <svg class="company-logo-svg" viewBox="0 0 100 100" fill="currentColor">
+                <rect x="22" y="22" width="56" height="56" rx="10" transform="rotate(45 50 50)" fill="none" stroke="currentColor" stroke-width="6"/>
+                <circle cx="50" cy="50" r="10" fill="currentColor"/>
+              </svg>
+            </div>
+            <div class="company-card-info">
+              <div class="company-card-name">Siemens HTT</div>
+            </div>
+          </div>
+
+          <!-- 6 (dup): Burullus Power Plant -->
+          <div class="company-carousel-card" aria-hidden="true">
+            <div class="company-card-icon-wrap">
+              <svg class="company-logo-svg" viewBox="0 0 100 100" fill="currentColor">
+                <circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="6"/>
+                <path d="M50 20 L50 40 M50 60 L50 80 M20 50 L40 50 M60 50 L80 50 M29 29 L43 43 M57 57 L71 71 M71 29 L57 43 M43 57 L29 71" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+                <circle cx="50" cy="50" r="12" fill="none" stroke="currentColor" stroke-width="5"/>
+              </svg>
+            </div>
+            <div class="company-card-info">
+              <div class="company-card-name">Burullus Power Plant</div>
+            </div>
+          </div>
+
+          <!-- 7 (dup): Benban Solar Park -->
+          <div class="company-carousel-card" aria-hidden="true">
+            <div class="company-card-icon-wrap">
+              <svg class="company-logo-svg" viewBox="0 0 100 100" fill="currentColor">
+                <rect x="18" y="28" width="64" height="44" rx="4" fill="none" stroke="currentColor" stroke-width="6"/>
+                <line x1="18" y1="50" x2="82" y2="50" stroke="currentColor" stroke-width="4"/>
+                <line x1="39" y1="28" x2="39" y2="72" stroke="currentColor" stroke-width="4"/>
+                <line x1="61" y1="28" x2="61" y2="72" stroke="currentColor" stroke-width="4"/>
+                <path d="M35 84 L50 72 L65 84" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="company-card-info">
+              <div class="company-card-name">Benban Solar Park</div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- VERIFIED DIGITAL BADGES & ACHIEVEMENTS SHOWCASE -->
-    <section class="section-wrapper" id="achievements-portals">
-      <div class="container">
-        <div class="section-header centered">
-          <span class="section-eyebrow">Verified Credentials</span>
-          <h2 class="section-title">Public Achievements & Accreditations</h2>
+    <!-- TAKE A LOOK AT MY DESIGN PORTFOLIO (You X Showcase Slider Section) -->
+    <section class="youx-portfolio-section" id="portfolio">
+      <div class="container" style="max-width: 1400px;">
+        
+        <div class="youx-portfolio-header">
+          <div class="youx-title-wrap">
+            <h2 class="youx-section-title">
+              Take a look at my<br>
+              <span class="youx-title-highlight">
+                design portfolio
+                <img src="assets/portfolio/portfolio-underline.svg" alt="" class="portfolio-underline-svg" aria-hidden="true" />
+              </span>
+            </h2>
+          </div>
+          <div class="portfolio-slider-controls">
+            <button class="portfolio-slider-arrow" id="portfolioPrevBtn" aria-label="Previous project">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <button class="portfolio-slider-arrow" id="portfolioNextBtn" aria-label="Next project">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Slider Main Track -->
+        <div class="portfolio-slider-wrapper">
+          <div class="portfolio-slider-track" id="portfolioSliderTrack">
+            
+            <!-- Slide 1: Todo List Mobile App Redesign -->
+            <div class="portfolio-slider-card">
+              <div class="portfolio-card-thumb">
+                <img src="assets/portfolio/portfolio-1.jpg" alt="Todo List Mobile App Redesign" class="portfolio-thumb-img" loading="lazy" />
+              </div>
+              <div class="portfolio-card-content">
+                <h3 class="portfolio-card-title">Todo List Mobile App Redesign</h3>
+                <p class="portfolio-card-desc">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus mattis nunc aliquam tincidunt est non dolor sit consectuetur do.
+                </p>
+                <a href="portfolio.html#todo-app" class="portfolio-card-link">
+                  <span>Read case study</span>
+                  <span class="portfolio-link-arrow">→</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Slide 2: Analytics Dashboard Design -->
+            <div class="portfolio-slider-card">
+              <div class="portfolio-card-thumb">
+                <img src="assets/portfolio/portfolio-2.jpg" alt="Analytics Dashboard Design" class="portfolio-thumb-img" loading="lazy" />
+              </div>
+              <div class="portfolio-card-content">
+                <h3 class="portfolio-card-title">Analytics Dashboard Design</h3>
+                <p class="portfolio-card-desc">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus mattis nunc aliquam tincidunt est non dolor sit consectuetur do.
+                </p>
+                <a href="portfolio.html#analytics-dashboard" class="portfolio-card-link">
+                  <span>Read case study</span>
+                  <span class="portfolio-link-arrow">→</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Slide 3: Task Manager Web App Design -->
+            <div class="portfolio-slider-card">
+              <div class="portfolio-card-thumb">
+                <img src="assets/portfolio/portfolio-3.jpg" alt="Task Manager Web App Design" class="portfolio-thumb-img" loading="lazy" />
+              </div>
+              <div class="portfolio-card-content">
+                <h3 class="portfolio-card-title">Task Manager Web App Design</h3>
+                <p class="portfolio-card-desc">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus mattis nunc aliquam tincidunt est non dolor sit consectuetur do.
+                </p>
+                <a href="portfolio.html#task-manager" class="portfolio-card-link">
+                  <span>Read case study</span>
+                  <span class="portfolio-link-arrow">→</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Slide 4: File Manager Mobile App Design -->
+            <div class="portfolio-slider-card">
+              <div class="portfolio-card-thumb">
+                <img src="assets/portfolio/portfolio-4.png" alt="File Manager Mobile App Design" class="portfolio-thumb-img" loading="lazy" />
+              </div>
+              <div class="portfolio-card-content">
+                <h3 class="portfolio-card-title">File Manager Mobile App Design</h3>
+                <p class="portfolio-card-desc">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus mattis nunc aliquam tincidunt est non dolor sit consectuetur do.
+                </p>
+                <a href="portfolio.html#file-manager" class="portfolio-card-link">
+                  <span>Read case study</span>
+                  <span class="portfolio-link-arrow">→</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- WHAT MY CLIENTS SAY ABOUT MY WORK (You X Testimonials Carousel with Auto-Scroll) -->
+    <section class="youx-testimonials-section" id="testimonials">
+      <div class="container" style="max-width: 1360px;">
+        
+        <div style="text-align: center; max-width: 720px; margin: 0 auto 32px auto;">
+          <span class="section-eyebrow">Professional Endorsements</span>
+          <h2 class="youx-section-title" style="margin-bottom: 12px;">What my clients say about my work</h2>
           <p class="section-desc">
-            Directly verified digital badges, learning paths, and developer credentials from Google, Credly, and Microsoft Learn.
+            Direct recommendations from plant directors, continuous improvement leaders, and cross-functional project managers on LinkedIn.
           </p>
         </div>
 
-        <div class="verified-portals-grid">
-          <!-- Portal 1: Microsoft Learn -->
-          <div class="portal-achievement-card">
+      </div>
+
+      <!-- Edge-to-Edge Auto-Scrolling Carousel Wrapper -->
+      <div class="testimonials-carousel-wrapper" id="testimonialsCarousel" aria-label="Client recommendations carousel">
+        <div class="testimonials-carousel-track" id="testimonialsTrack">
+          
+          <!-- ==================== SET 1: AUTHENTIC LINKEDIN ENDORSEMENTS ==================== -->
+          
+          <!-- 1: Karim Refaat -->
+          <div class="testimonial-card-youx">
+            <div class="testimonial-quote-icon">“</div>
+            <p class="testimonial-text">
+              "It has been an absolute pleasure working with Elkadi. He brings a high level of technical expertise, analytical rigor, and a collaborative spirit to every project. Elkadi is consistently reliable, detail-oriented, and solution-driven. He is a fantastic asset to any team, and I recommend him highly."
+            </p>
+            <div class="testimonial-author-wrap">
+              <img src="assets/recommendations/karim_refaat.jpg" alt="Karim Refaat, CMRP®" class="testimonial-avatar" loading="lazy" onerror="this.src='profile.jpg'">
+              <div>
+                <div class="testimonial-author-name">Karim Refaat, CMRP®</div>
+                <div class="testimonial-author-role">HRSG Service Engineer • <strong>Siemens Energy</strong></div>
+                <div class="testimonial-badge-linkedin">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  <span>Verified LinkedIn Recommendation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2: Moamen Ibrahem -->
+          <div class="testimonial-card-youx">
+            <div class="testimonial-quote-icon">“</div>
+            <p class="testimonial-text">
+              "Mr. Mohamed Elkadi is an exceptional IT engineer with a keen eye for detail and a strong work ethic. I had the pleasure of working with him in Siemens-Energy and was consistently impressed by his ability to work in CYS & IT. A true team player, always willing to lend a helping hand and contribute to the success of the team."
+            </p>
+            <div class="testimonial-author-wrap">
+              <img src="assets/recommendations/moamen_ibrahem.jpg" alt="Moamen Ibrahem" class="testimonial-avatar" loading="lazy" onerror="this.src='profile.jpg'">
+              <div>
+                <div class="testimonial-author-name">Moamen Ibrahem</div>
+                <div class="testimonial-author-role">Head of Mechanical Maintenance O&M • <strong>Burullus 4,800 MW</strong></div>
+                <div class="testimonial-badge-linkedin">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  <span>Verified LinkedIn Recommendation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3: Mousa Eladly -->
+          <div class="testimonial-card-youx">
+            <div class="testimonial-quote-icon">“</div>
+            <p class="testimonial-text">
+              "I am continually impressed by his deep knowledge of cybersecurity and IT systems. His expertise in areas such as network security, threat mitigation, and system optimization is unparalleled. Mohamed is not only technically proficient but also highly proactive in identifying and addressing potential vulnerabilities."
+            </p>
+            <div class="testimonial-author-wrap">
+              <img src="assets/recommendations/mousa_eladly.jpg" alt="Mousa Eladly" class="testimonial-avatar" loading="lazy" onerror="this.src='profile.jpg'">
+              <div>
+                <div class="testimonial-author-name">Mousa Eladly</div>
+                <div class="testimonial-author-role">Asset Reliability Engineer • <strong>Siemens Energy Kft (Budapest)</strong></div>
+                <div class="testimonial-badge-linkedin">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  <span>Verified LinkedIn Recommendation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4: Islam Mahmoud -->
+          <div class="testimonial-card-youx">
+            <div class="testimonial-quote-icon">“</div>
+            <p class="testimonial-text">
+              "I’ve had the pleasure of working with many professionals in our line of work, but Mohamed is someone who I will always remember fondly. I do recommend him as a subject matter expert in terms of IT infrastructure operation management."
+            </p>
+            <div class="testimonial-author-wrap">
+              <img src="assets/recommendations/islam_mahmoud.jpg" alt="Islam Mahmoud" class="testimonial-avatar" loading="lazy" onerror="this.src='profile.jpg'">
+              <div>
+                <div class="testimonial-author-name">Islam Mahmoud</div>
+                <div class="testimonial-author-role">IT Infrastructure Delivery Manager • <strong>Siemens Energy</strong></div>
+                <div class="testimonial-badge-linkedin">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  <span>Verified LinkedIn Recommendation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5: Mahmoud Aboulazm -->
+          <div class="testimonial-card-youx">
+            <div class="testimonial-quote-icon">“</div>
+            <p class="testimonial-text">
+              "I had the pleasure of directly managing Mohamed during his time as an IT Infrastructure Specialist at the power plant. Mohamed consistently impressed me with his High Commitment: He consistently went above and beyond expectations, demonstrating a strong dedication to his work, proactive problem solving, and continuous drive for digital adoption."
+            </p>
+            <div class="testimonial-author-wrap">
+              <img src="assets/recommendations/mahmoud_aboulazm.jpg" alt="Mahmoud Aboulazm, IPMA®" class="testimonial-avatar" loading="lazy" onerror="this.src='profile.jpg'">
+              <div>
+                <div class="testimonial-author-name">Mahmoud Aboulazm, IPMA®</div>
+                <div class="testimonial-author-role">IT Leader | AI & Digitalization • <strong>Siemens Energy</strong></div>
+                <div class="testimonial-badge-linkedin">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  <span>Verified LinkedIn Recommendation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6: Youness Jarir -->
+          <div class="testimonial-card-youx">
+            <div class="testimonial-quote-icon">“</div>
+            <p class="testimonial-text">
+              "Elkadi has been of great value to our team in the Burullus Power Plant. He set up our IT system and excelled at the job. He operationalised the plant management system, WebBFS, overseeing a seamless integration that has since been instrumental in making our Operations lean and wholly optimised. Further, Elkadi built up a single sign-on point catering for all our software."
+            </p>
+            <div class="testimonial-author-wrap">
+              <img src="assets/recommendations/youness_jarir.jpg" alt="Youness Jarir" class="testimonial-avatar" loading="lazy" onerror="this.src='profile.jpg'">
+              <div>
+                <div class="testimonial-author-name">Youness Jarir</div>
+                <div class="testimonial-author-role">Power Plant O&M Excellence Expert • <strong>Burullus 4,800 MW</strong></div>
+                <div class="testimonial-badge-linkedin">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  <span>Verified LinkedIn Recommendation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7: Dr. Ahmed Sharaf -->
+          <div class="testimonial-card-youx">
+            <div class="testimonial-quote-icon">“</div>
+            <p class="testimonial-text">
+              "Mohamed is an amazing person who is very committed regarding the employer vision and strategies. He is well organised, working according to a plan, very intelligent and energetic, and finally he is thinking out of the box."
+            </p>
+            <div class="testimonial-author-wrap">
+              <img src="assets/recommendations/ahmed_sharaf.jpg" alt="Dr. Ahmed Sharaf, PhD" class="testimonial-avatar" loading="lazy" onerror="this.src='profile.jpg'">
+              <div>
+                <div class="testimonial-author-name">Dr. Ahmed Sharaf, PhD</div>
+                <div class="testimonial-author-role">Head of Environment, Health & Safety • <strong>Siemens Energy</strong></div>
+                <div class="testimonial-badge-linkedin">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  <span>Verified LinkedIn Recommendation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 8: Moustafa El Dkhakhny -->
+          <div class="testimonial-card-youx">
+            <div class="testimonial-quote-icon">“</div>
+            <p class="testimonial-text">
+              "I have had the pleasure of working closely with Mohamed for many years at previous projects, and I can confidently say that he is one of the most talented and dedicated engineers I have ever worked with. His expertise combined with his ability to lead a team effectively has resulted in the successful completion of numerous projects."
+            </p>
+            <div class="testimonial-author-wrap">
+              <img src="assets/recommendations/moustafa_el_dkhakhny.jpg" alt="Moustafa El Dkhakhny" class="testimonial-avatar" loading="lazy" onerror="this.src='profile.jpg'">
+              <div>
+                <div class="testimonial-author-name">Moustafa El Dkhakhny</div>
+                <div class="testimonial-author-role">Founder, SESHAT | Project Planning & Controls</div>
+                <div class="testimonial-badge-linkedin">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  <span>Verified LinkedIn Recommendation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ==================== SET 2: DUPLICATED FOR SEAMLESS INFINITE AUTO-SCROLL ==================== -->
+          
+          <!-- 1 (Duplicate): Karim Refaat -->
+          <div class="testimonial-card-youx" aria-hidden="true">
+            <div class="testimonial-quote-icon">“</div>
+            <p class="testimonial-text">
+              "It has been an absolute pleasure working with Elkadi. He brings a high level of technical expertise, analytical rigor, and a collaborative spirit to every project. Elkadi is consistently reliable, detail-oriented, and solution-driven. He is a fantastic asset to any team, and I recommend him highly."
+            </p>
+            <div class="testimonial-author-wrap">
+              <img src="assets/recommendations/karim_refaat.jpg" alt="Karim Refaat, CMRP®" class="testimonial-avatar" loading="lazy" onerror="this.src='profile.jpg'">
+              <div>
+                <div class="testimonial-author-name">Karim Refaat, CMRP®</div>
+                <div class="testimonial-author-role">HRSG Service Engineer • <strong>Siemens Energy</strong></div>
+                <div class="testimonial-badge-linkedin">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  <span>Verified LinkedIn Recommendation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2 (Duplicate): Moamen Ibrahem -->
+          <div class="testimonial-card-youx" aria-hidden="true">
+            <div class="testimonial-quote-icon">“</div>
+            <p class="testimonial-text">
+              "Mr. Mohamed Elkadi is an exceptional IT engineer with a keen eye for detail and a strong work ethic. I had the pleasure of working with him in Siemens-Energy and was consistently impressed by his ability to work in CYS & IT. A true team player, always willing to lend a helping hand and contribute to the success of the team."
+            </p>
+            <div class="testimonial-author-wrap">
+              <img src="assets/recommendations/moamen_ibrahem.jpg" alt="Moamen Ibrahem" class="testimonial-avatar" loading="lazy" onerror="this.src='profile.jpg'">
+              <div>
+                <div class="testimonial-author-name">Moamen Ibrahem</div>
+                <div class="testimonial-author-role">Head of Mechanical Maintenance O&M • <strong>Burullus 4,800 MW</strong></div>
+                <div class="testimonial-badge-linkedin">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  <span>Verified LinkedIn Recommendation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3 (Duplicate): Mousa Eladly -->
+          <div class="testimonial-card-youx" aria-hidden="true">
+            <div class="testimonial-quote-icon">“</div>
+            <p class="testimonial-text">
+              "I am continually impressed by his deep knowledge of cybersecurity and IT systems. His expertise in areas such as network security, threat mitigation, and system optimization is unparalleled. Mohamed is not only technically proficient but also highly proactive in identifying and addressing potential vulnerabilities."
+            </p>
+            <div class="testimonial-author-wrap">
+              <img src="assets/recommendations/mousa_eladly.jpg" alt="Mousa Eladly" class="testimonial-avatar" loading="lazy" onerror="this.src='profile.jpg'">
+              <div>
+                <div class="testimonial-author-name">Mousa Eladly</div>
+                <div class="testimonial-author-role">Asset Reliability Engineer • <strong>Siemens Energy Kft (Budapest)</strong></div>
+                <div class="testimonial-badge-linkedin">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  <span>Verified LinkedIn Recommendation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4 (Duplicate): Islam Mahmoud -->
+          <div class="testimonial-card-youx" aria-hidden="true">
+            <div class="testimonial-quote-icon">“</div>
+            <p class="testimonial-text">
+              "I’ve had the pleasure of working with many professionals in our line of work, but Mohamed is someone who I will always remember fondly. I do recommend him as a subject matter expert in terms of IT infrastructure operation management."
+            </p>
+            <div class="testimonial-author-wrap">
+              <img src="assets/recommendations/islam_mahmoud.jpg" alt="Islam Mahmoud" class="testimonial-avatar" loading="lazy" onerror="this.src='profile.jpg'">
+              <div>
+                <div class="testimonial-author-name">Islam Mahmoud</div>
+                <div class="testimonial-author-role">IT Infrastructure Delivery Manager • <strong>Siemens Energy</strong></div>
+                <div class="testimonial-badge-linkedin">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  <span>Verified LinkedIn Recommendation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5 (Duplicate): Mahmoud Aboulazm -->
+          <div class="testimonial-card-youx" aria-hidden="true">
+            <div class="testimonial-quote-icon">“</div>
+            <p class="testimonial-text">
+              "I had the pleasure of directly managing Mohamed during his time as an IT Infrastructure Specialist at the power plant. Mohamed consistently impressed me with his High Commitment: He consistently went above and beyond expectations, demonstrating a strong dedication to his work, proactive problem solving, and continuous drive for digital adoption."
+            </p>
+            <div class="testimonial-author-wrap">
+              <img src="assets/recommendations/mahmoud_aboulazm.jpg" alt="Mahmoud Aboulazm, IPMA®" class="testimonial-avatar" loading="lazy" onerror="this.src='profile.jpg'">
+              <div>
+                <div class="testimonial-author-name">Mahmoud Aboulazm, IPMA®</div>
+                <div class="testimonial-author-role">IT Leader | AI & Digitalization • <strong>Siemens Energy</strong></div>
+                <div class="testimonial-badge-linkedin">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  <span>Verified LinkedIn Recommendation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6 (Duplicate): Youness Jarir -->
+          <div class="testimonial-card-youx" aria-hidden="true">
+            <div class="testimonial-quote-icon">“</div>
+            <p class="testimonial-text">
+              "Elkadi has been of great value to our team in the Burullus Power Plant. He set up our IT system and excelled at the job. He operationalised the plant management system, WebBFS, overseeing a seamless integration that has since been instrumental in making our Operations lean and wholly optimised. Further, Elkadi built up a single sign-on point catering for all our software."
+            </p>
+            <div class="testimonial-author-wrap">
+              <img src="assets/recommendations/youness_jarir.jpg" alt="Youness Jarir" class="testimonial-avatar" loading="lazy" onerror="this.src='profile.jpg'">
+              <div>
+                <div class="testimonial-author-name">Youness Jarir</div>
+                <div class="testimonial-author-role">Power Plant O&M Excellence Expert • <strong>Burullus 4,800 MW</strong></div>
+                <div class="testimonial-badge-linkedin">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  <span>Verified LinkedIn Recommendation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7 (Duplicate): Dr. Ahmed Sharaf -->
+          <div class="testimonial-card-youx" aria-hidden="true">
+            <div class="testimonial-quote-icon">“</div>
+            <p class="testimonial-text">
+              "Mohamed is an amazing person who is very committed regarding the employer vision and strategies. He is well organised, working according to a plan, very intelligent and energetic, and finally he is thinking out of the box."
+            </p>
+            <div class="testimonial-author-wrap">
+              <img src="assets/recommendations/ahmed_sharaf.jpg" alt="Dr. Ahmed Sharaf, PhD" class="testimonial-avatar" loading="lazy" onerror="this.src='profile.jpg'">
+              <div>
+                <div class="testimonial-author-name">Dr. Ahmed Sharaf, PhD</div>
+                <div class="testimonial-author-role">Head of Environment, Health & Safety • <strong>Siemens Energy</strong></div>
+                <div class="testimonial-badge-linkedin">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  <span>Verified LinkedIn Recommendation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 8 (Duplicate): Moustafa El Dkhakhny -->
+          <div class="testimonial-card-youx" aria-hidden="true">
+            <div class="testimonial-quote-icon">“</div>
+            <p class="testimonial-text">
+              "I have had the pleasure of working closely with Mohamed for many years at previous projects, and I can confidently say that he is one of the most talented and dedicated engineers I have ever worked with. His expertise combined with his ability to lead a team effectively has resulted in the successful completion of numerous projects."
+            </p>
+            <div class="testimonial-author-wrap">
+              <img src="assets/recommendations/moustafa_el_dkhakhny.jpg" alt="Moustafa El Dkhakhny" class="testimonial-avatar" loading="lazy" onerror="this.src='profile.jpg'">
+              <div>
+                <div class="testimonial-author-name">Moustafa El Dkhakhny</div>
+                <div class="testimonial-author-role">Founder, SESHAT | Project Planning & Controls</div>
+                <div class="testimonial-badge-linkedin">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  <span>Verified LinkedIn Recommendation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Controls & Quick Action Bar -->
+      <div class="container" style="max-width: 1360px;">
+        <div class="testimonials-controls-bar">
+          
+          <div class="testimonials-status-indicator">
+            <span class="testimonials-status-dot"></span>
+            <span>Auto-scrolling • Hover cards to pause & read</span>
+          </div>
+
+          <div class="testimonials-arrow-btns">
+            <button class="testimonial-nav-btn" id="prevTestimonialBtn" aria-label="Previous recommendation" title="Previous recommendation">←</button>
+            <button class="testimonial-nav-btn" id="nextTestimonialBtn" aria-label="Next recommendation" title="Next recommendation">→</button>
+          </div>
+
+          <a href="https://www.linkedin.com/in/melkadi/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="display: inline-flex; align-items: center; gap: 8px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            <span>View All 18 Recommendations on LinkedIn ↗</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- VERIFIED DIGITAL ACCREDITATIONS & PORTALS -->
+    <section class="verified-portals-section" id="verifiedCredentials">
+      <div class="container">
+        
+        <div class="verified-portals-header">
+          <span class="section-eyebrow">Verified Digital Accreditations</span>
+          <h2 class="youx-section-title" style="margin-bottom: 12px;">Authenticated Official Profiles</h2>
+          <p class="section-desc">
+            Directly verifiable certifications, digital skill badges, and official credentials authenticated across global enterprise platforms.
+          </p>
+        </div>
+
+        <div class="achievements-portals-grid">
+          
+          <!-- Google Developers Card -->
+          <a href="https://me.developers.google.com/u/mohamed_elkadi" target="_blank" rel="noopener noreferrer" class="portal-card card-google" aria-label="Visit Mohamed Elkadi's Google Developers Profile">
             <div>
               <div class="portal-card-top">
-                <div class="portal-logo-badge">
-                  <div class="portal-logo-icon">
-                    <svg width="22" height="22" viewBox="0 0 23 23"><path fill="#f25022" d="M1 1h10v10H1z"/><path fill="#00a4ef" d="M1 12h10v10H1z"/><path fill="#7fba00" d="M12 1h10v10H12z"/><path fill="#ffb900" d="M12 12h10v10H12z"/></svg>
-                  </div>
-                  <span>Microsoft Learn</span>
+                <div class="portal-icon-wrapper">
+                  <svg width="28" height="28" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.14-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/></svg>
                 </div>
-                <span class="badge">Level 6</span>
+                <span class="portal-verify-pill">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  Verified Member
+                </span>
               </div>
 
-              <div class="portal-stats-row">
-                <div class="portal-stat-col">
-                  <span class="portal-stat-num">24,525+</span>
-                  <span class="portal-stat-lbl">XP Points</span>
-                </div>
-                <div class="portal-stat-col">
-                  <span class="portal-stat-num">16</span>
-                  <span class="portal-stat-lbl">Badges</span>
-                </div>
-                <div class="portal-stat-col">
-                  <span class="portal-stat-num">3</span>
-                  <span class="portal-stat-lbl">Trophies</span>
+              <div class="portal-info">
+                <div class="portal-org">Google for Developers</div>
+                <h3 class="portal-title">Google Developers Profile</h3>
+                <p class="portal-meta">Verified program member since 2020 active in mobile technologies, Android Studio, and Google development competencies.</p>
+                
+                <div class="portal-badge-chips">
+                  <span class="portal-badge-chip">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="color: #4285F4;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    Member Since 2020
+                  </span>
+                  <span class="portal-badge-chip">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="color: #34A853;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    Google Skills Badges
+                  </span>
+                  <span class="portal-badge-chip">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="color: #EA4335;"><path d="M17 1H7c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm0 18H7V5h10v14z"/></svg>
+                    Android Studio User
+                  </span>
                 </div>
               </div>
-
-              <h4 style="font-size: 0.92rem; margin-bottom: 10px; color: var(--text-primary);">Completed Trophies & Learning Paths:</h4>
-              <ul class="portal-badges-list">
-                <li class="portal-badge-item">
-                  <div class="portal-badge-thumb thumb-ms-trophy-gold" title="Microsoft Trophy">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg>
-                  </div>
-                  <div class="portal-badge-content">
-                    <span class="portal-badge-name">Manage and secure Power BI</span>
-                    <div class="portal-badge-meta-row">
-                      <span class="portal-badge-pill pill-trophy">Trophy</span>
-                      <span style="color: var(--text-muted); font-size: 0.7rem;">Power BI Security</span>
-                    </div>
-                  </div>
-                </li>
-                <li class="portal-badge-item">
-                  <div class="portal-badge-thumb thumb-ms-trophy-blue" title="Cloud Concepts Trophy">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
-                  </div>
-                  <div class="portal-badge-content">
-                    <span class="portal-badge-name">Introduction to Cloud Infrastructure</span>
-                    <div class="portal-badge-meta-row">
-                      <span class="portal-badge-pill pill-trophy">Trophy</span>
-                      <span style="color: var(--text-muted); font-size: 0.7rem;">Cloud Concepts</span>
-                    </div>
-                  </div>
-                </li>
-                <li class="portal-badge-item">
-                  <div class="portal-badge-thumb thumb-ms-trophy-blue" title="Azure Fundamentals Trophy">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-                  </div>
-                  <div class="portal-badge-content">
-                    <span class="portal-badge-name">Microsoft Azure Fundamentals</span>
-                    <div class="portal-badge-meta-row">
-                      <span class="portal-badge-pill pill-trophy">Trophy</span>
-                      <span style="color: var(--text-muted); font-size: 0.7rem;">Core Concepts</span>
-                    </div>
-                  </div>
-                </li>
-                <li class="portal-badge-item">
-                  <div class="portal-badge-thumb thumb-ms-badge-powerapps" title="Power Apps Badge">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
-                  </div>
-                  <div class="portal-badge-content">
-                    <span class="portal-badge-name">Power Apps Canvas App UI & Solution</span>
-                    <div class="portal-badge-meta-row">
-                      <span class="portal-badge-pill pill-badge">Badge</span>
-                      <span style="color: var(--text-muted); font-size: 0.7rem;">Power Platform</span>
-                    </div>
-                  </div>
-                </li>
-                <li class="portal-badge-item">
-                  <div class="portal-badge-thumb thumb-ms-badge-flow" title="Power Automate Badge">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                  </div>
-                  <div class="portal-badge-content">
-                    <span class="portal-badge-name">Web Automation in Power Automate</span>
-                    <div class="portal-badge-meta-row">
-                      <span class="portal-badge-pill pill-badge">Badge</span>
-                      <span style="color: var(--text-muted); font-size: 0.7rem;">RPA & Automation</span>
-                    </div>
-                  </div>
-                </li>
-              </ul>
             </div>
 
-            <a href="https://learn.microsoft.com/en-us/users/melkadise/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="width: 100%; margin-top: 14px;">
-              <span>Verify on Microsoft Learn ↗</span>
-            </a>
-          </div>
+            <div class="portal-card-footer">
+              <span class="portal-link-text">
+                <span>View Profile</span>
+                <svg class="portal-link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
+              <span class="portal-registry-badge">Official Registry ↗</span>
+            </div>
+          </a>
 
-          <!-- Portal 2: Credly -->
-          <div class="portal-achievement-card">
+          <!-- Credly Badges Card -->
+          <a href="https://www.credly.com/users/mohamedelkadi/badges" target="_blank" rel="noopener noreferrer" class="portal-card card-credly" aria-label="Verify Mohamed Elkadi's badges on Credly">
             <div>
               <div class="portal-card-top">
-                <div class="portal-logo-badge">
-                  <div class="portal-logo-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="#f59e0b"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                  </div>
-                  <span>Credly Badges</span>
+                <div class="portal-icon-wrapper">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="#FF6B00"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
                 </div>
-                <span class="badge badge-amber">Verified</span>
+                <span class="portal-verify-pill">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  Digital Badges
+                </span>
               </div>
 
-              <div class="portal-stats-row">
-                <div class="portal-stat-col">
-                  <span class="portal-stat-num">4+</span>
-                  <span class="portal-stat-lbl">Issuer Badges</span>
-                </div>
-                <div class="portal-stat-col">
-                  <span class="portal-stat-num">Cisco & ISC2</span>
-                  <span class="portal-stat-lbl">Accreditors</span>
+              <div class="portal-info">
+                <div class="portal-org">Credly by Pearson</div>
+                <h3 class="portal-title">Credly Digital Badges</h3>
+                <p class="portal-meta">Official digitally verified credentials issued by Cisco Networking Academy and the International Information System Security Certification Consortium (ISC2).</p>
+                
+                <div class="portal-badge-chips">
+                  <span class="portal-badge-chip">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="color: #FF6B00;"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+                    Cisco: Cybersecurity
+                  </span>
+                  <span class="portal-badge-chip">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="color: #0284c7;"><path d="M4 6h16v12H4z"/></svg>
+                    Cisco: Packet Tracer
+                  </span>
+                  <span class="portal-badge-chip">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="color: #10b981;"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 14h-2v-2h2v2zm0-4h-2V7h2v5z"/></svg>
+                    ISC2 Candidate
+                  </span>
+                  <span class="portal-badge-chip">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="color: #8b5cf6;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    Career Preparation
+                  </span>
                 </div>
               </div>
-
-              <h4 style="font-size: 0.92rem; margin-bottom: 10px; color: var(--text-primary);">Verified Issued Credentials:</h4>
-              <ul class="portal-badges-list">
-                <li class="portal-badge-item">
-                  <div class="portal-badge-thumb thumb-cisco-cyber" title="Cisco Cybersecurity Badge">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-                  </div>
-                  <div class="portal-badge-content">
-                    <span class="portal-badge-name">Introduction to Cybersecurity</span>
-                    <div class="portal-badge-meta-row">
-                      <span class="portal-badge-pill pill-cisco">Cisco</span>
-                      <span style="color: var(--text-muted); font-size: 0.7rem;">Digital Badge</span>
-                    </div>
-                  </div>
-                </li>
-                <li class="portal-badge-item">
-                  <div class="portal-badge-thumb thumb-cisco-network" title="Cisco Packet Tracer Badge">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="6" height="6" rx="1"/><rect x="16" y="2" width="6" height="6" rx="1"/><rect x="9" y="16" width="6" height="6" rx="1"/><path d="M5 8v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8"/><path d="M12 13v3"/></svg>
-                  </div>
-                  <div class="portal-badge-content">
-                    <span class="portal-badge-name">Introduction to Packet Tracer</span>
-                    <div class="portal-badge-meta-row">
-                      <span class="portal-badge-pill pill-cisco">Cisco</span>
-                      <span style="color: var(--text-muted); font-size: 0.7rem;">Network Simulation</span>
-                    </div>
-                  </div>
-                </li>
-                <li class="portal-badge-item">
-                  <div class="portal-badge-thumb thumb-cisco-career" title="Cisco Career Workshop Badge">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-                  </div>
-                  <div class="portal-badge-content">
-                    <span class="portal-badge-name">Career Preparation Workshop</span>
-                    <div class="portal-badge-meta-row">
-                      <span class="portal-badge-pill pill-cisco">Cisco</span>
-                      <span style="color: var(--text-muted); font-size: 0.7rem;">Professional Dev</span>
-                    </div>
-                  </div>
-                </li>
-                <li class="portal-badge-item">
-                  <div class="portal-badge-thumb thumb-isc2-cert" title="ISC2 Candidate Digital Badge">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><circle cx="12" cy="11" r="3"/><path d="M12 14v4"/></svg>
-                  </div>
-                  <div class="portal-badge-content">
-                    <span class="portal-badge-name">ISC2 Candidate Digital Badge</span>
-                    <div class="portal-badge-meta-row">
-                      <span class="portal-badge-pill pill-isc2">ISC2</span>
-                      <span style="color: var(--text-muted); font-size: 0.7rem;">Global InfoSec</span>
-                    </div>
-                  </div>
-                </li>
-              </ul>
             </div>
 
-            <a href="https://www.credly.com/users/mohamedelkadi/badges" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="width: 100%; margin-top: 14px;">
-              <span>Verify on Credly Profile ↗</span>
-            </a>
-          </div>
+            <div class="portal-card-footer">
+              <span class="portal-link-text">
+                <span>Verify Badges</span>
+                <svg class="portal-link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
+              <span class="portal-registry-badge">Official Registry ↗</span>
+            </div>
+          </a>
 
-          <!-- Portal 3: Google Developers -->
-          <div class="portal-achievement-card">
+          <!-- Microsoft Learn Card -->
+          <a href="https://learn.microsoft.com/en-us/users/melkadise/" target="_blank" rel="noopener noreferrer" class="portal-card card-microsoft" aria-label="View Mohamed Elkadi's Microsoft Learn Profile">
             <div>
               <div class="portal-card-top">
-                <div class="portal-logo-badge">
-                  <div class="portal-logo-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/></svg>
-                  </div>
-                  <span>Google Developers</span>
+                <div class="portal-icon-wrapper">
+                  <svg width="28" height="28" viewBox="0 0 24 24"><path fill="#f25022" d="M1 1h10v10H1z"/><path fill="#00a4ef" d="M1 13h10v10H1z"/><path fill="#7fba00" d="M13 1h10v10H13z"/><path fill="#ffb900" d="M13 13h10v10H13z"/></svg>
                 </div>
-                <span class="badge badge-teal">Member</span>
+                <span class="portal-verify-pill">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  Level 6 • 24,525+ XP
+                </span>
               </div>
 
-              <div class="portal-stats-row">
-                <div class="portal-stat-col">
-                  <span class="portal-stat-num">Verified</span>
-                  <span class="portal-stat-lbl">Developer Profile</span>
-                </div>
-                <div class="portal-stat-col">
-                  <span class="portal-stat-num">Builder</span>
-                  <span class="portal-stat-lbl">Program</span>
+              <div class="portal-info">
+                <div class="portal-org">Microsoft Learn</div>
+                <h3 class="portal-title">Microsoft Learn Profile</h3>
+                <p class="portal-meta">Authenticated certifications and continuous learning achievements in Microsoft Azure, Microsoft 365 Security, and Power BI enterprise analytics.</p>
+                
+                <div class="portal-badge-chips">
+                  <span class="portal-badge-chip">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="color: #00a4ef;"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>
+                    Azure Fundamentals
+                  </span>
+                  <span class="portal-badge-chip">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="color: #f59e0b;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    16 Badges & 3 Trophies
+                  </span>
+                  <span class="portal-badge-chip">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="color: #7fba00;"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+                    Power BI Security
+                  </span>
+                  <span class="portal-badge-chip">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="color: #38bdf8;"><path d="M4 6h16v12H4z"/></svg>
+                    Cloud Concepts
+                  </span>
                 </div>
               </div>
-
-              <h4 style="font-size: 0.92rem; margin-bottom: 10px; color: var(--text-primary);">Program Badges:</h4>
-              <ul class="portal-badges-list">
-                <li class="portal-badge-item">
-                  <div class="portal-badge-thumb thumb-google-skill" title="Google Skills Badge">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                  </div>
-                  <div class="portal-badge-content">
-                    <span class="portal-badge-name">Google Skills Badge</span>
-                    <div class="portal-badge-meta-row">
-                      <span class="portal-badge-pill pill-google">Google</span>
-                      <span style="color: var(--text-muted); font-size: 0.7rem;">Verified 2022</span>
-                    </div>
-                  </div>
-                </li>
-                <li class="portal-badge-item">
-                  <div class="portal-badge-thumb thumb-google-code" title="Google Developer Program Member">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                  </div>
-                  <div class="portal-badge-content">
-                    <span class="portal-badge-name">Joined Google Developer Program</span>
-                    <div class="portal-badge-meta-row">
-                      <span class="portal-badge-pill pill-google">Member</span>
-                      <span style="color: var(--text-muted); font-size: 0.7rem;">Active Since 2020</span>
-                    </div>
-                  </div>
-                </li>
-                <li class="portal-badge-item">
-                  <div class="portal-badge-thumb thumb-google-android" title="Android Studio User Badge">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.52 15.34c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1m-11.04 0c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1m11.4-6.02l2-3.46c.11-.18.04-.42-.14-.53-.18-.11-.42-.04-.53.14l-2.02 3.5C15.59 8.36 13.86 8 12 8s-3.59.36-5.19.98L4.79 5.48c-.11-.18-.34-.25-.53-.14-.18.11-.25.34-.14.53l2 3.46C2.69 11.2 0 14.8 0 19h24c0-4.2-2.69-7.8-6.12-9.68"/></svg>
-                  </div>
-                  <div class="portal-badge-content">
-                    <span class="portal-badge-name">Android Studio User Badge</span>
-                    <div class="portal-badge-meta-row">
-                      <span class="portal-badge-pill pill-android">Android</span>
-                      <span style="color: var(--text-muted); font-size: 0.7rem;">Mobile Development</span>
-                    </div>
-                  </div>
-                </li>
-              </ul>
             </div>
 
-            <a href="https://me.developers.google.com/u/mohamed_elkadi" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="width: 100%; margin-top: 14px;">
-              <span>Verify on Google Developers ↗</span>
-            </a>
-          </div>
+            <div class="portal-card-footer">
+              <span class="portal-link-text">
+                <span>View Transcript</span>
+                <svg class="portal-link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
+              <span class="portal-registry-badge">Official Registry ↗</span>
+            </div>
+          </a>
+
         </div>
       </div>
     </section>
 
-    <!-- AI & GENERATIVE AI SECTION -->
-    <section class="section-wrapper" id="ai-practice">
-      <div class="container">
-        <div class="card-glass" style="padding: 36px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; margin-bottom: 24px;">
-            <div>
-              <span class="section-eyebrow">Practical Innovation</span>
-              <h2 class="section-title" style="margin-bottom: 0;">AI & Generative AI Hands-On Experience</h2>
-            </div>
-            <span class="badge badge-teal">Enterprise Copilot & Vision AI</span>
-          </div>
-
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px;">
-            <div style="background: var(--bg-secondary); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 18px;">
-              <h4 style="font-size: 0.98rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">Microsoft Copilot Power User</h4>
-              <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
-                Daily user of Microsoft Copilot for in-depth research, content generation, summarization, meeting preparation, and productivity improvement.
-              </p>
-            </div>
-
-            <div style="background: var(--bg-secondary); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 18px;">
-              <h4 style="font-size: 0.98rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">Business Prompt Engineering</h4>
-              <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
-                Designed and tested business-focused prompts to improve operational efficiency and decision support across enterprise teams.
-              </p>
-            </div>
-
-            <div style="background: var(--bg-secondary); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 18px;">
-              <h4 style="font-size: 0.98rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">Workflow Acceleration</h4>
-              <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
-                Applied Generative AI tools to accelerate documentation, user support, communication, and process optimization.
-              </p>
-            </div>
-
-            <div style="background: var(--bg-secondary); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 18px;">
-              <h4 style="font-size: 0.98rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">Industrial AI Infrastructure (OIA)</h4>
-              <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
-                Supported infrastructure for the <strong>Omnivise Image Analytics (OIA)</strong> AI camera use case, engineered to capture real-time equipment readings.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- DEVELOPED APPLICATIONS (17 SOLUTIONS) -->
-    <section class="section-wrapper" id="applications">
-      <div class="container apps-container">
-        <div class="section-header centered">
-          <span class="section-eyebrow">Enterprise Solutions</span>
-          <h2 class="section-title">Developed Applications & Low-Code Systems</h2>
-          <p class="section-desc">Portfolio of internal digital products, process automations, and custom control systems engineered across 15+ years.</p>
-        </div>
-
-        <div class="apps-section-layout">
-          <!-- Side Category Filter -->
-          <aside class="apps-categories-sidebar" aria-label="Application Categories">
-            <div class="apps-sidebar-sticky">
-              <div class="apps-sidebar-header">
-                <span class="apps-sidebar-eyebrow">Categories</span>
-                <span class="apps-total-badge">17 Solutions</span>
-              </div>
-              <div class="apps-filter-bar">
-                <button class="filter-btn active" data-filter="all">
-                  <span class="filter-btn-text">All Solutions</span>
-                  <span class="filter-count">17</span>
-                </button>
-                <button class="filter-btn" data-filter="m365">
-                  <span class="filter-btn-text">Siemens Energy M365</span>
-                  <span class="filter-count">11</span>
-                </button>
-                <button class="filter-btn" data-filter="ehs">
-                  <span class="filter-btn-text">EHS Collaboration</span>
-                  <span class="filter-count">5</span>
-                </button>
-                <button class="filter-btn" data-filter="legacy">
-                  <span class="filter-btn-text">Project Control Systems</span>
-                  <span class="filter-count">5</span>
-                </button>
-              </div>
-            </div>
-          </aside>
-
-          <!-- Right Cards Area -->
-          <div class="apps-content-area">
-            <div class="collapsible-wrapper collapsed" id="appsCollapsible" style="--collapse-height: 460px;">
-              <div class="apps-grid">
-          <!-- App 1 -->
-          <div class="app-card" data-category="m365">
-            <div>
-              <div class="app-card-header">
-                <div>
-                  <h3 class="app-title">IT O&M Burullus SharePoint Site</h3>
-                  <span class="app-company-tag">Siemens Energy</span>
-                </div>
-                <div class="app-icon">🌐</div>
-              </div>
-              <p class="app-desc">Collaborating tool that delivers ease of use and central collaboration for all site members.</p>
-            </div>
-            <div class="app-tags">
-              <span class="tech-tag">SharePoint</span>
-              <span class="tech-tag">Microsoft 365</span>
-            </div>
-          </div>
-
-          <!-- App 2 -->
-          <div class="app-card" data-category="m365">
-            <div>
-              <div class="app-card-header">
-                <div>
-                  <h3 class="app-title">Burullus IT Tools Hub</h3>
-                  <span class="app-company-tag">Siemens Energy</span>
-                </div>
-                <div class="app-icon">🧰</div>
-              </div>
-              <p class="app-desc">Unified interface containing all internally developed applications and site services.</p>
-            </div>
-            <div class="app-tags">
-              <span class="tech-tag">Power Apps</span>
-              <span class="tech-tag">Unified UI</span>
-            </div>
-          </div>
-
-          <!-- App 3 -->
-          <div class="app-card" data-category="m365">
-            <div>
-              <div class="app-card-header">
-                <div>
-                  <h3 class="app-title">Guest Internet Voucher System</h3>
-                  <span class="app-company-tag">Siemens Energy</span>
-                </div>
-                <div class="app-icon">🔑</div>
-              </div>
-              <p class="app-desc">Generates voucher codes through integration with the firewall to enable dynamic interaction for end-users.</p>
-            </div>
-            <div class="app-tags">
-              <span class="tech-tag">Network Security</span>
-              <span class="tech-tag">Power Automate</span>
-            </div>
-          </div>
-
-          <!-- App 4 -->
-          <div class="app-card" data-category="m365">
-            <div>
-              <div class="app-card-header">
-                <div>
-                  <h3 class="app-title">Employee Recognition Program (EMD)</h3>
-                  <span class="app-company-tag">Siemens Energy (4 Power Plants)</span>
-                </div>
-                <div class="app-icon">🏆</div>
-              </div>
-              <p class="app-desc">Deployed across New Capital, Beni Suef, Midelec, and Burullus plants based on START categories.</p>
-            </div>
-            <div class="app-tags">
-              <span class="tech-tag">Multi-Plant</span>
-              <span class="tech-tag">Power Apps</span>
-            </div>
-          </div>
-
-          <!-- App 5 -->
-          <div class="app-card" data-category="m365">
-            <div>
-              <div class="app-card-header">
-                <div>
-                  <h3 class="app-title">IT Facilities & Warehouse System</h3>
-                  <span class="app-company-tag">Siemens Energy</span>
-                </div>
-                <div class="app-icon">📦</div>
-              </div>
-              <p class="app-desc">End-user interface to request IT assets/facilities, acting as internal warehouse tool.</p>
-            </div>
-            <div class="app-tags">
-              <span class="tech-tag">Asset Mgmt</span>
-              <span class="tech-tag">Power Apps</span>
-            </div>
-          </div>
-
-          <!-- App 6 -->
-          <div class="app-card" data-category="m365">
-            <div>
-              <div class="app-card-header">
-                <div>
-                  <h3 class="app-title">Event Organizer Application</h3>
-                  <span class="app-company-tag">Siemens Energy</span>
-                </div>
-                <div class="app-icon">📅</div>
-              </div>
-              <p class="app-desc">Provides ease of use for site members to manage their large/small events on site with other departments.</p>
-            </div>
-            <div class="app-tags">
-              <span class="tech-tag">Teams</span>
-              <span class="tech-tag">Outlook</span>
-            </div>
-          </div>
-
-          <!-- App 7 -->
-          <div class="app-card" data-category="m365">
-            <div>
-              <div class="app-card-header">
-                <div>
-                  <h3 class="app-title">Car Route Change Request</h3>
-                  <span class="app-company-tag">Siemens Energy</span>
-                </div>
-                <div class="app-icon">🚐</div>
-              </div>
-              <p class="app-desc">Systematic notification system with BA and transportation team to manage commuter routes.</p>
-            </div>
-            <div class="app-tags">
-              <span class="tech-tag">Workflow</span>
-              <span class="tech-tag">Power Apps</span>
-            </div>
-          </div>
-
-          <!-- App 8 -->
-          <div class="app-card" data-category="m365">
-            <div>
-              <div class="app-card-header">
-                <div>
-                  <h3 class="app-title">Heavy Equipment Reservation</h3>
-                  <span class="app-company-tag">Siemens Energy</span>
-                </div>
-                <div class="app-icon">🚜</div>
-              </div>
-              <p class="app-desc">Site reservation tool allowing maintenance and ops teams to book heavy equipment seamlessly.</p>
-            </div>
-            <div class="app-tags">
-              <span class="tech-tag">Planner</span>
-              <span class="tech-tag">Power Apps</span>
-            </div>
-          </div>
-
-          <!-- App 9 -->
-          <div class="app-card" data-category="m365">
-            <div>
-              <div class="app-card-header">
-                <div>
-                  <h3 class="app-title">Operation Start Card (PTW)</h3>
-                  <span class="app-company-tag">Siemens Energy</span>
-                </div>
-                <div class="app-icon">📋</div>
-              </div>
-              <p class="app-desc">Manages all Permit to Work (PTW) activities and pre-job briefings across all departments.</p>
-            </div>
-            <div class="app-tags">
-              <span class="tech-tag">Safety Compliance</span>
-              <span class="tech-tag">PTW</span>
-            </div>
-          </div>
-
-          <!-- App 10 -->
-          <div class="app-card" data-category="m365">
-            <div>
-              <div class="app-card-header">
-                <div>
-                  <h3 class="app-title">3D Printing Model Management</h3>
-                  <span class="app-company-tag">Siemens Energy</span>
-                </div>
-                <div class="app-icon">🖨️</div>
-              </div>
-              <p class="app-desc">Managing internal/external requests and monitoring printing activities, consumables, and cost.</p>
-            </div>
-            <div class="app-tags">
-              <span class="tech-tag">Additive Mfg</span>
-              <span class="tech-tag">Cost Tracking</span>
-            </div>
-          </div>
-
-          <!-- App 11 -->
-          <div class="app-card" data-category="m365">
-            <div>
-              <div class="app-card-header">
-                <div>
-                  <h3 class="app-title">Learning Management System (LMS)</h3>
-                  <span class="app-company-tag">Siemens Energy</span>
-                </div>
-                <div class="app-icon">🎓</div>
-              </div>
-              <p class="app-desc">Controlling internal and external training matrices with all on-site employees.</p>
-            </div>
-            <div class="app-tags">
-              <span class="tech-tag">Training LMS</span>
-              <span class="tech-tag">SharePoint</span>
-            </div>
-          </div>
-
-          <!-- App 12: EHS Incentive Program -->
-          <div class="app-card" data-category="ehs">
-            <div>
-              <div class="app-card-header">
-                <div>
-                  <h3 class="app-title">EHS Incentive Program</h3>
-                  <span class="app-company-tag">Siemens Energy • EHS Team</span>
-                </div>
-                <div class="app-icon">🛡️</div>
-              </div>
-              <p class="app-desc">Collaboration with the EHS team to showcase insights and analysis aimed to promote workplace safety.</p>
-            </div>
-            <div class="app-tags">
-              <span class="tech-tag">EHS Suite</span>
-              <span class="tech-tag">Safety Incentives</span>
-            </div>
-          </div>
-
-          <!-- App 13: PPE Collecting Tool -->
-          <div class="app-card" data-category="ehs">
-            <div>
-              <div class="app-card-header">
-                <div>
-                  <h3 class="app-title">PPE Collecting Tool</h3>
-                  <span class="app-company-tag">Siemens Energy • EHS Team</span>
-                </div>
-                <div class="app-icon">🦺</div>
-              </div>
-              <p class="app-desc">Digital platform for collecting PPE sizes and requirements from all site members.</p>
-            </div>
-            <div class="app-tags">
-              <span class="tech-tag">EHS Suite</span>
-              <span class="tech-tag">PPE Logistics</span>
-            </div>
-          </div>
-
-          <!-- App 14: EHS Lifting Equipment -->
-          <div class="app-card" data-category="ehs">
-            <div>
-              <div class="app-card-header">
-                <div>
-                  <h3 class="app-title">EHS Lifting Equipment</h3>
-                  <span class="app-company-tag">Siemens Energy • EHS Team</span>
-                </div>
-                <div class="app-icon">🏗️</div>
-              </div>
-              <p class="app-desc">Manage and track all lifting accessories. Divided into sub-modules to improve compliance and inspection efficiency.</p>
-            </div>
-            <div class="app-tags">
-              <span class="tech-tag">EHS Suite</span>
-              <span class="tech-tag">Lifting Compliance</span>
-            </div>
-          </div>
-
-          <!-- App 15: EHS Safety Datasheet -->
-          <div class="app-card" data-category="ehs">
-            <div>
-              <div class="app-card-header">
-                <div>
-                  <h3 class="app-title">EHS Safety Datasheet (QR Codes)</h3>
-                  <span class="app-company-tag">Siemens Energy • EHS Team</span>
-                </div>
-                <div class="app-icon">📱</div>
-              </div>
-              <p class="app-desc">Safety Data Sheet app with QR codes, allowing quick mobile scanning and access to critical emergency documentation.</p>
-            </div>
-            <div class="app-tags">
-              <span class="tech-tag">QR Integration</span>
-              <span class="tech-tag">Chemical Safety</span>
-            </div>
-          </div>
-
-          <!-- App 16: EHS Task Management System -->
-          <div class="app-card" data-category="ehs">
-            <div>
-              <div class="app-card-header">
-                <div>
-                  <h3 class="app-title">EHS Task Management System</h3>
-                  <span class="app-company-tag">Siemens Energy • EHS Team</span>
-                </div>
-                <div class="app-icon">✅</div>
-              </div>
-              <p class="app-desc">Streamlines planning, assignment, tracking, and closure of all EHS-related tasks and safety inspections.</p>
-            </div>
-            <div class="app-tags">
-              <span class="tech-tag">Task Tracking</span>
-              <span class="tech-tag">Audits</span>
-            </div>
-          </div>
-
-          <!-- App 17: Legacy / Departmental Systems -->
-          <div class="app-card" data-category="legacy">
-            <div>
-              <div class="app-card-header">
-                <div>
-                  <h3 class="app-title">Multi-Department Project Control Systems</h3>
-                  <span class="app-company-tag">SIEMENS HTT • NEM • PSC • AL-HASHEMIAH</span>
-                </div>
-                <div class="app-icon">🗂️</div>
-              </div>
-              <p class="app-desc">Series of 5 custom engineering systems built for project control, material tracking, and human resourcing across 5 key industrial departments.</p>
-            </div>
-            <div class="app-tags">
-              <span class="tech-tag">Engineering Systems</span>
-              <span class="tech-tag">Production Control</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="section-show-more-area" id="appsShowMoreArea">
-        <button class="btn-show-more" id="appsToggleBtn" aria-expanded="false" aria-controls="appsCollapsible">
-          <span class="btn-show-more-text">Show More Solutions</span>
-          <span class="badge-count">+11 More</span>
-          <svg class="show-more-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
-
-    <!-- PROFESSIONAL EXPERIENCE TIMELINE -->
-    <section class="section-wrapper" id="experience">
-      <div class="container">
-        <div class="section-header centered">
-          <span class="section-eyebrow">Career Milestones</span>
-          <h2 class="section-title">Professional Experience (15+ Years)</h2>
-          <p class="section-desc">Progressive track record spanning power generation giants, renewable energy megaprojects, and industrial engineering corporations.</p>
-        </div>
-
-        <div class="collapsible-wrapper collapsed" id="experienceCollapsible" style="--collapse-height: 820px;">
-          <div class="experience-timeline">
-          <!-- Role 1: Siemens Energy -->
-          <div class="timeline-item" id="role-1">
-            <div class="timeline-date-side">
-              <button class="timeline-year-badge" type="button" data-target="role-1" title="View details for Siemens Energy">July 2020 – Present</button>
-              <span class="timeline-date-tag">Active Role</span>
-            </div>
-            <div class="timeline-marker">
-              <div class="timeline-dot"></div>
-            </div>
-            <div class="timeline-card">
-              <div class="timeline-header">
-                <div>
-                  <h3 class="timeline-role-title">IT Infrastructure Specialist & Cybersecurity Ambassador</h3>
-                  <div class="timeline-company">Siemens Energy</div>
-                </div>
-                <span class="timeline-period">July 2020 – Present</span>
-              </div>
-              <div class="timeline-location">📍 Kafr Elshekh, Egypt • Burullus Combined Cycle Power Plant</div>
-              <ul class="timeline-responsibilities">
-                <li><strong>Digital Enablement:</strong> Build and support low-code applications integrated with Microsoft 365 services to improve business workflows across departments.</li>
-                <li><strong>User Support and Coaching:</strong> Mentor colleagues on security policies and best practices and provide first-line cybersecurity guidance.</li>
-                <li><strong>Business Collaboration:</strong> Work with operational teams to identify requirements, coordinate delivery, and support adoption of new digital tools.</li>
-                <li><strong>Secure Operations:</strong> Support IT infrastructure and secure service delivery for Burullus Combined Cycle Power Plant.</li>
-                <li><strong>AI-Related Infrastructure:</strong> Supported infrastructure for the Omnivise Image Analytics (OIA) camera use case.</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Role 2: Siemens -->
-          <div class="timeline-item" id="role-2">
-            <div class="timeline-date-side">
-              <button class="timeline-year-badge" type="button" data-target="role-2" title="View details for Siemens">April 2019 – July 2020</button>
-              <span class="timeline-date-tag">Siemens</span>
-            </div>
-            <div class="timeline-marker">
-              <div class="timeline-dot"></div>
-            </div>
-            <div class="timeline-card">
-              <div class="timeline-header">
-                <div>
-                  <h3 class="timeline-role-title">IT Infrastructure Specialist</h3>
-                  <div class="timeline-company">Siemens</div>
-                </div>
-                <span class="timeline-period">April 2019 – July 2020</span>
-              </div>
-              <div class="timeline-location">📍 Kafr Elshekh, Egypt</div>
-              <ul class="timeline-responsibilities">
-                <li>Managed IT infrastructure for <strong>Alburullus Combined Cycle Power Plant (4,800 MW)</strong>, one of the largest power plants in the world.</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Role 3: Five Builders -->
-          <div class="timeline-item" id="role-3">
-            <div class="timeline-date-side">
-              <button class="timeline-year-badge" type="button" data-target="role-3" title="View details for Five Builders">Dec 2018 – April 2019</button>
-              <span class="timeline-date-tag">Solar Megaproject</span>
-            </div>
-            <div class="timeline-marker">
-              <div class="timeline-dot"></div>
-            </div>
-            <div class="timeline-card">
-              <div class="timeline-header">
-                <div>
-                  <h3 class="timeline-role-title">Project Coordinator</h3>
-                  <div class="timeline-company">Five Builders</div>
-                </div>
-                <span class="timeline-period">Dec 2018 – April 2019</span>
-              </div>
-              <div class="timeline-location">📍 Benban, Aswan, Egypt • Benban Solar Park</div>
-              <ul class="timeline-responsibilities">
-                <li>Coordinated project management activities for <strong>Benban Solar Park (50 MW)</strong>.</li>
-                <li>Monitored project progress, handled site issues, and communicated status to stakeholders.</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Role 4: SIEMENS Heat Transfer Technology -->
-          <div class="timeline-item" id="role-4">
-            <div class="timeline-date-side">
-              <button class="timeline-year-badge" type="button" data-target="role-4" title="View details for SIEMENS Heat Transfer Technology">Jan 2018 – Oct 2018</button>
-              <span class="timeline-date-tag">QA Head</span>
-            </div>
-            <div class="timeline-marker">
-              <div class="timeline-dot"></div>
-            </div>
-            <div class="timeline-card">
-              <div class="timeline-header">
-                <div>
-                  <h3 class="timeline-role-title">QA Head</h3>
-                  <div class="timeline-company">SIEMENS Heat Transfer Technology</div>
-                </div>
-                <span class="timeline-period">Jan 2018 – Oct 2018</span>
-              </div>
-              <div class="timeline-location">📍 Free Zone, Alexandria, Egypt</div>
-              <ul class="timeline-responsibilities">
-                <li>Managed QA activities for Marzahn Power Plant (Berlin) and South Bangkok Power Plant.</li>
-                <li>Prepared and reviewed quality manuals and operating procedures.</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Role 5: NEM Energy Egypt -->
-          <div class="timeline-item" id="role-5">
-            <div class="timeline-date-side">
-              <button class="timeline-year-badge" type="button" data-target="role-5" title="View details for NEM Energy Egypt">2012 – 2018</button>
-              <span class="timeline-date-tag">6 Years</span>
-            </div>
-            <div class="timeline-marker">
-              <div class="timeline-dot"></div>
-            </div>
-            <div class="timeline-card">
-              <div class="timeline-header">
-                <div>
-                  <h3 class="timeline-role-title">QC Inspector & QA Head / Senior Document Controller</h3>
-                  <div class="timeline-company">NEM Energy Egypt</div>
-                </div>
-                <span class="timeline-period">2012 – 2018</span>
-              </div>
-              <div class="timeline-location">📍 Free Zone, Alexandria, Egypt</div>
-              <ul class="timeline-responsibilities">
-                <li><strong>QC Inspector & QA Head (2015 – 2018):</strong> Conducted quality assessments; applied visual (VT) and surface (PT, MT) testing methods to welded joints.</li>
-                <li><strong>Senior Document Controller (2012 – 2015):</strong> Controlled project productivity and prepared inspection test plan reports.</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Role 6: Project Services Company -->
-          <div class="timeline-item" id="role-6">
-            <div class="timeline-date-side">
-              <button class="timeline-year-badge" type="button" data-target="role-6" title="View details for Project Services Company">2009 – 2012</button>
-              <span class="timeline-date-tag">3 Years</span>
-            </div>
-            <div class="timeline-marker">
-              <div class="timeline-dot"></div>
-            </div>
-            <div class="timeline-card">
-              <div class="timeline-header">
-                <div>
-                  <h3 class="timeline-role-title">Planner & Production Follow-up</h3>
-                  <div class="timeline-company">Project Services Company (PSC)</div>
-                </div>
-                <span class="timeline-period">2009 – 2012</span>
-              </div>
-              <div class="timeline-location">📍 Amrieya, Alexandria, Egypt</div>
-              <ul class="timeline-responsibilities">
-                <li>Developed production plans and monitored project productivity metrics.</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Role 7: Al-Hashemiah Contracting Company -->
-          <div class="timeline-item" id="role-7">
-            <div class="timeline-date-side">
-              <button class="timeline-year-badge" type="button" data-target="role-7" title="View details for Al-Hashemiah Contracting Company">2007 – 2009</button>
-              <span class="timeline-date-tag">2 Years</span>
-            </div>
-            <div class="timeline-marker">
-              <div class="timeline-dot"></div>
-            </div>
-            <div class="timeline-card">
-              <div class="timeline-header">
-                <div>
-                  <h3 class="timeline-role-title">Technical Office Specialist</h3>
-                  <div class="timeline-company">Al-Hashemiah Contracting Company (HCC)</div>
-                </div>
-                <span class="timeline-period">2007 – 2009</span>
-              </div>
-              <div class="timeline-location">📍 Amrieya, Alexandria, Egypt</div>
-              <ul class="timeline-responsibilities">
-                <li>Managed technical office activities for various power plant projects.</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Role 8: IEMSA -->
-          <div class="timeline-item" id="role-8">
-            <div class="timeline-date-side">
-              <button class="timeline-year-badge" type="button" data-target="role-8" title="View details for IEMSA">2006 – 2007</button>
-              <span class="timeline-date-tag">1 Year</span>
-            </div>
-            <div class="timeline-marker">
-              <div class="timeline-dot"></div>
-            </div>
-            <div class="timeline-card">
-              <div class="timeline-header">
-                <div>
-                  <h3 class="timeline-role-title">Document Controller</h3>
-                  <div class="timeline-company">IEMSA</div>
-                </div>
-                <span class="timeline-period">2006 – 2007</span>
-              </div>
-              <div class="timeline-location">📍 Damietta, Egypt</div>
-              <ul class="timeline-responsibilities">
-                <li>Controlled documentation for the Agrium Fertilizer project.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="section-show-more-area" id="experienceShowMoreArea">
-          <button class="btn-show-more" id="experienceToggleBtn" aria-expanded="false" aria-controls="experienceCollapsible">
-            <span class="btn-show-more-text">Show Earlier Experience</span>
-            <span class="badge-count">+4 Earlier Roles</span>
-            <svg class="show-more-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- INFRASTRUCTURE PROJECTS -->
-    <section class="section-wrapper" id="infrastructure">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-eyebrow">Enterprise Operations</span>
-          <h2 class="section-title">Major Infrastructure Projects</h2>
-          <p class="section-desc">Key physical, electrical, and network infrastructure milestones executed across power plants and enterprise facilities.</p>
-        </div>
-
-        <div class="infra-grid">
-          <div class="card-glass">
-            <span class="badge" style="margin-bottom: 12px;">ISP Cutover</span>
-            <h3 style="font-size: 1.15rem; margin-bottom: 8px;">Internet Service Relocation</h3>
-            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
-              Coordinated with local internet service providers for relocation from the EPC to the new O&M Administration building, task planning, and upgrading services.
-            </p>
-          </div>
-
-          <div class="card-glass">
-            <span class="badge badge-amber" style="margin-bottom: 12px;">Power Backup • 12x Uptime</span>
-            <h3 style="font-size: 1.15rem; margin-bottom: 8px;">MDF Power Backup Plan</h3>
-            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
-              Designed and deployed enhanced UPS battery infrastructure, increasing power back up from <strong>30 minutes to 6 full hours</strong>.
-            </p>
-          </div>
-
-          <div class="card-glass">
-            <span class="badge" style="margin-bottom: 12px;">Facility Reactivation</span>
-            <h3 style="font-size: 1.15rem; margin-bottom: 8px;">New Building Renovation</h3>
-            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
-              After decommissioning the old building's network in 2019, reactivated facility with new infrastructure to support field service employees for all future outages.
-            </p>
-          </div>
-
-          <div class="card-glass">
-            <span class="badge" style="margin-bottom: 12px;">Residential Quarters</span>
-            <h3 style="font-size: 1.15rem; margin-bottom: 8px;">Camp Housing Renovation</h3>
-            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
-              Rebuilt housing network infrastructure equipping field teams with secure, high-speed connectivity during plant overhaul cycles.
-            </p>
-          </div>
-
-          <div class="card-glass">
-            <span class="badge badge-teal" style="margin-bottom: 12px;">Industrial AI</span>
-            <h3 style="font-size: 1.15rem; margin-bottom: 8px;">Install AI Cameras with Infrastructure</h3>
-            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
-              The OIA (Omnivise Image Analytics) project enables the AI camera model to capture real-time equipment readings across plant systems.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CERTIFICATIONS & CONTINUOUS LEARNING CATALOG -->
-    <section class="section-wrapper" id="certifications">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-eyebrow">Professional Certifications</span>
-          <h2 class="section-title">Certifications & Learning Platform</h2>
-          <p class="section-desc">Key accredited certifications alongside an interactive catalog of 60+ verified courses completed through the Siemens Energy Learning Platform (SELP) and partner academies.</p>
-        </div>
-
-        <div class="collapsible-wrapper collapsed" id="certsCollapsible" style="--collapse-height: 350px;">
-          <div class="certs-cards-grid">
-            <!-- Cert 1 -->
-            <div class="cert-card-premium">
-              <div class="cert-card-header">
-                <div class="cert-icon-box">🛡️</div>
-                <div class="cert-meta-badges">
-                  <span class="cert-year-pill">2026</span>
-                  <span class="cert-issuer-badge">PECB / IRCA</span>
-                </div>
-              </div>
-              <h3 class="cert-card-title">ISO 27001:2022 Lead Auditor (ISMS)</h3>
-              <div class="cert-card-footer">
-                <span class="cert-domain-tag">Information Security Governance</span>
-                <span class="cert-verify-dot">● Verified</span>
-              </div>
-            </div>
-
-            <!-- Cert 2 -->
-            <div class="cert-card-premium">
-              <div class="cert-card-header">
-                <div class="cert-icon-box">⚡</div>
-                <div class="cert-meta-badges">
-                  <span class="cert-year-pill">2026</span>
-                  <span class="cert-issuer-badge">PMI Chapter</span>
-                </div>
-              </div>
-              <h3 class="cert-card-title">Agile Product Owner Role: Techniques & Foundations</h3>
-              <div class="cert-card-footer">
-                <span class="cert-domain-tag">Agile & Product Delivery</span>
-                <span class="cert-verify-dot">● Verified</span>
-              </div>
-            </div>
-
-            <!-- Cert 3 -->
-            <div class="cert-card-premium">
-              <div class="cert-card-header">
-                <div class="cert-icon-box">🏆</div>
-                <div class="cert-meta-badges">
-                  <span class="cert-year-pill">2025</span>
-                  <span class="cert-issuer-badge">PMI Certified</span>
-                </div>
-              </div>
-              <h3 class="cert-card-title">PMP Traditional & PMI – Agile Certified Practitioner</h3>
-              <div class="cert-card-footer">
-                <span class="cert-domain-tag">Project Management & Scrum</span>
-                <span class="cert-verify-dot">● Verified</span>
-              </div>
-            </div>
-
-            <!-- Cert 4 -->
-            <div class="cert-card-premium">
-              <div class="cert-card-header">
-                <div class="cert-icon-box">📜</div>
-                <div class="cert-meta-badges">
-                  <span class="cert-year-pill">2024 : 2025</span>
-                  <span class="cert-issuer-badge">Siemens Energy & IPMA</span>
-                </div>
-              </div>
-              <h3 class="cert-card-title">IPMA Level D (PM Professional Basic/Advanced)</h3>
-              <div class="cert-card-footer">
-                <span class="cert-domain-tag">Project Governance & Delivery</span>
-                <span class="cert-verify-dot">● Verified</span>
-              </div>
-            </div>
-
-            <!-- Cert 5 -->
-            <div class="cert-card-premium">
-              <div class="cert-card-header">
-                <div class="cert-icon-box">⚙️</div>
-                <div class="cert-meta-badges">
-                  <span class="cert-year-pill">2024</span>
-                  <span class="cert-issuer-badge">AXELOS</span>
-                </div>
-              </div>
-              <h3 class="cert-card-title">ITIL v4 Service Management Foundation</h3>
-              <div class="cert-card-footer">
-                <span class="cert-domain-tag">IT Service Management (ITSM)</span>
-                <span class="cert-verify-dot">● Verified</span>
-              </div>
-            </div>
-
-            <!-- Cert 6 -->
-            <div class="cert-card-premium">
-              <div class="cert-card-header">
-                <div class="cert-icon-box">☁️</div>
-                <div class="cert-meta-badges">
-                  <span class="cert-year-pill">2024</span>
-                  <span class="cert-issuer-badge">Microsoft</span>
-                </div>
-              </div>
-              <h3 class="cert-card-title">AZ-104 Microsoft Azure Administrator</h3>
-              <div class="cert-card-footer">
-                <span class="cert-domain-tag">Cloud Infrastructure & Security</span>
-                <span class="cert-verify-dot">● Verified</span>
-              </div>
-            </div>
-
-            <!-- Cert 7 -->
-            <div class="cert-card-premium">
-              <div class="cert-card-header">
-                <div class="cert-icon-box">🌐</div>
-                <div class="cert-meta-badges">
-                  <span class="cert-year-pill">2024</span>
-                  <span class="cert-issuer-badge">Microsoft</span>
-                </div>
-              </div>
-              <h3 class="cert-card-title">AZ-900 Microsoft Azure Fundamentals</h3>
-              <div class="cert-card-footer">
-                <span class="cert-domain-tag">Azure Cloud Core Services</span>
-                <span class="cert-verify-dot">● Verified</span>
-              </div>
-            </div>
-
-            <!-- Cert 8 -->
-            <div class="cert-card-premium">
-              <div class="cert-card-header">
-                <div class="cert-icon-box">🐧</div>
-                <div class="cert-meta-badges">
-                  <span class="cert-year-pill">2024</span>
-                  <span class="cert-issuer-badge">Linux Pro</span>
-                </div>
-              </div>
-              <h3 class="cert-card-title">Linux Administration Bootcamp</h3>
-              <div class="cert-card-footer">
-                <span class="cert-domain-tag">Linux Server & CLI Operations</span>
-                <span class="cert-verify-dot">● Verified</span>
-              </div>
-            </div>
-
-            <!-- Cert 9 -->
-            <div class="cert-card-premium">
-              <div class="cert-card-header">
-                <div class="cert-icon-box">🔐</div>
-                <div class="cert-meta-badges">
-                  <span class="cert-year-pill">2023</span>
-                  <span class="cert-issuer-badge">ISC2</span>
-                </div>
-              </div>
-              <h3 class="cert-card-title">Certified Cybersecurity – Fundamentals (ISC2)</h3>
-              <div class="cert-card-footer">
-                <span class="cert-domain-tag">Cyber Defense & Security Operations</span>
-                <span class="cert-verify-dot">● Verified</span>
-              </div>
-            </div>
-
-            <!-- Cert 10 -->
-            <div class="cert-card-premium">
-              <div class="cert-card-header">
-                <div class="cert-icon-box">🏅</div>
-                <div class="cert-meta-badges">
-                  <span class="cert-year-pill">TÜV Nord</span>
-                  <span class="cert-issuer-badge">QI TÜV Nord</span>
-                </div>
-              </div>
-              <h3 class="cert-card-title">Refreshing Integrated Management System ISO 9001:2015</h3>
-              <div class="cert-card-footer">
-                <span class="cert-domain-tag">Quality Management Systems (QMS)</span>
-                <span class="cert-verify-dot">● Verified</span>
-              </div>
-            </div>
-
-            <!-- Cert 11 -->
-            <div class="cert-card-premium">
-              <div class="cert-card-header">
-                <div class="cert-icon-box">📋</div>
-                <div class="cert-meta-badges">
-                  <span class="cert-year-pill">Lead Auditor</span>
-                  <span class="cert-issuer-badge">QI Institute</span>
-                </div>
-              </div>
-              <h3 class="cert-card-title">Auditor/Lead Auditor Quality Management ISO 9001:2015</h3>
-              <div class="cert-card-footer">
-                <span class="cert-domain-tag">Audit Execution & Governance</span>
-                <span class="cert-verify-dot">● Verified</span>
-              </div>
-            </div>
-
-            <!-- Cert 12 -->
-            <div class="cert-card-premium">
-              <div class="cert-card-header">
-                <div class="cert-icon-box">💻</div>
-                <div class="cert-meta-badges">
-                  <span class="cert-year-pill">2018</span>
-                  <span class="cert-issuer-badge">Udacity</span>
-                </div>
-              </div>
-              <h3 class="cert-card-title">Full Stack Programming: One Million Final Phase</h3>
-              <div class="cert-card-footer">
-                <span class="cert-domain-tag">Web & Software Engineering</span>
-                <span class="cert-verify-dot">● Verified</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="section-show-more-area" id="certsShowMoreArea" style="margin-top: 16px; margin-bottom: 36px;">
-          <button class="btn-show-more" id="certsToggleBtn" aria-expanded="false" aria-controls="certsCollapsible">
-            <span class="btn-show-more-text">Show More Certifications</span>
-            <span class="badge-count">+6 More</span>
-            <svg class="show-more-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </button>
-        </div>
-
-        <!-- Interactive SELP Search -->
-        <div class="learning-catalog-card">
-          <div class="learning-header-bar">
-            <div class="learning-header-info">
-              <h3>Siemens Energy Learning Platform (SELP) & Academies</h3>
-              <p>Filter verified courses, specializations, and digital accreditations across 8 years (2019 – 2026).</p>
-            </div>
-            <div class="catalog-search-wrapper">
-              <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              </svg>
-              <input type="text" id="catalogSearchInput" placeholder="Filter courses (e.g. Python, AI, Cyber, Power BI)..." class="form-input" style="width: 100%; font-size: 0.88rem;">
-            </div>
-          </div>
-
-          <div class="apps-filter-bar" style="justify-content: flex-start; margin-bottom: 22px;">
-            <button class="filter-btn active year-filter-btn" data-year="all">All Years (60+)</button>
-            <button class="filter-btn year-filter-btn" data-year="2026">2026</button>
-            <button class="filter-btn year-filter-btn" data-year="2025">2025</button>
-            <button class="filter-btn year-filter-btn" data-year="2024">2024</button>
-            <button class="filter-btn year-filter-btn" data-year="2023">2023</button>
-            <button class="filter-btn year-filter-btn" data-year="2022">2022</button>
-            <button class="filter-btn year-filter-btn" data-year="2021">2021</button>
-            <button class="filter-btn year-filter-btn" data-year="2020">2020</button>
-            <button class="filter-btn year-filter-btn" data-year="2019">2019</button>
-          </div>
-
-          <div class="catalog-year-groups catalog-scroll-container">
-            <!-- 2026 -->
-            <div class="year-group" data-year="2026">
-              <div class="year-divider-header">
-                <span class="year-divider-badge">2026</span>
-                <span class="year-divider-line"></span>
-                <span class="year-count-pill">7 Specializations & Courses</span>
-              </div>
-              <ul class="course-items-grid">
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">🤖</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Smart AI in Product Management</span>
-                    <span class="course-item-provider">Siemens Energy SELP</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">⚖️</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Conflicts of Interest</span>
-                    <span class="course-item-provider">Siemens Energy Ethics</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">🐍</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Introduction to Python</span>
-                    <span class="course-item-provider">Datacamp</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">📊</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Basics for Data Analysis using Python</span>
-                    <span class="course-item-provider">Yanfaa</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">❄️</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Introduction to Snowflake</span>
-                    <span class="course-item-provider">Datacamp</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">🤖</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Introduction to AI for Work</span>
-                    <span class="course-item-provider">Datacamp</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">🌐</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Learning German Level 1</span>
-                    <span class="course-item-provider">Yanfaa</span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-
-            <!-- 2025 -->
-            <div class="year-group" data-year="2025">
-              <div class="year-divider-header">
-                <span class="year-divider-badge">2025</span>
-                <span class="year-divider-line"></span>
-                <span class="year-count-pill">9 Specializations & Courses</span>
-              </div>
-              <ul class="course-items-grid">
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">📜</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">PM Professional Part 2 – Advanced - IPMA Level D</span>
-                    <span class="course-item-provider">Siemens Energy & IPMA</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">🎨</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">UI and UX Prototyping with Figma</span>
-                    <span class="course-item-provider">Skillsoft</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">🎨</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Advanced Figma [Interactive Course]</span>
-                    <span class="course-item-provider">Skillsoft</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">🛡️</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Annual Cybersecurity Training</span>
-                    <span class="course-item-provider">Siemens Energy Cyber</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">🧩</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Mendix - Become a Rapid Developer</span>
-                    <span class="course-item-provider">Mendix Academy</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">👥</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Leading through Setting and Managing Priorities</span>
-                    <span class="course-item-provider">Siemens Energy Leadership</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">⚙️</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Introduction to Process Automation with RPA</span>
-                    <span class="course-item-provider">UiPath Academy</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">🐍</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Python Development Getting Started</span>
-                    <span class="course-item-provider">Datacamp</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">📊</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Python Coder</span>
-                    <span class="course-item-provider">Kaggle</span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-
-            <!-- 2024 -->
-            <div class="year-group" data-year="2024">
-              <div class="year-divider-header">
-                <span class="year-divider-badge">2024</span>
-                <span class="year-divider-line"></span>
-                <span class="year-count-pill">18 Courses & Certifications</span>
-              </div>
-              <ul class="course-items-grid">
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">⚡</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Introduction to Power Apps</span>
-                    <span class="course-item-provider">Microsoft 365</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">🤖</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Web automation in Power Automate Desktop</span>
-                    <span class="course-item-provider">Microsoft Power Platform</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">⚡</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Sharing & Collaborating on an App in PowerApps</span>
-                    <span class="course-item-provider">Microsoft Power Platform</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">📊</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Microsoft Power BI Recipes</span>
-                    <span class="course-item-provider">Microsoft Power BI</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">📊</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Getting Started with Power Query in Power BI</span>
-                    <span class="course-item-provider">Microsoft Power BI</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">📊</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Create Dashboards in Power BI</span>
-                    <span class="course-item-provider">Microsoft Power BI</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">📈</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">CompTIA Data+ Data Analysis Types & Techniques</span>
-                    <span class="course-item-provider">CompTIA</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">⚙️</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Data Analysis and Root Cause Analysis in Six Sigma</span>
-                    <span class="course-item-provider">Six Sigma</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">🔍</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Root-Cause-Analyse - Fishbone-Method</span>
-                    <span class="course-item-provider">TÜV NORD</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">🔍</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Root Cause Analysis – 5 Why Method</span>
-                    <span class="course-item-provider">TÜV NORD</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">🛡️</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Certified Info Systems Security Professional (CISSP) Bootcamp</span>
-                    <span class="course-item-provider">ISC2 Domain</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">🛡️</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Annual Cybersecurity Training - Cyber Guide</span>
-                    <span class="course-item-provider">Siemens Energy Cyber</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">🦈</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Exploring SecOps Tools - Wireshark</span>
-                    <span class="course-item-provider">SecOps Academy</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">🔐</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">CEH v12 - Windows Authentication</span>
-                    <span class="course-item-provider">EC-Council Certified</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">🖥️</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Manage and monitor Windows Server logs</span>
-                    <span class="course-item-provider">Microsoft Learn</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">🌐</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Network Discovery Tools and Techniques</span>
-                    <span class="course-item-provider">Cisco Academy</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">📜</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">PM Professional Part 1 – Basic - IPMA Level D</span>
-                    <span class="course-item-provider">Siemens Energy & IPMA</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">⚡</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Agile Mindset & Project Kickoff</span>
-                    <span class="course-item-provider">Siemens Energy Agile</span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-
-            <!-- 2023 -->
-            <div class="year-group" data-year="2023">
-              <div class="year-divider-header">
-                <span class="year-divider-badge">2023</span>
-                <span class="year-divider-line"></span>
-                <span class="year-count-pill">2 Accreditations</span>
-              </div>
-              <ul class="course-items-grid">
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">🛡️</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Cybersecurity Web-based Training 2023</span>
-                    <span class="course-item-provider">Siemens Energy Cyber</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">🔐</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Certified Cybersecurity – Fundamentals (ISC2)</span>
-                    <span class="course-item-provider">ISC2</span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-
-            <!-- 2022 -->
-            <div class="year-group" data-year="2022">
-              <div class="year-divider-header">
-                <span class="year-divider-badge">2022</span>
-                <span class="year-divider-line"></span>
-                <span class="year-count-pill">5 Accreditations & Courses</span>
-              </div>
-              <ul class="course-items-grid">
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">👥</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Customer First & Skills for New Managers</span>
-                    <span class="course-item-provider">Siemens Energy Leadership</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">🛡️</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Cybersecurity at Siemens Energy & Anti-Phishing</span>
-                    <span class="course-item-provider">Siemens Energy Cyber</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">🌐</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Microsoft 365 SharePoint Sites Phishing Awareness</span>
-                    <span class="course-item-provider">Microsoft 365 Security</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">🔒</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Data Privacy in Contracts & Access Control</span>
-                    <span class="course-item-provider">Siemens Energy Legal</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">🌐</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Introduction to Packet Tracer</span>
-                    <span class="course-item-provider">Cisco Certified Badge</span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-
-            <!-- 2021 -->
-            <div class="year-group" data-year="2021">
-              <div class="year-divider-header">
-                <span class="year-divider-badge">2021</span>
-                <span class="year-divider-line"></span>
-                <span class="year-count-pill">1 Course</span>
-              </div>
-              <ul class="course-items-grid">
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">🛡️</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Cybersecurity Challenge – Home Office</span>
-                    <span class="course-item-provider">Siemens Energy Cyber</span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-
-            <!-- 2020 -->
-            <div class="year-group" data-year="2020">
-              <div class="year-divider-header">
-                <span class="year-divider-badge">2020</span>
-                <span class="year-divider-line"></span>
-                <span class="year-count-pill">3 Courses</span>
-              </div>
-              <ul class="course-items-grid">
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">⚖️</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Siemens Business Conduct Guidelines & Antitrust</span>
-                    <span class="course-item-provider">Siemens Governance</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">🛡️</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Cybersecurity - You are the guardian!</span>
-                    <span class="course-item-provider">Siemens Cyber Guide</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">🌐</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Introduction to Packet Tracer – Cisco</span>
-                    <span class="course-item-provider">Cisco Certified Badge</span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-
-            <!-- 2019 -->
-            <div class="year-group" data-year="2019">
-              <div class="year-divider-header">
-                <span class="year-divider-badge">2019</span>
-                <span class="year-divider-line"></span>
-                <span class="year-count-pill">2 Courses</span>
-              </div>
-              <ul class="course-items-grid">
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">🛡️</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Cybersec - It’s up to us!</span>
-                    <span class="course-item-provider">Siemens Energy Cyber</span>
-                  </div>
-                </li>
-                <li class="course-item-card course-item">
-                  <div class="course-item-icon">🔒</div>
-                  <div class="course-item-details">
-                    <span class="course-item-name">Data Privacy Training International</span>
-                    <span class="course-item-provider">Siemens Governance</span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT INQUIRY FORM SECTION -->
-    <section class="section-wrapper" id="contact">
-      <div class="container">
-        <div class="contact-section-card">
-          <div class="contact-layout-grid">
-            <div class="contact-info-col">
-              <span class="section-eyebrow">Professional Inquiries</span>
-              <h2 style="font-size: 2.1rem; color: var(--text-primary); margin-bottom: 8px;">Let's Connect</h2>
-              <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.65;">
-                Have an inquiry about AI adoption, digital enablement, or enterprise IT operations? Send a message directly via this form. All correspondence is held in strict professional confidence.
-              </p>
-
-              <div style="margin-top: 10px; display: flex; flex-direction: column; gap: 14px;">
-                <div style="display: flex; align-items: center; gap: 12px;">
-                  <div style="width: 36px; height: 36px; border-radius: 8px; background: var(--bg-secondary); display: flex; align-items: center; justify-content: center; color: var(--brand-primary); font-size: 1.1rem;">📍</div>
-                  <div>
-                    <div style="font-size: 0.72rem; text-transform: uppercase; font-family: var(--font-mono); color: var(--text-muted);">Location</div>
-                    <div style="font-size: 0.92rem; font-weight: 600; color: var(--text-primary);">Cairo, Egypt</div>
-                  </div>
-                </div>
-
-                <div style="display: flex; align-items: center; gap: 12px;">
-                  <div style="width: 36px; height: 36px; border-radius: 8px; background: var(--bg-secondary); display: flex; align-items: center; justify-content: center; color: var(--brand-primary); font-size: 1.1rem;">🌐</div>
-                  <div>
-                    <div style="font-size: 0.72rem; text-transform: uppercase; font-family: var(--font-mono); color: var(--text-muted);">Professional Network</div>
-                    <a href="https://www.linkedin.com/in/melkadi/" target="_blank" rel="noopener noreferrer" style="font-size: 0.92rem; font-weight: 600; color: var(--brand-primary);">linkedin.com/in/melkadi ↗</a>
-                  </div>
-                </div>
-
-                <div style="display: flex; align-items: center; gap: 12px;">
-                  <div style="width: 36px; height: 36px; border-radius: 8px; background: var(--bg-secondary); display: flex; align-items: center; justify-content: center; color: var(--brand-primary); font-size: 1.1rem;">⏱️</div>
-                  <div>
-                    <div style="font-size: 0.72rem; text-transform: uppercase; font-family: var(--font-mono); color: var(--text-muted);">Response Time</div>
-                    <div style="font-size: 0.92rem; font-weight: 600; color: var(--text-primary);">Direct reply within 24 hours</div>
-                  </div>
-                </div>
-
-                <div style="display: flex; align-items: center; gap: 12px;">
-                  <div style="width: 36px; height: 36px; border-radius: 8px; background: var(--bg-secondary); display: flex; align-items: center; justify-content: center; color: var(--brand-primary); font-size: 1.1rem;">🔒</div>
-                  <div>
-                    <div style="font-size: 0.72rem; text-transform: uppercase; font-family: var(--font-mono); color: var(--text-muted);">Confidentiality</div>
-                    <div style="font-size: 0.92rem; font-weight: 600; color: var(--text-primary);">Strictly private professional correspondence</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Form -->
-            <div class="contact-form-col">
-              <form class="contact-form" id="contactForm" novalidate>
-                <div id="formStatus" class="form-status" role="alert"></div>
-
-                <div class="form-group">
-                  <label for="senderName" class="form-label">Full Name *</label>
-                  <input type="text" id="senderName" class="form-input" placeholder="e.g. Sarah Jenkins" required>
-                </div>
-
-                <div class="form-group">
-                  <label for="senderEmail" class="form-label">Your Email Address *</label>
-                  <input type="email" id="senderEmail" class="form-input" placeholder="name@company.com" required>
-                </div>
-
-                <div class="form-group">
-                  <label for="senderSubject" class="form-label">Subject / Organization</label>
-                  <input type="text" id="senderSubject" class="form-input" placeholder="e.g. Enterprise Collaboration Inquiry">
-                </div>
-
-                <div class="form-group">
-                  <label for="senderMessage" class="form-label">Message *</label>
-                  <textarea id="senderMessage" class="form-textarea" placeholder="How can we collaborate on AI adoption, digital products, or operations?" required></textarea>
-                </div>
-
-                <button type="submit" id="formSubmitBtn" class="btn btn-primary" style="width: 100%; margin-top: 6px;">
-                  <span>Send Message Directly</span>
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
-  <!-- FIXED SLIM FOOTER -->
-  <footer class="site-footer" id="siteFooter">
-    <div class="container footer-content">
-      <div class="footer-left">
-        <span class="footer-copy">&copy; 2026 Mohamed Elkadi. All rights reserved.</span>
+  <!-- YOU X 4-COLUMN FOOTER SITEMAP -->
+  <footer class="youx-footer" id="siteFooter">
+    <div class="container">
+      
+      <div class="youx-footer-sitemap">
+        
+        <!-- Column 1: Brand & Bio -->
+        <div>
+          <div class="brand-name" style="margin-bottom: 8px;">
+            <span style="font-size: 1.25rem; font-weight: 800; color: var(--text-primary);">Mohamed Elkadi</span>
+          </div>
+          <p class="footer-brand-desc">
+            Product-Oriented IT Professional with 15+ years delivering enterprise IT operations, Microsoft 365, Power Platform solutions, and AI enablement for 500+ users.
+          </p>
+          <div class="footer-socials">
+            <a href="https://www.linkedin.com/in/melkadi/" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="LinkedIn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="https://me.developers.google.com/u/mohamed_elkadi" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Google Developers">
+              G
+            </a>
+            <a href="https://www.credly.com/users/mohamedelkadi/badges" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Credly Badges">
+              C
+            </a>
+            <a href="https://learn.microsoft.com/en-us/users/melkadise/" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Microsoft Learn">
+              M
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Pages (Sitemap) -->
+        <div>
+          <div class="footer-col-title">Pages</div>
+          <ul class="footer-nav-list">
+            <li><a href="index.html" class="footer-nav-link">Home</a></li>
+            <li><a href="about.html" class="footer-nav-link">About & Resume</a></li>
+            <li><a href="portfolio.html" class="footer-nav-link">Portfolio & Solutions</a></li>
+            <li><a href="contact.html" class="footer-nav-link">Contact Inquiries</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Verified Portals & Certifications -->
+        <div>
+          <div class="footer-col-title">Credentials & Badges</div>
+          <ul class="footer-nav-list">
+            <li><a href="https://me.developers.google.com/u/mohamed_elkadi" target="_blank" rel="noopener noreferrer" class="footer-nav-link">Google Developers ↗</a></li>
+            <li><a href="https://www.credly.com/users/mohamedelkadi/badges" target="_blank" rel="noopener noreferrer" class="footer-nav-link">Credly Digital Badges ↗</a></li>
+            <li><a href="https://learn.microsoft.com/en-us/users/melkadise/" target="_blank" rel="noopener noreferrer" class="footer-nav-link">Microsoft Learn (L6) ↗</a></li>
+            <li><a href="about.html#certifications" class="footer-nav-link">SELP Certifications (2019-2026)</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact & Location -->
+        <div>
+          <div class="footer-col-title">Location & Connect</div>
+          <ul class="footer-nav-list">
+            <li class="footer-nav-link" style="cursor: default;">
+              <span>📍</span> <span>Cairo, Egypt</span>
+            </li>
+            <li class="footer-nav-link" style="cursor: default;">
+              <span>⏱️</span> <span>Response within 24 hours</span>
+            </li>
+            <li class="footer-nav-link" style="cursor: default;">
+              <span>🔒</span> <span>Strict professional privacy</span>
+            </li>
+            <li style="margin-top: 8px;">
+              <a href="contact.html" class="btn btn-sm btn-primary" style="width: 100%; justify-content: center;">
+                <span>Direct Contact Form →</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
       </div>
-      <div class="footer-right">
-        <span class="footer-updated"><span class="footer-portal-text">Personal Brand Portal &bull; </span>Cairo, Egypt</span>
+
+      <!-- Footer Bottom -->
+      <div class="youx-footer-bottom">
+        <div>&copy; 2026 Mohamed Elkadi. All rights reserved.</div>
+        <div>Personal Brand Portal • Cairo, Egypt</div>
       </div>
+
     </div>
   </footer>
 

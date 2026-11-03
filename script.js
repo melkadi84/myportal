@@ -18,6 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initBackToTop();
   initCollapsibleSections();
   initTimelineDateClicks();
+  initDynamicRecommendations();
+  initTestimonialsCarousel();
+  initCompaniesMarquee();
+  initPortfolioSlider();
 });
 
 /* ==========================================================================
@@ -44,7 +48,27 @@ function applyTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
   const toggleBtn = document.getElementById('themeToggleBtn');
   if (toggleBtn) {
-    toggleBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
+    if (theme === 'dark') {
+      toggleBtn.innerHTML = `
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      `;
+    } else {
+      toggleBtn.innerHTML = `
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      `;
+    }
     toggleBtn.setAttribute('title', theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode');
     toggleBtn.setAttribute('aria-label', theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode');
   }
@@ -498,4 +522,214 @@ function initTimelineDateClicks() {
   });
 }
 
+/* ==========================================================================
+   Dynamic LinkedIn Recommendations Loader (Cloudflare D1 API / Local JSON)
+   ========================================================================== */
+async function initDynamicRecommendations() {
+  const track = document.getElementById('testimonialsTrack');
+  if (!track) return;
 
+  try {
+    let recommendations = [];
+
+    // Attempt 1: Fetch from Cloudflare Worker endpoint if defined
+    if (typeof CLOUDFLARE_WORKER_ENDPOINT !== 'undefined' && CLOUDFLARE_WORKER_ENDPOINT) {
+      try {
+        const res = await fetch(`${CLOUDFLARE_WORKER_ENDPOINT}/api/recommendations`);
+        if (res.ok) {
+          recommendations = await res.json();
+        }
+      } catch (err) {
+        console.warn('Worker endpoint fetch failed, falling back to local dataset.', err);
+      }
+    }
+
+    // Attempt 2: Fallback to local data/recommendations.json (if on web server)
+    if (!recommendations || recommendations.length === 0) {
+      try {
+        const localRes = await fetch('data/recommendations.json');
+        if (localRes.ok) {
+          recommendations = await localRes.json();
+        }
+      } catch (e) {
+        // file:/// protocol or offline; keep preloaded markup
+        return;
+      }
+    }
+
+    if (!recommendations || recommendations.length === 0) return;
+
+    // Helper to render card HTML
+    const renderCard = (item, isDuplicate = false) => `
+      <div class="testimonial-card-youx" ${isDuplicate ? 'aria-hidden="true"' : ''}>
+        <div class="testimonial-quote-icon">“</div>
+        <p class="testimonial-text">${escapeHtml(item.quote)}</p>
+        <div class="testimonial-author-wrap">
+          <img src="${escapeHtml(item.avatar)}" alt="${escapeHtml(item.name)}" class="testimonial-avatar" loading="lazy" onerror="this.src='profile.jpg'">
+          <div>
+            <div class="testimonial-author-name">${escapeHtml(item.name)}</div>
+            <div class="testimonial-author-role">${escapeHtml(item.position)} • <strong>${escapeHtml(item.company)}</strong></div>
+            ${item.verified_linkedin ? `
+              <div class="testimonial-badge-linkedin">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <span>Verified LinkedIn Recommendation</span>
+              </div>
+            ` : ''}
+          </div>
+        </div>
+      </div>
+    `;
+
+    // Render Set 1 + Set 2 (duplicates for seamless marquee loop)
+    const set1 = recommendations.map(item => renderCard(item, false)).join('');
+    const set2 = recommendations.map(item => renderCard(item, true)).join('');
+    track.innerHTML = set1 + set2;
+
+  } catch (err) {
+    console.error('Failed to load dynamic recommendations:', err);
+  }
+}
+
+function escapeHtml(str) {
+  if (!str) return '';
+  return str.replace(/[&<>'"]/g, 
+    tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
+  );
+}
+
+/* ==========================================================================
+   Testimonials Auto-Scrolling Carousel Logic
+   ========================================================================== */
+function initTestimonialsCarousel() {
+  const wrapper = document.getElementById('testimonialsCarousel');
+  const track = document.getElementById('testimonialsTrack');
+  const prevBtn = document.getElementById('prevTestimonialBtn');
+  const nextBtn = document.getElementById('nextTestimonialBtn');
+  if (!wrapper || !track) return;
+
+  let resumeTimeout = null;
+
+  // Touch handling for mobile pause/resume
+  wrapper.addEventListener('touchstart', () => {
+    track.style.animationPlayState = 'paused';
+    wrapper.classList.add('paused');
+  }, { passive: true });
+
+  wrapper.addEventListener('touchend', () => {
+    track.style.animationPlayState = 'running';
+    wrapper.classList.remove('paused');
+  }, { passive: true });
+
+  // Arrow button navigation
+  function nudgeCarousel(direction) {
+    track.style.animationPlayState = 'paused';
+    wrapper.classList.add('paused');
+
+    // Read current computed translateX
+    let currentX = 0;
+    try {
+      const computedStyle = window.getComputedStyle(track);
+      const transform = computedStyle.transform || computedStyle.webkitTransform;
+      if (transform && transform !== 'none') {
+        const matrixValues = transform.match(/matrix.*\((.+)\)/);
+        if (matrixValues) {
+          const parts = matrixValues[1].split(', ');
+          currentX = parseFloat(parts[4]) || 0;
+        }
+      }
+    } catch (e) {
+      currentX = 0;
+    }
+
+    const cardStep = 436; // 410px width + 26px gap
+    let targetX = currentX + (direction === 'next' ? -cardStep : cardStep);
+
+    // Keep within half width loop
+    const halfWidth = track.scrollWidth / 2;
+    if (halfWidth > 0) {
+      if (targetX < -halfWidth) targetX += halfWidth;
+      if (targetX > 0) targetX -= halfWidth;
+    }
+
+    track.style.transition = 'transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)';
+    track.style.transform = `translateX(${targetX}px)`;
+
+    if (resumeTimeout) clearTimeout(resumeTimeout);
+    resumeTimeout = setTimeout(() => {
+      track.style.transition = '';
+      track.style.transform = '';
+      track.style.animationPlayState = 'running';
+      wrapper.classList.remove('paused');
+    }, 2800);
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      nudgeCarousel('prev');
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      nudgeCarousel('next');
+    });
+  }
+}
+
+/* ==========================================================================
+   Companies Marquee Carousel Logic
+   ========================================================================== */
+function initCompaniesMarquee() {
+  const container = document.getElementById('companiesMarquee');
+  const track = document.getElementById('companiesTrack');
+  if (!container || !track) return;
+
+  // Pause on touchstart, resume on touchend for mobile
+  container.addEventListener('touchstart', () => {
+    track.style.animationPlayState = 'paused';
+  }, { passive: true });
+
+  container.addEventListener('touchend', () => {
+    track.style.animationPlayState = 'running';
+  }, { passive: true });
+}
+
+/* ==========================================================================
+   You X Design Portfolio Slider Logic
+   ========================================================================== */
+function initPortfolioSlider() {
+  const track = document.getElementById('portfolioSliderTrack');
+  const prevBtn = document.getElementById('portfolioPrevBtn');
+  const nextBtn = document.getElementById('portfolioNextBtn');
+  if (!track || !prevBtn || !nextBtn) return;
+
+  function getStep() {
+    const card = track.querySelector('.portfolio-slider-card');
+    if (!card) return 400;
+    const gap = parseFloat(getComputedStyle(track).gap) || 34;
+    return card.offsetWidth + gap;
+  }
+
+  prevBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    track.scrollBy({ left: -getStep(), behavior: 'smooth' });
+  });
+
+  nextBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    track.scrollBy({ left: getStep(), behavior: 'smooth' });
+  });
+
+  function updateBtnStates() {
+    const maxScroll = track.scrollWidth - track.clientWidth - 10;
+    prevBtn.disabled = track.scrollLeft <= 5;
+    nextBtn.disabled = track.scrollLeft >= maxScroll;
+  }
+
+  track.addEventListener('scroll', updateBtnStates, { passive: true });
+  window.addEventListener('resize', updateBtnStates);
+  // Initial check after layout
+  setTimeout(updateBtnStates, 100);
+}

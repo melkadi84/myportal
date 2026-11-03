@@ -10,3 +10,16 @@ CREATE TABLE IF NOT EXISTS contact_messages (
   ip TEXT,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE IF NOT EXISTS recommendations (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT NOT NULL,
+  position TEXT NOT NULL,
+  company TEXT NOT NULL,
+  relationship TEXT,
+  avatar TEXT,
+  date TEXT,
+  quote TEXT NOT NULL,
+  verified_linkedin INTEGER DEFAULT 1,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);

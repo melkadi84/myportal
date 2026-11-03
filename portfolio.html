@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Portfolio & Enterprise Solutions | Mohamed Elkadi</title>
+  <meta name="description" content="Portfolio of 17+ low-code internal digital products, process automations, and AI camera solutions designed by Mohamed Elkadi for enterprise operations.">
+  <meta name="author" content="Mohamed Elkadi">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23096A61'/%3E%3Ctext x='16' y='21' font-family='sans-serif' font-size='13' font-weight='800' fill='%23ffffff' text-anchor='middle'%3EME%3C/text%3E%3C/svg%3E">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Staatliches&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header / Navigation -->
+  <header class="site-header" id="mainHeader">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-monogram" aria-label="Mohamed Elkadi Homepage">
+        <div class="monogram-box">ME</div>
+        <div class="brand-name">
+          <span>Mohamed Elkadi</span>
+          <span class="brand-title-small">IT & Digital Enablement</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About & Resume</a></li>
+          <li><a href="portfolio.html" class="nav-link active">Portfolio</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Navigation Actions & Mode Switcher -->
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme Mode" title="Switch Theme">
+          🌙
+        </button>
+
+        <a href="https://www.linkedin.com/in/melkadi/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary" title="Connect on LinkedIn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          <span>LinkedIn</span>
+        </a>
+
+        <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Toggle Menu" aria-expanded="false">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About & Resume</a></li>
+      <li><a href="portfolio.html" class="mobile-nav-link active">Portfolio & Solutions</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Get In Touch</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <!-- PAGE HERO -->
+    <section class="section-wrapper" style="padding: 60px 0 30px 0; background: var(--bg-secondary); border-bottom: 1px solid var(--border-subtle);">
+      <div class="container">
+        <span class="section-eyebrow">Enterprise Solutions & Digital Products</span>
+        <h1 style="font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 800; color: var(--text-primary); margin-bottom: 14px;">Design & Solutions Portfolio</h1>
+        <p style="font-size: 1.05rem; color: var(--text-secondary); max-width: 780px; line-height: 1.68;">
+          A showcase of 17+ low-code internal software applications, workflow automations, and AI computer vision systems built for enterprise operations across Siemens Energy, power plants, and industrial projects.
+        </p>
+
+        <!-- Category Filters Bar -->
+        <div class="apps-filter-bar" style="margin-top: 28px; display: flex; gap: 10px; flex-wrap: wrap;">
+          <button class="filter-btn active" data-filter="all">All Solutions (17)</button>
+          <button class="filter-btn" data-filter="power-platform">Power Platform (10)</button>
+          <button class="filter-btn" data-filter="ai-vision">AI & Vision (2)</button>
+          <button class="filter-btn" data-filter="ehs">EHS Safety (5)</button>
+          <button class="filter-btn" data-filter="operations">Operations & Logistics (5)</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO GRID SECTION -->
+    <section class="section-wrapper" id="appsCatalog" style="padding: 60px 0 90px 0;">
+      <div class="container">
+        
+        <div class="apps-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 28px;">
+
+          <!-- 1. Employee Recognition Platform (EMD) -->
+          <div class="app-card" data-category="power-platform" id="emd">
+            <div class="app-card-header">
+              <div class="app-icon-wrap" style="background: rgba(29, 78, 216, 0.1); color: var(--brand-primary); font-size: 1.6rem; width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center;">🏆</div>
+              <span class="app-status-badge">4 Power Plants Active</span>
+            </div>
+            <h3 class="app-title">Employee Recognition Program (EMD)</h3>
+            <p class="app-desc">
+              Multi-site recognition web application deployed across Burullus, New Capital, Beni Suef, and Midelec power plants. Employees nominate peers based on the corporate START platform criteria with detailed impact tracking.
+            </p>
+            <div class="app-tags">
+              <span class="app-tag">Power Apps</span>
+              <span class="app-tag">SharePoint Lists</span>
+              <span class="app-tag">Power Automate</span>
+              <span class="app-tag">Multi-Site Scale</span>
+            </div>
+          </div>
+
+          <!-- 2. Omnivise AI Image Analytics (OIA) -->
+          <div class="app-card" data-category="ai-vision" id="oia">
+            <div class="app-card-header">
+              <div class="app-icon-wrap" style="background: rgba(15, 118, 110, 0.1); color: var(--brand-secondary); font-size: 1.6rem; width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center;">📷</div>
+              <span class="app-status-badge" style="background: rgba(15, 118, 110, 0.15); color: var(--brand-secondary);">AI Edge Infrastructure</span>
+            </div>
+            <h3 class="app-title">Omnivise AI Image Analytics (OIA)</h3>
+            <p class="app-desc">
+              Industrial computer vision camera network capturing real-time readings from analog pressure gauges, thermal sensors, and high-voltage plant equipment to automate inspection logs.
+            </p>
+            <div class="app-tags">
+              <span class="app-tag">Computer Vision</span>
+              <span class="app-tag">Edge Hardware</span>
+              <span class="app-tag">IP Network</span>
+              <span class="app-tag">Predictive Maintenance</span>
+            </div>
+          </div>
+
+          <!-- 3. Burullus IT Warehouse & Asset Inventory -->
+          <div class="app-card" data-category="power-platform operations" id="it-warehouse">
+            <div class="app-card-header">
+              <div class="app-icon-wrap" style="background: rgba(180, 83, 9, 0.1); color: var(--brand-accent); font-size: 1.6rem; width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center;">📦</div>
+              <span class="app-status-badge">Internal Operations</span>
+            </div>
+            <h3 class="app-title">Burullus IT Asset Warehouse System</h3>
+            <p class="app-desc">
+              End-user interface and warehouse inventory tracker to streamline hardware requests, laptop lifecycle assignments, peripheral dispatches, and warehouse audits for 500+ site personnel.
+            </p>
+            <div class="app-tags">
+              <span class="app-tag">Power Apps</span>
+              <span class="app-tag">Asset Lifecycle</span>
+              <span class="app-tag">Inventory SQL</span>
+            </div>
+          </div>
+
+          <!-- 4. Guest Internet Voucher System -->
+          <div class="app-card" data-category="operations" id="voucher">
+            <div class="app-card-header">
+              <div class="app-icon-wrap" style="background: rgba(2, 132, 199, 0.1); color: #0284c7; font-size: 1.6rem; width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center;">🎫</div>
+              <span class="app-status-badge">Firewall Automated</span>
+            </div>
+            <h3 class="app-title">Guest Internet Voucher System</h3>
+            <p class="app-desc">
+              Self-service portal generating secure guest Wi-Fi access tokens directly connected to enterprise edge firewalls, reducing manual IT tickets by 90% for external audit teams and contractors.
+            </p>
+            <div class="app-tags">
+              <span class="app-tag">Network Automation</span>
+              <span class="app-tag">Firewall API</span>
+              <span class="app-tag">SecOps</span>
+            </div>
+          </div>
+
+          <!-- 5. EHS Safety Data Sheet (SDS) with QR -->
+          <div class="app-card" data-category="ehs" id="ehs">
+            <div class="app-card-header">
+              <div class="app-icon-wrap" style="background: rgba(22, 101, 52, 0.1); color: #166534; font-size: 1.6rem; width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center;">📱</div>
+              <span class="app-status-badge" style="background: rgba(22, 101, 52, 0.15); color: #166534;">Instant QR Access</span>
+            </div>
+            <h3 class="app-title">Safety Data Sheet (SDS) QR Portal</h3>
+            <p class="app-desc">
+              Mobile-first web app pairing physical QR codes on chemical and hazardous substance containers with instant cloud safety documentation, hazard pictograms, and emergency protocols.
+            </p>
+            <div class="app-tags">
+              <span class="app-tag">Mobile QR</span>
+              <span class="app-tag">EHS Compliance</span>
+              <span class="app-tag">Cloud Library</span>
+            </div>
+          </div>
+
+          <!-- 6. EHS PPE Sizing & Distribution Tracker -->
+          <div class="app-card" data-category="ehs" id="ppe">
+            <div class="app-card-header">
+              <div class="app-icon-wrap" style="background: rgba(22, 101, 52, 0.1); color: #166534; font-size: 1.6rem; width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center;">🦺</div>
+              <span class="app-status-badge">Plant-Wide Tool</span>
+            </div>
+            <h3 class="app-title">PPE Collection & Distribution Tool</h3>
+            <p class="app-desc">
+              Automated workflow collecting individual personal protective equipment sizes (helmets, safety shoes, flame-retardant wear) across all power plant teams to ensure compliant procurement.
+            </p>
+            <div class="app-tags">
+              <span class="app-tag">Power Automate</span>
+              <span class="app-tag">SharePoint</span>
+              <span class="app-tag">Safety Auditing</span>
+            </div>
+          </div>
+
+          <!-- 7. EHS Lifting Equipment Management -->
+          <div class="app-card" data-category="ehs" id="lifting">
+            <div class="app-card-header">
+              <div class="app-icon-wrap" style="background: rgba(22, 101, 52, 0.1); color: #166534; font-size: 1.6rem; width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center;">🏗️</div>
+              <span class="app-status-badge">Inspection Certified</span>
+            </div>
+            <h3 class="app-title">Lifting Equipment & Rigging Portal</h3>
+            <p class="app-desc">
+              Tracks mandatory inspection certificates, load testing schedules, and serial identification for overhead cranes, rigging gear, and hoists across Burullus power plant.
+            </p>
+            <div class="app-tags">
+              <span class="app-tag">Asset Compliance</span>
+              <span class="app-tag">Expiration Alerts</span>
+              <span class="app-tag">EHS Module</span>
+            </div>
+          </div>
+
+          <!-- 8. EHS Task Management & Corrective Actions -->
+          <div class="app-card" data-category="ehs" id="ehs-tasks">
+            <div class="app-card-header">
+              <div class="app-icon-wrap" style="background: rgba(22, 101, 52, 0.1); color: #166534; font-size: 1.6rem; width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center;">✅</div>
+              <span class="app-status-badge">Task Tracking</span>
+            </div>
+            <h3 class="app-title">EHS Task Management Platform</h3>
+            <p class="app-desc">
+              Coordinates assignment, tracking, and closure of plant safety walk actions, environmental inspections, and audit findings with automated email escalation loops.
+            </p>
+            <div class="app-tags">
+              <span class="app-tag">Action Tracking</span>
+              <span class="app-tag">Escalation Bots</span>
+              <span class="app-tag">Compliance</span>
+            </div>
+          </div>
+
+          <!-- 9. Plant Operation Start Card (PTW) -->
+          <div class="app-card" data-category="power-platform operations" id="ptw">
+            <div class="app-card-header">
+              <div class="app-icon-wrap" style="background: rgba(29, 78, 216, 0.1); color: var(--brand-primary); font-size: 1.6rem; width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center;">📝</div>
+              <span class="app-status-badge">Permit to Work</span>
+            </div>
+            <h3 class="app-title">Operation Start Card Application</h3>
+            <p class="app-desc">
+              Digital interface managing Permit to Work (PTW) inter-departmental sign-offs, isolation checklist verifications, and operational clearances prior to heavy maintenance work.
+            </p>
+            <div class="app-tags">
+              <span class="app-tag">Power Apps</span>
+              <span class="app-tag">Workflow Approval</span>
+              <span class="app-tag">Operations</span>
+            </div>
+          </div>
+
+          <!-- 10. Heavy Equipment Reservation System -->
+          <div class="app-card" data-category="operations" id="heavy-equip">
+            <div class="app-card-header">
+              <div class="app-icon-wrap" style="background: rgba(180, 83, 9, 0.1); color: var(--brand-accent); font-size: 1.6rem; width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center;">🚜</div>
+              <span class="app-status-badge">Schedule Conflict-Free</span>
+            </div>
+            <h3 class="app-title">Heavy Equipment Reservation System</h3>
+            <p class="app-desc">
+              Booking system preventing scheduling conflicts for heavy cranes, forklifts, and mobile generators among site teams, civil contractors, and electrical engineering crews.
+            </p>
+            <div class="app-tags">
+              <span class="app-tag">Resource Booking</span>
+              <span class="app-tag">Calendar Integration</span>
+              <span class="app-tag">Power Apps</span>
+            </div>
+          </div>
+
+          <!-- 11. Car Route Change Request Tool -->
+          <div class="app-card" data-category="operations" id="car-route">
+            <div class="app-card-header">
+              <div class="app-icon-wrap" style="background: rgba(2, 132, 199, 0.1); color: #0284c7; font-size: 1.6rem; width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center;">🚐</div>
+              <span class="app-status-badge">Logistics</span>
+            </div>
+            <h3 class="app-title">Transportation Route Request Tool</h3>
+            <p class="app-desc">
+              Coordinates daily employee shuttle changes, pick-up point updates, and business administration notifications across coastal Egypt for hundreds of plant commuters.
+            </p>
+            <div class="app-tags">
+              <span class="app-tag">Logistics</span>
+              <span class="app-tag">Notification System</span>
+              <span class="app-tag">Power Automate</span>
+            </div>
+          </div>
+
+          <!-- 12. Site Event Organizer Application -->
+          <div class="app-card" data-category="power-platform" id="event-org">
+            <div class="app-card-header">
+              <div class="app-icon-wrap" style="background: rgba(29, 78, 216, 0.1); color: var(--brand-primary); font-size: 1.6rem; width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center;">📅</div>
+              <span class="app-status-badge">Site Management</span>
+            </div>
+            <h3 class="app-title">Event Organizer Application</h3>
+            <p class="app-desc">
+              Manages logistics, conference room tech reservations, catering orders, and VIP access permissions for ministerial visits and plant delegations.
+            </p>
+            <div class="app-tags">
+              <span class="app-tag">Power Apps</span>
+              <span class="app-tag">Teams Integration</span>
+              <span class="app-tag">Event Logistics</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- YOU X 4-COLUMN FOOTER SITEMAP -->
+  <footer class="youx-footer" id="siteFooter">
+    <div class="container">
+      <div class="youx-footer-sitemap">
+        <div>
+          <div class="brand-name" style="margin-bottom: 8px;">
+            <span style="font-size: 1.25rem; font-weight: 800; color: var(--text-primary);">Mohamed Elkadi</span>
+          </div>
+          <p class="footer-brand-desc">Product-Oriented IT Professional with 15+ years delivering enterprise IT operations, Microsoft 365, Power Platform solutions, and AI enablement for 500+ users.</p>
+          <div class="footer-socials">
+            <a href="https://www.linkedin.com/in/melkadi/" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="LinkedIn">in</a>
+            <a href="https://me.developers.google.com/u/mohamed_elkadi" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Google Developers">G</a>
+            <a href="https://www.credly.com/users/mohamedelkadi/badges" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Credly Badges">C</a>
+            <a href="https://learn.microsoft.com/en-us/users/melkadise/" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Microsoft Learn">M</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Pages</div>
+          <ul class="footer-nav-list">
+            <li><a href="index.html" class="footer-nav-link">Home</a></li>
+            <li><a href="about.html" class="footer-nav-link">About & Resume</a></li>
+            <li><a href="portfolio.html" class="footer-nav-link">Portfolio & Solutions</a></li>
+            <li><a href="contact.html" class="footer-nav-link">Contact Inquiries</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Credentials & Badges</div>
+          <ul class="footer-nav-list">
+            <li><a href="https://me.developers.google.com/u/mohamed_elkadi" target="_blank" rel="noopener noreferrer" class="footer-nav-link">Google Developers ↗</a></li>
+            <li><a href="https://www.credly.com/users/mohamedelkadi/badges" target="_blank" rel="noopener noreferrer" class="footer-nav-link">Credly Digital Badges ↗</a></li>
+            <li><a href="https://learn.microsoft.com/en-us/users/melkadise/" target="_blank" rel="noopener noreferrer" class="footer-nav-link">Microsoft Learn (L6) ↗</a></li>
+            <li><a href="about.html#certifications" class="footer-nav-link">SELP Certifications</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Location & Connect</div>
+          <ul class="footer-nav-list">
+            <li class="footer-nav-link" style="cursor: default;"><span>📍</span> <span>Cairo, Egypt</span></li>
+            <li class="footer-nav-link" style="cursor: default;"><span>⏱️</span> <span>Response within 24 hours</span></li>
+            <li class="footer-nav-link" style="cursor: default;"><span>🔒</span> <span>Strict professional privacy</span></li>
+            <li style="margin-top: 8px;">
+              <a href="contact.html" class="btn btn-sm btn-primary" style="width: 100%; justify-content: center;">Direct Contact Form →</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="youx-footer-bottom">
+        <div>&copy; 2026 Mohamed Elkadi. All rights reserved.</div>
+        <div>Personal Brand Portal • Cairo, Egypt</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING BACK TO TOP BUTTON -->
+  <button class="back-to-top-btn" id="backToTopBtn" aria-label="Back to top" title="Back to top">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+    <span>Top</span>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>

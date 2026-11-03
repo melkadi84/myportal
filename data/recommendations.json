@@ -1,0 +1,200 @@
+[
+  {
+    "id": "rec-1",
+    "name": "Karim Refaat, CMRP®",
+    "position": "HRSG Service Engineer",
+    "company": "Siemens Energy",
+    "date": "September 2024",
+    "relationship": "Worked with Mohamed on the same team",
+    "quote": "It has been an absolute pleasure working with Elkadi. He brings a high level of technical expertise, analytical rigor, and a collaborative spirit to every project. Elkadi is consistently reliable, detail-oriented, and solution-driven. He is a fantastic asset to any team, and I recommend him highly.",
+    "avatar": "assets/recommendations/karim_refaat.jpg",
+    "verified_linkedin": true
+  },
+  {
+    "id": "rec-2",
+    "name": "Moamen Ibrahem",
+    "position": "Head of Mechanical Maintenance O&M",
+    "company": "Burullus Power Plant 4800MW",
+    "date": "November 2024",
+    "relationship": "Worked with Mohamed on different teams",
+    "quote": "Mr. Mohamed Elkadi is an exceptional IT engineer with a keen eye for detail and a strong work ethic. I had the pleasure of working with him in Siemens-Energy and was consistently impressed by his ability to work in CYS & IT. A true team player, always willing to lend a helping hand and contribute to the success of the team.",
+    "avatar": "assets/recommendations/moamen_ibrahem.jpg",
+    "verified_linkedin": true
+  },
+  {
+    "id": "rec-3",
+    "name": "Mousa Eladly",
+    "position": "Power Plant Asset Reliability Engineer",
+    "company": "Siemens Energy Kft (Budapest, Hungary)",
+    "date": "November 2024",
+    "relationship": "Worked with Mohamed on the same team",
+    "quote": "I am continually impressed by his deep knowledge of cybersecurity and IT systems. His expertise in areas such as network security, threat mitigation, and system optimization is unparalleled. Mohamed is not only technically proficient but also highly proactive in identifying potential vulnerabilities, ensuring systems remain secure and efficient.",
+    "avatar": "assets/recommendations/mousa_eladly.jpg",
+    "verified_linkedin": true
+  },
+  {
+    "id": "rec-4",
+    "name": "Islam Mahmoud",
+    "position": "IT Infrastructure Delivery Manager | IEC 62443 Expert | PMP",
+    "company": "Siemens Energy",
+    "date": "May 2024",
+    "relationship": "Managed Mohamed directly",
+    "quote": "I’ve had the pleasure of working with many professionals in our line of work, but Mohamed is someone who I will always remember fondly. I do recommend him as a subject matter expert in terms of IT infrastructure operation management.",
+    "avatar": "assets/recommendations/islam_mahmoud.jpg",
+    "verified_linkedin": true
+  },
+  {
+    "id": "rec-5",
+    "name": "Mahmoud Aboulazm, IPMA®",
+    "position": "IT Leader | AI & Digitalization Enablement",
+    "company": "Siemens Energy",
+    "date": "May 2024",
+    "relationship": "Managed Mohamed directly",
+    "quote": "I had the pleasure of directly managing Mohamed during his time as an IT Infrastructure Specialist at the power plant. Mohamed consistently impressed me with his High Commitment: He consistently went above and beyond expectations, demonstrating a strong dedication to his work, proactive problem solving, and driving digital adoption.",
+    "avatar": "assets/recommendations/mahmoud_aboulazm.jpg",
+    "verified_linkedin": true
+  },
+  {
+    "id": "rec-6",
+    "name": "Youness Jarir",
+    "position": "Power Plants Operations & Maintenance Management Expert",
+    "company": "Burullus Power Plant",
+    "date": "June 2024",
+    "relationship": "Worked with Mohamed on different teams",
+    "quote": "Elkadi has been of great value to our team in the Burullus Power Plant. He set up our IT system and excelled at the job. He operationalised the plant management system, WebBFS, overseeing a seamless integration that has since been instrumental in making our Operations lean and wholly optimised. Further, Elkadi built up a single sign-on point catering for all our software.",
+    "avatar": "assets/recommendations/youness_jarir.jpg",
+    "verified_linkedin": true
+  },
+  {
+    "id": "rec-7",
+    "name": "Dr. Ahmed Sharaf, PhD",
+    "position": "Head of Environment, Health & Safety",
+    "company": "Siemens Energy",
+    "date": "May 2024",
+    "relationship": "Worked with Mohamed on different teams",
+    "quote": "Mohamed is an amazing person who is very committed regarding the employer vision and strategies. He is well organised, working according to a plan, very intelligent and energetic, and finally he is thinking out of the box.",
+    "avatar": "assets/recommendations/ahmed_sharaf.jpg",
+    "verified_linkedin": true
+  },
+  {
+    "id": "rec-8",
+    "name": "Moustafa El Dkhakhny",
+    "position": "Founder, SESHAT | Project Planning & Controls",
+    "company": "SESHAT",
+    "date": "November 2024",
+    "relationship": "Managed Mohamed directly",
+    "quote": "I have had the pleasure of working closely with Mohamed for many years at previous projects, and I can confidently say that he is one of the most talented and dedicated engineers I have ever worked with. His expertise combined with his ability to lead a team effectively has resulted in the successful completion of numerous projects.",
+    "avatar": "assets/recommendations/moustafa_el_dkhakhny.jpg",
+    "verified_linkedin": true
+  },
+  {
+    "id": "rec-9",
+    "name": "Ahmed El Sayed",
+    "position": "Senior Network Engineer | Cisco & Juniper | WAN/LAN",
+    "company": "Network Infrastructure (EMEA & GCC)",
+    "date": "November 2024",
+    "relationship": "Collaborated with Mohamed",
+    "quote": "It is an absolute privilege to recommend Mohamed, with whom I had the pleasure of working closely at Siemens Energy. He consistently demonstrates outstanding professionalism, deep expertise, and an unwavering commitment to excellence. During our time working together, he repeatedly impressed me with his dedication and exceptional problem-solving skills.",
+    "avatar": "assets/recommendations/ahmed_el_sayed.jpg",
+    "verified_linkedin": true
+  },
+  {
+    "id": "rec-10",
+    "name": "Gamal AbdElnaser, CMRP",
+    "position": "Senior O&M & Reliability Leader",
+    "company": "Siemens Energy",
+    "date": "May 2024",
+    "relationship": "Worked with Mohamed on the same team",
+    "quote": "I highly recommend Elkady, we worked together at Siemens Energy. He consistently demonstrated initiative, competence, and collaboration. Elkady took on challenges with enthusiasm, implemented innovative solutions, and showed expertise in IT systems. He fostered a positive work environment and was an invaluable team member.",
+    "avatar": "assets/recommendations/gamal_abdelnaser.jpg",
+    "verified_linkedin": true
+  },
+  {
+    "id": "rec-11",
+    "name": "Mohamed Gebril, CSP®, ASP®",
+    "position": "HSE Professional | NEBOSH",
+    "company": "Siemens Energy",
+    "date": "November 2024",
+    "relationship": "Worked with Mohamed on the same team",
+    "quote": "Mohamed Elkadi has been an integral part of our team as an IT Infrastructure & Cybersecurity Engineer, and his contributions have been invaluable. He consistently demonstrated exceptional technical skills and a deep understanding of IT infrastructure and cybersecurity.",
+    "avatar": "assets/recommendations/mohamed_gebril.jpg",
+    "verified_linkedin": true
+  },
+  {
+    "id": "rec-12",
+    "name": "Hugo Silva",
+    "position": "Surveillance Manager for Asia/Pacific",
+    "company": "NEM Energy Group",
+    "date": "January 2019",
+    "relationship": "Managed Mohamed directly",
+    "quote": "Mohamed is committed, a team player and is a solutions person that can concentrate on proposing creative solutions instead of focusing only on the problem in hand.",
+    "avatar": "assets/recommendations/hugo_silva.jpg",
+    "verified_linkedin": true
+  },
+  {
+    "id": "rec-13",
+    "name": "Abdelrahman Khaled",
+    "position": "Digital Engineer | Power Platform & Automation",
+    "company": "ENGIE KSA",
+    "date": "May 2024",
+    "relationship": "Collaborated with Mohamed",
+    "quote": "I had the pleasure of working with Mohamed Elkadi at Siemens Energy. Mohamed is an exceptional IT support and infrastructure professional. His technical expertise, dedication, and problem-solving skills were invaluable to our team. He consistently delivered high-quality solutions and went above and beyond to ensure smooth operations.",
+    "avatar": "assets/recommendations/abdelrahman_khaled.jpg",
+    "verified_linkedin": true
+  },
+  {
+    "id": "rec-14",
+    "name": "Mostafa Hmaida",
+    "position": "Technical Project Manager",
+    "company": "Siemens Energy",
+    "date": "May 2024",
+    "relationship": "Worked with Mohamed on the same team",
+    "quote": "I am pleased to write this recommendation for Mr Mohamed Elkadi who I have had the privilege of working closely at the Siemens Energy Burullus Power plant 4800MW. Mohamed in his function as IT Infrastructure and Cyber Security Officer / Ambassador has proven a great professional and helpful service to the company.",
+    "avatar": "assets/recommendations/mostafa_hmaida.jpg",
+    "verified_linkedin": true
+  },
+  {
+    "id": "rec-15",
+    "name": "Mahmoud Adel",
+    "position": "Procurement & Supply Chain Specialist",
+    "company": "Siemens Energy",
+    "date": "November 2024",
+    "relationship": "Worked with Mohamed on the same team",
+    "quote": "I am delighted to recommend Mohamed El Kady who has been an exceptional asset to our Information Technology team. He consistently demonstrates a deep understanding of IT systems and a remarkable ability to solve complex technical issues efficiently with a positive attitude.",
+    "avatar": "assets/recommendations/mahmoud_adel.jpg",
+    "verified_linkedin": true
+  },
+  {
+    "id": "rec-16",
+    "name": "Moataz Ebady",
+    "position": "Environmental Specialist (24 yrs exp)",
+    "company": "Siemens Energy",
+    "date": "July 2024",
+    "relationship": "Worked with Mohamed on different teams",
+    "quote": "The best IT member defined simply as: Whenever technical support requested from him, he responds ASAP. This is Mohamed Elkadi. Honored to work with you buddy.",
+    "avatar": "assets/recommendations/moataz_ebady.jpg",
+    "verified_linkedin": true
+  },
+  {
+    "id": "rec-17",
+    "name": "Khalil Selim",
+    "position": "O&M Quality Manager",
+    "company": "Siemens Energy",
+    "date": "May 2024",
+    "relationship": "Worked with Mohamed on different teams",
+    "quote": "It's rare to come across someone as motivated and enthusiastic as Mohamed. He consistently goes above and beyond to support his colleagues on site. His positive attitude and strong work ethic are contagious, and he always brings fresh ideas to the table.",
+    "avatar": "assets/recommendations/khalil_selim.jpg",
+    "verified_linkedin": true
+  },
+  {
+    "id": "rec-18",
+    "name": "Mohamed Hamed Elgedwi, PMP®",
+    "position": "I&C Maintenance Lead",
+    "company": "Burullus 4800MW • Siemens Energy",
+    "date": "May 2024",
+    "relationship": "Worked with Mohamed on different teams",
+    "quote": "Elkadi is working very professional and has an agile mindset, dealing always with challenges very simple and accurate. Eager to know new technology, sharing information and supporting others. I feel safe working with Elkadi.",
+    "avatar": "assets/recommendations/mohamed_elgedwi.jpg",
+    "verified_linkedin": true
+  }
+]
