@@ -23,6 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initYouTemplateSlider();
   initCompaniesMarquee();
   initPortfolioSlider();
+  initScrollProgressBar();
+  initScrollReveals();
+  initStatCounters();
 });
 
 /* ==========================================================================
@@ -326,11 +329,20 @@ function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
+      if (!targetId || targetId === '#' || targetId.length <= 1) return;
       const targetElement = document.querySelector(targetId);
       if (targetElement) {
         e.preventDefault();
-        targetElement.scrollIntoView({ behavior: 'smooth' });
+        const headerOffset = 84;
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: Math.max(0, offsetPosition),
+          behavior: 'smooth'
+        });
+        if (history.pushState) {
+          history.pushState(null, null, targetId);
+        }
       }
     });
   });
@@ -1045,3 +1057,156 @@ function initYouTemplateSlider() {
   startAutoPlay();
   updateSlider(0);
 }
+
+/* ==========================================================================
+   Global Reading Progress Bar
+   ========================================================================== */
+function initScrollProgressBar() {
+  let bar = document.getElementById('scrollProgressBar');
+  if (!bar) {
+    bar = document.createElement('div');
+    bar.id = 'scrollProgressBar';
+    bar.className = 'scroll-progress-bar';
+    document.body.prepend(bar);
+  }
+
+  function updateProgress() {
+    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (totalHeight <= 0) {
+      bar.style.width = '0%';
+      return;
+    }
+    const progress = Math.min(100, Math.max(0, (window.scrollY / totalHeight) * 100));
+    bar.style.width = `${progress}%`;
+  }
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        updateProgress();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
+  updateProgress();
+}
+
+/* ==========================================================================
+   Universal Scroll-Triggered Reveal Animations
+   ========================================================================== */
+function initScrollReveals() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    return;
+  }
+
+  const selectors = [
+    '.section-header',
+    '.portal-achievement-card',
+    '.app-card',
+    '.cert-card-premium',
+    '.youx-portfolio-card',
+    '.testimonial-card-slide',
+    '.about-card',
+    '.side-card',
+    '.metric-card',
+    '.companies-carousel-header',
+    '.contact-section-card',
+    '.learning-catalog-card',
+    '.beverr-hero-left',
+    '.beverr-hero-center',
+    '.beverr-hero-right',
+    '.course-item-card'
+  ];
+
+  const elements = document.querySelectorAll(selectors.join(', '));
+  if (!elements.length) return;
+
+  // Stagger siblings in same parent container
+  const parentMap = new Map();
+  elements.forEach(el => {
+    const parent = el.parentElement;
+    if (!parentMap.has(parent)) {
+      parentMap.set(parent, []);
+    }
+    parentMap.get(parent).push(el);
+  });
+
+  parentMap.forEach(group => {
+    group.forEach((el, index) => {
+      el.classList.add('reveal-item');
+      const delayIdx = (index % 4) + 1;
+      el.classList.add(`reveal-delay-${delayIdx}`);
+    });
+  });
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, {
+    root: null,
+    threshold: 0.08,
+    rootMargin: '0px 0px -20px 0px'
+  });
+
+  elements.forEach(el => observer.observe(el));
+}
+
+/* ==========================================================================
+   Animated Hero & Metric Stat Counters
+   ========================================================================== */
+function initStatCounters() {
+  const statElements = document.querySelectorAll('.beverr-stat-number, .metric-number, .stat-number');
+  if (!statElements.length) return;
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        obs.unobserve(el);
+
+        const originalText = el.textContent.trim();
+        const match = originalText.match(/^([^\d]*)(\d+)([^\d]*)$/);
+        if (!match) return;
+
+        const prefix = match[1] || '';
+        const targetValue = parseInt(match[2], 10);
+        const suffix = match[3] || '';
+
+        const duration = 1400; // ms
+        const startTime = performance.now();
+
+        function easeOutQuart(x) {
+          return 1 - Math.pow(1 - x, 4);
+        }
+
+        function updateCounter(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(1, elapsed / duration);
+          const currentCount = Math.round(easeOutQuart(progress) * targetValue);
+
+          el.textContent = `${prefix}${currentCount}${suffix}`;
+
+          if (progress < 1) {
+            requestAnimationFrame(updateCounter);
+          } else {
+            el.textContent = originalText;
+          }
+        }
+
+        requestAnimationFrame(updateCounter);
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  statElements.forEach(el => observer.observe(el));
+}
+

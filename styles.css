@@ -4902,6 +4902,163 @@ a {
   }
 }
 
+/* ==========================================================================
+   GLOBAL UX ENHANCEMENTS: ANIMATIONS, SCROLLING, TRANSITIONS & MOVEMENTS
+   ========================================================================== */
 
+/* 1. Global Reading & Scroll Progress Indicator Bar */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--brand-primary) 0%, var(--brand-secondary) 55%, var(--brand-accent) 100%);
+  z-index: 1100;
+  pointer-events: none;
+  transition: width 0.08s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 10px rgba(var(--brand-primary-rgb), 0.5);
+}
 
+/* 2. Scroll-Triggered Reveal Animations */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
 
+.reveal-item.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delay classes for cascading animations */
+.reveal-delay-1 { transition-delay: 0.05s; }
+.reveal-delay-2 { transition-delay: 0.12s; }
+.reveal-delay-3 { transition-delay: 0.19s; }
+.reveal-delay-4 { transition-delay: 0.26s; }
+
+/* 3. Stat Number Counting & Focus Glow */
+.beverr-stat-number, .stat-number, .metric-number {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+}
+
+.beverr-stat-item:hover .beverr-stat-number {
+  transform: scale(1.05);
+  color: #38bdf8;
+}
+
+/* 4. Enhanced Card Lift & Elevation Transitions */
+.portal-achievement-card,
+.app-card,
+.cert-card-premium,
+.youx-portfolio-card,
+.timeline-card,
+.metric-card,
+.side-card,
+.about-feature-card {
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.32s ease, border-color 0.25s ease;
+}
+
+.portal-achievement-card:hover,
+.app-card:hover,
+.cert-card-premium:hover,
+.youx-portfolio-card:hover,
+.timeline-card:hover,
+.metric-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12);
+  border-color: rgba(var(--brand-primary-rgb), 0.35);
+}
+
+[data-theme="dark"] .portal-achievement-card:hover,
+[data-theme="dark"] .app-card:hover,
+[data-theme="dark"] .cert-card-premium:hover,
+[data-theme="dark"] .youx-portfolio-card:hover,
+[data-theme="dark"] .timeline-card:hover,
+[data-theme="dark"] .metric-card:hover {
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+/* 5. Button Sheen & Interactive Click Feedback */
+.btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn:active {
+  transform: scale(0.97) !important;
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(25deg);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.btn-primary:hover::after {
+  opacity: 1;
+  animation: buttonSheen 0.75s ease-out;
+}
+
+@keyframes buttonSheen {
+  0% {
+    left: -60%;
+  }
+  100% {
+    left: 140%;
+  }
+}
+
+/* 6. Brand Logo Interactive Pulse */
+.beverr-brand-logo:hover .beverr-logo-box {
+  transform: scale(1.08) rotate(-4deg);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 7. Badges & Chip Gentle Floating Lift */
+.portal-badge-item,
+.lang-pill,
+.capability-item {
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.portal-badge-item:hover,
+.lang-pill:hover,
+.capability-item:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* 8. Reduced Motion Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal-item {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
