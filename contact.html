@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -83,6 +84,7 @@
   }
   </script>
 </head>
+
 <body>
 
   <!-- Header / Navigation (Beverr Green Theme) -->
@@ -123,8 +125,7 @@
           </svg>
         </button>
 
-        <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Toggle Menu" aria-expanded="false"
-          style="color: #ffffff; border-color: rgba(255,255,255,0.4);">
+        <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Toggle Menu" aria-expanded="false">
           ☰
         </button>
       </div>
@@ -156,9 +157,10 @@
     <section class="section-wrapper page-hero-banner">
       <div class="container">
         <span class="section-eyebrow">Direct Executive Communication</span>
-        <h1 style="font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 800; color: #ffffff; margin-bottom: 14px; letter-spacing: -0.02em;">Let's Connect</h1>
-        <p style="font-size: 1.08rem; color: rgba(255, 255, 255, 0.9); max-width: 820px; line-height: 1.7;">
-          Have an inquiry about AI adoption, internal digital products, or mission-critical enterprise IT operations? Send a message directly via this form. All correspondence is recorded securely in Cloudflare D1 SQL.
+        <h1 class="page-hero-title">Let's Connect</h1>
+        <p class="page-hero-desc">
+          Have an inquiry about AI adoption, internal digital products, or mission-critical enterprise IT operations?
+          Send a message directly via this form. All correspondence is recorded securely in Cloudflare D1 SQL.
         </p>
       </div>
     </section>
@@ -168,17 +170,18 @@
       <div class="container">
         <div class="contact-section-card">
           <div class="contact-layout-grid">
-            
+
             <!-- Information Column -->
             <div class="contact-info-col">
               <span class="section-eyebrow" style="margin-bottom: 8px;">Professional Inquiries</span>
               <h2 style="font-size: 2.1rem; color: var(--text-primary); margin-bottom: 12px;">Get in Touch</h2>
               <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.65; margin-bottom: 28px;">
-                Whether you are exploring Power Platform architecture, industrial AI camera adoption, or IT infrastructure reliability, I am open to strategic collaboration and professional exchange.
+                Whether you are exploring Power Platform architecture, industrial AI camera adoption, or IT
+                infrastructure reliability, I am open to strategic collaboration and professional exchange.
               </p>
 
               <div style="display: flex; flex-direction: column; gap: 20px;">
-                
+
                 <div class="contact-info-item">
                   <div class="contact-info-icon">📍</div>
                   <div>
@@ -191,7 +194,9 @@
                   <div class="contact-info-icon">🌐</div>
                   <div>
                     <div class="contact-info-label">Verified Professional Network</div>
-                    <a href="https://www.linkedin.com/in/melkadi/" target="_blank" rel="noopener noreferrer" style="font-size: 0.96rem; font-weight: 600; color: var(--brand-primary); text-decoration: none;">linkedin.com/in/melkadi ↗</a>
+                    <a href="https://www.linkedin.com/in/melkadi/" target="_blank" rel="noopener noreferrer"
+                      style="font-size: 0.96rem; font-weight: 600; color: var(--brand-primary); text-decoration: none;">linkedin.com/in/melkadi
+                      ↗</a>
                   </div>
                 </div>
 
@@ -212,16 +217,6 @@
                 </div>
 
               </div>
-
-              <!-- Accreditation Badges Quick Links -->
-              <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border-subtle);">
-                <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 12px;">Verified Accreditation Portals</div>
-                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-                  <a href="https://me.developers.google.com/u/mohamed_elkadi" target="_blank" rel="noopener noreferrer" class="badge badge-teal" style="text-decoration: none;">Google Developers ↗</a>
-                  <a href="https://www.credly.com/users/mohamedelkadi/badges" target="_blank" rel="noopener noreferrer" class="badge" style="text-decoration: none;">Credly Digital Badges ↗</a>
-                  <a href="https://learn.microsoft.com/en-us/users/melkadise/" target="_blank" rel="noopener noreferrer" class="badge badge-accent" style="text-decoration: none;">Microsoft Learn Level 6 ↗</a>
-                </div>
-              </div>
             </div>
 
             <!-- Form Column -->
@@ -236,17 +231,21 @@
 
                 <div class="form-group">
                   <label for="senderEmail" class="form-label">Your Email Address *</label>
-                  <input type="email" id="senderEmail" class="form-input" placeholder="e.g. partner@organization.com" required>
+                  <input type="email" id="senderEmail" class="form-input" placeholder="e.g. partner@organization.com"
+                    required>
                 </div>
 
                 <div class="form-group">
                   <label for="senderSubject" class="form-label">Subject / Organization</label>
-                  <input type="text" id="senderSubject" class="form-input" placeholder="e.g. AI Automation & Power Platform Initiative">
+                  <input type="text" id="senderSubject" class="form-input"
+                    placeholder="e.g. AI Automation & Power Platform Initiative">
                 </div>
 
                 <div class="form-group">
                   <label for="senderMessage" class="form-label">Message *</label>
-                  <textarea id="senderMessage" class="form-textarea" placeholder="How can we collaborate on AI adoption, digital products, or operations?" required></textarea>
+                  <textarea id="senderMessage" class="form-textarea"
+                    placeholder="How can we collaborate on AI adoption, digital products, or operations?"
+                    required></textarea>
                 </div>
 
                 <button type="submit" id="formSubmitBtn" class="btn btn-primary" style="width: 100%; margin-top: 8px;">
@@ -271,12 +270,17 @@
           <div class="brand-name" style="margin-bottom: 8px;">
             <span style="font-size: 1.25rem; font-weight: 800; color: var(--text-primary);">Mohamed Elkadi</span>
           </div>
-          <p class="footer-brand-desc">Product-Oriented IT Professional with 20+ years delivering enterprise IT operations, Microsoft 365, Power Platform solutions, and AI enablement for 500+ users.</p>
+          <p class="footer-brand-desc">Product-Oriented IT Professional with 20+ years delivering enterprise IT
+            operations, Microsoft 365, Power Platform solutions, and AI enablement for 500+ users.</p>
           <div class="footer-socials">
-            <a href="https://www.linkedin.com/in/melkadi/" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="LinkedIn">in</a>
-            <a href="https://me.developers.google.com/u/mohamed_elkadi" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Google Developers">G</a>
-            <a href="https://www.credly.com/users/mohamedelkadi/badges" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Credly Badges">C</a>
-            <a href="https://learn.microsoft.com/en-us/users/melkadise/" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Microsoft Learn">M</a>
+            <a href="https://www.linkedin.com/in/melkadi/" target="_blank" rel="noopener noreferrer"
+              class="footer-social-btn" title="LinkedIn">in</a>
+            <a href="https://me.developers.google.com/u/mohamed_elkadi" target="_blank" rel="noopener noreferrer"
+              class="footer-social-btn" title="Google Developers">G</a>
+            <a href="https://www.credly.com/users/mohamedelkadi/badges" target="_blank" rel="noopener noreferrer"
+              class="footer-social-btn" title="Credly Badges">C</a>
+            <a href="https://learn.microsoft.com/en-us/users/melkadise/" target="_blank" rel="noopener noreferrer"
+              class="footer-social-btn" title="Microsoft Learn">M</a>
           </div>
         </div>
 
@@ -293,9 +297,12 @@
         <div>
           <div class="footer-col-title">Credentials & Badges</div>
           <ul class="footer-nav-list">
-            <li><a href="https://me.developers.google.com/u/mohamed_elkadi" target="_blank" rel="noopener noreferrer" class="footer-nav-link">Google Developers ↗</a></li>
-            <li><a href="https://www.credly.com/users/mohamedelkadi/badges" target="_blank" rel="noopener noreferrer" class="footer-nav-link">Credly Digital Badges ↗</a></li>
-            <li><a href="https://learn.microsoft.com/en-us/users/melkadise/" target="_blank" rel="noopener noreferrer" class="footer-nav-link">Microsoft Learn (L6) ↗</a></li>
+            <li><a href="https://me.developers.google.com/u/mohamed_elkadi" target="_blank" rel="noopener noreferrer"
+                class="footer-nav-link">Google Developers ↗</a></li>
+            <li><a href="https://www.credly.com/users/mohamedelkadi/badges" target="_blank" rel="noopener noreferrer"
+                class="footer-nav-link">Credly Digital Badges ↗</a></li>
+            <li><a href="https://learn.microsoft.com/en-us/users/melkadise/" target="_blank" rel="noopener noreferrer"
+                class="footer-nav-link">Microsoft Learn (L6) ↗</a></li>
             <li><a href="about.html#certifications" class="footer-nav-link">SELP Certifications</a></li>
           </ul>
         </div>
@@ -304,10 +311,13 @@
           <div class="footer-col-title">Location & Connect</div>
           <ul class="footer-nav-list">
             <li class="footer-nav-link" style="cursor: default;"><span>📍</span> <span>Cairo, Egypt</span></li>
-            <li class="footer-nav-link" style="cursor: default;"><span>⏱️</span> <span>Response within 24 hours</span></li>
-            <li class="footer-nav-link" style="cursor: default;"><span>🔒</span> <span>Strict professional privacy</span></li>
+            <li class="footer-nav-link" style="cursor: default;"><span>⏱️</span> <span>Response within 24 hours</span>
+            </li>
+            <li class="footer-nav-link" style="cursor: default;"><span>🔒</span> <span>Strict professional
+                privacy</span></li>
             <li style="margin-top: 8px;">
-              <a href="contact.html" class="btn btn-sm btn-primary" style="width: 100%; justify-content: center;">Direct Contact Form →</a>
+              <a href="contact.html" class="btn btn-sm btn-primary" style="width: 100%; justify-content: center;">Direct
+                Contact Form →</a>
             </li>
           </ul>
         </div>
@@ -322,11 +332,13 @@
 
   <!-- FLOATING BACK TO TOP BUTTON (CIRCULAR) -->
   <button class="back-to-top-btn" id="backToTopBtn" aria-label="Back to top" title="Back to top">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M18 15l-6-6-6 6"/>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 15l-6-6-6 6" />
     </svg>
   </button>
 
   <script src="script.js"></script>
 </body>
+
 </html>
