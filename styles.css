@@ -3203,18 +3203,30 @@ a {
 
 .beverr-hero {
   position: relative;
-  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 52%, #0f766e 100%);
-  background-image: url('assets/waves-background.svg'), linear-gradient(135deg, #0f172a 0%, #1e3a8a 52%, #0f766e 100%);
-  background-repeat: no-repeat;
-  background-position: bottom center;
-  background-size: 100% auto;
+  background: linear-gradient(135deg, #092338 0%, #0a3d48 50%, #096a61 100%);
   color: #ffffff;
-  padding-top: 130px;
+  padding-top: 120px;
   padding-bottom: 20px;
   margin-bottom: 0px;
   overflow: visible;
   border-bottom: none;
   z-index: 20;
+}
+
+.beverr-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/waves-background.svg');
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: 90vw;
+  opacity: 0.14;
+  /* Mask out waves behind the left column text so profession is 100% clean and pristine like Beverr */
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, transparent 20%, rgba(0,0,0,0.4) 28%, rgba(0,0,0,1) 42%, rgba(0,0,0,1) 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, transparent 20%, rgba(0,0,0,0.4) 28%, rgba(0,0,0,1) 42%, rgba(0,0,0,1) 100%);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .beverr-hero-container {
@@ -3230,25 +3242,27 @@ a {
 
 .beverr-hero-left {
   align-self: center;
-  padding-bottom: 30px;
+  padding-bottom: 50px;
+  position: relative;
+  z-index: 5;
 }
 
 .beverr-greeting {
   font-size: 24px;
-  font-weight: 500;
+  font-weight: 600;
   color: #ffffff;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   letter-spacing: -0.01em;
   opacity: 0.95;
 }
 
 .beverr-name {
   font-family: 'Staatliches', cursive, sans-serif;
-  font-size: clamp(3.5rem, 5.6vw, 6.8rem);
-  line-height: 0.88;
+  font-size: clamp(3.8rem, 6.2vw, 7.5rem);
+  line-height: 0.9;
   color: #ffffff;
   text-transform: uppercase;
-  margin: 0 0 18px 0;
+  margin: 0 0 24px 0;
   letter-spacing: 0.02em;
 }
 
@@ -3256,7 +3270,7 @@ a {
   width: 250px;
   max-width: 100%;
   height: auto;
-  margin-bottom: 22px;
+  margin-bottom: 24px;
   display: block;
 }
 
@@ -3266,7 +3280,9 @@ a {
   opacity: 0.75;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  margin: 0;
 }
 
 /* Center Oval Capsule with Bottom Protrusion */
@@ -3280,13 +3296,13 @@ a {
 }
 
 .beverr-arch-frame {
-  background: linear-gradient(180deg, #d97706 0%, #b45309 100%);
+  background-color: #FDD746;
   border-radius: 500px;
-  width: 370px;
+  width: 400px;
   max-width: 100%;
   overflow: hidden;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.28);
-  margin-bottom: -180px;
+  margin-bottom: -200px;
   position: relative;
   z-index: 35;
   display: flex;
@@ -3317,13 +3333,13 @@ a {
   height: auto;
   display: block;
   object-fit: cover;
-  transform: translateY(6px);
+  transform: translateY(2px);
 }
 
 /* Right Column Vertically Stacked Metrics */
 .beverr-hero-right {
   align-self: center;
-  padding-bottom: 40px;
+  padding-bottom: 50px;
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -3336,7 +3352,7 @@ a {
 }
 
 .beverr-stat-label {
-  font-size: 22px;
+  font-size: 24px;
   color: #ffffff;
   opacity: 0.75;
   font-weight: 500;
@@ -3345,7 +3361,7 @@ a {
 
 .beverr-stat-number {
   font-family: 'Staatliches', cursive, sans-serif;
-  font-size: clamp(3.4rem, 5vw, 4.8rem);
+  font-size: clamp(3.6rem, 5.2vw, 5rem);
   font-weight: 700;
   color: #ffffff;
   line-height: 1;
