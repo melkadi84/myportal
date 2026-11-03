@@ -3205,7 +3205,7 @@ a {
   position: relative;
   background-color: #096A61;
   color: #ffffff;
-  padding-top: 130px;
+  padding-top: 100px;
   padding-bottom: 0px;
   margin-bottom: 0px;
   overflow: visible;
@@ -3295,7 +3295,8 @@ a {
 .beverr-arch-frame {
   background-color: #FDD746;
   border-radius: 500px;
-  width: 400px;
+  width: 424px;
+  height: 684px;
   max-width: 100%;
   overflow: hidden;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.28);
@@ -3327,10 +3328,10 @@ a {
 
 .beverr-hero-portrait {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   object-fit: cover;
-  transform: translateY(2px);
+  object-position: center bottom;
 }
 
 /* Right Column Vertically Stacked Metrics */
