@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollProgressBar();
   initScrollReveals();
   initStatCounters();
+  initTypewriterAnimation();
 });
 
 /* ==========================================================================
@@ -1207,5 +1208,69 @@ function initStatCounters() {
   });
 
   statElements.forEach(el => observer.observe(el));
+}
+
+/* ==========================================================================
+   Typewriter Animation (AboutMe Template: .header-title-text.type-animate)
+   ========================================================================== */
+function initTypewriterAnimation() {
+  const elements = document.getElementsByClassName('typewrite');
+  if (!elements || elements.length === 0) return;
+
+  function TxtType(el, toRotate, period) {
+    this.toRotate = toRotate;
+    this.el = el;
+    this.loopNum = 0;
+    this.period = parseInt(period, 10) || 2000;
+    this.txt = '';
+    this.isDeleting = false;
+    this.tick();
+  }
+
+  TxtType.prototype.tick = function() {
+    const i = this.loopNum % this.toRotate.length;
+    const fullTxt = this.toRotate[i];
+
+    if (this.isDeleting) {
+      this.txt = fullTxt.substring(0, this.txt.length - 1);
+    } else {
+      this.txt = fullTxt.substring(0, this.txt.length + 1);
+    }
+
+    this.el.innerHTML = '<span class="wrap">' + (this.txt || '&nbsp;') + '</span>';
+
+    const that = this;
+    let delta = 150 - Math.random() * 60;
+
+    if (this.isDeleting) {
+      delta /= 2;
+    }
+
+    if (!this.isDeleting && this.txt === fullTxt) {
+      delta = this.period;
+      this.isDeleting = true;
+    } else if (this.isDeleting && this.txt === '') {
+      this.isDeleting = false;
+      this.loopNum++;
+      delta = 500;
+    }
+
+    setTimeout(function() {
+      that.tick();
+    }, delta);
+  };
+
+  for (let i = 0; i < elements.length; i++) {
+    const el = elements[i];
+    const toRotate = el.getAttribute('data-type');
+    const period = el.getAttribute('data-period');
+    if (toRotate) {
+      try {
+        new TxtType(el, JSON.parse(toRotate), period);
+      } catch (err) {
+        console.error('Typewriter JSON parse error:', err);
+      }
+    }
+  }
 }
 
