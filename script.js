@@ -641,7 +641,8 @@ function initTestimonialsCarousel() {
       currentX = 0;
     }
 
-    const cardStep = 436; // 410px width + 26px gap
+    const firstCard = track.querySelector('.testimonial-card-youx');
+    const cardStep = firstCard ? (firstCard.offsetWidth + 20) : 330;
     let targetX = currentX + (direction === 'next' ? -cardStep : cardStep);
 
     // Keep within half width loop
