@@ -3127,8 +3127,8 @@ a {
 }
 
 .beverr-logo-box {
-  background: var(--brand-primary);
-  color: #ffffff;
+  background: #FDD746;
+  color: #096A61;
   font-family: 'Staatliches', sans-serif;
   font-weight: 900;
   font-size: 1.45rem;
@@ -3139,13 +3139,13 @@ a {
   justify-content: center;
   border-radius: 6px;
   line-height: 1;
-  box-shadow: 0 2px 8px rgba(29, 78, 216, 0.35);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
   transition: all 0.2s ease;
 }
 
 .beverr-brand-logo:hover .beverr-logo-box {
   transform: scale(1.05);
-  background: #2563eb;
+  background: #fde047;
 }
 
 .beverr-logo-text {
@@ -3203,10 +3203,10 @@ a {
 
 .beverr-hero {
   position: relative;
-  background: linear-gradient(135deg, #092338 0%, #0a3d48 50%, #096a61 100%);
+  background-color: #096A61;
   color: #ffffff;
-  padding-top: 120px;
-  padding-bottom: 20px;
+  padding-top: 130px;
+  padding-bottom: 0px;
   margin-bottom: 0px;
   overflow: visible;
   border-bottom: none;
@@ -3221,10 +3221,7 @@ a {
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: 90vw;
-  opacity: 0.14;
-  /* Mask out waves behind the left column text so profession is 100% clean and pristine like Beverr */
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, transparent 20%, rgba(0,0,0,0.4) 28%, rgba(0,0,0,1) 42%, rgba(0,0,0,1) 100%);
-  mask-image: linear-gradient(90deg, transparent 0%, transparent 20%, rgba(0,0,0,0.4) 28%, rgba(0,0,0,1) 42%, rgba(0,0,0,1) 100%);
+  opacity: 0.18;
   pointer-events: none;
   z-index: 1;
 }
