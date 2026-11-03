@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initCollapsibleSections();
   initTimelineDateClicks();
   initDynamicRecommendations();
-  initTestimonialsCarousel();
   initYouTemplateSlider();
   initCompaniesMarquee();
   initPortfolioSlider();
