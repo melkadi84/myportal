@@ -349,17 +349,9 @@ function initTimelineScrollAnimation() {
     items.forEach(item => {
       const rect = item.getBoundingClientRect();
 
-      if (rect.bottom < exitThreshold) {
-        // Scrolled past the top of the screen: hide smoothly
-        item.classList.remove('timeline-visible');
-        item.classList.add('timeline-scrolled-past');
-      } else if (rect.top < enterThreshold) {
-        // Active in viewport: show with smooth animation
+      if (rect.top < enterThreshold) {
+        // Active in viewport or already scrolled: show with smooth animation
         item.classList.add('timeline-visible');
-        item.classList.remove('timeline-scrolled-past');
-      } else {
-        // Not yet reached (below viewport)
-        item.classList.remove('timeline-visible');
         item.classList.remove('timeline-scrolled-past');
       }
     });

@@ -1760,12 +1760,11 @@ a {
   background: linear-gradient(to bottom, var(--brand-primary), var(--border-subtle));
 }
 
-/* Scrolled Past Items: Hidden with smooth fade-out */
+/* Scrolled Past Items: Remain fully visible so user can read smoothly */
 .experience-timeline.timeline-animated .timeline-item.timeline-scrolled-past {
-  opacity: 0;
-  transform: translateY(-28px) scale(0.97);
-  filter: blur(4px);
-  pointer-events: none;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
 }
 
 .timeline-header {
