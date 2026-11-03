@@ -4890,36 +4890,105 @@ a {
   }
 }
 
-@media (min-width: 641px) and (max-width: 992px) and (orientation: portrait) {
+@media (min-width: 641px) and (max-width: 1100px) and (orientation: portrait) {
+  .beverr-hero-container {
+    grid-template-columns: minmax(0, 1fr) minmax(260px, min(38vw, 380px)) minmax(0, 1fr);
+    align-items: start;
+    gap: clamp(12px, 2vw, 24px);
+  }
+
+  .beverr-hero-left {
+    align-self: start;
+    align-items: flex-start;
+    text-align: left;
+    padding-top: 15px;
+    padding-bottom: 0;
+  }
+
+  .beverr-greeting {
+    font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+    margin-bottom: 10px;
+  }
+
+  .beverr-name {
+    font-size: clamp(2.4rem, 5.8vw, 4rem);
+    line-height: 0.9;
+    margin-bottom: 10px;
+  }
+
+  .beverr-deco-line {
+    width: min(100%, 180px);
+    margin: 0 0 12px;
+  }
+
+  .beverr-role {
+    font-size: clamp(0.75rem, 1.8vw, 1rem);
+  }
+
   .beverr-hero-center {
-    width: min(100%, 340px);
-    justify-self: center;
+    width: 100%;
+    min-width: 0;
+    justify-self: stretch;
+    align-self: start;
   }
 
   .beverr-arch-frame {
     width: 100%;
     height: auto;
     aspect-ratio: 424 / 684;
-    margin-bottom: -160px;
+    margin-bottom: -120px;
   }
 
   .beverr-hero-right {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 16px;
-    padding: 0 0 28px;
+    align-self: start;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    padding: 15px 0 28px;
   }
 
   .beverr-stat-item {
-    margin-bottom: 0;
+    margin-bottom: 16px;
+    padding: 0;
+    text-align: right;
   }
 
   .beverr-stat-label {
-    font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+    font-size: clamp(0.72rem, 1.5vw, 0.95rem);
   }
 
   .beverr-stat-number {
-    font-size: clamp(2.5rem, 5vw, 3.8rem);
+    font-size: clamp(2rem, 4.2vw, 3rem);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1100px) and (orientation: portrait) {
+  .site-header.beverr-header-theme .nav-container {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 8px;
+    padding: 0 16px;
+  }
+
+  .site-header.beverr-header-theme .beverr-header-nav {
+    display: flex;
+    min-width: 0;
+  }
+
+  .site-header.beverr-header-theme .beverr-header-nav .nav-links {
+    gap: clamp(4px, 1vw, 10px);
+  }
+
+  .site-header.beverr-header-theme .beverr-header-nav .nav-link {
+    padding: 4px clamp(4px, 0.8vw, 8px);
+    font-size: clamp(0.7rem, 1.4vw, 0.88rem);
+  }
+
+  .site-header.beverr-header-theme .beverr-header-socials {
+    gap: 6px;
+  }
+
+  .site-header.beverr-header-theme .mobile-menu-btn {
+    display: none;
   }
 }
 
@@ -4994,7 +5063,7 @@ a {
   }
 }
 
-@media (min-width: 641px) and (max-width: 992px) and (orientation: portrait) {
+@media (min-width: 641px) and (max-width: 1100px) and (orientation: portrait) {
   .beverr-arch-frame {
     margin-bottom: 0;
   }
@@ -5055,6 +5124,7 @@ a {
 
   .beverr-stat-item {
     padding: 0 6px 10px;
+    text-align: center;
   }
 
   .beverr-stat-number {
