@@ -160,7 +160,7 @@
         <h1 class="page-hero-title">Let's Connect</h1>
         <p class="page-hero-desc">
           Have an inquiry about AI adoption, internal digital products, or mission-critical enterprise IT operations?
-          Send a message directly via this form. All correspondence is recorded securely in Cloudflare D1 SQL.
+          Send a message directly via this form.
         </p>
       </div>
     </section>
@@ -224,6 +224,12 @@
               <form class="contact-form" id="contactForm" novalidate>
                 <div id="formStatus" class="form-status" role="alert"></div>
 
+                <!-- Anti-Spam Honeypot Trap (Hidden from humans, attracts spam bots) -->
+                <div style="display:none !important;" aria-hidden="true">
+                  <label for="botTrapField">Do not fill this field</label>
+                  <input type="text" id="botTrapField" name="bot_verification_field" tabindex="-1" autocomplete="off">
+                </div>
+
                 <div class="form-group">
                   <label for="senderName" class="form-label">Full Name *</label>
                   <input type="text" id="senderName" class="form-input" placeholder="e.g. Dr. Tarek Nabil" required>
@@ -271,7 +277,7 @@
             <span style="font-size: 1.25rem; font-weight: 800; color: var(--text-primary);">Mohamed Elkadi</span>
           </div>
           <p class="footer-brand-desc">Product-Oriented IT Professional with 20+ years delivering enterprise IT
-            operations, Microsoft 365, Power Platform solutions, and AI enablement for 500+ users.</p>
+            operations, Microsoft 365, Power Platform solutions, and AI enablement for 700+ users.</p>
           <div class="footer-socials">
             <a href="https://www.linkedin.com/in/melkadi/" target="_blank" rel="noopener noreferrer"
               class="footer-social-btn" title="LinkedIn">in</a>
