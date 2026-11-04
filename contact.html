@@ -160,7 +160,7 @@
         <h1 class="page-hero-title">Let's Connect</h1>
         <p class="page-hero-desc">
           Have an inquiry about AI adoption, internal digital products, or mission-critical enterprise IT operations?
-          Send a message directly via this form. All correspondence is recorded securely in Cloudflare D1 SQL.
+          Send a message directly via this form.
         </p>
       </div>
     </section>
@@ -223,6 +223,12 @@
             <div class="contact-form-col">
               <form class="contact-form" id="contactForm" novalidate>
                 <div id="formStatus" class="form-status" role="alert"></div>
+
+                <!-- Anti-Spam Honeypot Trap (Hidden from humans, attracts spam bots) -->
+                <div style="display:none !important;" aria-hidden="true">
+                  <label for="botTrapField">Do not fill this field</label>
+                  <input type="text" id="botTrapField" name="bot_verification_field" tabindex="-1" autocomplete="off">
+                </div>
 
                 <div class="form-group">
                   <label for="senderName" class="form-label">Full Name *</label>

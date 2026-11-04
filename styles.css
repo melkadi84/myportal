@@ -83,7 +83,7 @@
 
   --text-primary: #f8fafc;
   --text-secondary: #94a3b8;
-  --text-muted: #64748b;
+  --text-muted: #94a3b8; /* Upgraded for WCAG AA compliance on dark backgrounds (>4.5:1 ratio) */
   --text-light: #cbd5e1;
 
   --brand-primary: #38bdf8;
@@ -117,7 +117,11 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  transition: background-color var(--transition-normal), border-color var(--transition-normal), color var(--transition-fast);
+}
+
+/* Focused Hardware-Accelerated Transitions for interactive components (Replaces laggy universal transition) */
+a, button, input, textarea, select, .btn, .nav-link, .app-card, .card-glass, .timeline-card, .theme-toggle-btn, .beverr-social-link {
+  transition: background-color var(--transition-normal), border-color var(--transition-normal), color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 html {
@@ -925,10 +929,6 @@ a {
 .capability-item:hover {
   border-color: var(--brand-primary);
   transform: translateX(4px);
-}
-
-.capabilities-grid .capability-item:last-child:nth-child(odd) {
-  grid-column: 1 / -1;
 }
 
 .capability-icon {
@@ -3461,7 +3461,7 @@ a {
 }
 
 .beverr-name {
-  font-family: 'Staatliches', cursive, sans-serif;
+  font-family: 'Staatliches', 'Impact', 'Trebuchet MS', 'Arial Black', sans-serif;
   font-size: clamp(4.5rem, 6.2vw, 120px);
   line-height: 0.9em;
   color: var(--text-primary);
@@ -3519,6 +3519,14 @@ a {
   margin-bottom: -200px;
   position: relative;
   z-index: 35;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.beverr-arch-frame picture {
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -3663,7 +3671,7 @@ a {
 }
 
 .beverr-stat-number {
-  font-family: 'Staatliches', cursive, sans-serif;
+  font-family: 'Staatliches', 'Impact', 'Trebuchet MS', 'Arial Black', sans-serif;
   font-size: 70px;
   font-weight: 400;
   color: var(--text-primary);
@@ -3938,7 +3946,7 @@ a {
 .portfolio-underline-svg {
   position: absolute;
   left: 0;
-  bottom: -16px;
+  bottom: -50px;
   width: 100%;
   max-width: 320px;
   height: auto;
