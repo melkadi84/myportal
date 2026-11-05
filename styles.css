@@ -1572,6 +1572,7 @@ a {
 .apps-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
   gap: 20px;
 }
 
@@ -2352,8 +2353,8 @@ a {
    -------------------------------------------------------------------------- */
 .infra-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 24px;
 }
 
 /* ==========================================================================
@@ -3493,6 +3494,94 @@ a {
   margin: 0;
 }
 
+.beverr-hero-value {
+  max-width: 370px;
+  margin: 14px 0 0;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.beverr-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.beverr-stat-item--capacity .beverr-stat-number {
+  font-size: clamp(2.5rem, 4vw, 3.75rem);
+}
+
+.languages-summary {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.languages-summary h3 {
+  margin: 0 0 8px;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+}
+
+.language-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.language-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.language-icon {
+  display: inline-flex;
+  flex: 0 0 28px;
+  width: 28px;
+  height: 20px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+svg.language-icon {
+  display: block;
+}
+
+.education-summary {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.education-summary h3 {
+  margin: 0 0 8px;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+}
+
+.education-summary ul {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--text-secondary);
+}
+
+.recommendations-link {
+  margin: 18px 20px 0;
+  text-align: center;
+}
+
+.recommendations-link a {
+  color: var(--brand-primary);
+  font-weight: 700;
+}
+
 [data-theme="dark"] .beverr-role {
   color: #FDD746;
 }
@@ -3693,7 +3782,7 @@ a {
 }
 
 .companies-carousel-section {
-  padding: 80px 0;
+  padding: 64px 0 76px 0;
   background: var(--bg-secondary);
   border-top: 1px solid var(--border-subtle);
   border-bottom: 1px solid var(--border-subtle);
@@ -3704,13 +3793,13 @@ a {
 .companies-carousel-header {
   text-align: center;
   max-width: 680px;
-  margin: 0 auto 40px auto;
+  margin: 0 auto 36px auto;
   padding: 0 20px;
 }
 
 .companies-carousel-eyebrow {
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.15em;
@@ -3720,15 +3809,15 @@ a {
 }
 
 .companies-carousel-title {
-  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+  font-size: clamp(1.8rem, 3vw, 2.35rem);
   font-weight: 800;
   color: var(--text-primary);
   line-height: 1.25;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .companies-carousel-desc {
-  font-size: 0.95rem;
+  font-size: 0.96rem;
   color: var(--text-secondary);
   line-height: 1.6;
 }
@@ -3737,16 +3826,14 @@ a {
   position: relative;
   width: 100%;
   overflow: hidden;
-  padding: 10px 0;
-  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  padding: 10px 24px 18px;
 }
 
 .companies-marquee-track {
   display: flex;
-  gap: 48px;
+  gap: 34px;
   width: max-content;
-  animation: marqueeContinuous 38s linear infinite;
+  animation: marqueeContinuous 45s linear infinite;
   will-change: transform;
   align-items: center;
 }
@@ -3770,104 +3857,82 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 14px;
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  padding: 12px 20px;
-  min-width: 140px;
-  box-shadow: none;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  gap: 12px;
+  min-width: 180px;
+  min-height: 72px;
+  padding: 12px 16px;
   flex-shrink: 0;
   user-select: none;
   cursor: default;
-  text-decoration: none;
-}
-
-.company-carousel-card:hover {
-  transform: translateY(-4px);
-  box-shadow: none;
-  border-color: transparent;
 }
 
 .company-card-icon-wrap {
   width: 64px;
-  height: 54px;
-  border-radius: 10px;
-  background: transparent;
-  border: none;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  padding: 2px;
-  overflow: visible;
-  box-shadow: none;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
-}
-
-[data-theme="dark"] .company-card-icon-wrap {
-  background: transparent;
-  border-color: transparent;
-  box-shadow: none;
-}
-
-.company-carousel-card:hover .company-card-icon-wrap {
-  transform: scale(1.08);
-  border-color: transparent;
-  box-shadow: none;
 }
 
 .company-logo-img {
-  width: auto;
-  height: auto;
-  max-width: 58px;
-  max-height: 48px;
+  width: 100%;
+  height: 100%;
+  max-width: 60px;
+  max-height: 56px;
   object-fit: contain;
   display: block;
-  border-radius: 6px;
-  filter: grayscale(25%) opacity(0.85);
-  transition: filter 0.3s ease, transform 0.3s ease;
-}
-
-[data-theme="dark"] .company-logo-img {
-  filter: grayscale(15%) opacity(0.9);
-}
-
-.company-carousel-card:hover .company-logo-img {
-  filter: grayscale(0%) opacity(1);
 }
 
 .company-card-info {
   display: flex;
-  align-items: center;
   justify-content: center;
   text-align: center;
 }
 
 .company-card-name {
   font-family: var(--font-main);
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   color: var(--text-muted);
   line-height: 1.35;
-  text-align: center;
-  white-space: nowrap;
-  transition: color 0.25s ease;
+  white-space: normal;
+  max-width: 180px;
 }
 
-[data-theme="dark"] .company-card-name {
-  color: #94a3b8;
+.company-card-meta {
+  display: none;
 }
 
-.company-carousel-card:hover .company-card-name {
-  color: var(--brand-secondary);
-}
-
-[data-theme="dark"] .company-carousel-card:hover .company-card-name {
-  color: #2dd4bf;
+@media (max-width: 640px) {
+  .companies-carousel-section {
+    padding: 48px 0 54px 0;
+  }
+  .companies-marquee-container {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+  .companies-marquee-track {
+    gap: 16px;
+  }
+  .company-carousel-card {
+    min-width: 132px;
+    padding: 4px 8px;
+    gap: 10px;
+  }
+  .company-card-icon-wrap {
+    width: 56px;
+    height: 52px;
+  }
+  .company-logo-img {
+    max-width: 52px;
+    max-height: 48px;
+  }
+  .company-card-name {
+    font-size: 0.7rem;
+  }
 }
 
 /* Carousel Manual Navigation Controls */
@@ -4539,12 +4604,13 @@ a {
   font-size: 0.9rem;
   color: var(--text-secondary);
   line-height: 1.55;
+  min-height: 4.65em;
   margin-bottom: 16px;
 }
 
 .portal-badges-gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
   margin-top: 16px;
 }
@@ -4596,7 +4662,7 @@ a {
 }
 
 .badge-thumb-label {
-  font-size: 0.65rem;
+  font-size: 0.58rem;
   font-weight: 600;
   font-family: var(--font-mono);
   color: var(--text-secondary);
@@ -5065,6 +5131,18 @@ a {
 }
 
 @media (max-width: 640px) {
+  .beverr-stat-item--capacity .beverr-stat-number {
+    font-size: clamp(1.75rem, 7vw, 2.5rem);
+  }
+
+  .beverr-hero-actions {
+    justify-content: center;
+  }
+
+  .beverr-hero-value {
+    text-align: center;
+  }
+
   .beverr-hero-center {
     width: min(100%, 300px);
     justify-self: center;
@@ -5644,7 +5722,7 @@ a {
   background: var(--brand-secondary);
 }
 
-.you-slider-play-btn {
+.you-slider-autoplay-status {
   display: inline-flex;
   align-items: center;
   gap: 7px;
@@ -5655,13 +5733,7 @@ a {
   color: var(--text-secondary);
   font-size: 0.82rem;
   font-weight: 500;
-  cursor: pointer;
   transition: all 0.2s ease;
-}
-
-.you-slider-play-btn:hover {
-  border-color: var(--brand-secondary);
-  color: var(--text-primary);
 }
 
 /* Responsive adjustments */
