@@ -6151,3 +6151,24 @@ img { height: auto; }
   .beverr-hero-right .beverr-stat-item:last-child { padding: 0 4px 12px; }
   .beverr-hero-right .beverr-stat-label { min-height: 3.6em; font-size: 0.72rem; }
 }
+
+/* Hero: circular WhatsApp button next to "Contact me" */
+.btn-whatsapp-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #128c7e;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(18, 140, 126, 0.3);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+}
+.btn-whatsapp-circle:hover {
+  background: #0f766e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(18, 140, 126, 0.4);
+}
+.btn-whatsapp-circle:active { transform: translateY(0); }

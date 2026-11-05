@@ -22,7 +22,8 @@
 ## 2. Privacy & Data Protection Rules
 1. **Confidential information**
    - NEVER display personal or corporate email addresses.
-   - NEVER display phone numbers.
+   - NEVER display phone numbers as text. The ONE exception, chosen by the owner (Nov 2026): the circular WhatsApp
+     button in the home hero, a `wa.me` link to his WhatsApp number. Keep it; do not add the number anywhere else.
    - NEVER display or link GitHub profiles or repositories.
    - Approved public profiles: LinkedIn (`https://www.linkedin.com/in/melkadi/`) and the three
      verified portals in section 3.
