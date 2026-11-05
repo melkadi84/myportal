@@ -940,8 +940,37 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.95rem;
   flex-shrink: 0;
+}
+
+.ui-icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+.service-icon {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  margin-bottom: 16px;
+  color: var(--brand-primary);
+}
+
+.service-icon .ui-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.capability-icon .ui-icon {
+  width: 18px;
+  height: 18px;
 }
 
 .side-card {
@@ -1637,6 +1666,12 @@ a {
   transition: transform 0.25s ease;
 }
 
+.app-icon-wrap .ui-icon,
+.app-icon .ui-icon {
+  width: 23px;
+  height: 23px;
+}
+
 .app-card:hover .app-icon-wrap,
 .app-card:hover .app-icon {
   transform: scale(1.08);
@@ -1767,9 +1802,13 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
   color: var(--brand-primary);
   flex-shrink: 0;
+}
+
+.contact-info-icon .ui-icon {
+  width: 21px;
+  height: 21px;
 }
 
 .contact-info-label {
@@ -2123,9 +2162,18 @@ a {
 }
 
 .timeline-location {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
   font-size: 0.8rem;
   color: var(--text-muted);
   margin-bottom: 14px;
+}
+
+.timeline-location .ui-icon {
+  width: 15px;
+  height: 15px;
+  margin-top: 1px;
 }
 
 .timeline-responsibilities {
@@ -4900,6 +4948,11 @@ svg.language-icon {
   color: var(--text-secondary);
   transition: all 0.2s ease;
   text-decoration: none;
+}
+
+.footer-social-btn .ui-icon {
+  width: 18px;
+  height: 18px;
 }
 
 .footer-social-btn:hover {
