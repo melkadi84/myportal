@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-# Sitemap Index
-Sitemap: https://melkadi.com/sitemap.xml
+# Sitemap
+Sitemap: https://melkadi.website/sitemap.xml
