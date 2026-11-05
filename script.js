@@ -216,24 +216,29 @@ function initContactForm() {
     const name = (document.getElementById('senderName')?.value || '').trim();
     const email = (document.getElementById('senderEmail')?.value || '').trim();
     const subject = (document.getElementById('senderSubject')?.value || '').trim();
-    const message = (document.getElementById('senderMessage')?.value || '').trim();
+    const company = (document.getElementById('senderCompany')?.value || '').trim();
+    const role = (document.getElementById('senderRole')?.value || '').trim();
+    const rawMessage = (document.getElementById('senderMessage')?.value || '').trim();
+    // The database has no company/role columns yet, so they travel at the top of the message.
+    const details = [company && `Company: ${company}`, role && `Role: ${role}`].filter(Boolean).join('\n');
+    const message = details ? `${details}\n\n${rawMessage}` : rawMessage;
 
-    if (!name || !email || !message) {
-      showStatus('Please fill in all required fields (Name, Email, and Message).', 'error');
+    if (!name || !email || !subject || !rawMessage) {
+      showStatus('Fill in your name, email, topic and message, then send again.', 'error');
       return;
     }
 
     // Precise Email Format Validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
     if (!emailRegex.test(email)) {
-      showStatus('Please provide a valid corporate or personal email address.', 'error');
+      showStatus('Enter an email address in the format name@company.com.', 'error');
       return;
     }
 
     // Loading UI state
     const originalText = submitBtn.innerHTML;
     submitBtn.disabled = true;
-    submitBtn.innerHTML = `<span>Sending...</span>`;
+    submitBtn.innerHTML = `<span>Sending…</span>`;
 
     const payload = {
       name,
@@ -269,7 +274,7 @@ function initContactForm() {
       form.reset();
     } catch (err) {
       console.error('Contact Form Error:', err);
-      showStatus('An error occurred while sending your message. Please try again or connect directly on LinkedIn.', 'error');
+      showStatus('Your message was not sent. Try again in a minute, or message me on LinkedIn.', 'error');
     } finally {
       submitBtn.disabled = false;
       submitBtn.innerHTML = originalText;
@@ -447,10 +452,10 @@ function initYouTemplateSlider() {
   const total = slides.length;
   let isDragging = false;
   let startX = 0;
-  const autoRotate = true;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const autoRotate = !reduceMotion;
   let autoRotateTimer = null;
   const sliderOuter = viewport.closest('.you-slider-outer');
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (counterTotal) counterTotal.textContent = String(total);
   viewport.setAttribute('aria-live', 'polite');

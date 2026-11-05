@@ -236,33 +236,47 @@
                   <input type="text" id="botTrapField" name="bot_verification_field" tabindex="-1" autocomplete="off">
                 </div>
 
-                <div class="form-group">
-                  <label for="senderName" class="form-label">Full Name *</label>
-                  <input type="text" id="senderName" class="form-input" placeholder="e.g. Dr. Tarek Nabil" required>
+                <div class="form-row-2">
+                  <div class="form-group">
+                    <label for="senderName" class="form-label">Full name *</label>
+                    <input type="text" id="senderName" name="name" class="form-input" autocomplete="name" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="senderEmail" class="form-label">Email address *</label>
+                    <input type="email" id="senderEmail" name="email" class="form-input" autocomplete="email" required>
+                  </div>
+                </div>
+
+                <div class="form-row-2">
+                  <div class="form-group">
+                    <label for="senderCompany" class="form-label">Company</label>
+                    <input type="text" id="senderCompany" name="company" class="form-input" autocomplete="organization" maxlength="120">
+                  </div>
+                  <div class="form-group">
+                    <label for="senderRole" class="form-label">Role or opportunity</label>
+                    <input type="text" id="senderRole" name="role" class="form-input" maxlength="120">
+                  </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="senderEmail" class="form-label">Your Email Address *</label>
-                  <input type="email" id="senderEmail" class="form-input" placeholder="e.g. partner@organization.com"
-                    required>
-                </div>
-
-                <div class="form-group">
-                  <label for="senderSubject" class="form-label">Subject / Organization</label>
-                  <input type="text" id="senderSubject" class="form-input"
-                    placeholder="e.g. AI Automation & Power Platform Initiative">
+                  <label for="senderSubject" class="form-label">What is this about? *</label>
+                  <select id="senderSubject" name="subject" class="form-input" required>
+                    <option value="" disabled selected>Choose a topic</option>
+                    <option>Recruiter inquiry</option>
+                    <option>Job opportunity</option>
+                    <option>Collaboration</option>
+                    <option>Other</option>
+                  </select>
                 </div>
 
                 <div class="form-group">
                   <label for="senderMessage" class="form-label">Message *</label>
-                  <textarea id="senderMessage" class="form-textarea"
-                    placeholder="How can we collaborate on AI adoption, digital products, or operations?"
-                    required></textarea>
+                  <textarea id="senderMessage" name="message" class="form-textarea" maxlength="3000" required></textarea>
+                  <p class="form-hint">Replies usually take up to a week.</p>
                 </div>
 
                 <button type="submit" id="formSubmitBtn" class="btn btn-primary" style="width: 100%; margin-top: 8px;">
-                  <span>Send Message Securely</span>
-                  <span>→</span>
+                  <span>Send message</span>
                 </button>
               </form>
             </div>
