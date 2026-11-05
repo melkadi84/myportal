@@ -1,1 +1,9 @@
 AGENTS.md
+wrangler.toml
+cloudflare-worker.js
+schema.sql
+README.md
+.wrangler/
+node_modules/
+*.pdf
+scratch/

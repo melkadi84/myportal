@@ -260,15 +260,10 @@ function initContactForm() {
           throw new Error('Failed to deliver message');
         }
 
-        const result = await res.json();
-        showStatus(result.message || 'Thank you! Your message has been sent successfully. I will get back to you shortly.', 'success');
+        showStatus('Message sent. I will reply as soon as I can.', 'success');
       } else {
-        // Fallback simulation & local storage log
-        const existingMessages = JSON.parse(localStorage.getItem('melkadi_messages') || '[]');
-        existingMessages.push(payload);
-        localStorage.setItem('melkadi_messages', JSON.stringify(existingMessages));
-
-        showStatus('Thank you! Your message has been sent successfully. I will get back to you shortly.', 'success');
+        // No backend is configured, so nothing can be delivered. Say so instead of faking success.
+        throw new Error('CLOUDFLARE_WORKER_ENDPOINT is not set');
       }
 
       form.reset();
