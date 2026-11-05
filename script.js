@@ -400,7 +400,7 @@ function initTimelineDateClicks() {
 }
 
 /* ==========================================================================
-   9. Testimonials Slider (18 Verified Endorsements with a11y & Drag/Swipe)
+   9. Testimonials Slider (8 featured endorsements, manual controls)
    ========================================================================== */
 function initYouTemplateSlider() {
   const viewport = document.getElementById('youSliderViewport');
@@ -408,21 +408,54 @@ function initYouTemplateSlider() {
   const prevBtn = document.getElementById('youSliderPrevBtn');
   const nextBtn = document.getElementById('youSliderNextBtn');
   const counterCurrent = document.getElementById('youSliderCurrent');
-  const playBtn = document.getElementById('youSliderPlayBtn');
-  const dots = document.querySelectorAll('.you-slider-dot');
-  const slides = document.querySelectorAll('.you-slide');
+  const counterTotal = document.getElementById('youSliderTotal');
+  let slides = Array.from(document.querySelectorAll('.you-slide'));
+  let dots = Array.from(document.querySelectorAll('.you-slider-dot'));
 
   if (!viewport || !track || !slides.length) return;
 
+  const featuredIndexes = [4, 3, 11, 1, 5, 6, 7, 13];
+  const featuredIndexSet = new Set(featuredIndexes);
+  slides.forEach(slide => {
+    if (!featuredIndexSet.has(Number(slide.getAttribute('data-slide-index')))) {
+      slide.remove();
+    }
+  });
+  const slidesByOriginalIndex = new Map(
+    slides.filter(slide => slide.isConnected)
+      .map(slide => [Number(slide.getAttribute('data-slide-index')), slide])
+  );
+  slides = featuredIndexes.map(index => slidesByOriginalIndex.get(index)).filter(Boolean);
+  slides.forEach(slide => track.appendChild(slide));
+  dots.forEach(dot => {
+    if (!featuredIndexSet.has(Number(dot.getAttribute('data-slide-target')))) {
+      dot.remove();
+    }
+  });
+  const dotsByOriginalIndex = new Map(
+    dots.filter(dot => dot.isConnected)
+      .map(dot => [Number(dot.getAttribute('data-slide-target')), dot])
+  );
+  dots = featuredIndexes.map(index => dotsByOriginalIndex.get(index)).filter(Boolean);
+  dots.forEach(dot => dot.parentElement.appendChild(dot));
+  dots.forEach((dot, index) => {
+    dot.setAttribute('data-slide-target', String(index));
+    dot.setAttribute('aria-label', `Go to featured recommendation ${index + 1}`);
+  });
+
   let currentIndex = 0;
   const total = slides.length;
-  let autoPlayTimer = null;
-  let isAutoPlaying = true;
   let isDragging = false;
   let startX = 0;
+  const autoRotate = true;
+  let autoRotateTimer = null;
+  const sliderOuter = viewport.closest('.you-slider-outer');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  if (counterTotal) counterTotal.textContent = String(total);
   viewport.setAttribute('aria-live', 'polite');
   viewport.setAttribute('aria-atomic', 'true');
+  viewport.tabIndex = 0;
 
   function updateSlider(index, smooth = true) {
     if (index < 0) {
@@ -433,7 +466,7 @@ function initYouTemplateSlider() {
       currentIndex = index;
     }
 
-    track.style.transition = smooth ? 'transform 0.45s cubic-bezier(0.22, 1, 0.36, 1)' : 'none';
+    track.style.transition = smooth && !reduceMotion ? 'transform 0.45s cubic-bezier(0.22, 1, 0.36, 1)' : 'none';
     track.style.transform = `translateX(-${currentIndex * 100}%)`;
 
     slides.forEach((slide, i) => {
@@ -444,7 +477,7 @@ function initYouTemplateSlider() {
 
     dots.forEach((dot, i) => {
       dot.classList.toggle('active', i === currentIndex);
-      dot.setAttribute('aria-selected', i === currentIndex ? 'true' : 'false');
+      dot.setAttribute('aria-pressed', i === currentIndex ? 'true' : 'false');
     });
 
     if (counterCurrent) {
@@ -452,20 +485,48 @@ function initYouTemplateSlider() {
     }
   }
 
+  function clearAutoRotateTimer() {
+    if (autoRotateTimer !== null) {
+      window.clearInterval(autoRotateTimer);
+      autoRotateTimer = null;
+    }
+  }
+
+  function syncAutoRotate() {
+    clearAutoRotateTimer();
+    const shouldRotate = autoRotate && !document.hidden &&
+      !sliderOuter?.matches(':hover') &&
+      !sliderOuter?.contains(document.activeElement);
+    viewport.setAttribute('aria-live', autoRotate ? 'off' : 'polite');
+    if (shouldRotate) {
+      autoRotateTimer = window.setInterval(() => updateSlider(currentIndex + 1), 6000);
+    }
+  }
+
+  if (sliderOuter) {
+    sliderOuter.addEventListener('pointerenter', syncAutoRotate);
+    sliderOuter.addEventListener('pointerleave', syncAutoRotate);
+    sliderOuter.addEventListener('focusin', syncAutoRotate);
+    sliderOuter.addEventListener('focusout', event => {
+      if (!sliderOuter.contains(event.relatedTarget)) syncAutoRotate();
+    });
+  }
+  document.addEventListener('visibilitychange', syncAutoRotate);
+
   // Button navigation
   if (prevBtn) {
     prevBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      resetAutoPlay();
       updateSlider(currentIndex - 1);
+      syncAutoRotate();
     });
   }
 
   if (nextBtn) {
     nextBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      resetAutoPlay();
       updateSlider(currentIndex + 1);
+      syncAutoRotate();
     });
   }
 
@@ -475,60 +536,11 @@ function initYouTemplateSlider() {
       e.preventDefault();
       const target = parseInt(dot.getAttribute('data-slide-target'), 10);
       if (!isNaN(target)) {
-        resetAutoPlay();
         updateSlider(target);
+        syncAutoRotate();
       }
     });
   });
-
-  // Auto-play timer (advances every 7 seconds)
-  function startAutoPlay() {
-    if (autoPlayTimer) clearInterval(autoPlayTimer);
-    if (!isAutoPlaying) return;
-    autoPlayTimer = setInterval(() => {
-      updateSlider(currentIndex + 1);
-    }, 7000);
-  }
-
-  function pauseAutoPlay() {
-    if (autoPlayTimer) {
-      clearInterval(autoPlayTimer);
-      autoPlayTimer = null;
-    }
-  }
-
-  function resetAutoPlay() {
-    pauseAutoPlay();
-    if (isAutoPlaying) startAutoPlay();
-  }
-
-  // Pause on hover
-  viewport.addEventListener('mouseenter', () => {
-    if (isAutoPlaying) pauseAutoPlay();
-  });
-
-  viewport.addEventListener('mouseleave', () => {
-    if (isAutoPlaying) startAutoPlay();
-  });
-
-  // Play / Pause button
-  if (playBtn) {
-    playBtn.addEventListener('click', () => {
-      isAutoPlaying = !isAutoPlaying;
-      playBtn.classList.toggle('paused', !isAutoPlaying);
-      const icon = playBtn.querySelector('.slider-play-icon');
-      const text = playBtn.querySelector('.slider-play-text');
-      if (isAutoPlaying) {
-        if (icon) icon.textContent = '❚❚';
-        if (text) text.textContent = 'Auto-playing';
-        startAutoPlay();
-      } else {
-        if (icon) icon.textContent = '▶';
-        if (text) text.textContent = 'Paused';
-        pauseAutoPlay();
-      }
-    });
-  }
 
   // Touch Support
   let touchStartX = 0;
@@ -536,7 +548,6 @@ function initYouTemplateSlider() {
 
   viewport.addEventListener('touchstart', (e) => {
     touchStartX = e.touches[0].clientX;
-    pauseAutoPlay();
   }, { passive: true });
 
   viewport.addEventListener('touchend', (e) => {
@@ -548,8 +559,8 @@ function initYouTemplateSlider() {
       } else {
         updateSlider(currentIndex - 1);
       }
+      syncAutoRotate();
     }
-    if (isAutoPlaying) startAutoPlay();
   }, { passive: true });
 
   // Mouse Drag Support
@@ -558,7 +569,6 @@ function initYouTemplateSlider() {
     isDragging = true;
     startX = e.clientX;
     viewport.classList.add('is-dragging');
-    pauseAutoPlay();
   });
 
   window.addEventListener('mouseup', (e) => {
@@ -572,28 +582,23 @@ function initYouTemplateSlider() {
       } else {
         updateSlider(currentIndex - 1);
       }
+      syncAutoRotate();
     }
-    if (isAutoPlaying) startAutoPlay();
   });
 
   // Keyboard navigation
-  window.addEventListener('keydown', (e) => {
-    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
-    const rect = viewport.getBoundingClientRect();
-    const inView = rect.top < window.innerHeight && rect.bottom > 0;
-    if (!inView) return;
-
+  viewport.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowLeft') {
-      resetAutoPlay();
       updateSlider(currentIndex - 1);
+      syncAutoRotate();
     } else if (e.key === 'ArrowRight') {
-      resetAutoPlay();
       updateSlider(currentIndex + 1);
+      syncAutoRotate();
     }
   });
 
-  startAutoPlay();
   updateSlider(0);
+  syncAutoRotate();
 }
 
 /* ==========================================================================
@@ -603,6 +608,14 @@ function initCompaniesMarquee() {
   const container = document.getElementById('companiesMarquee');
   const track = document.getElementById('companiesTrack');
   if (!container || !track) return;
+
+  const originalCards = Array.from(track.children);
+  originalCards.forEach(card => {
+    const clone = card.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    clone.querySelectorAll('img').forEach(image => image.setAttribute('alt', ''));
+    track.appendChild(clone);
+  });
 
   container.addEventListener('touchstart', () => {
     track.style.animationPlayState = 'paused';
@@ -757,11 +770,11 @@ function initStatCounters() {
         obs.unobserve(el);
 
         const originalText = el.textContent.trim();
-        const match = originalText.match(/^([^\d]*)(\d+)([^\d]*)$/);
+        const match = originalText.match(/^([^\d]*)([\d,]+)(.*)$/);
         if (!match) return;
 
         const prefix = match[1] || '';
-        const targetValue = parseInt(match[2], 10);
+        const targetValue = parseInt(match[2].replace(/,/g, ''), 10);
         const suffix = match[3] || '';
 
         const duration = 1400; // ms
@@ -776,7 +789,8 @@ function initStatCounters() {
           const progress = Math.min(1, elapsed / duration);
           const currentCount = Math.round(easeOutQuart(progress) * targetValue);
 
-          el.textContent = `${prefix}${currentCount}${suffix}`;
+          const displayCount = originalText.includes(',') ? currentCount.toLocaleString('en-US') : currentCount;
+          el.textContent = `${prefix}${displayCount}${suffix}`;
 
           if (progress < 1) {
             requestAnimationFrame(updateCounter);
