@@ -6043,6 +6043,7 @@ summary:focus-visible,
   }
   .footer-social-btn,
   .header-linkedin-link,
+  .header-whatsapp-link,
   .back-to-top-btn.back-to-top-btn,
   .mobile-menu-btn,
   .theme-toggle-btn.theme-toggle-btn,
@@ -6200,4 +6201,8 @@ img { height: auto; }
   grid-column: 1 / -1;
   grid-row: 2;
   margin: 0;
+}
+
+.header-whatsapp-link:hover {
+  color: #128c7e;
 }
