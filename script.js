@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollProgressBar();
   initScrollReveals();
   initStatCounters();
+  initCertViewer();
   initTypewriterAnimation();
 });
 
@@ -869,4 +870,67 @@ function initTypewriterAnimation() {
       }
     }
   }
+}
+
+
+/* ==========================================================================
+   Certificate viewer (Training page)
+   ========================================================================== */
+function initCertViewer() {
+  const dialog = document.getElementById('certViewer');
+  if (!dialog || typeof dialog.showModal !== 'function') return;
+
+  const titleEl = document.getElementById('certViewerTitle');
+  const captionEl = document.getElementById('certViewerCaption');
+  const imgEl = document.getElementById('certViewerImg');
+  const countEl = document.getElementById('certViewerCount');
+  const fullEl = document.getElementById('certViewerFull');
+  const prevBtn = document.getElementById('certViewerPrev');
+  const nextBtn = document.getElementById('certViewerNext');
+  const closeBtn = document.getElementById('certViewerClose');
+
+  let items = [];
+  let index = 0;
+  let opener = null;
+
+  function show(i) {
+    index = (i + items.length) % items.length;
+    const [src, caption] = items[index];
+    imgEl.src = src;
+    imgEl.alt = caption;
+    captionEl.textContent = caption;
+    fullEl.href = src;
+    countEl.textContent = items.length > 1 ? `${index + 1} of ${items.length}` : '';
+    prevBtn.hidden = nextBtn.hidden = items.length < 2;
+  }
+
+  document.querySelectorAll('.cert2-open').forEach(link => {
+    link.addEventListener('click', event => {
+      let data;
+      try { data = JSON.parse(link.dataset.images || '[]'); } catch (err) { data = []; }
+      if (!data.length) return;
+      event.preventDefault();
+      items = data;
+      opener = link;
+      titleEl.textContent = link.dataset.title || 'Certificate';
+      show(0);
+      dialog.showModal();
+      document.body.classList.add('cert2-lock');
+    });
+  });
+
+  prevBtn.addEventListener('click', () => show(index - 1));
+  nextBtn.addEventListener('click', () => show(index + 1));
+  closeBtn.addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+  dialog.addEventListener('keydown', event => {
+    if (items.length < 2) return;
+    if (event.key === 'ArrowLeft') { event.preventDefault(); show(index - 1); }
+    if (event.key === 'ArrowRight') { event.preventDefault(); show(index + 1); }
+  });
+  dialog.addEventListener('close', () => {
+    document.body.classList.remove('cert2-lock');
+    imgEl.removeAttribute('src');
+    if (opener) opener.focus();
+  });
 }
