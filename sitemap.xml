@@ -6,7 +6,7 @@
 
   <!-- Homepage -->
   <url>
-    <loc>https://melkadi.com/</loc>
+    <loc>https://melkadi.website/</loc>
     <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -14,7 +14,7 @@
 
   <!-- About & Resume -->
   <url>
-    <loc>https://melkadi.com/about.html</loc>
+    <loc>https://melkadi.website/about.html</loc>
     <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -22,7 +22,7 @@
 
   <!-- Digital Portfolio & Enterprise Solutions -->
   <url>
-    <loc>https://melkadi.com/portfolio.html</loc>
+    <loc>https://melkadi.website/portfolio.html</loc>
     <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -30,7 +30,7 @@
 
   <!-- Infrastructure Projects -->
   <url>
-    <loc>https://melkadi.com/infrastructure.html</loc>
+    <loc>https://melkadi.website/infrastructure.html</loc>
     <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -38,7 +38,7 @@
 
   <!-- Training & Education -->
   <url>
-    <loc>https://melkadi.com/training.html</loc>
+    <loc>https://melkadi.website/training.html</loc>
     <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -46,7 +46,7 @@
 
   <!-- Contact & Direct Inquiries -->
   <url>
-    <loc>https://melkadi.com/contact.html</loc>
+    <loc>https://melkadi.website/contact.html</loc>
     <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
