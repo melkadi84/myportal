@@ -38,7 +38,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Staatliches&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261105-ui9">
+  <link rel="stylesheet" href="styles.css?v=20261105-ui10">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -105,7 +105,24 @@
     </section>
     <section class="section-wrapper cert2-section" id="certifications">
       <div class="container">
-      <div class="cert2-group" id="grp-cert">
+      <div class="cert2-stats" aria-label="Summary">
+        <div class="cert2-stat"><strong>18</strong><span>Training records</span></div>
+        <div class="cert2-stat"><strong>13</strong><span>With certificate on file</span></div>
+        <div class="cert2-stat"><strong>25</strong><span>Certificate images to view</span></div>
+        <div class="cert2-stat"><strong>4</strong><span>Categories</span></div>
+      </div>
+      <div class="cert2-toolbar">
+        <label class="cert2-search"><span class="sr-only">Search training</span><input type="search" id="certSearch" placeholder="Search by title, provider or year" autocomplete="off"></label>
+        <div class="cert2-chips" role="group" aria-label="Filter by category">
+          <button type="button" class="cert2-chip is-active" data-filter="all">All <b></b></button>
+          <button type="button" class="cert2-chip" data-filter="grp-cert">Certifications <b></b></button>
+          <button type="button" class="cert2-chip" data-filter="grp-courses">Courses <b></b></button>
+          <button type="button" class="cert2-chip" data-filter="grp-quality">Quality <b></b></button>
+          <button type="button" class="cert2-chip" data-filter="grp-also">Also completed <b></b></button>
+        </div>
+      </div>
+      <p class="cert2-empty" id="certEmpty" hidden>No match. Try a different word or clear the filter.</p>
+            <div class="cert2-group" id="grp-cert">
         <div class="cert2-group-head"><h2 class="cert2-group-title">Certifications</h2><p class="cert2-group-desc">Credentials issued by an examination or certification body.</p></div>
         <div class="cert2-grid">
           <article class="cert2-card cert2-has-img">
@@ -299,6 +316,7 @@
         <img id="certViewerImg" alt="" class="cert2-dialog-img">
         <button type="button" class="cert2-nav cert2-next" id="certViewerNext" aria-label="Next certificate">&#8250;</button>
       </div>
+      <dl class="cert2-detail" id="certViewerDetail"></dl>
       <div class="cert2-dialog-foot"><span id="certViewerCount"></span><a id="certViewerFull" href="#" target="_blank" rel="noopener noreferrer">Open full size</a></div>
     </dialog>
 

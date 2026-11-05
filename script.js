@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveals();
   initStatCounters();
   initCertViewer();
+  initCertFilter();
   initTypewriterAnimation();
 });
 
@@ -888,6 +889,7 @@ function initCertViewer() {
   const prevBtn = document.getElementById('certViewerPrev');
   const nextBtn = document.getElementById('certViewerNext');
   const closeBtn = document.getElementById('certViewerClose');
+  const detailEl = document.getElementById('certViewerDetail');
 
   let items = [];
   let index = 0;
@@ -913,6 +915,23 @@ function initCertViewer() {
       items = data;
       opener = link;
       titleEl.textContent = link.dataset.title || 'Certificate';
+      const card = link.closest('.cert2-card');
+      detailEl.textContent = '';
+      if (card) {
+        const rows = [
+          ['Status', card.querySelector('.cert2-status')],
+          ['Date', card.querySelector('.cert2-date')],
+          ['Provider', card.querySelector('.cert2-issuer')],
+          ['Note', card.querySelector('.cert2-note')]
+        ];
+        rows.forEach(([label, node]) => {
+          if (!node || !node.textContent.trim()) return;
+          const wrap = document.createElement('div');
+          const dt = document.createElement('dt'); dt.textContent = label;
+          const dd = document.createElement('dd'); dd.textContent = node.textContent.trim();
+          wrap.append(dt, dd); detailEl.append(wrap);
+        });
+      }
       show(0);
       dialog.showModal();
       document.body.classList.add('cert2-lock');
@@ -933,4 +952,43 @@ function initCertViewer() {
     imgEl.removeAttribute('src');
     if (opener) opener.focus();
   });
+}
+
+
+function initCertFilter() {
+  const section = document.getElementById('certifications');
+  const search = document.getElementById('certSearch');
+  if (!section || !search) return;
+  const chips = [...section.querySelectorAll('.cert2-chip')];
+  const cards = [...section.querySelectorAll('.cert2-card')];
+  const groups = [...section.querySelectorAll('.cert2-group')];
+  const empty = document.getElementById('certEmpty');
+  let active = 'all';
+
+  cards.forEach(card => {
+    card._text = card.textContent.toLowerCase().replace(/\s+/g, ' ');
+    card._group = card.closest('.cert2-group').id;
+  });
+  chips.forEach(chip => {
+    const f = chip.dataset.filter;
+    chip.querySelector('b').textContent = f === 'all' ? cards.length : cards.filter(c => c._group === f).length;
+  });
+
+  function apply() {
+    const q = search.value.trim().toLowerCase();
+    let shown = 0;
+    cards.forEach(card => {
+      const ok = (active === 'all' || card._group === active) && (!q || card._text.includes(q));
+      card.hidden = !ok;
+      if (ok) shown++;
+    });
+    groups.forEach(g => { g.hidden = !g.querySelector('.cert2-card:not([hidden])'); });
+    if (empty) empty.hidden = shown > 0;
+  }
+  chips.forEach(chip => chip.addEventListener('click', () => {
+    active = chip.dataset.filter;
+    chips.forEach(c => c.classList.toggle('is-active', c === chip));
+    apply();
+  }));
+  search.addEventListener('input', apply);
 }
