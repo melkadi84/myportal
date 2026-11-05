@@ -6,7 +6,7 @@
 
 // Configuration: Enter your deployed Cloudflare Worker URL here:
 // Example: 'https://mk-contactme.<your-subdomain>.workers.dev'
-const CLOUDFLARE_WORKER_ENDPOINT = '';
+const CLOUDFLARE_WORKER_ENDPOINT = 'https://mk-contactme.mohamed-osn4.workers.dev/api/contact';
 
 document.addEventListener('DOMContentLoaded', () => {
   initThemeToggle();
