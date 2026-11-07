@@ -958,28 +958,24 @@ function initCertViewer() {
 function initCertFilter() {
   const section = document.getElementById('certifications');
   const search = document.getElementById('certSearch');
-  if (!section || !search) return;
+  const main = document.getElementById('certMain');
+  if (!section || !search || !main) return;
   const srcChips = [...section.querySelectorAll('.cert2-chip[data-src]')];
-  const compChips = [...section.querySelectorAll('.cert2-chip[data-comp]')];
+  const compBtns = [...section.querySelectorAll('.cert2-acomp')];
+  const viewBtns = [...section.querySelectorAll('.cert2-view-btn')];
   const cards = [...section.querySelectorAll('.cert2-card')];
   const groups = [...section.querySelectorAll('.cert2-group')];
   const subs = [...section.querySelectorAll('.cert2-sub')];
   const empty = document.getElementById('certEmpty');
+  const shownEl = document.getElementById('certShown');
   let src = 'all', comp = 'all';
 
   cards.forEach(card => { card._text = card.textContent.toLowerCase().replace(/\s+/g, ' '); });
-
   const COMP = {};
-  compChips.forEach(c => { if (c.dataset.comp !== 'all') COMP[c.dataset.comp] = c.firstChild.textContent.trim(); });
-
-  function count(filterFn) { return cards.filter(filterFn).length; }
+  compBtns.forEach(b => { if (b.dataset.comp !== 'all') COMP[b.dataset.comp] = b.querySelector('.cert2-acomp-name').textContent.trim(); });
   srcChips.forEach(chip => {
     const f = chip.dataset.src;
-    chip.querySelector('b').textContent = f === 'all' ? cards.length : count(c => c.dataset.src === f);
-  });
-  compChips.forEach(chip => {
-    const b = chip.querySelector('b');
-    if (b) b.textContent = count(c => c.dataset.comp === chip.dataset.comp);
+    chip.querySelector('b').textContent = f === 'all' ? cards.length : cards.filter(c => c.dataset.src === f).length;
   });
 
   function apply() {
@@ -992,75 +988,133 @@ function initCertFilter() {
       card.hidden = !ok;
       if (ok) shown++;
     });
-    subs.forEach(s => { s.hidden = !s.querySelector('.cert2-card:not([hidden])'); });
+    subs.forEach(x => { x.hidden = !x.querySelector('.cert2-card:not([hidden])'); });
     groups.forEach(g => { g.hidden = !g.querySelector('.cert2-card:not([hidden])'); });
     if (empty) empty.hidden = shown > 0;
-    document.querySelectorAll('.cert2-bar').forEach(b => b.classList.toggle('is-active', b.dataset.comp === comp));
+    if (shownEl) shownEl.textContent = 'Showing ' + shown + ' of ' + cards.length;
+    compBtns.forEach(b => b.classList.toggle('is-active', b.dataset.comp === comp));
+    section.querySelectorAll('.cert2-bar, .cert2-rlabel').forEach(b => b.classList.toggle('is-active', b.dataset.comp === comp));
   }
-  function setComp(c) {
-    comp = comp === c ? 'all' : c;
-    compChips.forEach(x => x.classList.toggle('is-active', x.dataset.comp === comp));
-    apply();
-  }
+  function setComp(c) { comp = (comp === c) ? 'all' : c; apply(); }
   srcChips.forEach(chip => chip.addEventListener('click', () => {
     src = chip.dataset.src;
     srcChips.forEach(c => c.classList.toggle('is-active', c === chip));
     apply();
   }));
-  compChips.forEach(chip => chip.addEventListener('click', () => {
-    comp = chip.dataset.comp;
-    compChips.forEach(c => c.classList.toggle('is-active', c === chip));
-    apply();
-  }));
+  compBtns.forEach(b => b.addEventListener('click', () => { comp = b.dataset.comp; apply(); }));
   search.addEventListener('input', apply);
 
-  /* Competencies chart, calculated from the certificate cards in the page */
-  const chart = document.getElementById('compChart');
-  const yearChart = document.getElementById('yearChart');
-  if (!chart) return;
-  const stats = {};
-  const years = {};
+  /* View modes: grid, list, table */
+  document.querySelectorAll('.cert2-grid, .cert2-rows').forEach(box => {
+    const head = document.createElement('div');
+    head.className = 'cert2-thead'; head.setAttribute('aria-hidden', 'true');
+    head.innerHTML = '<span></span><span>Certificate</span><span>Provider</span><span>Date</span><span>Competency</span>';
+    box.prepend(head);
+  });
+  function setView(v) {
+    main.dataset.view = v;
+    viewBtns.forEach(b => { const on = b.dataset.view === v; b.classList.toggle('is-active', on); b.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+    try { localStorage.setItem('certView', v); } catch (e) {}
+  }
+  viewBtns.forEach(b => b.addEventListener('click', () => setView(b.dataset.view)));
+  let saved = 'grid';
+  try { saved = localStorage.getItem('certView') || 'grid'; } catch (e) {}
+  setView(['grid', 'list', 'table'].includes(saved) ? saved : 'grid');
+  cards.forEach(card => card.addEventListener('click', e => {
+    if (main.dataset.view === 'grid' || e.target.closest('a, button')) return;
+    const a = card.querySelector('.cert2-open'); if (a) a.click();
+  }));
+
+  /* Competencies: stats are calculated from the cards in the page */
+  const stats = {}, years = {};
   cards.forEach(c => {
     const k = c.dataset.comp; if (!k) return;
-    const s = stats[k] || (stats[k] = { n: 0, min: 0 });
-    s.n++; s.min += Number(c.dataset.min || 0);
+    const st = stats[k] || (stats[k] = { n: 0, min: 0 });
+    st.n++; st.min += Number(c.dataset.min || 0);
     if (c.dataset.year) years[c.dataset.year] = (years[c.dataset.year] || 0) + 1;
   });
-  const rows = Object.keys(stats).sort((a, b) => stats[b].n - stats[a].n);
-  const max = Math.max(...rows.map(k => stats[k].n));
-  rows.forEach(k => {
-    const b = document.createElement('button');
-    b.type = 'button'; b.className = 'cert2-bar'; b.dataset.comp = k; b.setAttribute('role', 'listitem');
-    const h = Math.round(stats[k].min / 60);
-    b.innerHTML = '<span class="cert2-bar-label"></span><span class="cert2-bar-track"><span class="cert2-bar-fill"></span></span><span class="cert2-bar-val"></span>';
-    b.querySelector('.cert2-bar-label').textContent = COMP[k] || k;
-    b.querySelector('.cert2-bar-val').innerHTML = stats[k].n + (h ? '<small>' + h + ' h stated</small>' : '');
-    b.addEventListener('click', () => { setComp(k); const t = document.getElementById('certSearch'); if (t) t.closest('.cert2-toolbar').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
-    chart.append(b);
-  });
-  const yk = Object.keys(years).sort();
-  const ymax = Math.max(...yk.map(y => years[y]));
-  const first = Number(yk[0]), last = Number(yk[yk.length - 1]);
-  for (let y = first; y <= last; y++) {
-    const n = years[y] || 0;
-    const d = document.createElement('div'); d.className = 'cert2-year';
-    d.innerHTML = '<span class="cert2-year-n"></span><span class="cert2-year-col"></span><span class="cert2-year-lbl"></span>';
-    d.querySelector('.cert2-year-n').textContent = n || '';
-    d.querySelector('.cert2-year-lbl').textContent = String(y).slice(2) ? "'" + String(y).slice(2) : y;
-    d.dataset.h = n ? Math.max(6, Math.round(n / ymax * 100)) : 0;
-    yearChart.append(d);
+  const order = Object.keys(stats).sort((a, b) => stats[b].n - stats[a].n);
+  const max = Math.max(...order.map(k => stats[k].n));
+
+  const chart = document.getElementById('compChart');
+  if (chart) {
+    order.forEach(k => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'cert2-bar'; b.dataset.comp = k; b.setAttribute('role', 'listitem');
+      const h = Math.round(stats[k].min / 60);
+      b.innerHTML = '<span class="cert2-bar-label"></span><span class="cert2-bar-track"><span class="cert2-bar-fill"></span></span><span class="cert2-bar-val"></span>';
+      b.querySelector('.cert2-bar-label').textContent = COMP[k] || k;
+      b.querySelector('.cert2-bar-val').innerHTML = stats[k].n + (h ? '<small>' + h + ' h stated</small>' : '');
+      b.addEventListener('click', () => { setComp(k); document.getElementById('certToolbar').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+      chart.append(b);
+    });
+  }
+
+  const radar = document.getElementById('compRadar');
+  const SHORT = { cyber: 'Cybersecurity', data: 'Data, Python & AI', digital: 'Digital Solutions', infra: 'IT Infrastructure', pm: 'Project & Agile', quality: 'Quality & Audit', lead: 'Leadership', comp: 'Compliance' };
+  const axes = ['cyber', 'data', 'digital', 'infra', 'pm', 'quality', 'lead', 'comp'].filter(k => stats[k]);
+  if (radar && axes.length > 2) {
+    const NS = 'http://www.w3.org/2000/svg';
+    const cx = 220, cy = 190, R = 118, top = Math.ceil(max / 5) * 5;
+    const el = (n, a, parent) => { const e = document.createElementNS(NS, n); Object.entries(a || {}).forEach(([k, v]) => e.setAttribute(k, v)); (parent || radar).append(e); return e; };
+    const ang = i => -Math.PI / 2 + i * 2 * Math.PI / axes.length;
+    const pt = (i, r) => [cx + r * Math.cos(ang(i)), cy + r * Math.sin(ang(i))];
+    for (let l = 1; l <= 4; l++) {
+      const pts = axes.map((_, i) => pt(i, R * l / 4).join(',')).join(' ');
+      el('polygon', { points: pts, class: 'cert2-rring' });
+      const t = el('text', { x: cx + 4, y: cy - R * l / 4 - 3, class: 'cert2-rtick' }); t.textContent = Math.round(top * l / 4);
+    }
+    axes.forEach((_, i) => { const [x, y] = pt(i, R); el('line', { x1: cx, y1: cy, x2: x, y2: y, class: 'cert2-raxis' }); });
+    const poly = el('polygon', { points: axes.map((k, i) => pt(i, R * stats[k].n / top).join(',')).join(' '), class: 'cert2-rpoly' });
+    axes.forEach((k, i) => {
+      const [x, y] = pt(i, R * stats[k].n / top);
+      const d = el('circle', { cx: x, cy: y, r: 4.5, class: 'cert2-rdot' });
+      el('title', {}, d).textContent = (COMP[k] || k) + ': ' + stats[k].n + ' certificates';
+      const [lx, ly] = pt(i, R + 20), c = Math.cos(ang(i));
+      const t = el('text', { x: lx, y: ly, class: 'cert2-rlabel', 'data-comp': k, 'text-anchor': c > 0.3 ? 'start' : (c < -0.3 ? 'end' : 'middle'), tabindex: 0, role: 'button' });
+      const t1 = el('tspan', { x: lx, dy: Math.sin(ang(i)) > 0.5 ? '0.9em' : (Math.sin(ang(i)) < -0.5 ? '-0.2em' : '0.1em') }, t); t1.textContent = SHORT[k] || k;
+      const t2 = el('tspan', { x: lx, dy: '1.25em', class: 'cert2-rlabel-n' }, t); t2.textContent = stats[k].n;
+      t.addEventListener('click', () => setComp(k));
+      t.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setComp(k); } });
+    });
+    radar._poly = poly;
+  }
+
+  const yearChart = document.getElementById('yearChart');
+  if (yearChart) {
+    const yk = Object.keys(years).sort();
+    const ymax = Math.max(...yk.map(y => years[y]));
+    for (let y = Number(yk[0]); y <= Number(yk[yk.length - 1]); y++) {
+      const n = years[y] || 0;
+      const d = document.createElement('div'); d.className = 'cert2-year';
+      d.innerHTML = '<span class="cert2-year-n"></span><span class="cert2-year-col"></span><span class="cert2-year-lbl"></span>';
+      d.querySelector('.cert2-year-n').textContent = n || '';
+      d.querySelector('.cert2-year-lbl').textContent = "'" + String(y).slice(2);
+      d.dataset.h = n ? Math.max(6, Math.round(n / ymax * 100)) : 0;
+      yearChart.append(d);
+    }
   }
   const foot = document.getElementById('compFoot');
-  if (foot) {
-    const top = rows.slice(0, 3).map(k => COMP[k]).join(', ');
-    foot.textContent = 'Most certificates: ' + top + '. Hours count only certificates that state a duration.';
-  }
+  if (foot) foot.textContent = 'Strongest: ' + order.slice(0, 3).map(k => COMP[k]).join(', ') + '. Hours count only certificates that state a duration.';
   const grow = () => {
     chart.querySelectorAll('.cert2-bar').forEach(b => { b.querySelector('.cert2-bar-fill').style.width = Math.round(stats[b.dataset.comp].n / max * 100) + '%'; });
     yearChart.querySelectorAll('.cert2-year').forEach(d => { d.querySelector('.cert2-year-col').style.height = d.dataset.h + '%'; });
+    if (radar) radar.classList.add('is-in');
   };
-  if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { grow(); io.disconnect(); } }, { threshold: 0.2 });
-    io.observe(chart);
+  const compSection = document.getElementById('competencies');
+  if ('IntersectionObserver' in window && compSection) {
+    const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { grow(); io.disconnect(); } }, { threshold: 0.15 });
+    io.observe(compSection);
   } else { grow(); }
+
+  /* Aside: highlight the section in view */
+  const links = [...section.querySelectorAll('.cert2-anav')];
+  const targets = links.map(a => document.getElementById(a.getAttribute('href').slice(1)));
+  if ('IntersectionObserver' in window) {
+    const spy = new IntersectionObserver(es => {
+      es.forEach(e => { if (e.isIntersecting) links.forEach((a, i) => a.classList.toggle('is-current', targets[i] === e.target)); });
+    }, { rootMargin: '-20% 0px -65% 0px' });
+    targets.forEach(t => t && spy.observe(t));
+  }
+  apply();
 }

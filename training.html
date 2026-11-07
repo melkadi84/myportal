@@ -38,7 +38,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Staatliches&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261108-ui18">
+  <link rel="stylesheet" href="styles.css?v=20261108-ui20">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -100,7 +100,7 @@
         <span class="section-eyebrow">Competencies &amp; Credentials</span>
         <h1 class="page-hero-title">Certificates</h1>
         <p class="page-hero-desc">Certificates and professional training in project delivery, agile, IT service management, quality, cybersecurity, data and digital solutions, from 110 certificates on file, including 87 completed through the Siemens Energy Learning Platform (SELP).</p>
-      <nav class="cert2-jump" aria-label="Jump to a section"><a href="#competencies">Competencies</a><a href="#grp-cert">Certifications</a><a href="#grp-courses">Courses</a><a href="#grp-quality">Quality</a><a href="#grp-selp">Siemens Energy</a><a href="#official-profiles">Official profiles</a></nav>
+      
       </div>
     </section>
     <section class="section-wrapper cert2-section" id="certifications">
@@ -111,28 +111,42 @@
         <div class="cert2-stat"><strong id="statExt">23</strong><span>Other providers</span></div>
         <div class="cert2-stat"><strong id="statHours">358+</strong><span>Learning hours stated on certificates</span></div>
       </div>
-      <section class="cert2-comp" id="competencies" aria-labelledby="compTitle">
-        <div class="cert2-comp-head"><h2 class="cert2-group-title" id="compTitle">Competencies</h2><p class="cert2-group-desc">Calculated from the certificates below. Select a bar to filter the list.</p></div>
-        <div class="cert2-comp-grid">
-          <div class="cert2-chart" id="compChart" role="list" aria-label="Certificates per competency"></div>
-          <div class="cert2-chart-side">
-            <h3 class="cert2-chart-title">Certificates per year</h3>
-            <div class="cert2-years" id="yearChart" role="img" aria-label="Certificates earned per year"></div>
-            <p class="cert2-chart-foot" id="compFoot"></p>
-          </div>
+      <div class="cert2-layout">
+      <aside class="cert2-aside" aria-label="Certificates navigation">
+        <div class="cert2-aside-card">
+          <p class="cert2-aside-eyebrow">On this page</p>
+          <nav class="cert2-anavs" aria-label="Sections"><a class="cert2-anav" href="#competencies"><span>Competencies</span></a><a class="cert2-anav" href="#grp-cert"><span>Certifications</span><b>4</b></a><a class="cert2-anav" href="#grp-courses"><span>Courses</span><b>14</b></a><a class="cert2-anav" href="#grp-quality"><span>Quality &amp; inspection</span><b>4</b></a><a class="cert2-anav" href="#grp-also"><span>Also completed</span><b>1</b></a><a class="cert2-anav" href="#grp-selp"><span>Siemens Energy</span><b>87</b></a><a class="cert2-anav" href="#official-profiles"><span>Official profiles</span></a></nav>
+          <p class="cert2-aside-eyebrow cert2-aside-sep">Filter by competency</p>
+          <div class="cert2-acomps"><button type="button" class="cert2-acomp is-active" data-comp="all"><span class="cert2-acomp-name">All competencies</span><span class="cert2-acomp-n">110</span></button><button type="button" class="cert2-acomp" data-comp="cyber"><span class="cert2-acomp-name">Cybersecurity &amp; Data Privacy</span><span class="cert2-acomp-n">29</span><span class="cert2-acomp-bar"><i style="width:100%"></i></span></button><button type="button" class="cert2-acomp" data-comp="data"><span class="cert2-acomp-name">Data, Python &amp; AI</span><span class="cert2-acomp-n">18</span><span class="cert2-acomp-bar"><i style="width:62%"></i></span></button><button type="button" class="cert2-acomp" data-comp="quality"><span class="cert2-acomp-name">Quality, Audit &amp; Inspection</span><span class="cert2-acomp-n">13</span><span class="cert2-acomp-bar"><i style="width:45%"></i></span></button><button type="button" class="cert2-acomp" data-comp="digital"><span class="cert2-acomp-name">Digital Solutions &amp; Automation</span><span class="cert2-acomp-n">12</span><span class="cert2-acomp-bar"><i style="width:41%"></i></span></button><button type="button" class="cert2-acomp" data-comp="pm"><span class="cert2-acomp-name">Project &amp; Agile Delivery</span><span class="cert2-acomp-n">10</span><span class="cert2-acomp-bar"><i style="width:34%"></i></span></button><button type="button" class="cert2-acomp" data-comp="infra"><span class="cert2-acomp-name">IT Infrastructure, Cloud &amp; Service Management</span><span class="cert2-acomp-n">10</span><span class="cert2-acomp-bar"><i style="width:34%"></i></span></button><button type="button" class="cert2-acomp" data-comp="lead"><span class="cert2-acomp-name">Leadership &amp; Communication</span><span class="cert2-acomp-n">9</span><span class="cert2-acomp-bar"><i style="width:31%"></i></span></button><button type="button" class="cert2-acomp" data-comp="comp"><span class="cert2-acomp-name">Compliance, Ethics &amp; Safety</span><span class="cert2-acomp-n">9</span><span class="cert2-acomp-bar"><i style="width:31%"></i></span></button></div>
         </div>
-      </section>
-      <div class="cert2-toolbar">
-        <label class="cert2-search"><span class="sr-only">Search certificates</span><input type="search" id="certSearch" placeholder="Search by title, provider or year" autocomplete="off"></label>
+      </aside>
+      <div class="cert2-main" id="certMain" data-view="grid">
+      <div class="cert2-toolbar" id="certToolbar">
+        <label class="cert2-search"><span class="sr-only">Search certificates</span><input type="search" id="certSearch" placeholder="Search certificates" autocomplete="off"></label>
         <div class="cert2-chips" role="group" aria-label="Filter by source">
-          <button type="button" class="cert2-chip is-active" data-src="all">All <b></b></button>
-          <button type="button" class="cert2-chip" data-src="se">Siemens Energy <b></b></button>
-          <button type="button" class="cert2-chip" data-src="ext">Other providers <b></b></button>
+          <button type="button" class="cert2-chip cert2-chip-sm is-active" data-src="all">All <b></b></button>
+          <button type="button" class="cert2-chip cert2-chip-sm" data-src="se">Siemens Energy <b></b></button>
+          <button type="button" class="cert2-chip cert2-chip-sm" data-src="ext">Other providers <b></b></button>
         </div>
-        <div class="cert2-chips cert2-chips-comp" role="group" aria-label="Filter by competency">
-          <button type="button" class="cert2-chip cert2-chip-sm is-active" data-comp="all">All competencies</button><button type="button" class="cert2-chip cert2-chip-sm" data-comp="cyber">Cybersecurity &amp; Data Privacy <b></b></button><button type="button" class="cert2-chip cert2-chip-sm" data-comp="data">Data, Python &amp; AI <b></b></button><button type="button" class="cert2-chip cert2-chip-sm" data-comp="digital">Digital Solutions &amp; Automation <b></b></button><button type="button" class="cert2-chip cert2-chip-sm" data-comp="lead">Leadership &amp; Communication <b></b></button><button type="button" class="cert2-chip cert2-chip-sm" data-comp="comp">Compliance, Ethics &amp; Safety <b></b></button><button type="button" class="cert2-chip cert2-chip-sm" data-comp="quality">Quality, Audit &amp; Inspection <b></b></button><button type="button" class="cert2-chip cert2-chip-sm" data-comp="pm">Project &amp; Agile Delivery <b></b></button><button type="button" class="cert2-chip cert2-chip-sm" data-comp="infra">IT Infrastructure, Cloud &amp; Service Management <b></b></button>
+        <div class="cert2-views" role="group" aria-label="Change view">
+          <button type="button" class="cert2-view-btn is-active" data-view="grid" aria-pressed="true" title="Grid view" aria-label="Grid view"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></button>
+          <button type="button" class="cert2-view-btn" data-view="list" aria-pressed="false" title="List view" aria-label="List view"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h12M9 12h12M9 18h12"/><circle cx="4.5" cy="6" r="1.2"/><circle cx="4.5" cy="12" r="1.2"/><circle cx="4.5" cy="18" r="1.2"/></svg></button>
+          <button type="button" class="cert2-view-btn" data-view="table" aria-pressed="false" title="Table view" aria-label="Table view"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M3 15h18M9 4v16"/></svg></button>
         </div>
+        <p class="cert2-shown" id="certShown" aria-live="polite"></p>
       </div>
+      <section class="cert2-comp" id="competencies" aria-labelledby="compTitle">
+        <div class="cert2-comp-head"><h2 class="cert2-group-title" id="compTitle">Competencies</h2><p class="cert2-group-desc">Calculated from the certificates on this page. The further a point sits from the center, the more certificates support that competency. Select a competency to filter.</p></div>
+        <div class="cert2-comp-grid">
+          <div class="cert2-radar-wrap"><svg class="cert2-radar" id="compRadar" viewBox="0 0 440 380" role="img" aria-label="Radar chart of certificates per competency"></svg></div>
+          <div class="cert2-chart" id="compChart" role="list" aria-label="Certificates per competency"></div>
+        </div>
+        <div class="cert2-year-block">
+          <h3 class="cert2-chart-title">Certificates per year</h3>
+          <div class="cert2-years" id="yearChart" role="img" aria-label="Certificates earned per year"></div>
+        </div>
+        <p class="cert2-chart-foot" id="compFoot"></p>
+      </section>
       <p class="cert2-empty" id="certEmpty" hidden>No match. Try a different word or clear the filter.</p>
       <div class="cert2-group" id="grp-cert">
         <div class="cert2-group-head"><h2 class="cert2-group-title">Certifications</h2><p class="cert2-group-desc">Credentials issued by an examination or certification body.</p></div>
@@ -142,6 +156,7 @@
             <div class="cert2-body">
               <div class="cert2-meta"><span class="cert2-status cert2-ok">Certified</span><span class="cert2-date">19–23 Jul 2026</span></div>
               <h3 class="cert2-title">ISO 27001:2022 Lead Auditor</h3>
+              <p class="cert2-tag">Cybersecurity &amp; Data Privacy</p>
               <p class="cert2-issuer">CQI-IRCA certified course · Information Security Management Systems (ISMS)</p>
               <a class="cert2-view cert2-open" href="assets/certificates/iso27001-lead-auditor.webp" data-title="ISO 27001:2022 Lead Auditor" data-images="[[&quot;assets/certificates/iso27001-lead-auditor.webp&quot;, &quot;ISO 27001:2022 Lead Auditor, 19–23 Jul 2026&quot;]]">View certificate</a>
             </div>
@@ -151,6 +166,7 @@
             <div class="cert2-body">
               <div class="cert2-meta"><span class="cert2-status cert2-ok">Certified</span><span class="cert2-date">Effective 03 Mar 2024 · renew by 03 Mar 2027</span></div>
               <h3 class="cert2-title">ITIL® 4 Foundation Certificate in IT Service Management</h3>
+              <p class="cert2-tag">IT Infrastructure, Cloud &amp; Service Management</p>
               <p class="cert2-issuer">PeopleCert / AXELOS</p>
               <a class="cert2-view cert2-open" href="assets/certificates/itil-v4-foundation.webp" data-title="ITIL® 4 Foundation Certificate in IT Service Management" data-images="[[&quot;assets/certificates/itil-v4-foundation.webp&quot;, &quot;ITIL® 4 Foundation Certificate, effective 03 Mar 2024&quot;]]">View certificate</a>
             </div>
@@ -160,6 +176,7 @@
             <div class="cert2-body">
               <div class="cert2-meta"><span class="cert2-status cert2-ok">Course passed</span><span class="cert2-date">20–24 Mar 2016 · Alexandria</span></div>
               <h3 class="cert2-title">QMS ISO 9001:2015 Auditor / Lead Auditor Training Course</h3>
+              <p class="cert2-tag">Quality, Audit &amp; Inspection</p>
               <p class="cert2-issuer">IRCA-certified course A18096 · Quality Institution for Engineering &amp; Management Consultancy with Robere &amp; Associates (Thailand)</p>
               <a class="cert2-view cert2-open" href="assets/certificates/iso9001-lead-auditor-certificate.webp" data-title="QMS ISO 9001:2015 Auditor / Lead Auditor Training Course" data-images="[[&quot;assets/certificates/iso9001-lead-auditor-certificate.webp&quot;, &quot;Certificate of Achievement&quot;], [&quot;assets/certificates/iso9001-lead-auditor-letter.webp&quot;, &quot;Letter confirming the examination was passed, 8 Apr 2016&quot;]]">View 2 certificates</a>
             </div>
@@ -169,6 +186,7 @@
             <div class="cert2-body">
               <div class="cert2-meta"><span class="cert2-status cert2-info">Course completed</span><span class="cert2-date">15 Mar 2023</span></div>
               <h3 class="cert2-title">ISC2 Certified in Cybersecurity (CC) Self-Paced Training</h3>
+              <p class="cert2-tag">Cybersecurity &amp; Data Privacy</p>
               <p class="cert2-issuer">ISC2</p><p class="cert2-note">Course completion certificate. Candidate status, not the CC certification.</p>
               <a class="cert2-view cert2-open" href="assets/certificates/isc2-cc-course-completion.webp" data-title="ISC2 Certified in Cybersecurity (CC) Self-Paced Training" data-images="[[&quot;assets/certificates/isc2-cc-course-completion.webp&quot;, &quot;ISC2 CC Self-Paced Training, course completion, 15 Mar 2023&quot;]]">View certificate</a>
             </div>
@@ -183,6 +201,7 @@
             <div class="cert2-body">
               <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">Feb 2024 · 32 hours</span></div>
               <h3 class="cert2-title">Microsoft Azure Administrator (AZ-104) course</h3>
+              <p class="cert2-tag">IT Infrastructure, Cloud &amp; Service Management</p>
               <p class="cert2-issuer">INTRAST · New Horizons</p>
               <a class="cert2-view cert2-open" href="assets/certificates/az-104-course.webp" data-title="Microsoft Azure Administrator (AZ-104) course" data-images="[[&quot;assets/certificates/az-104-course.webp&quot;, &quot;AZ-104 course certificate of achievement, Feb 2024&quot;]]">View certificate</a>
             </div>
@@ -192,6 +211,7 @@
             <div class="cert2-body">
               <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">Jan 2024 · 8 hours</span></div>
               <h3 class="cert2-title">Microsoft Azure Fundamentals (AZ-900) course</h3>
+              <p class="cert2-tag">IT Infrastructure, Cloud &amp; Service Management</p>
               <p class="cert2-issuer">INTRAST · New Horizons</p>
               <a class="cert2-view cert2-open" href="assets/certificates/az-900-course.webp" data-title="Microsoft Azure Fundamentals (AZ-900) course" data-images="[[&quot;assets/certificates/az-900-course.webp&quot;, &quot;AZ-900 course certificate of achievement, Jan 2024&quot;]]">View certificate</a>
             </div>
@@ -201,6 +221,7 @@
             <div class="cert2-body">
               <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">27 Feb 2024 · 11 hours</span></div>
               <h3 class="cert2-title">Linux Administration Bootcamp: Beginner to Advanced</h3>
+              <p class="cert2-tag">IT Infrastructure, Cloud &amp; Service Management</p>
               <p class="cert2-issuer">AMIT Learning</p>
               <a class="cert2-view cert2-open" href="assets/certificates/linux-administration-bootcamp.webp" data-title="Linux Administration Bootcamp: Beginner to Advanced" data-images="[[&quot;assets/certificates/linux-administration-bootcamp.webp&quot;, &quot;Linux Administration Bootcamp, 27 Feb 2024&quot;]]">View certificate</a>
             </div>
@@ -210,6 +231,7 @@
             <div class="cert2-body">
               <div class="cert2-meta"><span class="cert2-status cert2-info">Courses completed</span><span class="cert2-date">Oct 2020 · 3 certificates</span></div>
               <h3 class="cert2-title">Cisco Networking Academy</h3>
+              <p class="cert2-tag">IT Infrastructure, Cloud &amp; Service Management</p>
               <p class="cert2-issuer">Cisco · NDG</p><p class="cert2-note">Introduction to Packet Tracer, Packet Tracer – Mobile, and NDG Linux Unhatched.</p>
               <a class="cert2-view cert2-open" href="assets/certificates/cisco-packet-tracer.webp" data-title="Cisco Networking Academy" data-images="[[&quot;assets/certificates/cisco-packet-tracer.webp&quot;, &quot;Introduction to Packet Tracer, 30 Oct 2020&quot;], [&quot;assets/certificates/cisco-packet-tracer-mobile.webp&quot;, &quot;Introduction to Packet Tracer – Mobile, 31 Oct 2020&quot;], [&quot;assets/certificates/cisco-ndg-linux-unhatched.webp&quot;, &quot;NDG Linux Unhatched, 22 Oct 2020&quot;]]">View 3 certificates</a>
             </div>
@@ -219,6 +241,7 @@
             <div class="cert2-body">
               <div class="cert2-meta"><span class="cert2-status cert2-info">Course completed</span><span class="cert2-date">Mar 2019</span></div>
               <h3 class="cert2-title">Full Stack Development Track</h3>
+              <p class="cert2-tag">Digital Solutions &amp; Automation</p>
               <p class="cert2-issuer">Udacity · 1 Million Arab Coders</p><p class="cert2-note">Verified certificates of completion and participation.</p>
               <a class="cert2-view cert2-open" href="assets/certificates/udacity-full-stack-completion.webp" data-title="Full Stack Development Track" data-images="[[&quot;assets/certificates/udacity-full-stack-completion.webp&quot;, &quot;Verified certificate of completion, Mar 2019&quot;], [&quot;assets/certificates/udacity-full-stack-participation.webp&quot;, &quot;Verified certificate of participation, Mar 2019&quot;]]">View 2 certificates</a>
             </div>
@@ -228,6 +251,7 @@
             <div class="cert2-body">
               <div class="cert2-meta"><span class="cert2-status cert2-info">Courses completed</span><span class="cert2-date">May 2017 · 5 courses</span></div>
               <h3 class="cert2-title">Web development fundamentals</h3>
+              <p class="cert2-tag">Digital Solutions &amp; Automation</p>
               <p class="cert2-issuer">SoloLearn</p><p class="cert2-note">HTML, CSS, JavaScript, PHP and SQL.</p>
               <a class="cert2-view cert2-open" href="assets/certificates/sololearn-html.webp" data-title="Web development fundamentals" data-images="[[&quot;assets/certificates/sololearn-html.webp&quot;, &quot;HTML Fundamentals, 2 May 2017&quot;], [&quot;assets/certificates/sololearn-css.webp&quot;, &quot;CSS Fundamentals, 8 May 2017&quot;], [&quot;assets/certificates/sololearn-javascript.webp&quot;, &quot;JavaScript Tutorial, 10 May 2017&quot;], [&quot;assets/certificates/sololearn-sql.webp&quot;, &quot;SQL Fundamentals, 13 May 2017&quot;], [&quot;assets/certificates/sololearn-php.webp&quot;, &quot;PHP Tutorial, 23 May 2017&quot;]]">View 5 certificates</a>
             </div>
@@ -237,6 +261,7 @@
             <div class="cert2-body">
               <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">90 hours</span></div>
               <h3 class="cert2-title">Software Design training program</h3>
+              <p class="cert2-tag">Digital Solutions &amp; Automation</p>
               <p class="cert2-issuer">Delta Soft</p>
               <a class="cert2-view cert2-open" href="assets/certificates/delta-soft-software-design.webp" data-title="Software Design training program" data-images="[[&quot;assets/certificates/delta-soft-software-design.webp&quot;, &quot;Software Design training certificate, 90 hours&quot;]]">View certificate</a>
             </div>
@@ -246,6 +271,7 @@
             <div class="cert2-body">
               <div class="cert2-meta"><span class="cert2-status cert2-info">Course completed</span><span class="cert2-date">11 May – 15 Jun 2025 · 35 contact hours</span></div>
               <h3 class="cert2-title">Preparation Course for Project Management Professional (PMP)®</h3>
+              <p class="cert2-tag">Project &amp; Agile Delivery</p>
               <p class="cert2-issuer">Engineering Tracks</p><p class="cert2-note">Course completion certificate, not the PMI certification.</p>
               <a class="cert2-view cert2-open" href="assets/certificates/pmp-preparation-course.webp" data-title="Preparation Course for Project Management Professional (PMP)®" data-images="[[&quot;assets/certificates/pmp-preparation-course.webp&quot;, &quot;Preparation Course for Project Management Professional (PMP)®, 11 May – 15 Jun 2025 · 35 contact hours&quot;]]">View certificate</a>
             </div>
@@ -255,6 +281,7 @@
             <div class="cert2-body">
               <div class="cert2-meta"><span class="cert2-status cert2-info">Course completed</span><span class="cert2-date">30 Jun – 24 Jul 2025 · 24 contact hours</span></div>
               <h3 class="cert2-title">PMI Agile Certified Practitioner (PMI-ACP)® course</h3>
+              <p class="cert2-tag">Project &amp; Agile Delivery</p>
               <p class="cert2-issuer">Engineering Tracks</p><p class="cert2-note">Course completion certificate, not the PMI certification.</p>
               <a class="cert2-view cert2-open" href="assets/certificates/pmi-acp-course.webp" data-title="PMI Agile Certified Practitioner (PMI-ACP)® course" data-images="[[&quot;assets/certificates/pmi-acp-course.webp&quot;, &quot;PMI Agile Certified Practitioner (PMI-ACP)® course, 30 Jun – 24 Jul 2025 · 24 contact hours&quot;]]">View certificate</a>
             </div>
@@ -264,6 +291,7 @@
             <div class="cert2-body">
               <div class="cert2-meta"><span class="cert2-status cert2-info">Course completed</span><span class="cert2-date">25 Oct 2025</span></div>
               <h3 class="cert2-title">Python Coder</h3>
+              <p class="cert2-tag">Data, Python &amp; AI</p>
               <p class="cert2-issuer">Kaggle</p>
               <a class="cert2-view cert2-open" href="assets/certificates/kaggle-python-coder.webp" data-title="Python Coder" data-images="[[&quot;assets/certificates/kaggle-python-coder.webp&quot;, &quot;Python Coder, 25 Oct 2025&quot;]]">View certificate</a>
             </div>
@@ -273,6 +301,7 @@
             <div class="cert2-body">
               <div class="cert2-meta"><span class="cert2-status cert2-info">Recognition</span><span class="cert2-date">22 Dec 2025</span></div>
               <h3 class="cert2-title">Kaggle Community Member</h3>
+              <p class="cert2-tag">Data, Python &amp; AI</p>
               <p class="cert2-issuer">Kaggle</p>
               <a class="cert2-view cert2-open" href="assets/certificates/kaggle-community-member.webp" data-title="Kaggle Community Member" data-images="[[&quot;assets/certificates/kaggle-community-member.webp&quot;, &quot;Kaggle Community Member, 22 Dec 2025&quot;]]">View certificate</a>
             </div>
@@ -282,6 +311,7 @@
             <div class="cert2-body">
               <div class="cert2-meta"><span class="cert2-status cert2-info">Course completed</span><span class="cert2-date">1 Apr 2026 · 4 hours</span></div>
               <h3 class="cert2-title">Introduction to Python</h3>
+              <p class="cert2-tag">Data, Python &amp; AI</p>
               <p class="cert2-issuer">DataCamp</p>
               <a class="cert2-view cert2-open" href="assets/certificates/datacamp-introduction-to-python.webp" data-title="Introduction to Python" data-images="[[&quot;assets/certificates/datacamp-introduction-to-python.webp&quot;, &quot;Introduction to Python, 1 Apr 2026 · 4 hours&quot;]]">View certificate</a>
             </div>
@@ -291,6 +321,7 @@
             <div class="cert2-body">
               <div class="cert2-meta"><span class="cert2-status cert2-info">Participation</span><span class="cert2-date">6 Apr 2026 · 1 h 47 min</span></div>
               <h3 class="cert2-title">Basics for Data Analysis using Python</h3>
+              <p class="cert2-tag">Data, Python &amp; AI</p>
               <p class="cert2-issuer">Yanfaa</p>
               <a class="cert2-view cert2-open" href="assets/certificates/yanfaa-data-analysis-python.webp" data-title="Basics for Data Analysis using Python" data-images="[[&quot;assets/certificates/yanfaa-data-analysis-python.webp&quot;, &quot;Basics for Data Analysis using Python, 6 Apr 2026 · 1 h 47 min&quot;]]">View certificate</a>
             </div>
@@ -300,6 +331,7 @@
             <div class="cert2-body">
               <div class="cert2-meta"><span class="cert2-status cert2-info">Course completed</span><span class="cert2-date">20 May 2026 · 2 hours</span></div>
               <h3 class="cert2-title">Introduction to Snowflake</h3>
+              <p class="cert2-tag">Data, Python &amp; AI</p>
               <p class="cert2-issuer">DataCamp</p>
               <a class="cert2-view cert2-open" href="assets/certificates/datacamp-introduction-to-snowflake.webp" data-title="Introduction to Snowflake" data-images="[[&quot;assets/certificates/datacamp-introduction-to-snowflake.webp&quot;, &quot;Introduction to Snowflake, 20 May 2026 · 2 hours&quot;]]">View certificate</a>
             </div>
@@ -314,6 +346,7 @@
             <div class="cert2-body">
               <div class="cert2-meta"><span class="cert2-status cert2-muted">Expired</span><span class="cert2-date">2012–2018</span></div>
               <h3 class="cert2-title">ASNT SNT-TC-1A Level II qualification: MT, PT, RT, UT, VT</h3>
+              <p class="cert2-tag">Quality, Audit &amp; Inspection</p>
               <p class="cert2-issuer">Alex. Inspection Services</p><p class="cert2-note">Magnetic particle and liquid penetrant testing expired in 2015; radiographic, ultrasonic and visual testing in 2018.</p>
               <a class="cert2-view cert2-open" href="assets/certificates/ndt-mt-level-2.webp" data-title="ASNT SNT-TC-1A Level II qualification: MT, PT, RT, UT, VT" data-images="[[&quot;assets/certificates/ndt-mt-level-2.webp&quot;, &quot;Magnetic Particle Testing, Level II, issued 21 Oct 2012, expired 20 Oct 2015&quot;], [&quot;assets/certificates/ndt-pt-level-2.webp&quot;, &quot;Liquid Penetrant Testing, Level II, issued 21 Oct 2012, expired 20 Oct 2015&quot;], [&quot;assets/certificates/ndt-rt-level-2.webp&quot;, &quot;Radiographic Testing, Level II, 15 Apr 2015 to 14 Apr 2018&quot;], [&quot;assets/certificates/ndt-ut-level-2.webp&quot;, &quot;Ultrasonic Testing, Level II, 25 Apr 2015 to 24 Apr 2018&quot;], [&quot;assets/certificates/ndt-vt-level-2.webp&quot;, &quot;Visual Testing, Level II, 5 Apr 2015 to 4 Apr 2018&quot;]]">View 5 certificates</a>
             </div>
@@ -323,6 +356,7 @@
             <div class="cert2-body">
               <div class="cert2-meta"><span class="cert2-status cert2-info">Course completed</span><span class="cert2-date">Certificate of successful completion</span></div>
               <h3 class="cert2-title">Internal Audit course based on ISO 19011:2011</h3>
+              <p class="cert2-tag">Quality, Audit &amp; Inspection</p>
               <p class="cert2-issuer">CERTIND</p>
               <a class="cert2-view cert2-open" href="assets/certificates/internal-audit-iso-19011.webp" data-title="Internal Audit course based on ISO 19011:2011" data-images="[[&quot;assets/certificates/internal-audit-iso-19011.webp&quot;, &quot;Internal Audit certificate of successful completion&quot;]]">View certificate</a>
             </div>
@@ -332,6 +366,7 @@
             <div class="cert2-body">
               <div class="cert2-meta"><span class="cert2-status cert2-muted">Attendance</span><span class="cert2-date">15–16 Mar 2015</span></div>
               <h3 class="cert2-title">Jotun Protective Coatings Paint School</h3>
+              <p class="cert2-tag">Quality, Audit &amp; Inspection</p>
               <p class="cert2-issuer">Jotun · NEM workshop</p>
               <a class="cert2-view cert2-open" href="assets/certificates/jotun-paint-school.webp" data-title="Jotun Protective Coatings Paint School" data-images="[[&quot;assets/certificates/jotun-paint-school.webp&quot;, &quot;Jotun Paint School attendance certificate, 15–16 Mar 2015&quot;]]">View certificate</a>
             </div>
@@ -341,6 +376,7 @@
             <div class="cert2-body">
               <div class="cert2-meta"><span class="cert2-status cert2-info">Attendance</span><span class="cert2-date">24–28 Aug 2025</span></div>
               <h3 class="cert2-title">ISO 9001:2015 · 14001:2015 · 45001:2018 Awareness &amp; Internal Auditor</h3>
+              <p class="cert2-tag">Quality, Audit &amp; Inspection</p>
               <p class="cert2-issuer">TÜV NORD Egypt · Integrated Management Systems</p>
               <a class="cert2-view cert2-open" href="assets/certificates/tuv-nord-ims-awareness.webp" data-title="ISO 9001:2015 · 14001:2015 · 45001:2018 Awareness &amp; Internal Auditor" data-images="[[&quot;assets/certificates/tuv-nord-ims-awareness.webp&quot;, &quot;ISO 9001:2015 · 14001:2015 · 45001:2018 Awareness &amp; Internal Auditor, 24–28 Aug 2025&quot;]]">View certificate</a>
             </div>
@@ -355,6 +391,7 @@
             <div class="cert2-body">
               <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">2026</span></div>
               <h3 class="cert2-title">Agile Product Owner Role: Techniques &amp; Foundations</h3>
+              <p class="cert2-tag">Project &amp; Agile Delivery</p>
               
               
             </div>
@@ -371,6 +408,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">14 Jun 2025 · 30 min</span></div>
                 <h4 class="cert2-title">Annual Cybersecurity Training</h4>
+                <p class="cert2-tag">Cybersecurity &amp; Data Privacy</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -379,6 +417,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">10 Oct 2024 · 20 min</span></div>
                 <h4 class="cert2-title">Ransomware Game</h4>
+                <p class="cert2-tag">Cybersecurity &amp; Data Privacy</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -387,6 +426,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">9 Aug 2024 · 16 h</span></div>
                 <h4 class="cert2-title">CompTIA Security+ Crash Course</h4>
+                <p class="cert2-tag">Cybersecurity &amp; Data Privacy</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -395,6 +435,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">6 Jul 2024</span></div>
                 <h4 class="cert2-title">Exploring SecOps Tools: Packet Manipulation Using Wireshark</h4>
+                <p class="cert2-tag">Cybersecurity &amp; Data Privacy</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -403,6 +444,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">14 Jun 2024</span></div>
                 <h4 class="cert2-title">CISSP Bootcamp (course)</h4>
+                <p class="cert2-tag">Cybersecurity &amp; Data Privacy</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -411,6 +453,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">12 Jun 2024</span></div>
                 <h4 class="cert2-title">Information Security</h4>
+                <p class="cert2-tag">Cybersecurity &amp; Data Privacy</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -419,6 +462,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">17 Apr 2024</span></div>
                 <h4 class="cert2-title">Introduction to Cybersecurity</h4>
+                <p class="cert2-tag">Cybersecurity &amp; Data Privacy</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -427,6 +471,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">17 Apr 2024</span></div>
                 <h4 class="cert2-title">Vulnerability Management</h4>
+                <p class="cert2-tag">Cybersecurity &amp; Data Privacy</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -435,6 +480,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">16 Apr 2024</span></div>
                 <h4 class="cert2-title">Annual Cybersecurity Training: Cyber Guide</h4>
+                <p class="cert2-tag">Cybersecurity &amp; Data Privacy</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -443,6 +489,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">24 Mar 2024</span></div>
                 <h4 class="cert2-title">CEH v12: Windows Authentication</h4>
+                <p class="cert2-tag">Cybersecurity &amp; Data Privacy</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -451,6 +498,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">30 May 2023</span></div>
                 <h4 class="cert2-title">Cybersecurity Web-based Training 2023</h4>
+                <p class="cert2-tag">Cybersecurity &amp; Data Privacy</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -459,6 +507,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">15 Oct 2022</span></div>
                 <h4 class="cert2-title">Cybersecurity and Data Privacy Incidents</h4>
+                <p class="cert2-tag">Cybersecurity &amp; Data Privacy</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -467,6 +516,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">15 Oct 2022</span></div>
                 <h4 class="cert2-title">Data Privacy in CCTV &amp; Access Control</h4>
+                <p class="cert2-tag">Cybersecurity &amp; Data Privacy</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -475,6 +525,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">15 Oct 2022</span></div>
                 <h4 class="cert2-title">Data Privacy in Contracts</h4>
+                <p class="cert2-tag">Cybersecurity &amp; Data Privacy</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -483,6 +534,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">15 Oct 2022</span></div>
                 <h4 class="cert2-title">Data Privacy in HR</h4>
+                <p class="cert2-tag">Cybersecurity &amp; Data Privacy</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -491,6 +543,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">15 Oct 2022</span></div>
                 <h4 class="cert2-title">Information Security</h4>
+                <p class="cert2-tag">Cybersecurity &amp; Data Privacy</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -499,6 +552,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">15 Oct 2022</span></div>
                 <h4 class="cert2-title">SE Cybersecurity Scribble: Phishing</h4>
+                <p class="cert2-tag">Cybersecurity &amp; Data Privacy</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -507,6 +561,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">15 Oct 2022</span></div>
                 <h4 class="cert2-title">Secure Use of Social Media</h4>
+                <p class="cert2-tag">Cybersecurity &amp; Data Privacy</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -515,6 +570,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">15 Oct 2022</span></div>
                 <h4 class="cert2-title">Social Engineering and Phishing</h4>
+                <p class="cert2-tag">Cybersecurity &amp; Data Privacy</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -523,6 +579,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">8 Oct 2022</span></div>
                 <h4 class="cert2-title">Cyber Security</h4>
+                <p class="cert2-tag">Cybersecurity &amp; Data Privacy</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -531,6 +588,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">8 Aug 2022 · 45 min</span></div>
                 <h4 class="cert2-title">Cybersecurity at Siemens Energy</h4>
+                <p class="cert2-tag">Cybersecurity &amp; Data Privacy</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -539,6 +597,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">9 May 2022 · 30 min</span></div>
                 <h4 class="cert2-title">Cybersecurity Challenge - Think Before You Click</h4>
+                <p class="cert2-tag">Cybersecurity &amp; Data Privacy</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -547,6 +606,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">17 Apr 2022 · 12 min</span></div>
                 <h4 class="cert2-title">Data Privacy Training Essentials</h4>
+                <p class="cert2-tag">Cybersecurity &amp; Data Privacy</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -555,6 +615,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">21 Jun 2021 · 30 min</span></div>
                 <h4 class="cert2-title">Cybersecurity Challenge - Home Office</h4>
+                <p class="cert2-tag">Cybersecurity &amp; Data Privacy</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -563,6 +624,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">12 Apr 2020 · 30 min</span></div>
                 <h4 class="cert2-title">Cybersecurity - You are the guardian!</h4>
+                <p class="cert2-tag">Cybersecurity &amp; Data Privacy</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -571,6 +633,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">24 Sep 2019</span></div>
                 <h4 class="cert2-title">Data Privacy Training International</h4>
+                <p class="cert2-tag">Cybersecurity &amp; Data Privacy</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -579,6 +642,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">30 May 2019 · 30 min</span></div>
                 <h4 class="cert2-title">Cybersec - It’s up to us!</h4>
+                <p class="cert2-tag">Cybersecurity &amp; Data Privacy</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -592,6 +656,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">7 Oct 2026 · 30 min</span></div>
                 <h4 class="cert2-title">Introduction to Claude</h4>
+                <p class="cert2-tag">Data, Python &amp; AI</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform · Pluralsight Skills</p>
               </div>
             </article>
@@ -600,6 +665,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">2 Oct 2026 · 48 min</span></div>
                 <h4 class="cert2-title">Getting Started on Prompt Engineering with Generative AI</h4>
+                <p class="cert2-tag">Data, Python &amp; AI</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform · Pluralsight Skills</p>
               </div>
             </article>
@@ -608,6 +674,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">30 Sep 2026 · 6 min</span></div>
                 <h4 class="cert2-title">First Look: Anthropic Claude Opus 4.8</h4>
+                <p class="cert2-tag">Data, Python &amp; AI</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform · Pluralsight Skills</p>
               </div>
             </article>
@@ -616,6 +683,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">30 Sep 2026 · 1 h 54 min</span></div>
                 <h4 class="cert2-title">Identify AI Concepts and Capabilities (AI-901)</h4>
+                <p class="cert2-tag">Data, Python &amp; AI</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform · Pluralsight Skills</p>
               </div>
             </article>
@@ -624,6 +692,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">8 Jan 2026</span></div>
                 <h4 class="cert2-title">Smart AI in Product Management</h4>
+                <p class="cert2-tag">Data, Python &amp; AI</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -632,6 +701,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">4 Dec 2025 · 1 h 30 min</span></div>
                 <h4 class="cert2-title">GenAI for Business Impact</h4>
+                <p class="cert2-tag">Data, Python &amp; AI</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -640,6 +710,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">21 Oct 2025</span></div>
                 <h4 class="cert2-title">Getting Started with Python: Introduction</h4>
+                <p class="cert2-tag">Data, Python &amp; AI</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -648,6 +719,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">21 Oct 2025</span></div>
                 <h4 class="cert2-title">Python Development: Getting Started with Programming in Python</h4>
+                <p class="cert2-tag">Data, Python &amp; AI</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -656,6 +728,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">2 Sep 2025 · 5 min</span></div>
                 <h4 class="cert2-title">Building a Customer Insight Assistant Agent with Microsoft 365 Copilot</h4>
+                <p class="cert2-tag">Data, Python &amp; AI</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform · Skillsoft Percipio</p>
               </div>
             </article>
@@ -664,6 +737,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">5 Jul 2024</span></div>
                 <h4 class="cert2-title">Create Dashboards in Power BI</h4>
+                <p class="cert2-tag">Data, Python &amp; AI</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -672,6 +746,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">27 Jun 2024</span></div>
                 <h4 class="cert2-title">Getting Started with Power Query in Power BI</h4>
+                <p class="cert2-tag">Data, Python &amp; AI</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -680,6 +755,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">22 Jun 2024</span></div>
                 <h4 class="cert2-title">Microsoft Power BI Recipes</h4>
+                <p class="cert2-tag">Data, Python &amp; AI</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -688,6 +764,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">9 Jul 2022 · 1 h 39 min</span></div>
                 <h4 class="cert2-title">CompTIA Data+: Data Analysis Types &amp; Techniques</h4>
+                <p class="cert2-tag">Data, Python &amp; AI</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -701,6 +778,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">21 Oct 2025</span></div>
                 <h4 class="cert2-title">Introduction to Process Automation with RPA (UiPath)</h4>
+                <p class="cert2-tag">Digital Solutions &amp; Automation</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -709,6 +787,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">11 Jul 2025 · 16 h</span></div>
                 <h4 class="cert2-title">Mendix: Become a Rapid Developer</h4>
+                <p class="cert2-tag">Digital Solutions &amp; Automation</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p><p class="cert2-note">Includes the Mendix Rapid Developer certification, 5 Jul 2025.</p>
               </div>
             </article>
@@ -717,6 +796,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">4 May 2025</span></div>
                 <h4 class="cert2-title">Advanced Figma (Interactive Course)</h4>
+                <p class="cert2-tag">Digital Solutions &amp; Automation</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform · Skillsoft</p>
               </div>
             </article>
@@ -725,6 +805,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">30 Apr 2025</span></div>
                 <h4 class="cert2-title">UI and UX Prototyping with Figma</h4>
+                <p class="cert2-tag">Digital Solutions &amp; Automation</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform · Skillsoft</p>
               </div>
             </article>
@@ -733,6 +814,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">16 Dec 2024 · 2 h 30 min</span></div>
                 <h4 class="cert2-title">Robotic Process Automation with UiPath</h4>
+                <p class="cert2-tag">Digital Solutions &amp; Automation</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -741,6 +823,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">15 Aug 2024 · 30 min</span></div>
                 <h4 class="cert2-title">Sharing &amp; Collaborating on an App in Microsoft Power Apps</h4>
+                <p class="cert2-tag">Digital Solutions &amp; Automation</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform · Skillsoft</p>
               </div>
             </article>
@@ -749,6 +832,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">17 May 2024 · 1 h 6 min</span></div>
                 <h4 class="cert2-title">Web Automation in Power Automate Desktop</h4>
+                <p class="cert2-tag">Digital Solutions &amp; Automation</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -757,6 +841,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">12 Mar 2024</span></div>
                 <h4 class="cert2-title">Introduction to Power Apps</h4>
+                <p class="cert2-tag">Digital Solutions &amp; Automation</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -765,6 +850,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">22 Sep 2022 · 2 h 10 min</span></div>
                 <h4 class="cert2-title">Microsoft 365 SharePoint Sites</h4>
+                <p class="cert2-tag">Digital Solutions &amp; Automation</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -778,6 +864,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">20 Oct 2025</span></div>
                 <h4 class="cert2-title">Leading through Setting and Managing Priorities</h4>
+                <p class="cert2-tag">Leadership &amp; Communication</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -786,6 +873,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">4 Jul 2024</span></div>
                 <h4 class="cert2-title">First Time Manager (part 2)</h4>
+                <p class="cert2-tag">Leadership &amp; Communication</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -794,6 +882,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">13 May 2024</span></div>
                 <h4 class="cert2-title">First Time Manager</h4>
+                <p class="cert2-tag">Leadership &amp; Communication</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -802,6 +891,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">17 Apr 2024</span></div>
                 <h4 class="cert2-title">Networking Skills (Relationships)</h4>
+                <p class="cert2-tag">Leadership &amp; Communication</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -810,6 +900,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">5 Mar 2024</span></div>
                 <h4 class="cert2-title">Emotional Intelligence</h4>
+                <p class="cert2-tag">Leadership &amp; Communication</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -818,6 +909,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">15 Oct 2022</span></div>
                 <h4 class="cert2-title">Writing Effective E-mails</h4>
+                <p class="cert2-tag">Leadership &amp; Communication</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -826,6 +918,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">11 Mar 2022 · 10 min</span></div>
                 <h4 class="cert2-title">Skills for New Managers</h4>
+                <p class="cert2-tag">Leadership &amp; Communication</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -834,6 +927,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">11 Mar 2022 · 10 min</span></div>
                 <h4 class="cert2-title">The New Manager’s Handbook (getAbstract)</h4>
+                <p class="cert2-tag">Leadership &amp; Communication</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -842,6 +936,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">11 Feb 2022</span></div>
                 <h4 class="cert2-title">Customer First</h4>
+                <p class="cert2-tag">Leadership &amp; Communication</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -855,6 +950,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">4 Jan 2026 · 25 min</span></div>
                 <h4 class="cert2-title">Conflicts of Interest</h4>
+                <p class="cert2-tag">Compliance, Ethics &amp; Safety</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -863,6 +959,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">27 Sep 2024 · 20 min</span></div>
                 <h4 class="cert2-title">Sustainability at Siemens Energy</h4>
+                <p class="cert2-tag">Compliance, Ethics &amp; Safety</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -871,6 +968,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">22 May 2024</span></div>
                 <h4 class="cert2-title">Export Control Basic Training</h4>
+                <p class="cert2-tag">Compliance, Ethics &amp; Safety</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -879,6 +977,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">24 Mar 2024</span></div>
                 <h4 class="cert2-title">BCG Refresher</h4>
+                <p class="cert2-tag">Compliance, Ethics &amp; Safety</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -887,6 +986,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">21 Jun 2022 · 30 min</span></div>
                 <h4 class="cert2-title">Siemens Energy Business Conduct Guidelines</h4>
+                <p class="cert2-tag">Compliance, Ethics &amp; Safety</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -895,6 +995,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">17 Apr 2022 · 12 min</span></div>
                 <h4 class="cert2-title">Defensive Driving Awareness</h4>
+                <p class="cert2-tag">Compliance, Ethics &amp; Safety</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -903,6 +1004,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">23 Aug 2020</span></div>
                 <h4 class="cert2-title">Siemens Antitrust Essentials</h4>
+                <p class="cert2-tag">Compliance, Ethics &amp; Safety</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -911,6 +1013,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">30 Apr 2020</span></div>
                 <h4 class="cert2-title">Export Control and Customs – Global Awareness</h4>
+                <p class="cert2-tag">Compliance, Ethics &amp; Safety</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -919,6 +1022,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">4 Feb 2020</span></div>
                 <h4 class="cert2-title">Siemens Business Conduct Guidelines</h4>
+                <p class="cert2-tag">Compliance, Ethics &amp; Safety</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -932,6 +1036,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">1 Sep 2025 · 17 min</span></div>
                 <h4 class="cert2-title">Getting to the Root of a Problem</h4>
+                <p class="cert2-tag">Quality, Audit &amp; Inspection</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform · Skillsoft Percipio</p>
               </div>
             </article>
@@ -940,6 +1045,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">25 Jul 2025 · 30 h</span></div>
                 <h4 class="cert2-title">ISO Awareness &amp; Internal Auditor (ISO 9001, 14001, 45001)</h4>
+                <p class="cert2-tag">Quality, Audit &amp; Inspection</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -948,6 +1054,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">4 Jun 2025 · 3 h</span></div>
                 <h4 class="cert2-title">RCM Awareness Training (Reliability-Centered Maintenance)</h4>
+                <p class="cert2-tag">Quality, Audit &amp; Inspection</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -956,6 +1063,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">9 Dec 2024 · 20 min</span></div>
                 <h4 class="cert2-title">Root Cause Analysis: 5 Why Method</h4>
+                <p class="cert2-tag">Quality, Audit &amp; Inspection</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -964,6 +1072,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">9 Dec 2024 · 45 min</span></div>
                 <h4 class="cert2-title">Learning from Mistakes II</h4>
+                <p class="cert2-tag">Quality, Audit &amp; Inspection</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -972,6 +1081,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">9 Dec 2024</span></div>
                 <h4 class="cert2-title">Quality Training (GS ME SO)</h4>
+                <p class="cert2-tag">Quality, Audit &amp; Inspection</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -980,6 +1090,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">13 Jun 2024</span></div>
                 <h4 class="cert2-title">Data Analysis and Root Cause Analysis in Six Sigma</h4>
+                <p class="cert2-tag">Quality, Audit &amp; Inspection</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -988,6 +1099,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">16 May 2024</span></div>
                 <h4 class="cert2-title">Root Cause Analysis: Fishbone Method (TÜV)</h4>
+                <p class="cert2-tag">Quality, Audit &amp; Inspection</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -1001,6 +1113,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">4 Feb 2025 · 36 h</span></div>
                 <h4 class="cert2-title">PM Professional Part 2: Advanced (IPMA Level D)</h4>
+                <p class="cert2-tag">Project &amp; Agile Delivery</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -1009,6 +1122,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">27 Sep 2024 · 30 min</span></div>
                 <h4 class="cert2-title">Project Management: Project Kickoff</h4>
+                <p class="cert2-tag">Project &amp; Agile Delivery</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -1017,6 +1131,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">12 Jul 2024 · 27 h</span></div>
                 <h4 class="cert2-title">PM Professional Part 1: Basic (IPMA Level D)</h4>
+                <p class="cert2-tag">Project &amp; Agile Delivery</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -1025,6 +1140,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">9 Jul 2024</span></div>
                 <h4 class="cert2-title">Project Manager Basic: Day 1</h4>
+                <p class="cert2-tag">Project &amp; Agile Delivery</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -1033,6 +1149,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">3 Jul 2024</span></div>
                 <h4 class="cert2-title">What is Project Management</h4>
+                <p class="cert2-tag">Project &amp; Agile Delivery</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -1041,6 +1158,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">18 May 2024</span></div>
                 <h4 class="cert2-title">New Project Manager Essentials</h4>
+                <p class="cert2-tag">Project &amp; Agile Delivery</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -1049,6 +1167,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">24 Mar 2024</span></div>
                 <h4 class="cert2-title">Agile Mindset</h4>
+                <p class="cert2-tag">Project &amp; Agile Delivery</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -1062,6 +1181,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">9 Aug 2024</span></div>
                 <h4 class="cert2-title">CCNA 2020: Networking Components</h4>
+                <p class="cert2-tag">IT Infrastructure, Cloud &amp; Service Management</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform · Skillsoft Percipio</p>
               </div>
             </article>
@@ -1070,6 +1190,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">23 May 2024</span></div>
                 <h4 class="cert2-title">Network Discovery Tools and Techniques</h4>
+                <p class="cert2-tag">IT Infrastructure, Cloud &amp; Service Management</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -1078,6 +1199,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">21 May 2024</span></div>
                 <h4 class="cert2-title">Manage and Monitor Windows Server Event Logs</h4>
+                <p class="cert2-tag">IT Infrastructure, Cloud &amp; Service Management</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -1086,6 +1208,7 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">12 May 2023 · 2 h</span></div>
                 <h4 class="cert2-title">ITIL Exam Preparation: Recap Session</h4>
+                <p class="cert2-tag">IT Infrastructure, Cloud &amp; Service Management</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
@@ -1094,11 +1217,14 @@
               <div class="cert2-body">
                 <div class="cert2-meta"><span class="cert2-status cert2-info">Training completed</span><span class="cert2-date">5 Apr 2023</span></div>
                 <h4 class="cert2-title">ITIL v4</h4>
+                <p class="cert2-tag">IT Infrastructure, Cloud &amp; Service Management</p>
                 <p class="cert2-issuer">Siemens Energy Learning Platform</p>
               </div>
             </article>
           </div>
         </div>
+      </div>
+      </div>
       </div>
       </div>
     </section>
@@ -1334,6 +1460,6 @@
   <button class="back-to-top-btn" id="backToTopBtn" aria-label="Back to top" title="Back to top">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
   </button>
-  <script src="script.js?v=20261108-ui12"></script>
+  <script src="script.js?v=20261108-ui13"></script>
 </body>
 </html>
