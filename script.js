@@ -959,36 +959,108 @@ function initCertFilter() {
   const section = document.getElementById('certifications');
   const search = document.getElementById('certSearch');
   if (!section || !search) return;
-  const chips = [...section.querySelectorAll('.cert2-chip')];
+  const srcChips = [...section.querySelectorAll('.cert2-chip[data-src]')];
+  const compChips = [...section.querySelectorAll('.cert2-chip[data-comp]')];
   const cards = [...section.querySelectorAll('.cert2-card')];
   const groups = [...section.querySelectorAll('.cert2-group')];
+  const subs = [...section.querySelectorAll('.cert2-sub')];
   const empty = document.getElementById('certEmpty');
-  let active = 'all';
+  let src = 'all', comp = 'all';
 
-  cards.forEach(card => {
-    card._text = card.textContent.toLowerCase().replace(/\s+/g, ' ');
-    card._group = card.closest('.cert2-group').id;
+  cards.forEach(card => { card._text = card.textContent.toLowerCase().replace(/\s+/g, ' '); });
+
+  const COMP = {};
+  compChips.forEach(c => { if (c.dataset.comp !== 'all') COMP[c.dataset.comp] = c.firstChild.textContent.trim(); });
+
+  function count(filterFn) { return cards.filter(filterFn).length; }
+  srcChips.forEach(chip => {
+    const f = chip.dataset.src;
+    chip.querySelector('b').textContent = f === 'all' ? cards.length : count(c => c.dataset.src === f);
   });
-  chips.forEach(chip => {
-    const f = chip.dataset.filter;
-    chip.querySelector('b').textContent = f === 'all' ? cards.length : cards.filter(c => c._group === f).length;
+  compChips.forEach(chip => {
+    const b = chip.querySelector('b');
+    if (b) b.textContent = count(c => c.dataset.comp === chip.dataset.comp);
   });
 
   function apply() {
     const q = search.value.trim().toLowerCase();
     let shown = 0;
     cards.forEach(card => {
-      const ok = (active === 'all' || card._group === active) && (!q || card._text.includes(q));
+      const ok = (src === 'all' || card.dataset.src === src) &&
+        (comp === 'all' || card.dataset.comp === comp) &&
+        (!q || card._text.includes(q));
       card.hidden = !ok;
       if (ok) shown++;
     });
+    subs.forEach(s => { s.hidden = !s.querySelector('.cert2-card:not([hidden])'); });
     groups.forEach(g => { g.hidden = !g.querySelector('.cert2-card:not([hidden])'); });
     if (empty) empty.hidden = shown > 0;
+    document.querySelectorAll('.cert2-bar').forEach(b => b.classList.toggle('is-active', b.dataset.comp === comp));
   }
-  chips.forEach(chip => chip.addEventListener('click', () => {
-    active = chip.dataset.filter;
-    chips.forEach(c => c.classList.toggle('is-active', c === chip));
+  function setComp(c) {
+    comp = comp === c ? 'all' : c;
+    compChips.forEach(x => x.classList.toggle('is-active', x.dataset.comp === comp));
+    apply();
+  }
+  srcChips.forEach(chip => chip.addEventListener('click', () => {
+    src = chip.dataset.src;
+    srcChips.forEach(c => c.classList.toggle('is-active', c === chip));
+    apply();
+  }));
+  compChips.forEach(chip => chip.addEventListener('click', () => {
+    comp = chip.dataset.comp;
+    compChips.forEach(c => c.classList.toggle('is-active', c === chip));
     apply();
   }));
   search.addEventListener('input', apply);
+
+  /* Competencies chart, calculated from the certificate cards in the page */
+  const chart = document.getElementById('compChart');
+  const yearChart = document.getElementById('yearChart');
+  if (!chart) return;
+  const stats = {};
+  const years = {};
+  cards.forEach(c => {
+    const k = c.dataset.comp; if (!k) return;
+    const s = stats[k] || (stats[k] = { n: 0, min: 0 });
+    s.n++; s.min += Number(c.dataset.min || 0);
+    if (c.dataset.year) years[c.dataset.year] = (years[c.dataset.year] || 0) + 1;
+  });
+  const rows = Object.keys(stats).sort((a, b) => stats[b].n - stats[a].n);
+  const max = Math.max(...rows.map(k => stats[k].n));
+  rows.forEach(k => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'cert2-bar'; b.dataset.comp = k; b.setAttribute('role', 'listitem');
+    const h = Math.round(stats[k].min / 60);
+    b.innerHTML = '<span class="cert2-bar-label"></span><span class="cert2-bar-track"><span class="cert2-bar-fill"></span></span><span class="cert2-bar-val"></span>';
+    b.querySelector('.cert2-bar-label').textContent = COMP[k] || k;
+    b.querySelector('.cert2-bar-val').innerHTML = stats[k].n + (h ? '<small>' + h + ' h stated</small>' : '');
+    b.addEventListener('click', () => { setComp(k); const t = document.getElementById('certSearch'); if (t) t.closest('.cert2-toolbar').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+    chart.append(b);
+  });
+  const yk = Object.keys(years).sort();
+  const ymax = Math.max(...yk.map(y => years[y]));
+  const first = Number(yk[0]), last = Number(yk[yk.length - 1]);
+  for (let y = first; y <= last; y++) {
+    const n = years[y] || 0;
+    const d = document.createElement('div'); d.className = 'cert2-year';
+    d.innerHTML = '<span class="cert2-year-n"></span><span class="cert2-year-col"></span><span class="cert2-year-lbl"></span>';
+    d.querySelector('.cert2-year-n').textContent = n || '';
+    d.querySelector('.cert2-year-lbl').textContent = String(y).slice(2) ? "'" + String(y).slice(2) : y;
+    d.dataset.h = n ? Math.max(6, Math.round(n / ymax * 100)) : 0;
+    yearChart.append(d);
+  }
+  const foot = document.getElementById('compFoot');
+  if (foot) {
+    const top = rows.slice(0, 3).map(k => COMP[k]).join(', ');
+    foot.textContent = 'Most certificates: ' + top + '. Hours count only certificates that state a duration.';
+  }
+  const grow = () => {
+    chart.querySelectorAll('.cert2-bar').forEach(b => { b.querySelector('.cert2-bar-fill').style.width = Math.round(stats[b.dataset.comp].n / max * 100) + '%'; });
+    yearChart.querySelectorAll('.cert2-year').forEach(d => { d.querySelector('.cert2-year-col').style.height = d.dataset.h + '%'; });
+  };
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { grow(); io.disconnect(); } }, { threshold: 0.2 });
+    io.observe(chart);
+  } else { grow(); }
 }

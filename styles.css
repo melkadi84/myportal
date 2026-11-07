@@ -6410,3 +6410,89 @@ body.cert2-lock { overflow: hidden; }
 .youx-footer-bottom a:hover, .youx-footer-bottom a:focus-visible { background-size: 100% 2px; }
 .youx-footer-bottom a:focus-visible { outline: 2px solid var(--brand-primary); outline-offset: 3px; border-radius: 3px; }
 @media (prefers-reduced-motion: reduce) { .youx-footer-bottom a { transition: none; } }
+
+/* Header nav: clean selected state (pill with a short indicator, no full-width underline) */
+.beverr-header-nav .nav-link { position: relative; }
+.beverr-header-nav .nav-link::after { display: none; }
+.beverr-header-nav .nav-link:hover:not(.active) {
+  background: rgba(29, 78, 216, 0.06) !important;
+}
+.beverr-header-nav .nav-link.active {
+  background: rgba(29, 78, 216, 0.1) !important;
+  box-shadow: inset 0 0 0 1px rgba(29, 78, 216, 0.14);
+  font-weight: 700;
+}
+.beverr-header-nav .nav-link.active::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 3px;
+  width: 16px;
+  height: 3px;
+  margin-left: -8px;
+  border-radius: 3px;
+  background: var(--brand-primary);
+}
+.beverr-header-nav .nav-link.active { padding-bottom: 10px; }
+[data-theme="dark"] .beverr-header-nav .nav-link.active {
+  background: rgba(255, 255, 255, 0.12) !important;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16);
+}
+[data-theme="dark"] .beverr-header-nav .nav-link.active::before { background: #ffffff; }
+@media (max-width: 1100px) {
+  .site-header.beverr-header-theme .beverr-header-nav .nav-link.active { padding-bottom: 8px; }
+  .beverr-header-nav .nav-link.active::before { bottom: 2px; width: 12px; margin-left: -6px; }
+}
+
+/* Certificates: competencies chart, Siemens Energy section, filters */
+.cert2-comp { margin: 0 0 48px; padding: 32px; border-radius: 24px; background: #fff; border: 1px solid rgba(15,23,42,.06); box-shadow: 0 1px 2px rgba(15,23,42,.04), 0 18px 40px -22px rgba(15,23,42,.18); }
+[data-theme="dark"] .cert2-comp { background: rgba(22,30,51,.9); border-color: rgba(255,255,255,.08); }
+.cert2-comp-head { margin-bottom: 24px; }
+.cert2-comp-grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 40px; align-items: start; }
+.cert2-chart { display: flex; flex-direction: column; gap: 10px; }
+.cert2-bar { display: grid; grid-template-columns: minmax(150px, 220px) 1fr auto; align-items: center; gap: 14px; width: 100%; padding: 8px 10px; margin: 0; border: 0; border-radius: 12px; background: transparent; color: inherit; font: inherit; text-align: left; cursor: pointer; transition: background .2s; }
+.cert2-bar:hover, .cert2-bar.is-active { background: rgba(29,78,216,.07); }
+.cert2-bar:focus-visible { outline: 3px solid rgba(29,78,216,.4); outline-offset: 1px; }
+.cert2-bar-label { font-size: .92rem; font-weight: 600; line-height: 1.3; color: var(--text-primary); }
+.cert2-bar-track { height: 12px; border-radius: 999px; background: rgba(29,78,216,.1); overflow: hidden; }
+.cert2-bar-fill { display: block; height: 100%; width: 0; border-radius: 999px; background: linear-gradient(90deg, #1d4ed8, #38bdf8); transition: width .9s cubic-bezier(.2,.7,.2,1); }
+.cert2-bar-fill.is-ext { opacity: .0; }
+.cert2-bar-val { font-size: .86rem; font-weight: 700; color: var(--text-primary); min-width: 5.5em; text-align: right; font-variant-numeric: tabular-nums; }
+.cert2-bar-val small { display: block; font-weight: 500; font-size: .72rem; color: var(--text-muted); }
+.cert2-chart-title { font-size: .95rem; font-weight: 700; margin: 0 0 14px; color: var(--text-primary); }
+.cert2-years { display: flex; align-items: flex-end; gap: 8px; height: 190px; padding-top: 22px; border-bottom: 1px solid rgba(15,23,42,.14); }
+[data-theme="dark"] .cert2-years { border-color: rgba(255,255,255,.18); }
+.cert2-year { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; height: 100%; min-width: 0; position: relative; }
+.cert2-year-col { width: 100%; max-width: 34px; border-radius: 8px 8px 0 0; background: linear-gradient(180deg, #38bdf8, #1d4ed8); height: 0; transition: height .9s cubic-bezier(.2,.7,.2,1); }
+.cert2-year-n { font-size: .72rem; font-weight: 700; line-height: 1.6; color: var(--text-primary); }
+.cert2-year-lbl { position: absolute; bottom: -24px; font-size: .7rem; color: var(--text-muted); }
+.cert2-years { margin-bottom: 34px; }
+.cert2-chart-foot { margin: 0; font-size: .82rem; color: var(--text-muted); line-height: 1.5; }
+.cert2-chips-comp { width: 100%; }
+.cert2-chip-sm { height: 36px; padding: 0 14px; font-size: .82rem; border-radius: 10px; }
+.cert2-toolbar { margin-bottom: 36px; }
+.cert2-selp { margin-top: 24px; padding-top: 16px; }
+.cert2-selp .cert2-group-head { padding: 28px 30px; border-radius: 20px; margin-bottom: 28px; color: #fff; background: radial-gradient(700px 300px at 90% -20%, rgba(56,189,248,.3), transparent 60%), linear-gradient(135deg, #0b1630, #17306a); }
+.cert2-selp .cert2-group-title { color: #fff; }
+.cert2-selp .cert2-group-desc { color: #c7d6ee; margin: 6px 0 0; max-width: 70ch; }
+.cert2-sub { margin-bottom: 36px; }
+.cert2-sub-title { display: flex; align-items: center; gap: 10px; font-size: 1.12rem; font-weight: 800; letter-spacing: -.01em; margin: 0 0 16px; color: var(--text-primary); }
+.cert2-sub-title span { font-size: .78rem; font-weight: 700; padding: 2px 10px; border-radius: 999px; background: rgba(29,78,216,.1); color: var(--brand-primary); }
+.cert2-rows { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 14px; }
+.cert2-row { flex-direction: row; align-items: stretch; border-radius: 14px; }
+.cert2-row:hover { transform: translateY(-3px); }
+.cert2-row .cert2-thumb { flex: 0 0 112px; height: auto; min-height: 86px; padding: 8px; border-bottom: 0; border-right: 1px solid rgba(255,255,255,.06); }
+.cert2-row .cert2-thumb::after { display: none; }
+.cert2-row .cert2-thumb img { height: auto; max-height: 100%; width: 100%; box-shadow: 0 6px 14px -6px rgba(0,0,0,.6); }
+.cert2-row .cert2-body { padding: 12px 16px 14px; gap: 5px; min-width: 0; }
+.cert2-row .cert2-title { font-size: .95rem; margin: 0; }
+.cert2-row .cert2-issuer { font-size: .78rem; color: var(--text-muted); }
+.cert2-sub[hidden] { display: none; }
+@media (max-width: 860px) {
+  .cert2-comp { padding: 22px 16px; }
+  .cert2-comp-grid { grid-template-columns: 1fr; gap: 28px; }
+  .cert2-bar { grid-template-columns: 1fr auto; row-gap: 6px; }
+  .cert2-bar-label { grid-column: 1 / -1; }
+  .cert2-rows { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { .cert2-bar-fill, .cert2-year-col { transition: none; } }
