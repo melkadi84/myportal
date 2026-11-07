@@ -6404,3 +6404,9 @@ body.cert2-lock { overflow: hidden; }
 .cert2-detail dd { margin: 3px 0 0; font-size: .92rem; font-weight: 600; color: var(--text-primary); line-height: 1.4; }
 @media (max-width: 860px) { .cert2-stats { grid-template-columns: repeat(2, 1fr); margin-top: -72px; } .cert2-search { flex-basis: 100%; } }
 @media (max-width: 520px) { .cert2-stat strong { font-size: 1.8rem; } .cert2-chip { height: 42px; padding: 0 14px; } }
+
+/* Footer: Echo Tech credit link */
+.youx-footer-bottom a { color: var(--brand-primary); font-weight: 700; text-decoration: none; padding-bottom: 1px; background: linear-gradient(currentColor, currentColor) left bottom / 0 2px no-repeat; transition: background-size .25s ease, color .2s ease; }
+.youx-footer-bottom a:hover, .youx-footer-bottom a:focus-visible { background-size: 100% 2px; }
+.youx-footer-bottom a:focus-visible { outline: 2px solid var(--brand-primary); outline-offset: 3px; border-radius: 3px; }
+@media (prefers-reduced-motion: reduce) { .youx-footer-bottom a { transition: none; } }
