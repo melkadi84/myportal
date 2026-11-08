@@ -961,7 +961,9 @@ function initCertFilter() {
   const main = document.getElementById('certMain');
   if (!section || !search || !main) return;
   const srcChips = [...section.querySelectorAll('.cert2-chip[data-src]')];
-  const compBtns = [...section.querySelectorAll('.cert2-acomp')];
+  const compBtns = [...section.querySelectorAll('.cert2-type')];
+  const typesReset = document.getElementById('typesReset');
+  const picked = new Set();
   const viewBtns = [...section.querySelectorAll('.cert2-view-btn')];
   const cards = [...section.querySelectorAll('.cert2-card')];
   const groups = [...section.querySelectorAll('.cert2-group')];
@@ -973,19 +975,21 @@ function initCertFilter() {
 
   cards.forEach(card => { card._g = card.closest('.cert2-group').id; card._text = card.textContent.toLowerCase().replace(/\s+/g, ' '); });
   const COMP = {};
-  compBtns.forEach(b => { if (b.dataset.comp !== 'all') COMP[b.dataset.comp] = b.querySelector('.cert2-acomp-name').textContent.trim(); });
+  compBtns.forEach(b => { COMP[b.dataset.comp] = b.querySelector('.cert2-type-name').textContent.trim(); });
   srcChips.forEach(chip => {
     const f = chip.dataset.src;
     chip.querySelector('b').textContent = f === 'all' ? cards.length : cards.filter(c => c.dataset.src === f).length;
   });
 
-  function apply() {
+  let ready = false;
+  let apply = function () {
     const q = search.value.trim().toLowerCase();
     let shown = 0;
     cards.forEach(card => {
       const ok = (grp === 'all' || card._g === grp) && (src === 'all' || card.dataset.src === src) &&
-        (comp === 'all' || card.dataset.comp === comp) &&
+        (!picked.size || picked.has(card.dataset.comp)) &&
         (!q || card._text.includes(q));
+      if (ok && card.hidden && ready) { card.classList.remove('cert2-pop'); void card.offsetWidth; card.style.setProperty('--d', Math.min(shown, 10) * 35 + 'ms'); card.classList.add('cert2-pop'); }
       card.hidden = !ok;
       if (ok) shown++;
     });
@@ -994,19 +998,21 @@ function initCertFilter() {
     if (empty) empty.hidden = shown > 0;
     if (shownEl) shownEl.textContent = 'Showing ' + shown + ' of ' + cards.length;
     anavs.forEach(a => a.classList.toggle('is-current', a.dataset.group === grp));
-    compBtns.forEach(b => b.classList.toggle('is-active', b.dataset.comp === comp));
+    compBtns.forEach(b => { const on = picked.has(b.dataset.comp); b.classList.toggle('is-on', on); b.setAttribute('aria-checked', on ? 'true' : 'false'); });
+    if (typesReset) typesReset.hidden = !picked.size;
     section.querySelectorAll('.cert2-bar, .cert2-rlabel').forEach(b => b.classList.toggle('is-active', b.dataset.comp === comp));
-  }
+  };
   function setComp(c) { comp = (comp === c) ? 'all' : c; apply(); }
   srcChips.forEach(chip => chip.addEventListener('click', () => {
     src = chip.dataset.src;
     srcChips.forEach(c => c.classList.toggle('is-active', c === chip));
     apply();
   }));
-  compBtns.forEach(b => b.addEventListener('click', () => { comp = b.dataset.comp; apply(); }));
+  compBtns.forEach(b => b.addEventListener('click', () => { const k = b.dataset.comp; picked.has(k) ? picked.delete(k) : picked.add(k); apply(); }));
+  if (typesReset) typesReset.addEventListener('click', () => { picked.clear(); apply(); });
   search.addEventListener('input', apply);
   anavs.forEach(a => a.addEventListener('click', () => {
-    grp = a.dataset.group; apply();
+    grp = a.dataset.group; if (grp === 'all') picked.clear(); apply();
     const bar = document.getElementById('certToolbar');
     if (bar && bar.getBoundingClientRect().top < 0) bar.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }));
@@ -1018,15 +1024,48 @@ function initCertFilter() {
     head.innerHTML = '<span></span><span>Certificate</span><span>Provider</span><span>Date</span><span>Competency</span>';
     box.prepend(head);
   });
+  /* Timeline: newest first, grouped under year markers */
+  const dkey = c => { const d = c.dataset.date || ''; return !d ? '0000' : d.length === 4 ? d + '-06-15' : d.length === 7 ? d + '-15' : d; };
+  const sorted = cards.map((c, i) => [c, i]).sort((a, b) => dkey(b[0]).localeCompare(dkey(a[0])) || a[1] - b[1]).map(x => x[0]);
+  const yearOf = c => (c.dataset.date || '').slice(0, 4) || 'Undated';
+  const yearEls = {};
+  sorted.forEach((c, i) => {
+    const y = yearOf(c);
+    if (!yearEls[y]) {
+      const el = document.createElement('div');
+      el.className = 'cert2-tl-year'; el.hidden = true; el.dataset.year = y;
+      el.style.order = String(i * 2 + 1);
+      el.innerHTML = '<span class="cert2-tl-y"></span><span class="cert2-tl-n"></span>';
+      el.firstChild.textContent = y;
+      main.appendChild(el); yearEls[y] = el;
+    }
+    c._tlOrder = (i + 1) * 2;
+  });
+  function tlUpdate() {
+    const on = main.hasAttribute('data-tl');
+    cards.forEach(c => { c.style.order = on ? String(c._tlOrder) : ''; });
+    Object.keys(yearEls).forEach(y => {
+      const n = cards.filter(c => !c.hidden && yearOf(c) === y).length;
+      const el = yearEls[y];
+      el.hidden = !on || !n;
+      el.lastChild.textContent = n + (n === 1 ? ' certificate' : ' certificates');
+    });
+    if (empty) empty.style.order = on ? '99999' : '';
+  }
+  const apply0 = apply;
+  apply = function () { apply0(); tlUpdate(); };
   function setView(v) {
-    main.dataset.view = v;
+    const tl = v === 'timeline';
+    main.dataset.view = tl ? 'list' : v;
+    main.toggleAttribute('data-tl', tl);
     viewBtns.forEach(b => { const on = b.dataset.view === v; b.classList.toggle('is-active', on); b.setAttribute('aria-pressed', on ? 'true' : 'false'); });
-    try { localStorage.setItem('certView', v); } catch (e) {}
+    tlUpdate();
+    try { localStorage.setItem('certView2', v); } catch (e) {}
   }
   viewBtns.forEach(b => b.addEventListener('click', () => setView(b.dataset.view)));
-  let saved = 'grid';
-  try { saved = localStorage.getItem('certView') || 'grid'; } catch (e) {}
-  setView(['grid', 'list', 'table'].includes(saved) ? saved : 'grid');
+  let saved = 'timeline';
+  try { saved = localStorage.getItem('certView2') || 'timeline'; } catch (e) {}
+  setView(['timeline', 'grid', 'list', 'table'].includes(saved) ? saved : 'timeline');
   cards.forEach(card => card.addEventListener('click', e => {
     if (main.dataset.view === 'grid' || e.target.closest('a, button')) return;
     const a = card.querySelector('.cert2-open'); if (a) a.click();
@@ -1118,4 +1157,16 @@ function initCertFilter() {
   }
 
   apply();
+  ready = true;
+
+  /* Carousels (mobile and tablet): arrows scroll the row, swipe works natively */
+  section.querySelectorAll('.cert2-car').forEach(car => {
+    const track = car.querySelector('.cert2-track');
+    const [prev, next] = car.querySelectorAll('.cert2-car-btn');
+    const upd = () => { prev.disabled = track.scrollLeft < 4; next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4; };
+    car.querySelectorAll('.cert2-car-btn').forEach(btn => btn.addEventListener('click', () => track.scrollBy({ left: Number(btn.dataset.dir) * track.clientWidth * 0.8, behavior: 'smooth' })));
+    track.addEventListener('scroll', upd, { passive: true });
+    window.addEventListener('resize', upd);
+    upd();
+  });
 }
