@@ -1008,7 +1008,7 @@ function initCertFilter() {
     srcChips.forEach(c => c.classList.toggle('is-active', c === chip));
     apply();
   }));
-  compBtns.forEach(b => b.addEventListener('click', () => { const k = b.dataset.comp; picked.has(k) ? picked.delete(k) : picked.add(k); apply(); }));
+  compBtns.forEach(b => b.addEventListener('click', () => { const k = b.dataset.comp; const was = picked.has(k); picked.clear(); if (!was) picked.add(k); apply(); }));
   if (typesReset) typesReset.addEventListener('click', () => { picked.clear(); apply(); });
   search.addEventListener('input', apply);
   /* Bring the results back into view after a filter change (the list gets shorter) */

@@ -6722,3 +6722,9 @@ button.cert2-anav.is-current { background: rgba(125,211,252,.16); color: #fff; }
 .cert2-pane[hidden] { display: none; }
 .cert2-pane .cert2-types-head { margin-top: 0; padding-top: 0; border-top: 0; }
 @media (prefers-reduced-motion: reduce) { .cert2-mode-pill { transition: none; } }
+
+
+/* Type list: plain single-select items (no switch) */
+.cert2-type { grid-template-columns: 1fr auto; }
+.cert2-switch { display: none; }
+.cert2-type.is-on { box-shadow: inset 3px 0 0 #38bdf8; background: rgba(125,211,252,.16); }
