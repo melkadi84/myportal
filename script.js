@@ -996,7 +996,7 @@ function initCertFilter() {
     subs.forEach(x => { x.hidden = !x.querySelector('.cert2-card:not([hidden])'); });
     groups.forEach(g => { g.hidden = (grp !== 'all' && g.id !== grp) || !g.querySelector('.cert2-card:not([hidden])'); });
     if (empty) empty.hidden = shown > 0;
-    if (shownEl) shownEl.textContent = 'Showing ' + shown + ' of ' + cards.length;
+    if (shownEl) shownEl.textContent = shown + ' of ' + cards.length;
     anavs.forEach(a => a.classList.toggle('is-current', a.dataset.group === grp));
     compBtns.forEach(b => { const on = picked.has(b.dataset.comp); b.classList.toggle('is-on', on); b.setAttribute('aria-checked', on ? 'true' : 'false'); });
     if (typesReset) typesReset.hidden = !picked.size;

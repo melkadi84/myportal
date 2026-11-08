@@ -6694,3 +6694,19 @@ button.cert2-anav.is-current { background: rgba(125,211,252,.16); color: #fff; }
 .delivery-chip li { padding: 10px 14px; border-radius: 12px; background: rgba(29,78,216,.05); font-size: .88rem; display: flex; flex-direction: column; gap: 2px; }
 .delivery-chip li span { font-size: .78rem; color: var(--text-muted); }
 .delivery-chip li em { font-style: normal; font-size: .8rem; color: var(--text-secondary); }
+
+/* Certificates toolbar: one row */
+@media (min-width: 761px) {
+  .cert2-toolbar { flex-wrap: nowrap; gap: 10px; }
+  .cert2-toolbar .cert2-search { flex: 1 1 120px; min-width: 120px; }
+  .cert2-toolbar .cert2-chips { flex-wrap: nowrap; flex: 0 0 auto; gap: 6px; }
+  .cert2-toolbar .cert2-chip { white-space: nowrap; padding-left: 12px; padding-right: 12px; }
+  .cert2-toolbar .cert2-views { flex: 0 0 auto; }
+  .cert2-toolbar .cert2-shown { flex: 0 0 auto; white-space: nowrap; font-size: .75rem; }
+}
+@media (min-width: 761px) {
+  .cert2-toolbar .cert2-chip { padding-left: 10px; padding-right: 8px; font-size: .82rem; gap: 6px; }
+  .cert2-toolbar .cert2-search { flex-basis: 150px; min-width: 150px; }
+  .cert2-toolbar .cert2-search input { padding-right: 8px; }
+  .cert2-toolbar .cert2-shown { padding: 0 2px; font-weight: 600; }
+}
