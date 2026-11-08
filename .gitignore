@@ -4,3 +4,4 @@ node_modules/
 Thumbs.db
 *.pdf
 scratch/
+!assets/Mohamed-Elkadi-CV.pdf
