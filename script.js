@@ -1025,6 +1025,7 @@ function initCertFilter() {
     const a = card.querySelector('.cert2-open'); if (a) a.click();
   }));
 
+  if (document.getElementById('competencies')) {
   /* Competencies: stats are calculated from the cards in the page */
   const stats = {}, years = {};
   cards.forEach(c => {
@@ -1106,6 +1107,8 @@ function initCertFilter() {
     const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { grow(); io.disconnect(); } }, { threshold: 0.15 });
     io.observe(compSection);
   } else { grow(); }
+
+  }
 
   /* Aside: highlight the section in view */
   const links = [...section.querySelectorAll('.cert2-anav')];
