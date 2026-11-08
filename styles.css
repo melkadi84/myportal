@@ -6748,3 +6748,21 @@ button.cert2-anav.is-current { background: rgba(125,211,252,.16); color: #fff; }
 
 .ds-box.ds-text { display: flex; flex-direction: column; justify-content: center; }
 .ds-box.ds-text b { font-size: 1.15rem; line-height: 1.25; letter-spacing: 0; }
+
+/* Hero actions: always one row */
+.beverr-hero-actions { flex-wrap: nowrap; gap: 10px; }
+.beverr-hero-actions .btn { white-space: nowrap; flex: 0 1 auto; }
+.beverr-hero-actions .btn-whatsapp-circle { flex: 0 0 auto; }
+@media (max-width: 480px) {
+  .beverr-hero-actions { gap: 8px; }
+  .beverr-hero-actions .btn { padding-left: 14px; padding-right: 14px; font-size: .88rem; }
+  .beverr-hero-actions .btn.btn-cv { gap: 6px; }
+  .beverr-hero-actions .btn.btn-cv svg { width: 16px; height: 16px; }
+  .beverr-hero-actions .btn-whatsapp-circle { width: 44px; height: 44px; }
+}
+@media (max-width: 400px) {
+  .beverr-hero-actions { gap: 6px; }
+  .beverr-hero-actions .btn { padding-left: 11px; padding-right: 11px; font-size: .82rem; }
+  .beverr-hero-actions .btn.btn-cv svg { display: none; }
+  .beverr-hero-actions .btn-whatsapp-circle { width: 40px; height: 40px; }
+}
