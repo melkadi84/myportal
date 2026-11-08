@@ -1,0 +1,173 @@
+{
+ "note": "Source: LinkedIn Projects. 'boilers' is filled only with owner-confirmed numbers.",
+ "projects": [
+  {
+   "job": "exp-siemens-energy",
+   "name": "Al-Burullus CCPP",
+   "period": "Apr 2019 – Present",
+   "detail": "Combined cycle power plant, 4,800 MW",
+   "boilers": null
+  },
+  {
+   "job": "exp-siemens",
+   "name": "Al-Burullus CCPP",
+   "period": "Apr 2019 – Present",
+   "detail": "Combined cycle power plant, 4,800 MW",
+   "boilers": null
+  },
+  {
+   "job": "exp-five-builders",
+   "name": "Benban Solar Park (Plot 17-3)",
+   "period": "Dec 2018 – Apr 2019",
+   "detail": "Owner: Elsweedy · Client: Sterling & Wilson",
+   "boilers": null
+  },
+  {
+   "job": "exp-siemens-htt",
+   "name": "Marzahn Power Plant",
+   "period": "2018",
+   "detail": "QA activities",
+   "boilers": null
+  },
+  {
+   "job": "exp-siemens-htt",
+   "name": "South Bangkok Power Plant",
+   "period": "2018",
+   "detail": "QA activities",
+   "boilers": null
+  },
+  {
+   "job": "exp-nem-qa",
+   "name": "BLNG Cogen II",
+   "period": "Feb 2015 – Dec 2015",
+   "detail": "Owner: BLNG · Client: Siemens",
+   "boilers": null
+  },
+  {
+   "job": "exp-nem-qa",
+   "name": "Oregon Clean Energy",
+   "period": "Jun 2015 – Dec 2015",
+   "detail": "Owner: Black & Veatch · Client: NEM Energy BV",
+   "boilers": null
+  },
+  {
+   "job": "exp-nem-docs",
+   "name": "Jazan",
+   "period": "Jul 2014 – Oct 2016",
+   "detail": "Owner: Saudi Aramco · Client: Siemens",
+   "boilers": null
+  },
+  {
+   "job": "exp-nem-docs",
+   "name": "Bandirma II",
+   "period": "Oct 2014 – Apr 2015",
+   "detail": "Owner: Enerji SA · Client: Siemens",
+   "boilers": null
+  },
+  {
+   "job": "exp-nem-docs",
+   "name": "San Gabriel",
+   "period": "Aug 2014 – Feb 2015",
+   "detail": "Owner: First Natagaz Power · Client: Siemens",
+   "boilers": null
+  },
+  {
+   "job": "exp-nem-docs",
+   "name": "Tanjung Uncang CCPP 120 MW",
+   "period": "Jan 2014 – Mar 2014",
+   "detail": "Owner: PT. PLN Batam · Client: Siemens",
+   "boilers": null
+  },
+  {
+   "job": "exp-nem-docs",
+   "name": "Brigadier Lopez & Ensenada de Barragan",
+   "period": "Mar 2013 – Nov 2013",
+   "detail": "Owner: ENARSA · Client: Siemens",
+   "boilers": null
+  },
+  {
+   "job": "exp-nem-docs",
+   "name": "Pinjarra",
+   "period": "Mar 2013 – Nov 2013",
+   "detail": "Owner: Alinta Energy · Client: Siemens",
+   "boilers": null
+  },
+  {
+   "job": "exp-nem-docs",
+   "name": "Temple II Power Plant",
+   "period": "Sep 2013 – Nov 2013",
+   "detail": "Owner: Panda Energy · Client: Siemens",
+   "boilers": null
+  },
+  {
+   "job": "exp-nem-docs",
+   "name": "PP10",
+   "period": "Aug 2012 – Sep 2013",
+   "detail": "Owner: Saudi Electricity Company · Client: Siemens",
+   "boilers": null
+  },
+  {
+   "job": "exp-nem-docs",
+   "name": "Temple & Sherman Power Plants",
+   "period": "Oct 2012 – Sep 2013",
+   "detail": "Owner: Panda Energy · Client: Siemens",
+   "boilers": null
+  },
+  {
+   "job": "exp-psc",
+   "name": "Abu Qir Internal Piping",
+   "period": "Mar 2010 – Jun 2011",
+   "detail": "Project Services Company",
+   "boilers": null
+  },
+  {
+   "job": "exp-psc",
+   "name": "Elswedy Cement",
+   "period": "Nov 2009 – Dec 2009",
+   "detail": "Project Services Company",
+   "boilers": null
+  },
+  {
+   "job": "exp-hcc",
+   "name": "Sidi Krir & El Atf Power Plants",
+   "period": "Feb 2009 – Oct 2009",
+   "detail": "Al-Hashemiah Contracting",
+   "boilers": null
+  },
+  {
+   "job": "exp-hcc",
+   "name": "Besos V Power Plant",
+   "period": "Oct 2008 – Feb 2009",
+   "detail": "Al-Hashemiah Contracting",
+   "boilers": null
+  },
+  {
+   "job": "exp-hcc",
+   "name": "Kerwalabityia Power Plant",
+   "period": "Jul 2008 – Oct 2008",
+   "detail": "Al-Hashemiah Contracting",
+   "boilers": null
+  },
+  {
+   "job": "exp-hcc",
+   "name": "Darling Down Combined",
+   "period": "Mar 2008 – Jul 2008",
+   "detail": "Al-Hashemiah Contracting",
+   "boilers": null
+  },
+  {
+   "job": "exp-hcc",
+   "name": "Mesaieed Combined (Qatar)",
+   "period": "Aug 2007 – Mar 2008",
+   "detail": "Al-Hashemiah Contracting",
+   "boilers": null
+  },
+  {
+   "job": "exp-iemsa",
+   "name": "MOPCO",
+   "period": "Jul 2006 – Sep 2007",
+   "detail": "IEMSA Impianti",
+   "boilers": null
+  }
+ ]
+}

@@ -1170,3 +1170,39 @@ function initCertFilter() {
     upd();
   });
 }
+
+
+/* Delivery record: projects (and boilers) per role, from data/delivery.json */
+(function initDelivery() {
+  const stats = document.getElementById('deliveryStats');
+  if (!stats) return;
+  fetch('data/delivery.json').then(r => r.json()).then(d => {
+    const list = d.projects || [];
+    const esc = t => String(t).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    const unique = new Map(); list.forEach(p => unique.set(p.name, p));
+    const boilers = [...unique.values()].reduce((n, p) => n + (p.boilers || 0), 0);
+    const jobs = new Set(list.map(p => p.job)).size;
+    const box = (n, l) => '<div class="ds-box"><b data-n="' + n + '">0</b><span>' + l + '</span></div>';
+    stats.innerHTML = box(unique.size, 'projects delivered') + box(jobs, 'roles with project work') + (boilers ? box(boilers, 'boilers (HRSG) supported') : '');
+    stats.hidden = false;
+    const byJob = {};
+    list.forEach(p => (byJob[p.job] = byJob[p.job] || []).push(p));
+    Object.keys(byJob).forEach(id => {
+      const item = document.getElementById(id); if (!item) return;
+      const card = item.querySelector('.timeline-card'); if (!card) return;
+      const ps = byJob[id]; const b = ps.reduce((n, p) => n + (p.boilers || 0), 0);
+      const det = document.createElement('details'); det.className = 'delivery-chip';
+      det.innerHTML = '<summary><span class="dc-n">' + ps.length + '</span> ' + (ps.length === 1 ? 'project' : 'projects') +
+        (b ? ' · <span class="dc-n">' + b + '</span> boilers' : '') + '</summary><ul>' +
+        ps.map(p => '<li><strong>' + esc(p.name) + '</strong><span>' + esc(p.period) + (p.boilers ? ' · ' + p.boilers + ' boilers' : '') + '</span><em>' + esc(p.detail) + '</em></li>').join('') + '</ul>';
+      card.appendChild(det);
+    });
+    const run = () => stats.querySelectorAll('b[data-n]').forEach(el => {
+      const n = +el.dataset.n, t0 = performance.now();
+      (function tick(t) { const k = Math.min(1, (t - t0) / 900); el.textContent = Math.round(n * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(tick); })(t0);
+    });
+    if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const io = new IntersectionObserver(es => { if (es[0].isIntersecting) { run(); io.disconnect(); } }, { threshold: .4 }); io.observe(stats);
+    } else stats.querySelectorAll('b[data-n]').forEach(el => el.textContent = el.dataset.n);
+  }).catch(() => {});
+})();
