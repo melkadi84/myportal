@@ -1205,7 +1205,7 @@ function initCertFilter() {
     const boilers = [...unique.values()].reduce((n, p) => n + (p.boilers || 0), 0);
     const jobs = new Set(list.map(p => p.job)).size;
     const box = (n, l) => '<div class="ds-box"><b data-n="' + n + '">0</b><span>' + l + '</span></div>';
-    stats.innerHTML = box(unique.size, 'projects delivered') + box(jobs, 'roles with project work') + (boilers ? box(boilers, 'boilers (HRSG) supported') : '');
+    stats.innerHTML = box(unique.size, 'projects delivered') + box(jobs, 'roles with project work') + (boilers ? box(boilers, 'boilers (HRSG) supported') : '') + '<div class="ds-box ds-text"><b>Pressure vessels &amp; power boilers</b><span>project management</span></div>';
     stats.hidden = false;
     const byJob = {};
     list.forEach(p => (byJob[p.job] = byJob[p.job] || []).push(p));

@@ -6745,3 +6745,6 @@ button.cert2-anav.is-current { background: rgba(125,211,252,.16); color: #fff; }
 .btn.btn-cv:focus-visible { outline: 3px solid #fbbf24; outline-offset: 2px; }
 [data-theme="dark"] .btn.btn-cv { background: linear-gradient(135deg, #fbbf24, #f59e0b); color: #0b1630; border-color: transparent; }
 [data-theme="dark"] .btn.btn-cv svg { color: #0b1630; }
+
+.ds-box.ds-text { display: flex; flex-direction: column; justify-content: center; }
+.ds-box.ds-text b { font-size: 1.15rem; line-height: 1.25; letter-spacing: 0; }
