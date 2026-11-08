@@ -6601,3 +6601,7 @@ body.cert2-lock { overflow: hidden; }
 @media (max-width: 1100px) {
   .cert2-aside-sep, .cert2-acomps { display: none; }
 }
+button.cert2-anav { width: 100%; border: 0; background: transparent; font: inherit; font-size: .92rem; font-weight: 600; text-align: left; cursor: pointer; }
+button.cert2-anav:hover { background: rgba(255,255,255,.08); }
+button.cert2-anav.is-current { background: rgba(125,211,252,.16); color: #fff; }
+.cert2-anav-link { margin-top: 6px; border-top: 1px solid rgba(255,255,255,.1); border-radius: 0 0 12px 12px; padding-top: 12px; }

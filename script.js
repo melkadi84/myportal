@@ -968,9 +968,10 @@ function initCertFilter() {
   const subs = [...section.querySelectorAll('.cert2-sub')];
   const empty = document.getElementById('certEmpty');
   const shownEl = document.getElementById('certShown');
-  let src = 'all', comp = 'all';
+  let src = 'all', comp = 'all', grp = 'all';
+  const anavs = [...section.querySelectorAll('.cert2-anav[data-group]')];
 
-  cards.forEach(card => { card._text = card.textContent.toLowerCase().replace(/\s+/g, ' '); });
+  cards.forEach(card => { card._g = card.closest('.cert2-group').id; card._text = card.textContent.toLowerCase().replace(/\s+/g, ' '); });
   const COMP = {};
   compBtns.forEach(b => { if (b.dataset.comp !== 'all') COMP[b.dataset.comp] = b.querySelector('.cert2-acomp-name').textContent.trim(); });
   srcChips.forEach(chip => {
@@ -982,16 +983,17 @@ function initCertFilter() {
     const q = search.value.trim().toLowerCase();
     let shown = 0;
     cards.forEach(card => {
-      const ok = (src === 'all' || card.dataset.src === src) &&
+      const ok = (grp === 'all' || card._g === grp) && (src === 'all' || card.dataset.src === src) &&
         (comp === 'all' || card.dataset.comp === comp) &&
         (!q || card._text.includes(q));
       card.hidden = !ok;
       if (ok) shown++;
     });
     subs.forEach(x => { x.hidden = !x.querySelector('.cert2-card:not([hidden])'); });
-    groups.forEach(g => { g.hidden = !g.querySelector('.cert2-card:not([hidden])'); });
+    groups.forEach(g => { g.hidden = (grp !== 'all' && g.id !== grp) || !g.querySelector('.cert2-card:not([hidden])'); });
     if (empty) empty.hidden = shown > 0;
     if (shownEl) shownEl.textContent = 'Showing ' + shown + ' of ' + cards.length;
+    anavs.forEach(a => a.classList.toggle('is-current', a.dataset.group === grp));
     compBtns.forEach(b => b.classList.toggle('is-active', b.dataset.comp === comp));
     section.querySelectorAll('.cert2-bar, .cert2-rlabel').forEach(b => b.classList.toggle('is-active', b.dataset.comp === comp));
   }
@@ -1003,6 +1005,11 @@ function initCertFilter() {
   }));
   compBtns.forEach(b => b.addEventListener('click', () => { comp = b.dataset.comp; apply(); }));
   search.addEventListener('input', apply);
+  anavs.forEach(a => a.addEventListener('click', () => {
+    grp = a.dataset.group; apply();
+    const bar = document.getElementById('certToolbar');
+    if (bar && bar.getBoundingClientRect().top < 0) bar.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }));
 
   /* View modes: grid, list, table */
   document.querySelectorAll('.cert2-grid, .cert2-rows').forEach(box => {
@@ -1110,14 +1117,5 @@ function initCertFilter() {
 
   }
 
-  /* Aside: highlight the section in view */
-  const links = [...section.querySelectorAll('.cert2-anav')];
-  const targets = links.map(a => document.getElementById(a.getAttribute('href').slice(1)));
-  if ('IntersectionObserver' in window) {
-    const spy = new IntersectionObserver(es => {
-      es.forEach(e => { if (e.isIntersecting) links.forEach((a, i) => a.classList.toggle('is-current', targets[i] === e.target)); });
-    }, { rootMargin: '-20% 0px -65% 0px' });
-    targets.forEach(t => t && spy.observe(t));
-  }
   apply();
 }
