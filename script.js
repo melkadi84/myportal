@@ -1011,11 +1011,33 @@ function initCertFilter() {
   compBtns.forEach(b => b.addEventListener('click', () => { const k = b.dataset.comp; picked.has(k) ? picked.delete(k) : picked.add(k); apply(); }));
   if (typesReset) typesReset.addEventListener('click', () => { picked.clear(); apply(); });
   search.addEventListener('input', apply);
+  /* Bring the results back into view after a filter change (the list gets shorter) */
+  function toTop() {
+    if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+    const top = main.getBoundingClientRect().top + window.scrollY - 150;
+    if (window.scrollY > top) window.scrollTo({ top: Math.max(0, top), behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  }
   anavs.forEach(a => a.addEventListener('click', () => {
-    grp = a.dataset.group; if (grp === 'all') picked.clear(); apply();
-    const bar = document.getElementById('certToolbar');
-    if (bar && bar.getBoundingClientRect().top < 0) bar.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    grp = a.dataset.group; if (grp === 'all') picked.clear(); apply(); toTop();
   }));
+  compBtns.forEach(b => b.addEventListener('click', toTop));
+  if (typesReset) typesReset.addEventListener('click', toTop);
+
+  /* Browse by: Category | Type */
+  const modeBox = section.querySelector('.cert2-mode');
+  if (modeBox) {
+    const modeBtns = [...modeBox.querySelectorAll('.cert2-mode-btn')];
+    const panes = [...section.querySelectorAll('.cert2-pane')];
+    function setMode(m, user) {
+      modeBox.dataset.mode = m;
+      modeBtns.forEach(b => { const on = b.dataset.mode === m; b.classList.toggle('is-on', on); b.setAttribute('aria-selected', on ? 'true' : 'false'); });
+      panes.forEach(p => { p.hidden = p.dataset.pane !== m; });
+      if (user) { if (m === 'type') grp = 'all'; else picked.clear(); apply(); toTop(); }
+      window.dispatchEvent(new Event('resize'));
+    }
+    modeBtns.forEach(b => b.addEventListener('click', () => setMode(b.dataset.mode, true)));
+    setMode('category', false);
+  }
 
   /* View modes: grid, list, table */
   document.querySelectorAll('.cert2-grid, .cert2-rows').forEach(box => {

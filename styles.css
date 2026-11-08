@@ -6710,3 +6710,15 @@ button.cert2-anav.is-current { background: rgba(125,211,252,.16); color: #fff; }
   .cert2-toolbar .cert2-search input { padding-right: 8px; }
   .cert2-toolbar .cert2-shown { padding: 0 2px; font-weight: 600; }
 }
+
+
+/* Browse by: Category | Type */
+.cert2-mode { position: relative; display: grid; grid-template-columns: 1fr 1fr; padding: 4px; margin-bottom: 18px; border-radius: 14px; background: rgba(255,255,255,.08); }
+.cert2-mode-pill { position: absolute; top: 4px; bottom: 4px; left: 4px; width: calc(50% - 4px); border-radius: 11px; background: linear-gradient(135deg, #2563eb, #1d4ed8); box-shadow: 0 8px 18px -8px rgba(37,99,235,.9); transition: transform .35s cubic-bezier(.34,1.4,.5,1); }
+.cert2-mode[data-mode="type"] .cert2-mode-pill { transform: translateX(100%); }
+.cert2-aside .cert2-mode-btn { position: relative; z-index: 1; padding: 9px 8px; border: 0; background: transparent; color: rgba(255,255,255,.7); font: inherit; font-weight: 700; font-size: .9rem; cursor: pointer; border-radius: 11px; transition: color .2s; }
+.cert2-aside .cert2-mode-btn.is-on { color: #fff; }
+.cert2-aside .cert2-mode-btn:focus-visible { outline: 2px solid #7dd3fc; outline-offset: 1px; }
+.cert2-pane[hidden] { display: none; }
+.cert2-pane .cert2-types-head { margin-top: 0; padding-top: 0; border-top: 0; }
+@media (prefers-reduced-motion: reduce) { .cert2-mode-pill { transition: none; } }
