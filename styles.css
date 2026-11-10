@@ -6766,3 +6766,12 @@ button.cert2-anav.is-current { background: rgba(125,211,252,.16); color: #fff; }
   .beverr-hero-actions .btn.btn-cv svg { display: none; }
   .beverr-hero-actions .btn-whatsapp-circle { width: 40px; height: 40px; }
 }
+
+/* Hero action buttons: compact */
+.beverr-hero-actions { gap: 10px; align-items: center; }
+.beverr-hero-actions .btn { padding: 10px 20px; font-size: .92rem; line-height: 1.2; min-height: 0; border-radius: 12px; }
+.beverr-hero-actions .btn.btn-cv { gap: 8px; }
+.beverr-hero-actions .btn.btn-cv svg { width: 16px; height: 16px; }
+.beverr-hero-actions .btn-whatsapp-circle { width: 42px; height: 42px; }
+.beverr-hero-actions .btn-whatsapp-circle svg { width: 20px; height: 20px; }
+@media (max-width: 400px) { .beverr-hero-actions .btn { padding: 9px 12px; font-size: .8rem; } .beverr-hero-actions .btn-whatsapp-circle { width: 38px; height: 38px; } }
