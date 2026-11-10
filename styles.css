@@ -6775,3 +6775,15 @@ button.cert2-anav.is-current { background: rgba(125,211,252,.16); color: #fff; }
 .beverr-hero-actions .btn-whatsapp-circle { width: 42px; height: 42px; }
 .beverr-hero-actions .btn-whatsapp-circle svg { width: 20px; height: 20px; }
 @media (max-width: 400px) { .beverr-hero-actions .btn { padding: 9px 12px; font-size: .8rem; } .beverr-hero-actions .btn-whatsapp-circle { width: 38px; height: 38px; } }
+
+
+/* About: skills as tags */
+.skills-grid { align-items: start; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
+.skill-group { background: var(--bg-primary, #fff); border: 1px solid rgba(29,78,216,.12); border-radius: 18px; padding: 20px 22px; box-shadow: 0 10px 26px -20px rgba(11,22,48,.5); }
+.skill-group h3 { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 0 0 14px; font-size: 1.02rem; color: var(--text-primary); }
+.skill-count { font-size: .75rem; font-weight: 700; color: var(--brand-primary); background: rgba(29,78,216,.1); padding: 2px 9px; border-radius: 999px; }
+.skill-tags { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.skill-tags li { padding: 6px 13px; border-radius: 999px; font-size: .84rem; font-weight: 600; color: var(--text-secondary); background: rgba(29,78,216,.07); border: 1px solid rgba(29,78,216,.16); transition: background .2s, color .2s, transform .2s; }
+.skill-tags li:hover { background: var(--brand-primary); color: #fff; transform: translateY(-2px); }
+[data-theme="dark"] .skill-group { background: rgba(255,255,255,.04); border-color: rgba(255,255,255,.1); }
+[data-theme="dark"] .skill-tags li { background: rgba(125,211,252,.1); border-color: rgba(125,211,252,.25); color: #dbeafe; }
