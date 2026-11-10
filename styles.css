@@ -6848,3 +6848,11 @@ button.cert2-anav.is-current { background: rgba(125,211,252,.16); color: #fff; }
 [data-theme="dark"] .sk-flat li { background: rgba(255,255,255,.04); border-color: rgba(255,255,255,.1); }
 [data-theme="dark"] .sk-view.is-on { background: rgba(125,211,252,.18); color: #bae6fd; box-shadow: none; }
 @media (max-width: 1100px) { .sk-flat-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); } .sk-flat-list .sk-flat-c { display: none; } }
+
+/* Skills: masonry (no empty gaps between category cards) on desktop */
+@media (min-width: 1101px) {
+  .sk-groups { display: block; column-count: 2; column-gap: 16px; }
+  .sk-groups .skill-group { break-inside: avoid; -webkit-column-break-inside: avoid; margin: 0 0 16px; display: inline-block; width: 100%; box-sizing: border-box; }
+  .sk-groups .skill-group[hidden] { display: none; }
+  .sk-layout[data-cat]:not([data-cat="all"]) .sk-groups { column-count: 1; }
+}
