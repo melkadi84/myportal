@@ -6767,23 +6767,54 @@ button.cert2-anav.is-current { background: rgba(125,211,252,.16); color: #fff; }
   .beverr-hero-actions .btn-whatsapp-circle { width: 40px; height: 40px; }
 }
 
-/* Hero action buttons: compact */
-.beverr-hero-actions { gap: 10px; align-items: center; }
-.beverr-hero-actions .btn { padding: 10px 20px; font-size: .92rem; line-height: 1.2; min-height: 0; border-radius: 12px; }
-.beverr-hero-actions .btn.btn-cv { gap: 8px; }
-.beverr-hero-actions .btn.btn-cv svg { width: 16px; height: 16px; }
-.beverr-hero-actions .btn-whatsapp-circle { width: 42px; height: 42px; }
-.beverr-hero-actions .btn-whatsapp-circle svg { width: 20px; height: 20px; }
-@media (max-width: 400px) { .beverr-hero-actions .btn { padding: 9px 12px; font-size: .8rem; } .beverr-hero-actions .btn-whatsapp-circle { width: 38px; height: 38px; } }
 
 
-/* About: skills as tags */
-.skills-grid { align-items: start; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
+/* About: skills with category aside */
+.sk-layout { display: grid; grid-template-columns: 290px minmax(0,1fr); gap: 28px; align-items: start; }
+.sk-aside { position: sticky; top: 96px; }
+.sk-aside-card { padding: 18px; border-radius: 22px; color: #fff; background: radial-gradient(420px 220px at 100% -10%, rgba(56,189,248,.28), transparent 60%), linear-gradient(160deg, #0b1630, #14295c); box-shadow: 0 22px 44px -26px rgba(11,22,48,.8); }
+.sk-aside-title { margin: 2px 6px 12px; font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: rgba(255,255,255,.6); }
+.sk-car { position: relative; }
+.sk-aside .sk-track { display: flex; flex-direction: column; gap: 4px; }
+.sk-arrow { display: none; }
+.sk-aside button.sk-nav { display: grid; grid-template-columns: 30px 1fr auto; align-items: center; gap: 10px; width: 100%; padding: 8px 10px; border: 0; border-radius: 12px; background: transparent; color: rgba(255,255,255,.86); font: inherit; font-weight: 600; font-size: .92rem; text-align: left; cursor: pointer; transition: background .2s, transform .2s; }
+.sk-aside button.sk-nav:hover { background: rgba(255,255,255,.1); }
+.sk-aside button.sk-nav.is-on { background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #fff; box-shadow: 0 10px 20px -10px rgba(37,99,235,.9); }
+.sk-aside button.sk-nav:focus-visible { outline: 2px solid #7dd3fc; outline-offset: 2px; }
+.sk-nav-ic { width: 30px; height: 30px; border-radius: 9px; background: #fff; display: grid; place-items: center; }
+.sk-nav-ic .sk-ic { width: 20px; height: 20px; }
+.sk-nav-n { font-size: .75rem; font-weight: 700; padding: 2px 8px; border-radius: 999px; background: rgba(255,255,255,.14); }
+.sk-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; align-items: start; }
+.sk-layout[data-cat]:not([data-cat="all"]) .sk-groups { grid-template-columns: 1fr; }
 .skill-group { background: var(--bg-primary, #fff); border: 1px solid rgba(29,78,216,.12); border-radius: 18px; padding: 20px 22px; box-shadow: 0 10px 26px -20px rgba(11,22,48,.5); }
+.skill-group[hidden] { display: none; }
 .skill-group h3 { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 0 0 14px; font-size: 1.02rem; color: var(--text-primary); }
 .skill-count { font-size: .75rem; font-weight: 700; color: var(--brand-primary); background: rgba(29,78,216,.1); padding: 2px 9px; border-radius: 999px; }
 .skill-tags { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
-.skill-tags li { padding: 6px 13px; border-radius: 999px; font-size: .84rem; font-weight: 600; color: var(--text-secondary); background: rgba(29,78,216,.07); border: 1px solid rgba(29,78,216,.16); transition: background .2s, color .2s, transform .2s; }
-.skill-tags li:hover { background: var(--brand-primary); color: #fff; transform: translateY(-2px); }
+.skill-tags li { display: inline-flex; align-items: center; gap: 8px; padding: 6px 13px 6px 8px; border-radius: 999px; font-size: .86rem; font-weight: 600; color: var(--text-secondary); background: rgba(29,78,216,.07); border: 1px solid rgba(29,78,216,.16); transition: background .2s, color .2s, transform .2s; }
+.skill-tags li:hover { background: rgba(29,78,216,.14); color: var(--text-primary); transform: translateY(-2px); }
+.sk-ic { width: 20px; height: 20px; flex: none; }
+.skill-tags .sk-ic { background: #fff; border-radius: 6px; padding: 2px; width: 24px; height: 24px; }
 [data-theme="dark"] .skill-group { background: rgba(255,255,255,.04); border-color: rgba(255,255,255,.1); }
 [data-theme="dark"] .skill-tags li { background: rgba(125,211,252,.1); border-color: rgba(125,211,252,.25); color: #dbeafe; }
+@media (max-width: 1100px) {
+  .sk-layout { grid-template-columns: minmax(0,1fr); gap: 16px; }
+  .sk-aside { position: static; }
+  .sk-aside-card { padding: 12px; border-radius: 18px; }
+  .sk-aside-title { display: none; }
+  .sk-track { scrollbar-width: none; }
+  .sk-track::-webkit-scrollbar { display: none; }
+  .sk-aside .sk-track { flex-direction: row; overflow-x: auto; scroll-snap-type: x proximity; scroll-padding: 0 34px; padding: 2px 34px; }
+  .sk-aside button.sk-nav { width: auto; flex: 0 0 auto; white-space: nowrap; scroll-snap-align: start; grid-template-columns: 26px auto auto; padding: 6px 12px 6px 8px; border-radius: 999px; background: rgba(255,255,255,.08); }
+  .sk-nav-ic { width: 26px; height: 26px; }
+  .sk-groups { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 14px; padding: 4px 2px 8px; }
+  .sk-groups .skill-group { flex: 0 0 min(86%, 440px); scroll-snap-align: center; }
+  .sk-layout[data-cat]:not([data-cat="all"]) .sk-groups { display: block; overflow: visible; }
+  .sk-arrow { display: grid; place-items: center; position: absolute; top: 50%; transform: translateY(-50%); z-index: 3; width: 32px; height: 32px; padding: 0; border-radius: 50%; border: 0; cursor: pointer; color: #fff; background: rgba(37,99,235,.95); box-shadow: 0 6px 14px -6px rgba(11,22,48,.7); }
+  .sk-arrow svg { width: 16px; height: 16px; }
+  .sk-arrow:disabled { opacity: .0; pointer-events: none; }
+  .sk-prev { left: 0; } .sk-next { right: 0; }
+  .sk-main .sk-arrow { top: 42%; }
+  .sk-main .sk-prev { left: -6px; } .sk-main .sk-next { right: -6px; }
+  .sk-layout[data-cat]:not([data-cat="all"]) .sk-main .sk-arrow { display: none; }
+}

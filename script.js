@@ -1228,3 +1228,31 @@ function initCertFilter() {
     } else stats.querySelectorAll('b[data-n]').forEach(el => el.textContent = el.dataset.n);
   }).catch(() => {});
 })();
+
+
+/* Skills: category aside, filters and carousels */
+(function initSkills() {
+  const layout = document.getElementById('skLayout');
+  if (!layout) return;
+  const navs = [...layout.querySelectorAll('.sk-nav')];
+  const groups = [...layout.querySelectorAll('.skill-group')];
+  function show(cat) {
+    layout.dataset.cat = cat;
+    navs.forEach(n => { const on = n.dataset.cat === cat; n.classList.toggle('is-on', on); n.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+    groups.forEach(g => { g.hidden = !(cat === 'all' || g.dataset.cat === cat); });
+    const t = layout.querySelector('.sk-groups'); if (t) t.scrollLeft = 0;
+    sync();
+  }
+  navs.forEach(n => n.addEventListener('click', () => show(n.dataset.cat)));
+  const cars = [...layout.querySelectorAll('.sk-car')].map(car => {
+    const track = car.querySelector('.sk-track'), prev = car.querySelector('.sk-prev'), next = car.querySelector('.sk-next');
+    const upd = () => { if (!prev) return; const max = track.scrollWidth - track.clientWidth - 2; prev.disabled = track.scrollLeft <= 2; next.disabled = track.scrollLeft >= max || max <= 0; };
+    const go = d => track.scrollBy({ left: d * Math.max(120, track.clientWidth * 0.8), behavior: 'smooth' });
+    if (prev) { prev.addEventListener('click', () => go(-1)); next.addEventListener('click', () => go(1)); }
+    track.addEventListener('scroll', upd, { passive: true });
+    return upd;
+  });
+  function sync() { cars.forEach(f => f()); }
+  window.addEventListener('resize', sync);
+  show('all');
+})();
