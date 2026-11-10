@@ -1236,10 +1236,25 @@ function initCertFilter() {
   if (!layout) return;
   const navs = [...layout.querySelectorAll('.sk-nav')];
   const groups = [...layout.querySelectorAll('.skill-group')];
+  const flat = [...layout.querySelectorAll('#skFlat li')];
+  const flatBox = document.getElementById('skFlat'), catBox = document.getElementById('skCat'), shownEl = document.getElementById('skShown');
+  const vbtns = [...layout.querySelectorAll('.sk-view')];
+  function setView(v) {
+    layout.dataset.view = v;
+    vbtns.forEach(b => { const on = b.dataset.view === v; b.classList.toggle('is-on', on); b.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+    flatBox.hidden = v === 'categories'; catBox.hidden = v !== 'categories';
+    flatBox.className = 'sk-flat sk-flat-' + v;
+    try { localStorage.setItem('skView', v); } catch (e) {}
+    if (typeof sync === 'function') sync();
+  }
+  vbtns.forEach(b => b.addEventListener('click', () => setView(b.dataset.view)));
   function show(cat) {
     layout.dataset.cat = cat;
     navs.forEach(n => { const on = n.dataset.cat === cat; n.classList.toggle('is-on', on); n.setAttribute('aria-pressed', on ? 'true' : 'false'); });
     groups.forEach(g => { g.hidden = !(cat === 'all' || g.dataset.cat === cat); });
+    flat.forEach(li => { li.hidden = !(cat === 'all' || li.dataset.cat === cat); });
+    const n = flat.filter(li => !li.hidden).length;
+    if (shownEl) shownEl.textContent = n + (n === 1 ? ' skill' : ' skills');
     const t = layout.querySelector('.sk-groups'); if (t) t.scrollLeft = 0;
     sync();
   }
@@ -1255,4 +1270,6 @@ function initCertFilter() {
   function sync() { cars.forEach(f => f()); }
   window.addEventListener('resize', sync);
   show('all');
+  let sv = 'categories'; try { sv = localStorage.getItem('skView') || 'categories'; } catch (e) {}
+  setView(['categories', 'grid', 'list'].includes(sv) ? sv : 'categories');
 })();
